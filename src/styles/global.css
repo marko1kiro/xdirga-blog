@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: #0891b2;
+  --color-accent-bright: #22d3ee;
+  --font-display: Georgia, 'Times New Roman', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-300;
+}
+
+::selection {
+  background: #22d3ee;
+  color: #082f49;
+}

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Cari" description="Cari tulisan di blog XDIRGA.">
+  <section class="pt-10">
+    <h1 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Cari</h1>
+    <div id="search" class="mt-8"></div>
+  </section>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.PagefindUI) {
+        new window.PagefindUI({
+          element: '#search',
+          showSubResults: true,
+          translations: { placeholder: 'Cari tulisan...' },
+        });
+      }
+    });
+  </script>
+  <style>
+    .dark .pagefind-ui__search-input {
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+    .dark .pagefind-ui__result-title,
+    .dark .pagefind-ui__result-link {
+      color: #e2e8f0;
+    }
+    .dark .pagefind-ui__result-excerpt {
+      color: #94a3b8;
+    }
+  </style>
+</BaseLayout>

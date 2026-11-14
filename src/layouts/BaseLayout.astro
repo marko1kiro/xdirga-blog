@@ -1,0 +1,59 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: string;
+}
+
+const {
+  title = 'XDIRGA',
+  description = 'Catatan soal AI dan tools gratis, ditulis dari yang dicoba sendiri.',
+  type = 'website',
+} = Astro.props;
+
+const pageTitle = title === 'XDIRGA' ? title : `${title} — XDIRGA`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://xdirga.xyz').href;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="XDIRGA" href="/rss.xml" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="XDIRGA" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <script is:inline>
+      (function () {
+        try {
+          var saved = localStorage.getItem('xdirga-theme');
+          var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen">
+    <Header />
+    <main class="mx-auto w-full max-w-3xl px-5 pb-16">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
