@@ -56,22 +56,13 @@ const categories = (await getCollection('categories')).sort((a, b) => a.data.ord
             </li>
           ))
         }
-        <li>
-          <a href="/search/" class="text-text-secondary transition hover:text-primary">Cari</a>
-        </li>
-        <li>
-          <a href="/tag/" class="text-text-secondary transition hover:text-primary">Semua Tag</a>
-        </li>
       </ul>
     </nav>
   </div>
 
   <div class="border-t border-border">
-    <div class="mx-auto flex w-full max-w-[1280px] flex-col gap-2 px-5 py-5 text-[0.8rem] text-text-secondary sm:flex-row sm:items-center sm:justify-between">
-      <p>© {new Date().getFullYear()} {SITE.name}. Semua tulisan gratis dibaca.</p>
-      <p>
-        Dibangun dengan <a href="https://astro.build" class="font-medium text-primary hover:underline">Astro</a>
-      </p>
+    <div class="mx-auto w-full max-w-[1280px] px-5 py-5 text-[0.8rem] text-text-secondary">
+      <p>© {new Date().getFullYear()} {SITE.name}. Tulisan bisa dibaca tanpa paywall dan tanpa iklan.</p>
     </div>
   </div>
 </footer>

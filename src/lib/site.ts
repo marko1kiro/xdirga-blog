@@ -17,10 +17,10 @@ export const NAV_STATIC = [
 ] as const;
 
 export const FOOTER_STATIC = [
-  { label: 'Tentang', href: '/tentang/' },
-  { label: 'Kontak', href: '/kontak/' },
-  { label: 'Kebijakan Privasi', href: '/privasi/' },
-  { label: 'Syarat Layanan', href: '/syarat/' },
+  { label: 'Privacy', href: '/privasi/' },
+  { label: 'Terms', href: '/syarat/' },
+  { label: 'Sitemap', href: '/sitemap/' },
+  { label: 'About', href: '/tentang/' },
 ] as const;
 
 export const PAGE_SIZE = 3;

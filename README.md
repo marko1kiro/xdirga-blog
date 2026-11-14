@@ -36,6 +36,17 @@ cover: /covers/judul-artikel.jpg
 coverAlt: "Ilustrasi artikel Judul Artikel"
 ```
 
+## Humanize dan spot-check plagiarisme (aturan wajib, 2026-11-14)
+
+Setiap artikel, termasuk yang ditulis user nanti, WAJIB melewati humanize pass sebelum terbit.
+
+- Suara natural Bahasa Indonesia, nada editorial informatif, santai tapi profesional. Sapaan ke pembaca memakai "lo", itu suara blog yang sudah mapan.
+- Variasikan panjang kalimat dan paragraf. Hilangkan pola AI seperti pembuka generik, "Pertama, Kedua, Ketiga" yang berulang, restatement tabel di prosa, penutup generik yang seimbang, dan konstruksi "bukan X, tapi Y" yang berulang.
+- Fakta, angka, harga, nama produk atau layanan, tanggal, klaim teknis, dan link TIDAK BOLEH berubah. Jangan tambah fakta baru, jangan karang kutipan, jangan ubah makna. Judul, slug, tanggal, tag, kategori, dan cover tidak berubah.
+- Prosa mengalir natural, TANPA titik dua dan TANPA strip di prosa artikel (aturan gaya user).
+- Spot-check plagiarisme. Untuk tiap artikel, ambil 2 sampai 3 kalimat paling khas dan cari frasa persisnya lewat web search. Kalau ada halaman lain dengan kalimat yang hampir sama persis, tulis ulang bagian itu sampai tidak lagi sama.
+- Jujur soal batas. Tidak ada run detector AI atau plagiarism checker eksternal (tidak ada akun atau API checker). Jangan pernah klaim "lolos AI detector" atau "lolos plagiarism checker". Yang dikerjakan adalah rewrite humanize plus spot-check web search, dan hasilnya dilaporkan apa adanya.
+
 ## Gambar cover (aturan wajib)
 
 Setiap artikel WAJIB punya minimal 1 gambar (hero/konten). Gambar di-generate sendiri, bukan foto stok. Pipeline-nya:
@@ -75,4 +86,4 @@ npm run build
 python3 cf_pages_direct_upload.py
 ```
 
-Skrip itu memakai API token Cloudflare yang sama dengan konektor `custom.cloudflare`. Domain `xdirga.xyz` belum live, menunggu record CNAME di dashboard Cloudflare.
+Skrip itu memakai API token Cloudflare yang sama dengan konektor `custom.cloudflare`. Domain `xdirga.xyz` sudah live sejak 14 Nov 2026 (CNAME dibuat user di dashboard Cloudflare).

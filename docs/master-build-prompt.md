@@ -966,3 +966,16 @@ Start by auditing the existing project, then proceed through the implementation 
 Do not stop after producing a plan or mockup.
 
 BUILD THE ACTUAL WEBSITE.
+
+---
+
+## 21. HUMANIZE PASS DAN SPOT-CHECK PLAGIARISME (ATURAN DURABLE, 2026-11-14)
+
+Setiap artikel, termasuk yang ditulis user nanti, WAJIB melewati humanize pass sebelum terbit. Aturan ini berlaku untuk semua artikel baru dan semua artikel yang ditulis ulang.
+
+1. Suara natural Bahasa Indonesia, nada editorial informatif, santai tapi profesional. Sapaan ke pembaca memakai "lo", itu suara blog yang sudah mapan.
+2. Variasikan panjang kalimat dan paragraf. Hilangkan pola AI seperti pembuka generik, "Pertama, Kedua, Ketiga" yang berulang, restatement tabel di prosa, penutup generik yang seimbang, dan konstruksi "bukan X, tapi Y" yang berulang.
+3. Fakta, angka, harga, nama produk atau layanan, tanggal, klaim teknis, dan link TIDAK BOLEH berubah. Jangan tambah fakta baru, jangan karang kutipan, jangan ubah makna. Judul, slug, tanggal, tag, kategori, dan cover tidak berubah.
+4. Prosa mengalir natural, TANPA titik dua dan TANPA strip di prosa artikel (aturan gaya user).
+5. Spot-check plagiarisme. Untuk tiap artikel, ambil 2 sampai 3 kalimat paling khas dan cari frasa persisnya lewat web search. Kalau ada halaman lain dengan kalimat yang hampir sama persis, tulis ulang bagian itu sampai tidak lagi sama.
+6. Jujur soal batas. Tidak ada run detector AI atau plagiarism checker eksternal (tidak ada akun atau API checker). Jangan pernah klaim "lolos AI detector" atau "lolos plagiarism checker". Yang dikerjakan adalah rewrite humanize plus spot-check web search, dan hasilnya dilaporkan apa adanya.

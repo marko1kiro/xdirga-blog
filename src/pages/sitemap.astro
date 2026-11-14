@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedArticles, getCategories, articleUrl, categoryUrl, formatDateShort } from '../lib/articles';
+
+const articles = await getPublishedArticles();
+const categories = await getCategories();
+
+const groups = categories
+  .map((cat) => ({
+    id: cat.id,
+    name: cat.data.name,
+    url: categoryUrl(cat.id),
+    items: articles.filter((a) => a.data.category === cat.id),
+  }))
+  .filter((g) => g.items.length > 0);
+
+const mainPages = [
+  { label: 'Beranda', href: '/' },
+  { label: 'About', href: '/tentang/' },
+  { label: 'Kontak', href: '/kontak/' },
+  { label: 'Cari', href: '/search/' },
+  { label: 'Privacy', href: '/privasi/' },
+  { label: 'Terms', href: '/syarat/' },
+  { label: 'RSS', href: '/rss.xml' },
+];
+---
+
+<BaseLayout title="Sitemap" description="Daftar semua halaman dan artikel di XDIRGA BLOG, dikelompokkan per kategori.">
+  <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
+    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Sitemap</h1>
+    <p class="mt-3 leading-relaxed text-text-secondary">
+      Daftar semua halaman di blog ini, dikelompokkan per kategori supaya gampang dicari.
+    </p>
+
+    <h2 class="mt-10 text-xl font-bold text-text">Halaman</h2>
+    <ul class="mt-4 space-y-2.5 text-sm">
+      {
+        mainPages.map((page) => (
+          <li>
+            <a href={page.href} class="text-primary hover:underline">
+              {page.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      groups.map((group) => (
+        <section class="mt-10">
+          <h2 class="text-xl font-bold text-text">
+            <a href={group.url} class="transition hover:text-primary">
+              {group.name}
+            </a>
+          </h2>
+          <ul class="mt-4 space-y-3 text-sm">
+            {group.items.map((article) => (
+              <li class="flex flex-wrap items-baseline gap-x-3">
+                <a href={articleUrl(article)} class="font-medium text-text transition hover:text-primary">
+                  {article.data.title}
+                </a>
+                <span class="text-xs text-text-secondary">{formatDateShort(article.data.publishedAt)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </section>
+</BaseLayout>
