@@ -8,3 +8,6 @@
 /kategori/lainnya /kategori/berita/ 301
 /kategori/lainnya/ /kategori/berita/ 301
 /kategori/lainnya/* /kategori/berita/ 301
+# Artikel Selamat Datang dihapus permanen 2026-11-14 (bukan berita, sudah ada Halaman Tentang)
+/artikel/selamat-datang-di-blog-xdirga /tentang/ 301
+/artikel/selamat-datang-di-blog-xdirga/ /tentang/ 301

@@ -272,8 +272,9 @@ try {
   ok('nav: tidak ada tautan ke /kategori/lainnya/ di homepage', noLainnyaLink === true);
   const beritaHtml = await (await fetch(BASE + '/kategori/berita/')).text();
   ok(
-    'arsip: artikel Selamat Datang sudah pindah ke Berita',
-    beritaHtml.includes('/artikel/selamat-datang-di-blog-xdirga/'),
+    'arsip: artikel Selamat Datang sudah dihapus permanen, Berita tersisa Layanan AI Gratis Makin Ketat',
+    !beritaHtml.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
+      beritaHtml.includes('/artikel/layanan-ai-gratis-makin-ketat/'),
   );
 
   ws.close();

@@ -35,7 +35,6 @@ SLUGS = [
     "lima-kebiasaan-kerja-rapi",
     "memilih-model-ai-gratis",
     "rutinitas-pagi-sebelum-buka-laptop",
-    "selamat-datang-di-blog-xdirga",
     "catatan-draft-contoh",
     "chatgpt-vs-gemini-vs-claude-gratis",
     "gemini-gratis-2026-flash-lite",
