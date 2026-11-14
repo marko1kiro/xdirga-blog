@@ -9,6 +9,8 @@ import newsreader600 from '@fontsource/newsreader/files/newsreader-latin-600-nor
 
 interface Props {
   title?: string;
+  /** Judul penuh apa adanya (mis. homepage). Kalau diisi, `title` diabaikan. */
+  fullTitle?: string;
   description?: string;
   type?: string;
   image?: string;
@@ -27,6 +29,7 @@ interface Props {
 
 const {
   title,
+  fullTitle,
   description = SITE.description,
   type = 'website',
   image = SITE.socialImage,
@@ -38,7 +41,7 @@ const {
   articleMeta,
 } = Astro.props;
 
-const pageTitle = title ? `${title} — ${SITE.name}` : SITE.name;
+const pageTitle = fullTitle ?? (title ? `${title} — ${SITE.name}` : SITE.name);
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
 const imageUrl = new URL(image, SITE.url).href;
 const orgJsonLd = {

@@ -17,7 +17,7 @@ Hari kerja yang berantakan jarang disebabkan satu masalah besar. Biasanya penyeb
 
 ## 1. Tulis tiga hal terpenting sebelum mulai
 
-Sebelum buka apa pun, tulis tiga hal yang harus selesai hari ini. Bukan sepuluh, cukup tiga. Tiga hal yang jelas bikin hari punya arah. Sisanya jadi bonus.
+Sebelum buka apa pun, tulis tiga hal yang harus selesai hari ini. Bukan sepuluh, cukup tiga. Tiga hal yang jelas bikin hari punya arah. Sisanya jadi bonus. Tiga hal itu paling gampang ditentukan pas pagi, bareng [rutinitas pagi yang sederhana](/artikel/rutinitas-pagi-sebelum-buka-laptop/) sebelum buka laptop.
 
 ## 2. Bereskan meja sebelum pulang
 

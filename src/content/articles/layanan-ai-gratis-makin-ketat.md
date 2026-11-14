@@ -37,6 +37,6 @@ Yang pertama, jangan andalkan satu layanan. Punya dua atau tiga cadangan bikin k
 
 Terus, pakai jatah gratis buat hal yang memang butuh model pintar. Buat tugas ringan, model yang lebih kecil atau tools lokal sering udah cukup.
 
-Terakhir, catat layanan mana yang masih ngasih jatah tanpa tanggal berakhir. Daftar kayak gitu berubah terus, jadi perlu dicek berkala. Di blog ini ada daftar API gratis yang masih jalan, dan bakal diperbarui kalau ada perubahan.
+Terakhir, catat layanan mana yang masih ngasih jatah tanpa tanggal berakhir. Daftar kayak gitu berubah terus, jadi perlu dicek berkala. Di blog ini ada [daftar API gratis yang masih jalan](/artikel/7-api-llm-gratis-tanpa-tanggal-berakhir/), dan bakal diperbarui kalau ada perubahan.
 
 Jatah gratis nggak bakal hilang sepenuhnya. Tapi bentuknya bakal terus berubah. Yang siap dengan cadangan bakal baik baik aja, yang cuma ngandelin satu layanan bakal kerepotan setiap kali ada perubahan.

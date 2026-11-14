@@ -10,7 +10,7 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 ## Deploy dan QA (v2, 2026-11-14)
 
-- Push ke GitHub: `python3 ~/workspace/xdirga-blog-push.py "<pesan>" [--delete <path> ...]` — SATU commit via Git Data API. File yang dihapus dari worktree wajib disebut lewat `--delete` (boleh diulang) supaya ikut terhapus di repo dalam commit yang sama, kalau tidak build GitHub-connected bisa rusak.
+- Push ke GitHub: `python3 ~/workspace/xdirga-blog-push.py "<pesan>" [--delete <path> ...]` — SATU commit via Git Data API. File yang dihapus dari worktree wajib disebut lewat `--delete` (boleh diulang) supaya ikut terhapus di repo dalam commit yang sama, kalau tidak build GitHub-connected bisa rusak. **PERHATIAN (insiden favicon.svg 2026-11-14): `--delete` HANYA menghapus di repo, file lokal di worktree TETAP ADA** — hapus file lokalnya dulu (`rm`), baru push dengan `--delete`, lalu rebuild dari `dist` bersih (`rm -rf dist`) sebelum deploy, kalau tidak file lama ikut ter-copy lagi ke `dist` dan tetap live 200.
 - Deploy ke Cloudflare Pages: `npm run build` lalu `python3 cf_pages_direct_upload.py` (repo belum GitHub-connected, jadi push tidak auto-deploy).
 - QA otomatis: server statis di port 8321, lalu `node scripts/qa-check.mjs` (rute, draf, tautan internal, overflow 360/1280px, dark mode, screenshot ke `/tmp/qa-shots/`).
 - Palet LIME (magenta + cyan/teal). Palet hijau di master prompt DIBATALKAN TOTAL. Jangan kembalikan warna hijau.

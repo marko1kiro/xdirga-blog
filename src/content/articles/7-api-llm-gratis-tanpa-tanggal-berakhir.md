@@ -43,6 +43,6 @@ Dari 42 API yang dicek di llmlatency.dev, cuma 7 yang kasih gratis tanpa tanggal
 
 ## Buat yang bangun agen sendiri
 
-Dari 7 ini, 5 bisa dipakai di OpenClaw, Hermes Agent, dan n8n. Jadi buat yang bangun agen sendiri, daftar ini langsung kepakai. Mulai dari yang batasnya paling longgar buat kebutuhanmu. Dan jangan andalkan satu layanan saja buat produksi, batas gratis bisa berubah sewaktu waktu.
+Dari 7 ini, 5 bisa dipakai di OpenClaw, Hermes Agent, dan n8n. Jadi buat yang [bangun agen sendiri](/artikel/apa-itu-agen-ai/), daftar ini langsung kepakai. Mulai dari yang batasnya paling longgar buat kebutuhanmu. Dan jangan andalkan satu layanan saja buat produksi, batas gratis bisa berubah sewaktu waktu.
 
 Sumber data [llmlatency.dev](https://llmlatency.dev/free-llm-api), dicek 11 November 2026.

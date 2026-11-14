@@ -29,4 +29,4 @@ Nggak perlu olahraga penuh. Peregangan ringan, jalan sebentar, atau sekadar berd
 
 Sebelum buka laptop, tentuin satu hal yang paling penting hari ini. Satu aja. Kalau satu hal itu selesai, hari ini udah berhasil, apa pun yang terjadi setelahnya.
 
-Yang bikin rutinitas pagi bagus itu gampang diulangnya, bukan panjangnya. Kalau bisa dilakuin pas lagi lelah dan lagi sibuk, itu rutinitas yang bener.
+Yang bikin rutinitas pagi bagus itu gampang diulangnya, bukan panjangnya. Kalau bisa dilakuin pas lagi lelah dan lagi sibuk, itu rutinitas yang bener. Rutinitas ini cuma satu dari [kebiasaan kecil yang bertahan](/artikel/lima-kebiasaan-kerja-rapi/) kalau dilakuin tiap hari.

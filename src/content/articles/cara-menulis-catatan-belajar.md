@@ -37,4 +37,4 @@ Teori tanpa contoh gampang menguap. Satu contoh nyata lebih nempel daripada tiga
 
 Sisihin waktu singkat tiap minggu buat merapikan catatan. Gabungin yang dobel, perbaiki judul yang kabur, dan hapus yang udah nggak relevan. Catatan yang dirawat dikit dikit jauh lebih berguna daripada arsip besar yang nggak pernah dibuka lagi.
 
-Mulai dari satu kebiasaan aja, tulis judul yang gampang dicari. Sisanya bakal ngikutin.
+Mulai dari satu kebiasaan aja, tulis judul yang gampang dicari. Sisanya bakal ngikutin. Kalau catatan lo sudah numpuk dan panjang, lo bisa [meringkas catatan panjang dengan AI](/artikel/cara-pakai-ai-gratis-untuk-kerja/) sebelum merapikannya.

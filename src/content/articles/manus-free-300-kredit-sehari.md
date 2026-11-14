@@ -9,11 +9,11 @@ status: published
 featured: false
 trending: true
 cover: /covers/manus-free-300-kredit-sehari.jpg
-coverAlt: "Ilustrasi agen AI lucu bekerja di laptop dengan kartu tugas selesai"
+coverAlt: "Ilustrasi meja kerja dengan laptop dan kartu tugas selesai"
 coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
-Ada yang nanya kemarin, agen AI apa yang bisa dicoba gratisan tanpa kartu kredit. Nah, ini salah satu yang masih jalan. Manus versi gratis ngasih 300 kredit tiap hari buat dipakai di mode Lite. Satu tugas nyata sehari itu udah cukup banget buat ngetes. Suruh dia riset satu topik, nyusun dokumen, atau beresin spreadsheet, terus lihat hasilnya.
+Ada yang nanya kemarin, [agen AI](/artikel/apa-itu-agen-ai/) apa yang bisa dicoba gratisan tanpa kartu kredit. Nah, ini salah satu yang masih jalan. Manus versi gratis ngasih 300 kredit tiap hari buat dipakai di mode Lite. Satu tugas nyata sehari itu udah cukup banget buat ngetes. Suruh dia riset satu topik, nyusun dokumen, atau beresin spreadsheet, terus lihat hasilnya.
 
 ## Yang perlu diperhatikan
 
@@ -25,4 +25,4 @@ Kalau lo baru pertama kali nyentuh agen AI, ini titik masuk yang paling gampang.
 
 Mulai dari tugas kecil dulu. Minta riset lima sumber soal satu topik, terus lihat hasilnya. Kalau hasilnya kepakai, baru pikirin apakah mode berbayarnya sepadan. Buat sekadar nyoba rasanya punya agen yang kerja sendiri, yang gratis ini udah lebih dari cukup.
 
-Sumber tulisan ini [Medium](https://medium.com/@larkgrass/best-free-ai-agents-in-2026-what-you-get-for-0-f57a5a8167d2).
+Sumber tulisan ini [Medium](https://medium.com/@larkgrass/best-free-ai-agents-in-2026-what-you-get-for-0-f57a5a8167d2). Angka kreditnya dicek ke [halaman bantuan resmi Manus soal kredit harian](https://help.manus.im/en/articles/11711121-will-my-daily-refresh-credits-accumulate-or-reset) dan [halaman harga resmi Manus](https://manus.im/pricing).
