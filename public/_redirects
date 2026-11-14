@@ -3,5 +3,8 @@
 /tags/* /tag/:splat 301
 /tags/ /tag/ 301
 # Kategori Lainnya dihapus 2026-11-14, artikelnya pindah ke Berita
+# Aturan tanpa slash diperlukan terpisah: /kategori/lainnya/* hanya cocok
+# bila ada slash, jadi varian tanpa slash tadinya lolos jadi 404.
+/kategori/lainnya /kategori/berita/ 301
 /kategori/lainnya/ /kategori/berita/ 301
 /kategori/lainnya/* /kategori/berita/ 301
