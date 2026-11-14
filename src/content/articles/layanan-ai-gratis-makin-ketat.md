@@ -8,9 +8,9 @@ publishedAt: 2026-11-12
 status: published
 featured: false
 trending: true
-cover: /covers/layanan-ai-gratis-makin-ketat.svg
-coverAlt: "Ilustrasi abstrak artikel Layanan AI Gratis Makin Ketat"
-coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
+cover: /covers/layanan-ai-gratis-makin-ketat.jpg
+coverAlt: "Ilustrasi meteran jatah gratis yang menyempit dan dompet dengan koin"
+coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
 Kalau lo mengikuti dunia AI gratis, mungkin lo merasakan hal yang sama. Jatah yang dulu terasa longgar pelan pelan menyempit. Batas harian turun, antrean makin panjang, dan fitur yang dulu gratis pindah ke paket berbayar. Ini bukan kebetulan, dan bukan karena layanannya pelit.

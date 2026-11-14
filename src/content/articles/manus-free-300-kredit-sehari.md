@@ -8,9 +8,9 @@ publishedAt: 2026-11-12
 status: published
 featured: true
 trending: true
-cover: /covers/manus-free-300-kredit-sehari.svg
-coverAlt: "Ilustrasi abstrak artikel Manus Gratis 300 Kredit Setiap Hari"
-coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
+cover: /covers/manus-free-300-kredit-sehari.jpg
+coverAlt: "Ilustrasi agen AI lucu bekerja di laptop dengan kartu tugas selesai"
+coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
 Ada yang nanya kemarin agen AI apa yang bisa dicoba gratisan tanpa kartu kredit. Nah ini salah satu yang masih jalan. Manus yang versi gratis ngasih 300 kredit tiap hari buat dipakai di mode Lite. Satu tugas nyata sehari itu cukup banget buat ngetes, misal disuruh riset topik, nyusun dokumen, atau beresin spreadsheet.

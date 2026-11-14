@@ -8,9 +8,9 @@ publishedAt: 2026-11-13
 status: published
 featured: false
 trending: false
-cover: /covers/cara-kerja-rss.svg
-coverAlt: "Ilustrasi abstrak artikel Cara Kerja RSS dan Kenapa Masih Berguna"
-coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
+cover: /covers/cara-kerja-rss.jpg
+coverAlt: "Ilustrasi gelombang RSS mengalir ke tumpukan kartu artikel dan secangkir kopi"
+coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
 RSS sering dianggap teknologi jadul. Padahal cara kerjanya sederhana dan masih jalan sampai sekarang. Kalau lo capek dengan linimasa yang diatur algoritma, RSS adalah jalan keluarnya.

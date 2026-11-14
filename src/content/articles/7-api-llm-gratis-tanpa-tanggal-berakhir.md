@@ -8,9 +8,9 @@ publishedAt: 2026-11-11
 status: published
 featured: false
 trending: true
-cover: /covers/7-api-llm-gratis-tanpa-tanggal-berakhir.svg
-coverAlt: "Ilustrasi abstrak artikel 7 API LLM Gratis Tanpa Tanggal Berakhir"
-coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
+cover: /covers/7-api-llm-gratis-tanpa-tanggal-berakhir.jpg
+coverAlt: "Ilustrasi jaringan node API dengan alur cahaya magenta dan cyan"
+coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
 Dari 42 API yang dicek di llmlatency.dev, 7 kasih gratis tanpa tanggal berakhir. Sisanya, 16 kasih kredit sekali pakai buat akun baru dan 9 nggak kasih gratis sama sekali. Dan perlu dicatat, nggak ada satu pun yang tanpa batas.

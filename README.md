@@ -15,8 +15,8 @@ Astro 5, TypeScript, Markdown dan MDX, Tailwind v4, Cloudflare Pages. Palet LIME
 - `src/layouts/` — BaseLayout, ArticleLayout, ArchiveLayout
 - `src/pages/` — homepage, `/artikel/`, `/kategori/`, `/tag/`, `/author/`, `/search/`, halaman statis
 - `src/lib/` — helper artikel dan konfigurasi situs
-- `scripts/` — `make-covers.mjs` (generator cover SVG), `qa-check.mjs` (QA otomatis)
-- `public/covers/` — cover SVG abstrak per artikel, `public/avatars/` — avatar penulis
+- `scripts/` — `watermark-covers.py` (watermark cover JPG), `qa-check.mjs` (QA otomatis)
+- `public/covers/` — cover JPG hasil generate + watermark per artikel, `public/avatars/` — avatar penulis
 
 ## Menulis artikel
 
@@ -32,11 +32,19 @@ publishedAt: 2026-11-14
 status: published # draft tidak muncul di mana pun
 featured: false
 trending: false
-cover: /covers/judul-artikel.svg
-coverAlt: "Ilustrasi abstrak artikel Judul Artikel"
+cover: /covers/judul-artikel.jpg
+coverAlt: "Ilustrasi artikel Judul Artikel"
 ```
 
-Setelah menambah artikel, jalankan `node scripts/make-covers.mjs` untuk membuat cover SVG-nya. Cover selalu abstrak, bukan foto stok, dan alt text-nya jujur.
+## Gambar cover (aturan wajib)
+
+Setiap artikel WAJIB punya minimal 1 gambar (hero/konten). Gambar di-generate sendiri, bukan foto stok. Pipeline-nya:
+
+1. Generate gambar hero 16:9 (sekitar 1280x720 atau lebih besar) dengan `media.generate_image`, gaya editorial modern yang bersih, sesuai topik artikel, palet LIME (magenta, cyan, teal gelap, dasar putih teal). Jangan ada teks, huruf, logo, atau watermark di dalam hasil generate.
+2. Jalankan `python3 scripts/watermark-covers.py` — script ini resize ke 1280x720 lalu menambahkan watermark kecil "XDIRGA BLOG" di pojok kanan bawah (putih dengan bayangan gelap halus), dan menyimpan hasilnya sebagai JPG kualitas 82 ke `public/covers/<slug>.jpg`. Watermark selalu ditambahkan oleh script, jangan pernah minta AI menambahkan watermark.
+3. Set frontmatter `cover: /covers/<slug>.jpg` dan `coverAlt` yang jujur (mendeskripsikan isi gambar).
+
+Cover SVG abstrak lama sudah dihapus total 2026-11-14.
 
 Komponen MDX yang tersedia di artikel `.mdx`: `Callout`, `InfoBox`, `Quote`, `ArticleImage`, `RelatedContent`. Contoh pemakaian ada di `apa-itu-agen-ai.mdx` dan `memilih-model-ai-gratis.mdx`.
 

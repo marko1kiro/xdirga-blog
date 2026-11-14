@@ -8,9 +8,9 @@ publishedAt: 2026-11-13
 status: published
 featured: false
 trending: false
-cover: /covers/cara-menulis-catatan-belajar.svg
-coverAlt: "Ilustrasi abstrak artikel Cara Menulis Catatan Belajar yang Gampang Dicari Lagi"
-coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
+cover: /covers/cara-menulis-catatan-belajar.jpg
+coverAlt: "Ilustrasi buku catatan terbuka dengan pola garis abstrak dan kaca pembesar"
+coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
 Pernah nggak sih, lo udah pernah belajar satu hal, terus pas butuh lagi lo lupa di mana nyatetnya. Akhirnya belajar ulang dari nol. Masalahnya jarang di otaknya, tapi di catatannya yang nggak bisa dicari.

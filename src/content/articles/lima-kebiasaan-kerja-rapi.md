@@ -8,9 +8,9 @@ publishedAt: 2026-11-14
 status: published
 featured: false
 trending: false
-cover: /covers/lima-kebiasaan-kerja-rapi.svg
-coverAlt: "Ilustrasi abstrak artikel 5 Kebiasaan Kecil yang Bikin Hari Kerja Lebih Rapi"
-coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
+cover: /covers/lima-kebiasaan-kerja-rapi.jpg
+coverAlt: "Ilustrasi meja kerja rapi dilihat dari atas dengan lima kartu tugas"
+coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
 Hari kerja yang berantakan jarang disebabkan satu masalah besar. Biasanya penyebabnya adalah banyak kekacauan kecil yang menumpuk. Lima kebiasaan di bawah ini sederhana, tapi efeknya terasa dalam seminggu.

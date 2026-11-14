@@ -8,9 +8,9 @@ publishedAt: 2026-11-14
 status: published
 featured: false
 trending: false
-cover: /covers/selamat-datang-di-blog-xdirga.svg
-coverAlt: "Ilustrasi abstrak artikel Selamat Datang di Blog XDIRGA"
-coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
+cover: /covers/selamat-datang-di-blog-xdirga.jpg
+coverAlt: "Ilustrasi pintu terbuka ke studio yang terang dengan buku dan laptop"
+coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
 Halo, selamat datang di blog XDIRGA.

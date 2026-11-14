@@ -8,9 +8,9 @@ publishedAt: 2026-11-14
 status: published
 featured: false
 trending: false
-cover: /covers/rutinitas-pagi-sebelum-buka-laptop.svg
-coverAlt: "Ilustrasi abstrak artikel Rutinitas Pagi yang Sederhana Sebelum Buka Laptop"
-coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
+cover: /covers/rutinitas-pagi-sebelum-buka-laptop.jpg
+coverAlt: "Ilustrasi pagi yang tenang, matahari terbit di jendela, kopi, dan laptop tertutup"
+coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
 Banyak panduan rutinitas pagi yang terdengar mustahil. Bangun jam 4, olahraga satu jam, meditasi, baca buku, lalu baru kerja. Buat yang hidupnya nyata, rutinitas seperti itu justru bikin stres sebelum hari dimulai.

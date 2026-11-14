@@ -329,6 +329,7 @@ FEATURED IMAGE:
 - Responsive aspect ratio.
 - Proper alt text.
 - Optional image caption and credit.
+- COVER IMAGE RULE (durable, 2026-11-14): every article MUST have at least 1 generated image (hero/content). Images are generated, never stock photos. Pipeline: generate a 16:9 hero image in the LIME palette with no text, letters, logo, or watermark baked in, then run `scripts/watermark-covers.py` which resizes to 1280x720 and adds a small "XDIRGA BLOG" watermark at the bottom-right corner (white text with a soft dark shadow), saving JPG quality 82 to `public/covers/<slug>.jpg`. Never ask the AI to add the watermark. Set frontmatter `cover` to the JPG path and `coverAlt` to an honest description of the image.
 
 ARTICLE BODY:
 
