@@ -6,6 +6,7 @@ tags: ["AI gratis", "Teknologi"]
 author: xdirga
 publishedAt: 2026-11-14T17:20:00+07:00
 lastVerifiedAt: 2026-11-14
+updatedAt: 2026-11-14
 status: published
 featured: false
 trending: true
@@ -23,18 +24,18 @@ Sebelum bandingin layanan, hitung dulu berapa gambar yang lo butuhin. Buat thumb
 | Layanan | Batas gratis | Yang perlu diingat |
 | --- | --- | --- |
 | Leonardo | 150 token per hari, reset tiap hari | Hasilnya publik, cuma bisa pakai model Auto |
-| Canva | Sampai 20 pemakaian AI Premium per bulan, berbagi dengan alat AI lain | Sekali bikin gambar berat, jatah sebulan bisa habis dalam sehari |
+| Canva | Sampai 20 pemakaian AI per bulan, Standard dan Premium dalam satu pool bersama | Sekali bikin gambar berat, jatah sebulan bisa habis dalam sehari |
 | Gemini | Tanpa angka pasti, hitungan komputasi, refresh tiap 5 jam | Lewat Flow bisa sampai 400 gambar per hari |
 
 ## Leonardo, jatah harian buat coba coba
 
-Leonardo kasih 150 token cepat tiap hari, dan token yang tidak kepakai hangus besoknya. Token itu bukan gambar. Satu gambar lebar pernah diukur makan 8 token dalam satu pengujian November 2026, jadi jatah harian itu kira kira cukup buat 18 gambar sehari. Angka pastinya tergantung ukuran dan model, jadi anggap saja perkiraan, bukan janji. Jatah harian yang reset tiap hari ini mirip seperti [kredit harian Manus](/artikel/manus-free-300-kredit-sehari/), habis ya habis, besok balik lagi.
+Leonardo kasih 150 token cepat tiap hari, dan token yang tidak kepakai hangus besoknya. Token itu bukan gambar. Satu gambar lebar pernah diukur makan 8 token dalam satu pengujian November 2026, jadi jatah harian itu kira kira cukup buat 18 gambar sehari. Angka 8 token ini hasil uji kami, bukan tarif resmi Leonardo. Angka pastinya tergantung ukuran dan model, jadi anggap saja perkiraan, bukan janji. Jatah harian yang reset tiap hari ini mirip seperti [kredit harian Manus](/artikel/manus-free-300-kredit-sehari/), habis ya habis, besok balik lagi.
 
-Yang paling penting, semua yang lo bikin di paket gratis itu publik. Orang lain bisa lihat, dan Leonardo juga pegang hak buat memakai dan menyebarkan gambar itu. Sebagai gantinya, lo dapat lisensi bebas royalti yang termasuk pemakaian komersial, tapi tidak eksklusif. Jadi buat latihan, coba coba, dan gambar yang tidak butuh dirahasiakan, Leonardo paling enak karena jatahnya balik tiap hari. Buat gambar yang harus privat, jangan pakai paket gratisnya.
+Yang paling penting, semua yang lo bikin di paket gratis itu publik. Orang lain bisa lihat, dan Leonardo juga pegang hak buat memakai dan menyebarkan gambar itu. Sebagai gantinya, lo dapat lisensi bebas royalti yang termasuk pemakaian komersial, tapi tidak eksklusif. Kepemilikan IP-nya tetap di Leonardo. Jadi buat latihan, coba coba, dan gambar yang tidak butuh dirahasiakan, Leonardo paling enak karena jatahnya balik tiap hari. Buat gambar yang harus privat, jangan pakai paket gratisnya.
 
 ## Canva, desain lengkap dengan jatah bulanan
 
-Canva itu bukan cuma generator gambar. Lo dapat template, teks, dan editor desain dalam satu tempat, jadi buat thumbnail dan poster, gambarnya bisa langsung jadi desain. Jatah gratisnya sampai 20 pemakaian AI Premium per bulan. Magic Media dan Dream Lab sama sama ambil dari jatah itu, dan jatah itu juga berbagi dengan alat AI lain seperti Magic Edit. Artinya, satu sesi bikin gambar yang berat bisa menghabiskan jatah sebulan dalam sehari. Kalau kebutuhan lo cuma beberapa gambar sebulan dan lo butuh desainnya langsung jadi, Canva paling praktis. Kalau lo butuh gambar tiap hari, jatah bulanannya cepat habis.
+Canva itu bukan cuma generator gambar. Lo dapat template, teks, dan editor desain dalam satu tempat, jadi buat thumbnail dan poster, gambarnya bisa langsung jadi desain. Jatah gratisnya sampai 20 pemakaian AI per bulan, Standard dan Premium dalam satu pool bersama. Magic Media dan Dream Lab sama sama ambil dari jatah itu, dan jatah itu juga berbagi dengan alat AI lain seperti Magic Edit. Artinya, satu sesi bikin gambar yang berat bisa menghabiskan jatah sebulan dalam sehari. Kalau kebutuhan lo cuma beberapa gambar sebulan dan lo butuh desainnya langsung jadi, Canva paling praktis. Kalau lo butuh gambar tiap hari, jatah bulanannya cepat habis.
 
 ## Gemini, tanpa angka tapi paling fleksibel
 
@@ -46,8 +47,8 @@ Kelebihan Gemini ada di edit. Lo bisa upload foto, minta diubah, atau gabung dua
 
 Jawabannya tergantung kebutuhan lo. Buat gambar tiap hari dalam jumlah kecil, Leonardo paling hemat karena jatahnya reset tiap hari. Buat thumbnail dan poster yang butuh desain langsung jadi, Canva paling praktis walau jatahnya bulanan. Buat edit foto dan kebutuhan yang tidak tentu jumlahnya, Gemini paling fleksibel, dan Flow jadi cadangannya kalau butuh banyak.
 
-Satu hal yang perlu diingat, gratis belum tentu boleh dipakai jualan. Leonardo memang kasih lisensi komersial, tapi hasilnya publik dan tidak eksklusif. Canva dan Google punya ketentuan sendiri yang bisa berubah, jadi baca dulu ketentuan pemakaian komersialnya sebelum gambar dipakai jualan. Kalau butuh volume paling banyak tanpa bayar, Bing Image Creator kasih 15 kreasi cepat per hari dan lanjut kecepatan standar sampai 200 prompt sehari. Kalau butuh lisensi komersial yang jelas di paket gratis, Playground kasih 10 gambar tiap 3 jam dengan lisensi bebas royalti. Midjourney tidak masuk hitungan karena tidak ada paket gratis sama sekali.
+Satu hal yang perlu diingat, gratis belum tentu boleh dipakai jualan. Leonardo memang kasih lisensi komersial, tapi hasilnya publik dan tidak eksklusif. Canva dan Google punya ketentuan sendiri yang bisa berubah, jadi baca dulu ketentuan pemakaian komersialnya sebelum gambar dipakai jualan. Kalau butuh volume paling banyak tanpa bayar, Bing Image Creator kasih 15 kreasi cepat per hari dan lanjut kecepatan standar sampai 200 prompt sehari. Kalau butuh lisensi komersial yang jelas di paket gratis, Playground kasih 5 gambar v3 tiap 3 jam plus 6 kredit sebulan, dengan lisensi bebas royalti yang berlaku di seluruh dunia. Midjourney tidak masuk hitungan karena tidak ada paket gratis sama sekali.
 
 Kalau lo masih bingung milih layanan AI secara umum, baca [perbandingan lengkap ketiganya](/artikel/chatgpt-vs-gemini-vs-claude-gratis/) sebelum memutuskan.
 
-Sumber tulisan ini [halaman bantuan Google soal Gemini](https://support.google.com/gemini/answer/17004136), [halaman harga Leonardo](https://leonardo.ai/pricing), [halaman harga Canva](https://canva.com/pricing), dan [Bing Image Creator](https://www.bing.com/images/create).
+Sumber tulisan ini [halaman bantuan Google soal Gemini](https://support.google.com/gemini/answer/17004136), [halaman harga Leonardo](https://leonardo.ai/pricing), [halaman harga Canva](https://canva.com/pricing), [Bing Image Creator](https://www.bing.com/images/create), dan [blog resmi Playground soal paket gratis](https://playgroundai.com/blog/is-playground-ai-free-what-you-get-on-free-vs-pro-vs-pro-plus).

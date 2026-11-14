@@ -5,6 +5,7 @@ category: teknologi
 tags: ["Manus", "AI gratis", "Agen AI"]
 author: xdirga
 publishedAt: 2026-11-12
+updatedAt: 2026-11-14
 lastVerifiedAt: 2026-11-14
 status: published
 featured: false
@@ -26,4 +27,4 @@ Kalau lo baru pertama kali nyentuh agen AI, ini titik masuk yang paling gampang.
 
 Mulai dari tugas kecil dulu. Minta riset lima sumber soal satu topik, terus lihat hasilnya. Kalau hasilnya kepakai, baru pikirin apakah mode berbayarnya sepadan. Buat sekadar nyoba rasanya punya agen yang kerja sendiri, yang gratis ini udah lebih dari cukup.
 
-Sumber tulisan ini [Medium](https://medium.com/@larkgrass/best-free-ai-agents-in-2026-what-you-get-for-0-f57a5a8167d2). Angka kreditnya dicek ke [halaman bantuan resmi Manus soal kredit harian](https://help.manus.im/en/articles/11711121-will-my-daily-refresh-credits-accumulate-or-reset) dan [halaman harga resmi Manus](https://manus.im/pricing).
+Sumber tulisan ini [halaman bantuan resmi Manus soal harga keanggotaan](https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus) dan [halaman bantuan resmi Manus soal kredit harian](https://help.manus.im/en/articles/11711121-will-my-daily-refresh-credits-accumulate-or-reset). Angka kreditnya dicek ke kedua halaman bantuan itu.

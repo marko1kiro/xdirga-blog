@@ -5,6 +5,7 @@ category: tips
 tags: ["AI gratis", "Tips"]
 author: xdirga
 publishedAt: 2026-11-14T17:30:00+07:00
+updatedAt: 2026-11-14
 lastVerifiedAt: 2026-11-14
 status: published
 featured: false
@@ -35,7 +36,7 @@ Satu hal lagi yang perlu diingat. Lisensi itu nempel di waktu generate. Audio ya
 
 Suno kasih 50 kredit tiap hari, reset tiap hari, tidak bisa ditabung. Satu lagu makan kira kira 5 kredit, jadi jatah harian itu cukup buat kira kira 10 lagu. Buat coba coba genre dan prompt, jatah itu lebih dari cukup. Buat produksi serius, batasnya terasa di tempat lain.
 
-Lagu gratis di Suno cuma bisa diputar di dalam Suno. Tidak ada jatah unduhan bulanan, cuma sedikit unduhan percobaan. Hasilnya juga ada watermark. Dan yang paling berat, lagu yang lo bikin di paket gratis itu milik Suno, bukan milik lo. Aturannya jelas, lagu gratis tidak boleh dimonetisasi. Tidak boleh masuk video YouTube yang ada iklannya, tidak boleh dijual, tidak boleh dipakai buat klien. Sama seperti ElevenLabs, naik ke paket berbayar tidak mengubah status lagu lama. Lagu yang dibikin waktu gratis tetap milik Suno. Paket Pro, 10 dolar per bulan, kasih 2.500 kredit sebulan, 20 unduhan lagu sebulan, dan hak komersial buat lagu yang dibikin selama langganan.
+Lagu gratis di Suno cuma bisa diputar di dalam Suno. Tidak ada jatah unduhan bulanan, cuma sedikit unduhan percobaan. Suno berhak menempel fingerprint/watermark/metadata dan lo dilarang menghapusnya. Dan yang paling berat, lagu yang lo bikin di paket gratis itu milik Suno, bukan milik lo. Setiap kali lo memakai lagu gratis itu, lo wajib mencantumkan atribusi ke Suno. Aturannya jelas, lagu gratis tidak boleh dimonetisasi. Tidak boleh masuk video YouTube yang ada iklannya, tidak boleh dijual, tidak boleh dipakai buat klien. Sama seperti ElevenLabs, naik ke paket berbayar tidak mengubah status lagu lama. Lagu yang dibikin waktu gratis tetap milik Suno. Paket Pro, 10 dolar per bulan, kasih 2.500 kredit sebulan, 20 unduhan lagu sebulan, dan hak komersial buat lagu yang diunduh lewat Suno selama langganan. Lagu Pro yang tidak pernah diunduh tidak punya hak komersial, dan remix tetap non komersial.
 
 ## Buat apa masing masing cukup
 

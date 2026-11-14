@@ -6,6 +6,7 @@ tags: ["AI gratis", "Tips"]
 author: xdirga
 publishedAt: 2026-11-14T18:20:00+07:00
 lastVerifiedAt: 2026-11-14
+updatedAt: 2026-11-14
 status: published
 featured: false
 trending: true
@@ -19,7 +20,7 @@ Gratis di artikel ini artinya ketat. Lo bisa daftar dan pakai fitur intinya tanp
 | Langkah | Alat gratis | Yang perlu diingat |
 | --- | --- | --- |
 | Ide dan naskah | ChatGPT, Gemini | Daftar pakai email, tanpa kartu |
-| Gambar | Leonardo, Canva, Bing | Leonardo 150 token per hari, Canva 20 pemakaian per bulan |
+| Gambar | Leonardo, Canva, Bing | Leonardo 150 token per hari, Canva sampai 20 pemakaian AI per bulan dalam satu pool bersama |
 | Suara dan musik | ElevenLabs, Suno | ElevenLabs 10.000 kredit per bulan, Suno 50 kredit per hari |
 | Edit dan caption | CapCut | Ekspor 1080p tanpa watermark, caption otomatis di editor butuh Pro |
 
@@ -29,7 +30,7 @@ Semua konten mulai dari ide. ChatGPT dan Gemini paket gratis bisa dipakai buat c
 
 ## Langkah 2, gambar
 
-Konten tanpa gambar itu sepi. Leonardo kasih 150 token cepat per hari buat akun gratis, daftarnya cuma butuh email atau akun Google, tanpa kartu. Satu gambar lebar makan sekitar 8 token, jadi jatah harian itu cukup buat belasan gambar. Canva gratis kasih sampai 20 pemakaian AI Premium per bulan, satu jatah bersama buat Magic Media, Dream Lab, dan Magic Edit. Bing Image Creator kasih 15 kreasi cepat per hari, lalu kecepatan standar sampai 200 prompt per hari. Perbandingan lengkap ketiganya, termasuk soal lisensi, ada di [artikel gambar AI gratis](/artikel/ai-gambar-gratis-leonardo-canva-gemini/).
+Konten tanpa gambar itu sepi. Leonardo kasih 150 token cepat per hari buat akun gratis, daftarnya cuma butuh email atau akun Google, tanpa kartu. Satu gambar lebar makan sekitar 8 token menurut hasil uji kami, bukan tarif resmi Leonardo, jadi jatah harian itu cukup buat belasan gambar. Canva gratis kasih sampai 20 pemakaian AI per bulan, Standard dan Premium dalam satu pool bersama buat Magic Media, Dream Lab, dan Magic Edit. Bing Image Creator kasih 15 kreasi cepat per hari, lalu kecepatan standar sampai 200 prompt per hari. Perbandingan lengkap ketiganya, termasuk soal lisensi, ada di [artikel gambar AI gratis](/artikel/ai-gambar-gratis-leonardo-canva-gemini/).
 
 ## Langkah 3, suara dan musik
 
@@ -37,7 +38,7 @@ Buat video, suara bikin beda besar. ElevenLabs gratis kasih 10.000 kredit per bu
 
 ## Langkah 4, edit dan caption
 
-CapCut itu editor video yang paling gampang buat pemula. Paket gratisnya bisa dipakai tanpa kartu, edit di timeline beneran, dan ekspor video 1080p tanpa watermark. Batas yang paling terasa itu penyimpanan cloud 512MB, jadi simpan proyek di perangkat sendiri kalau sudah penuh. Satu hal yang berubah tahun ini, caption otomatis di dalam editor sekarang butuh Pro sejak 31 Oktober 2026. Tapi halaman AI Captions CapCut yang terpisah masih bikin caption dan mengekspornya gratis tanpa watermark. Jadi alurnya, edit video di CapCut, bikin caption lewat halaman itu, lalu gabungkan.
+CapCut itu editor video yang paling gampang buat pemula. Paket gratisnya bisa dipakai tanpa kartu, edit di timeline beneran, dan ekspor video 1080p tanpa watermark. Batas yang paling terasa itu penyimpanan cloud gratis yang sangat terbatas, dan halaman harga CapCut sendiri tidak mencantumkan jatahnya, jadi simpan proyek di perangkat sendiri kalau sudah penuh. Satu hal yang perlu lo tahu, caption otomatis di dalam editor sekarang butuh Pro. Pengujian independen pada Oktober 2026 menemukan caption otomatis sudah terkunci di balik Pro pada akun gratis yang diuji, tapi halaman AI Captions CapCut yang terpisah masih bikin caption dan mengekspornya gratis tanpa watermark, dengan ekspor 720p. Jadi alurnya, edit video di CapCut, bikin caption lewat halaman itu, lalu gabungkan.
 
 ## Jebakan trial yang minta kartu kredit
 
@@ -45,4 +46,4 @@ Ini bagian yang paling sering bikin pemula kecolongan. Ada tiga tanda yang perlu
 
 Satu konten lengkap, dari ide sampai caption, bisa selesai tanpa keluar uang dan tanpa kartu kredit. Ide dan naskah dari ChatGPT atau Gemini, gambar dari Leonardo atau Canva, suara dari ElevenLabs atau Suno, edit di CapCut. Yang tidak gratis cuma satu, waktu lo buat konsisten bikin konten. Sebelum lo monetisasi, baca dulu syarat lisensi tiap alat, karena batas gratis dan lisensi komersial itu dua hal yang berbeda.
 
-Sumber tulisan ini [halaman harga Leonardo](https://leonardo.ai/pricing), [halaman harga Canva](https://www.canva.com/pricing), [halaman harga ElevenLabs](https://elevenlabs.io/pricing), [halaman harga Suno](https://suno.com/pricing), dan [situs CapCut](https://www.capcut.com/).
+Sumber tulisan ini [halaman harga Leonardo](https://leonardo.ai/pricing), [halaman harga Canva](https://www.canva.com/pricing), [halaman harga ElevenLabs](https://elevenlabs.io/pricing), [halaman harga Suno](https://suno.com/pricing), [situs CapCut](https://www.capcut.com/), dan [pengujian independen soal harga dan fitur CapCut](https://aialleyway.com/capcut-pricing/).
