@@ -8,6 +8,9 @@ export const SITE = {
   locale: 'id-ID',
   language: 'id',
   author: 'Marko',
+  // Gambar sosial default (1280x720) untuk halaman non-artikel.
+  // Artikel tetap memakai cover masing-masing.
+  socialImage: '/og-default.jpg',
 } as const;
 
 export const NAV_STATIC = [
