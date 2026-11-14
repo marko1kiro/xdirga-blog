@@ -5,6 +5,7 @@ category: teknologi
 tags: ["Gemini", "AI gratis", "Google"]
 author: xdirga
 publishedAt: 2026-11-14T12:20:00+07:00
+lastVerifiedAt: 2026-11-14
 status: published
 featured: false
 trending: true

@@ -5,6 +5,7 @@ category: teknologi
 tags: ["Manus", "AI gratis", "Agen AI"]
 author: xdirga
 publishedAt: 2026-11-12
+lastVerifiedAt: 2026-11-14
 status: published
 featured: false
 trending: true

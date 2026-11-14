@@ -5,6 +5,8 @@ category: teknologi
 tags: ["ChatGPT", "Gemini", "Claude", "AI gratis"]
 author: xdirga
 publishedAt: 2026-11-14T12:30:00+07:00
+updatedAt: 2026-11-14
+lastVerifiedAt: 2026-11-14
 status: published
 featured: true
 trending: true
@@ -22,7 +24,7 @@ Kalau lo cuma mau satu jawaban cepat, ini dia. Buat ngobrol dan nulis sehari har
 
 ## ChatGPT gratis
 
-ChatGPT itu yang paling gampang dipakai buat hampir semua hal. Daftar akun gratis, buka chat, langsung nanya. Model gratisnya sekarang GPT 5.6 Luna, dan ada fitur Think di aplikasi HP buat pertanyaan yang butuh dipikir lebih lama.
+ChatGPT itu yang paling gampang dipakai buat hampir semua hal. Daftar akun gratis, buka chat, langsung nanya. Model gratisnya sekarang GPT 6 Luna, dan ada fitur Think di aplikasi HP buat pertanyaan yang butuh dipikir lebih lama.
 
 Yang paling beda dari ChatGPT adalah chat teks sehari harinya tidak dibatasi jumlah pesan. Halaman bantuan OpenAI nulisnya jelas, unlimited everyday text chats, selama masih dalam batas wajar biar tidak disalahgunakan.
 

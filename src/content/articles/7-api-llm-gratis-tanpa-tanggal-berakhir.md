@@ -5,6 +5,7 @@ category: teknologi
 tags: ["API", "LLM gratis", "AI gratis"]
 author: xdirga
 publishedAt: 2026-11-11
+lastVerifiedAt: 2026-11-14
 status: published
 featured: false
 trending: true

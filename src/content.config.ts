@@ -11,6 +11,9 @@ const articles = defineCollection({
     author: z.string().default('xdirga'),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
+    // Tanggal terakhir isi artikel DIPERIKSA kebenarannya (bukan tanggal tulis/terbit/update).
+    // Hanya diisi setelah verifikasi nyata ke sumber, jangan pernah dari waktu build/deploy.
+    lastVerifiedAt: z.coerce.date().optional(),
     status: z.enum(['draft', 'published']).default('published'),
     featured: z.boolean().default(false),
     trending: z.boolean().default(false),
