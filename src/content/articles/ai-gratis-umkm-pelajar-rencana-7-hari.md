@@ -4,7 +4,7 @@ description: "Tujuh hari, tujuh tugas kecil, semuanya gratis. Rencana buat UMKM 
 category: bisnis
 tags: ["AI gratis", "Bisnis"]
 author: xdirga
-publishedAt: 2026-11-14T19:00:00+07:00
+publishedAt: 2026-11-14T18:27:00+07:00
 lastVerifiedAt: 2026-11-14
 status: published
 featured: false

@@ -4,7 +4,7 @@ description: "Gemini kini terhubung ke Google Wallet dan bisa membaca pengeluara
 category: berita
 tags: ["Gemini", "Google Wallet", "Berita"]
 author: xdirga
-publishedAt: 2026-11-14T19:00:00+07:00
+publishedAt: 2026-11-14T18:45:00+07:00
 lastVerifiedAt: 2026-11-14
 status: published
 featured: false
