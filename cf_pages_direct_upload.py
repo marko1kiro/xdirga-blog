@@ -83,7 +83,9 @@ def walk_dist():
     for root, dirs, names in os.walk(DIST):
         dirs[:] = [d for d in dirs if d not in SKIP_NAMES]
         for name in names:
-            if name in SKIP_NAMES:
+            # File SPECIAL (_headers/_redirects/_routes.json) jangan di-skip:
+            # main() mengirimnya sebagai field khusus deployment, bukan asset.
+            if name in SKIP_NAMES and name not in SPECIAL:
                 continue
             ap = os.path.join(root, name)
             if os.path.islink(ap):
