@@ -21,7 +21,9 @@ const all = await getPublishedArticles();
 const categories = await getCategories();
 const allTags = await getAllTags();
 
-const featured = all.find((a) => a.data.featured) ?? all[0];
+// Hero = artikel terbaru, otomatis ganti tiap ada artikel baru terbit.
+// Flag frontmatter `featured` tidak lagi dipakai di homepage (keputusan user 14 Nov 2026).
+const featured = all[0];
 const featuredSlug = featured ? articleSlug(featured) : '';
 const trending = all.filter((a) => a.data.trending).slice(0, 4);
 const latest = all.filter((a) => articleSlug(a) !== featuredSlug).slice(0, 6);

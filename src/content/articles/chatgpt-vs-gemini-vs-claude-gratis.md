@@ -8,7 +8,7 @@ publishedAt: 2026-11-14T12:30:00+07:00
 updatedAt: 2026-11-14
 lastVerifiedAt: 2026-11-14
 status: published
-featured: true
+featured: false
 trending: true
 cover: /covers/chatgpt-vs-gemini-vs-claude-gratis.jpg
 coverAlt: "Ilustrasi meja kerja dengan laptop dan layar berisi tiga jendela chat AI, tanpa orang dan tanpa karakter"
