@@ -15,8 +15,8 @@ Astro 5, TypeScript, Markdown dan MDX, Tailwind v4, Cloudflare Pages. Palet LIME
 - `src/layouts/` — BaseLayout, ArticleLayout, ArchiveLayout
 - `src/pages/` — homepage, `/artikel/`, `/kategori/`, `/tag/`, `/author/`, `/search/`, halaman statis
 - `src/lib/` — helper artikel dan konfigurasi situs
-- `scripts/` — `watermark-covers.py` (watermark cover JPG), `qa-check.mjs` (QA otomatis)
-- `public/covers/` — cover JPG hasil generate + watermark per artikel, `public/avatars/` — avatar penulis
+- `scripts/` — `watermark-covers.py` (watermark cover JPG), `make-cover-variants.py` (varian responsif WebP/JPG cover), `qa-check.mjs` (QA otomatis)
+- `public/covers/` — cover JPG hasil generate + watermark per artikel, plus varian responsif `-640`/`-720`/`-1280` (WebP + JPG). `public/avatars/` — avatar penulis
 
 ## Menulis artikel
 
@@ -53,7 +53,16 @@ Setiap artikel WAJIB punya minimal 1 gambar (hero/konten). Gambar di-generate se
 
 1. Generate gambar hero 16:9 (sekitar 1280x720 atau lebih besar) dengan `media.generate_image`, gaya editorial modern yang bersih, sesuai topik artikel, palet LIME (magenta, cyan, teal gelap, dasar putih teal). Jangan ada teks, huruf, logo, atau watermark di dalam hasil generate. **JANGAN ADA KARAKTER di gambar (aturan durable 2026-11-14): tidak ada manusia, hewan, robot, maskot, makhluk, atau wajah dalam bentuk apa pun — hanya objek, scene, workspace tanpa orang, perangkat, diagram, atau komposisi abstrak. Alasan: karakter yang mirip karakter komersial yang sudah ada bisa kena klaim IP/trademark di blog publik.**
 2. Jalankan `python3 scripts/watermark-covers.py` — script ini resize ke 1280x720 lalu menambahkan watermark kecil "XDIRGA BLOG" di pojok kanan bawah (putih dengan bayangan gelap halus), dan menyimpan hasilnya sebagai JPG kualitas 82 ke `public/covers/<slug>.jpg`. Watermark selalu ditambahkan oleh script, jangan pernah minta AI menambahkan watermark.
-3. Set frontmatter `cover: /covers/<slug>.jpg` dan `coverAlt` yang jujur (mendeskripsikan isi gambar).
+3. Jalankan `python3 scripts/make-cover-variants.py` — membuat varian responsif dari JPG ber-watermark (watermark ikut terbawa, gambar tidak digenerate ulang): `<slug>-640.webp`, `<slug>-720.webp`, `<slug>-1280.webp`, `<slug>-640.jpg`, `<slug>-720.jpg`. WAJIB dijalankan tiap ada cover baru atau cover berubah, sebelum build.
+4. Set frontmatter `cover: /covers/<slug>.jpg` dan `coverAlt` yang jujur (mendeskripsikan isi gambar). Cover dirender lewat `src/components/CoverPicture.astro` (`<picture>` + `srcset`/`sizes`, WebP dengan fallback JPG) — jangan pernah render cover dengan `<img src>` polos. Gambar LCP (featured homepage + hero artikel) di-preload lewat prop `preloadImage` di BaseLayout.
+
+## Performa, SEO, dan tombol share (aturan wajib, 2026-11-14)
+
+- **Gambar responsif.** Semua cover WAJIB punya varian WebP + JPG (lihat pipeline di atas). Jangan serve JPG 1280px mentah ke mobile. Target PageSpeed mobile: Performa ≥90, Aksesibilitas 100, Praktik Terbaik 100, SEO 100.
+- **Kontras.** Angka peringkat panel "Sedang Tren" pakai `text-primary` solid (bukan `/50`) — sudah terhitung lolos 4,71:1 di light dan 3,89:1 di dark untuk teks besar. Jangan turunkan lagi opasitasnya.
+- **SEO per artikel.** BaseLayout sudah menyediakan: title, description, canonical, OG (termasuk `og:image:width/height` 1280x720), Twitter card `summary_large_image`, JSON-LD Organization. ArticleLayout menambah: JSON-LD `BlogPosting` (headline, description, image, author, publisher, datePublished/dateModified, articleSection, keywords) + `BreadcrumbList`, dan meta `article:published_time`, `article:modified_time`, `article:section`, `article:tag`, `article:author`. Jangan hapus salah satunya saat mengubah layout.
+- **Tombol share.** Setiap halaman artikel WAJIB menampilkan tombol share di sidebar (`src/components/ShareButtons.astro`): WhatsApp, Facebook, X, Telegram, LinkedIn, Pinterest, Threads, plus Salin Tautan. **Ikon saja, tanpa label teks.** Ikon SVG inline (simple-icons), `aria-label` untuk aksesibilitas, buka di tab baru (`target="_blank"`, `rel="noopener noreferrer"`), URL share standar tiap platform. Salin tautan pakai Clipboard API modern (tanpa `document.execCommand`). Jangan bikin komponen share duplikat.
+- **Yang sengaja TIDAK dilakukan (2026-11-14):** beacon Cloudflare dibiarkan (script Cloudflare, bukan milik kita); tanpa CSP (inline script ThemeScript/ShareButtons/progress bar akan rusak bila CSP ketat dipaksakan); tanpa inline critical CSS (risiko merusak styling, hematnya kecil).
 
 Cover SVG abstrak lama sudah dihapus total 2026-11-14.
 

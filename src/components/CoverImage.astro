@@ -1,4 +1,6 @@
 ---
+import CoverPicture from './CoverPicture.astro';
+
 interface Props {
   src: string;
   alt: string;
@@ -10,14 +12,11 @@ const { src, alt, caption, eager = false } = Astro.props;
 ---
 
 <figure class="mt-8">
-  <img
+  <CoverPicture
     src={src}
     alt={alt}
-    width="1200"
-    height="630"
-    loading={eager ? 'eager' : 'lazy'}
-    fetchpriority={eager ? 'high' : undefined}
-    decoding="async"
+    sizes="(max-width: 1023px) 100vw, 880px"
+    eager={eager}
     class="aspect-[16/9] w-full rounded-2xl border border-border object-cover sm:aspect-[2/1]"
   />
   {

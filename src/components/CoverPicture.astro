@@ -1,0 +1,40 @@
+---
+/**
+ * CoverPicture — gambar cover responsif (aturan durable, 2026-11-14).
+ *
+ * Varian dibuat scripts/make-cover-variants.py dari JPG ber-watermark:
+ *   <slug>-640.webp / -1280.webp (WebP) + <slug>-640.jpg / <slug>.jpg (JPG fallback)
+ * Browser modern ambil WebP 640w di mobile, 1280w di desktop; fallback JPG
+ * bila WebP tidak didukung. `sizes` WAJIB diisi sesuai lebar tampil komponen.
+ */
+interface Props {
+  src: string;
+  alt: string;
+  sizes: string;
+  eager?: boolean;
+  class?: string;
+  /** Kelas layout untuk wrapper <picture> (default: block w-full). */
+  pictureClass?: string;
+}
+
+const { src, alt, sizes, eager = false, class: className, pictureClass = 'block w-full' } = Astro.props;
+const base = src.replace(/\.jpg$/, '');
+const srcsetWebp = `${base}-640.webp 640w, ${base}-720.webp 720w, ${base}-1280.webp 1280w`;
+const srcsetJpg = `${base}-640.jpg 640w, ${base}-720.jpg 720w, ${src} 1280w`;
+---
+
+<picture class={pictureClass}>
+  <source type="image/webp" srcset={srcsetWebp} sizes={sizes} />
+  <img
+    src={src}
+    srcset={srcsetJpg}
+    sizes={sizes}
+    alt={alt}
+    width="1280"
+    height="720"
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : undefined}
+    decoding="async"
+    class={className}
+  />
+</picture>

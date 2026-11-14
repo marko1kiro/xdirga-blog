@@ -9,6 +9,7 @@ import AuthorBox from '../components/AuthorBox.astro';
 import PrevNext from '../components/PrevNext.astro';
 import RelatedArticleCard from '../components/cards/RelatedArticleCard.astro';
 import { SITE } from '../lib/site';
+import { coverSrcsetWebp } from '../lib/covers';
 import {
   articleUrl,
   categoryUrl,
@@ -49,6 +50,8 @@ const articleJsonLd = {
   ...(post.data.updatedAt ? { dateModified: post.data.updatedAt.toISOString() } : {}),
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
   inLanguage: 'id-ID',
+  articleSection: categoryName,
+  ...(tags.length > 0 ? { keywords: tags.join(', ') } : {}),
 };
 
 const breadcrumbJsonLd = {
@@ -70,6 +73,13 @@ const breadcrumbJsonLd = {
   canonical={canonical}
   noindex={post.data.noindex}
   jsonLd={[articleJsonLd, breadcrumbJsonLd]}
+  preloadImage={{ srcset: coverSrcsetWebp(cover), sizes: '(max-width: 1023px) 100vw, 880px' }}
+  articleMeta={{
+    publishedTime: post.data.publishedAt.toISOString(),
+    modifiedTime: post.data.updatedAt?.toISOString(),
+    section: categoryName,
+    tags,
+  }}
 >
   <div id="progress-bar" class="fixed inset-x-0 top-0 z-50 h-[3px] origin-left scale-x-0 bg-primary" aria-hidden="true"></div>
 
@@ -115,7 +125,7 @@ const breadcrumbJsonLd = {
 
       <aside class="min-w-0 lg:sticky lg:top-24 lg:self-start" aria-label="Sidebar artikel">
         <div class="flex flex-col gap-8 rounded-2xl border border-border bg-surface-secondary p-5 sm:p-6 lg:bg-transparent lg:p-0 lg:border-0 lg:rounded-none">
-          <ShareButtons url={canonical} title={title} />
+          <ShareButtons url={canonical} title={title} image={new URL(cover, SITE.url).href} />
           <ArticleTOC items={toc} />
           {
             tags.length > 0 && (

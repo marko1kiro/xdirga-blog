@@ -1,4 +1,5 @@
 ---
+import CoverPicture from '../CoverPicture.astro';
 import type { Article } from '../../lib/articles';
 import { articleUrl, formatDateShort } from '../../lib/articles';
 
@@ -11,13 +12,10 @@ const { post } = Astro.props;
 
 <article class="group flex gap-3.5">
   <a href={articleUrl(post)} class="block w-24 shrink-0 overflow-hidden rounded-xl">
-    <img
+    <CoverPicture
       src={post.data.cover}
       alt={post.data.coverAlt}
-      width="1200"
-      height="630"
-      loading="lazy"
-      decoding="async"
+      sizes="96px"
       class="aspect-[16/10] h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
     />
   </a>

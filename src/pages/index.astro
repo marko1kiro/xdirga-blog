@@ -15,6 +15,7 @@ import {
   categoryUrl,
 } from '../lib/articles';
 import { SITE } from '../lib/site';
+import { coverSrcsetWebp } from '../lib/covers';
 
 const all = await getPublishedArticles();
 const categories = await getCategories();
@@ -46,7 +47,14 @@ const websiteJsonLd = {
 };
 ---
 
-<BaseLayout jsonLd={[websiteJsonLd]}>
+<BaseLayout
+  jsonLd={[websiteJsonLd]}
+  preloadImage={
+    featured
+      ? { srcset: coverSrcsetWebp(featured.data.cover), sizes: '(max-width: 1023px) 100vw, 800px' }
+      : undefined
+  }
+>
   <section class="pt-8 sm:pt-10" aria-label="Artikel unggulan dan tren">
     <div class="grid gap-6 lg:grid-cols-3">
       <div class="lg:col-span-2">

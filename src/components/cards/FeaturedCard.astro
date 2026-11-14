@@ -1,4 +1,5 @@
 ---
+import CoverPicture from '../CoverPicture.astro';
 import type { Article } from '../../lib/articles';
 import { articleUrl, formatDateShort, getCategory } from '../../lib/articles';
 
@@ -13,14 +14,11 @@ const category = await getCategory(post.data.category);
 
 <article class="group overflow-hidden rounded-2xl border border-border bg-surface transition hover:border-primary/60 hover:shadow-[0_12px_32px_rgba(16,51,61,0.09)]">
   <a href={articleUrl(post)} class="block">
-    <img
+    <CoverPicture
       src={post.data.cover}
       alt={post.data.coverAlt}
-      width="1200"
-      height="630"
-      loading={eager ? 'eager' : 'lazy'}
-      fetchpriority={eager ? 'high' : undefined}
-      decoding="async"
+      sizes="(max-width: 1023px) 100vw, 800px"
+      eager={eager}
       class="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
     />
     <div class="p-6 sm:p-7">
