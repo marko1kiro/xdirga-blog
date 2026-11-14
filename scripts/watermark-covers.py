@@ -40,6 +40,7 @@ SLUGS = [
     "chatgpt-vs-gemini-vs-claude-gratis",
     "gemini-gratis-2026-flash-lite",
     "cara-pakai-ai-gratis-untuk-kerja",
+    "ai-gambar-gratis-leonardo-canva-gemini",
 ]
 
 
