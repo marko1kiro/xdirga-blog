@@ -46,6 +46,7 @@ SLUGS = [
     "ai-gratis-content-creator",
     "aman-pakai-ai-gratis-data-jangan-upload",
     "ai-gratis-umkm-pelajar-rencana-7-hari",
+    "gemini-google-wallet",
 ]
 
 
