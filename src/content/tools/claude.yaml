@@ -1,0 +1,86 @@
+slug: claude
+name: Claude
+vendor: Anthropic
+officialWebsite: https://claude.com
+logo: /tools/logos/claude.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/claude.svg"
+categories: [ai-automation, productivity]
+tags: [ai-assistant, chatbot, coding, writing, research]
+platforms: [web, windows, macos, linux, android, ios]
+audiences: [individual, creator, developer, small-business, enterprise]
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.5
+scoreBreakdown: { usefulness: 23, features: 18, easeOfUse: 13, pricing: 14, platform: 9, transparency: 8 }
+verdict:
+  en: "A thoughtful AI assistant that shines at long form writing and coding, with a free tier for trying it and a Pro plan that is the sweet spot for daily users."
+  id: "Asisten AI yang teliti dan bersinar di tulisan panjang dan ngoding, paket gratisnya cukup buat mencoba dan paket Pronya titik paling pas buat pemakai harian."
+bestFor:
+  en:
+    - "Long form writing and editing"
+    - "Coding with Claude Code"
+    - "Analyzing long documents"
+    - "Careful, structured reasoning"
+  id:
+    - "Menulis dan mengedit naskah panjang"
+    - "Ngoding bareng Claude Code"
+    - "Menganalisis dokumen panjang"
+    - "Penalaran yang teliti dan terstruktur"
+pros:
+  en:
+    - "Excellent at long documents and nuanced writing"
+    - "Claude Code is included in paid plans"
+    - "Clean interface with projects and artifacts"
+    - "Free plan needs no credit card"
+  id:
+    - "Sangat bagus untuk dokumen panjang dan tulisan bernuansa"
+    - "Claude Code sudah termasuk di paket berbayar"
+    - "Antarmuka bersih dengan Projects dan artefak"
+    - "Paket gratis tidak butuh kartu kredit"
+cons:
+  en:
+    - "Free plan has tight 5 hour and weekly limits"
+    - "No Opus model on the free plan"
+    - "Max and Ultra are expensive for casual users"
+    - "Fewer third party integrations than rivals"
+  id:
+    - "Paket gratis dibatasi ketat tiap 5 jam dan mingguan"
+    - "Model Opus tidak ada di paket gratis"
+    - "Max dan Ultra mahal buat pemakai santai"
+    - "Integrasi pihak ketiga lebih sedikit dibanding rival"
+alternatives: [chatgpt, gemini, microsoft-copilot]
+reviewMethod: research-based
+sources:
+  - label: "Official pricing page"
+    url: https://claude.com/pricing
+  - label: "Official website"
+    url: https://claude.com
+shortDescription:
+  en: "Anthropic's AI assistant, known for careful writing, long documents, and coding with Claude Code."
+  id: "Asisten AI dari Anthropic, terkenal untuk tulisan yang rapi, dokumen panjang, dan ngoding bareng Claude Code."
+description:
+  en: "Claude is Anthropic's AI assistant on the web, desktop, and mobile, built for writing, analysis, and coding. It handles long documents, creates artifacts like interactive pages, and runs Claude Code for terminal based development on paid plans. The free plan covers everyday questions, while Pro adds the Opus model, Research, Projects, and Claude Code."
+  id: "Claude adalah asisten AI dari Anthropic di web, desktop, dan HP, yang dibuat untuk menulis, analisis, dan ngoding. Lo bisa olah dokumen panjang, bikin artefak seperti halaman interaktif, dan jalanin Claude Code untuk pengembangan lewat terminal di paket berbayar. Paket gratis sudah menutup pertanyaan sehari hari, sementara Pro menambah model Opus, Research, Projects, dan Claude Code."
+features:
+  en:
+    - "Long context for large documents and codebases"
+    - "Artifacts for interactive pages and apps"
+    - "Claude Code for terminal based development"
+    - "Web search, memory, and voice mode"
+    - "Projects to organize chats and files"
+    - "Research for multi step investigation"
+  id:
+    - "Konteks panjang untuk dokumen dan codebase besar"
+    - "Artefak untuk halaman dan aplikasi interaktif"
+    - "Claude Code untuk pengembangan lewat terminal"
+    - "Pencarian web, memori, dan mode suara"
+    - "Projects untuk merapikan chat dan file"
+    - "Research untuk penyelidikan bertahap"
+pricingNote:
+  en: "Free at $0 with limited usage every 5 hours and every week. Pro costs $20 a month or $17 a month billed yearly at $200 up front. Max costs $100 a month for 5x Pro usage, and Ultra $200 a month for 10x Pro weekly usage. Prices exclude tax."
+  id: "Gratis 0 dolar dengan pemakaian terbatas tiap 5 jam dan tiap minggu. Pro seharga 20 dolar per bulan atau 17 dolar per bulan bila ditagih tahunan sebesar 200 dolar di muka. Max seharga 100 dolar per bulan untuk pemakaian 5 kali Pro, dan Ultra 200 dolar per bulan untuk pemakaian mingguan 10 kali Pro. Harga di atas belum termasuk pajak."

@@ -1,0 +1,109 @@
+slug: github-copilot
+name: GitHub Copilot
+vendor: GitHub
+officialWebsite: https://github.com/features/copilot
+logo: /tools/logos/github-copilot.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/githubcopilot.svg"
+categories:
+  - developer-engineering
+  - ai-automation
+tags:
+  - ai-coding
+  - github
+  - code-assistant
+  - developer-tools
+  - agent
+platforms:
+  - web
+  - windows
+  - macos
+  - linux
+  - android
+  - ios
+audiences:
+  - developer
+  - small-business
+  - enterprise
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.4
+scoreBreakdown:
+  usefulness: 22
+  features: 17
+  easeOfUse: 12
+  pricing: 15
+  platform: 9
+  transparency: 9
+verdict:
+  en: "The default AI pair programmer for GitHub users, with a genuinely useful free tier and a Pro plan that pays for itself fast."
+  id: "Pasangan coding AI paling natural buat pengguna GitHub, paket gratisnya beneran kepakai dan paket Pro cepat balik modal."
+bestFor:
+  en:
+    - "Developers who code in VS Code or JetBrains daily"
+    - "Teams already organized around GitHub issues and pull requests"
+    - "Anyone who wants AI help without leaving their editor"
+  id:
+    - "Developer yang tiap hari coding di VS Code atau JetBrains"
+    - "Tim yang sudah rapi kerja di sekitar issue dan pull request GitHub"
+    - "Siapa pun yang mau bantuan AI tanpa pindah dari editor"
+pros:
+  en:
+    - "Unlimited code completions on every paid plan"
+    - "Works across VS Code, JetBrains, Visual Studio, Xcode, and the terminal"
+    - "Agent mode and cloud agents can turn issues into pull requests"
+    - "Free tier includes 2,000 completions a month with no credit card"
+    - "Model choice from Pro upward, including Claude models"
+  id:
+    - "Pelengkapan kode tanpa batas di semua paket berbayar"
+    - "Jalan di VS Code, JetBrains, Visual Studio, Xcode, dan terminal"
+    - "Mode agen dan agen cloud bisa mengubah issue jadi pull request"
+    - "Paket gratis kasih 2.000 pelengkapan per bulan tanpa kartu kredit"
+    - "Pilihan model mulai paket Pro, termasuk model Claude"
+cons:
+  en:
+    - "Chat and agent usage is metered in AI credits, so heavy use costs extra"
+    - "Free plan locks you to automatic model selection"
+    - "Individual subscribers may have prompts used for model training unless they opt out"
+  id:
+    - "Pemakaian chat dan agen dihitung dengan kredit AI, jadi pemakaian berat nambah biaya"
+    - "Paket gratis mengunci lo ke pemilihan model otomatis"
+    - "Pelanggan individu bisa dipakai promptnya untuk latih model kecuali lo menolaknya"
+alternatives:
+  - claude
+  - chatgpt
+  - gemini
+reviewMethod: research-based
+sources:
+  - label: "GitHub Copilot plans and pricing"
+    url: https://docs.github.com/en/copilot/get-started/plans
+  - label: "GitHub Copilot product page"
+    url: https://github.com/features/copilot
+shortDescription:
+  en: "GitHub's AI coding agent that suggests code, chats about your codebase, and opens pull requests from issues."
+  id: "Agen coding AI dari GitHub yang menyarankan kode, menjawab soal codebase lo, dan membuka pull request dari issue."
+description:
+  en: "GitHub Copilot lives inside your editor, terminal, and GitHub itself. It completes code as you type, explains unfamiliar code in chat, and runs agent sessions that can turn an assigned issue into a pull request. Paid plans add model choice and a monthly allowance of AI credits, while completions stay unlimited. It is the most deeply integrated AI assistant for developers who already live on GitHub."
+  id: "GitHub Copilot hidup di dalam editor, terminal, dan GitHub itu sendiri. Ia melengkapi kode saat lo mengetik, menjelaskan kode yang belum lo kenal lewat chat, dan menjalankan sesi agen yang bisa mengubah issue menjadi pull request. Paket berbayar menambah pilihan model dan jatah kredit AI bulanan, sementara pelengkapan kode tetap tanpa batas. Ini asisten AI yang paling menyatu buat developer yang memang sudah tinggal di GitHub."
+features:
+  en:
+    - "Real-time code completions and next-edit suggestions"
+    - "Copilot Chat in the editor, terminal, and GitHub.com"
+    - "Agent mode that edits files across your workspace"
+    - "Cloud agents that pick up assigned issues and open pull requests"
+    - "Copilot CLI for terminal workflows"
+    - "Pull request reviews with code suggestions"
+  id:
+    - "Pelengkapan kode seketika dan saran edit berikutnya"
+    - "Copilot Chat di editor, terminal, dan GitHub.com"
+    - "Mode agen yang mengedit file di seluruh workspace lo"
+    - "Agen cloud yang mengambil issue dan membuka pull request"
+    - "Copilot CLI untuk kerja lewat terminal"
+    - "Review pull request lengkap dengan saran kode"
+pricingNote:
+  en: "Free costs $0 with 2,000 completions a month. Pro is $10 a month, Pro+ is $39, and Max is $100. Business is $19 per seat a month and Enterprise is $39 per seat a month. Extra AI credit usage is billed at $0.01 per credit."
+  id: "Gratis itu $0 dengan 2.000 pelengkapan per bulan. Pro $10 per bulan, Pro+ $39, dan Max $100. Business $19 per kursi per bulan dan Enterprise $39 per kursi per bulan. Pemakaian kredit AI tambahan ditagih $0,01 per kredit."

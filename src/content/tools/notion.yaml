@@ -1,0 +1,86 @@
+slug: notion
+name: Notion
+vendor: Notion Labs
+officialWebsite: https://www.notion.com
+logo: /tools/logos/notion.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/notion.svg"
+categories: [productivity, ai-automation]
+tags: [notes, wiki, databases, project-management, ai-workspace]
+platforms: [web, windows, macos, android, ios]
+audiences: [individual, creator, developer, small-business, enterprise]
+pricingType: freemium
+status: active
+featured: true
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.2
+scoreBreakdown: { usefulness: 22, features: 17, easeOfUse: 13, pricing: 14, platform: 9, transparency: 7 }
+verdict:
+  en: "A flexible workspace that can replace several apps at once, best for people who enjoy shaping their own system rather than following a fixed one."
+  id: "Workspace fleksibel yang bisa menggantikan beberapa aplikasi sekaligus, paling cocok buat lo yang suka merancang sistem sendiri daripada mengikuti sistem yang sudah baku."
+bestFor:
+  en:
+    - "Personal notes and knowledge bases"
+    - "Team wikis and documentation"
+    - "Project and task tracking"
+    - "Content planning and databases"
+  id:
+    - "Catatan pribadi dan bank pengetahuan"
+    - "Wiki tim dan dokumentasi"
+    - "Pelacakan proyek dan tugas"
+    - "Perencanaan konten dan database"
+pros:
+  en:
+    - "Free plan is generous for individuals"
+    - "Very flexible, one tool for many jobs"
+    - "Strong template community"
+    - "AI features are deeply integrated on Business"
+  id:
+    - "Paket gratisnya longgar buat pemakaian sendiri"
+    - "Sangat fleksibel, satu tool untuk banyak keperluan"
+    - "Komunitas templatenya kuat"
+    - "Fitur AI menyatu dalam di paket Business"
+cons:
+  en:
+    - "Full Notion AI needs the Business plan"
+    - "Can feel slow with very large workspaces"
+    - "Learning curve for advanced database setups"
+    - "Offline use is limited"
+  id:
+    - "Notion AI lengkap cuma ada di paket Business"
+    - "Bisa terasa lambat di workspace yang sangat besar"
+    - "Butuh waktu belajar untuk setup database lanjutan"
+    - "Pemakaian offline masih terbatas"
+alternatives: [trello, chatgpt]
+reviewMethod: research-based
+sources:
+  - label: "Official pricing page"
+    url: https://www.notion.com/pricing
+  - label: "Official website"
+    url: https://www.notion.com
+shortDescription:
+  en: "All in one workspace for notes, docs, wikis, databases, and team projects."
+  id: "Satu workspace untuk catatan, dokumen, wiki, database, dan proyek tim."
+description:
+  en: "Notion combines notes, documents, wikis, and databases in one flexible workspace. Pages can hold text, tables, kanban boards, calendars, and embedded media, and teams can build wikis, trackers, and project hubs without extra tools. The free plan covers solo use generously, while Business adds the full Notion AI agent, meeting notes, and enterprise search."
+  id: "Notion menggabungkan catatan, dokumen, wiki, dan database dalam satu workspace yang fleksibel. Satu halaman bisa berisi teks, tabel, papan kanban, kalender, dan media, dan tim bisa bikin wiki, pelacak tugas, sampai pusat proyek tanpa tool tambahan. Paket gratisnya sudah longgar buat pemakaian sendiri, sementara Business menambah agen Notion AI lengkap, catatan rapat, dan pencarian enterprise."
+features:
+  en:
+    - "Unlimited pages and blocks for solo use"
+    - "Databases with kanban, calendar, and table views"
+    - "Notion AI agent and meeting notes on Business"
+    - "Templates for wikis, trackers, and docs"
+    - "Real time collaboration and comments"
+    - "Public API and integrations"
+  id:
+    - "Halaman dan blok tanpa batas buat pemakaian sendiri"
+    - "Database dengan tampilan kanban, kalender, dan tabel"
+    - "Agen Notion AI dan catatan rapat di paket Business"
+    - "Template untuk wiki, pelacak tugas, dan dokumen"
+    - "Kolaborasi dan komentar secara langsung"
+    - "API publik dan integrasi"
+pricingNote:
+  en: "Free at $0 for individuals, with unlimited pages and blocks for solo use, 5 MB uploads, and 7 day page history. Plus costs $10 per member a month billed yearly or $12 billed monthly. Business costs $20 per member a month billed yearly or $24 billed monthly, and Enterprise is quoted by sales."
+  id: "Gratis 0 dolar buat pemakaian sendiri, dengan halaman dan blok tanpa batas, upload sampai 5 MB, dan riwayat halaman 7 hari. Plus seharga 10 dolar per anggota per bulan bila ditagih tahunan atau 12 dolar bila ditagih bulanan. Business seharga 20 dolar per anggota per bulan bila ditagih tahunan atau 24 dolar bila ditagih bulanan, dan Enterprise ikut harga penawaran."

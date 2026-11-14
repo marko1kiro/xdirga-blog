@@ -1,0 +1,107 @@
+slug: todoist
+name: Todoist
+vendor: Doist
+officialWebsite: https://todoist.com/
+logo: /tools/logos/todoist.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/todoist.svg"
+categories:
+  - productivity
+tags:
+  - to-do-list
+  - task-manager
+  - productivity
+  - planner
+  - doist
+platforms:
+  - web
+  - windows
+  - macos
+  - linux
+  - android
+  - ios
+audiences:
+  - individual
+  - small-business
+  - enterprise
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.3
+scoreBreakdown:
+  usefulness: 21
+  features: 17
+  easeOfUse: 13
+  pricing: 15
+  platform: 9
+  transparency: 8
+verdict:
+  en: "The most balanced to-do app for personal use, with a free plan that stays useful and cheap paid tiers."
+  id: "Aplikasi daftar tugas paling seimbang buat pemakaian pribadi, dengan paket gratis yang tetap berguna dan paket berbayar yang murah."
+bestFor:
+  en:
+    - "People organizing daily tasks across phone and desktop"
+    - "Small teams sharing projects without heavy project software"
+    - "Anyone who wants a simple system that stays out of the way"
+  id:
+    - "Orang yang mengatur tugas harian di HP dan desktop"
+    - "Tim kecil yang berbagi proyek tanpa perangkat lunak proyek yang berat"
+    - "Siapa pun yang mau sistem simpel yang tidak mengganggu"
+pros:
+  en:
+    - "Available on every platform including watches and browsers"
+    - "Fast capture with natural language dates"
+    - "Calendar, board, list, and table layouts"
+    - "Pro is only $5 a month billed yearly"
+    - "SOC 2 Type II certified with 90+ integrations"
+  id:
+    - "Tersedia di semua platform termasuk jam dan browser"
+    - "Tangkap tugas cepat dengan tanggal berbahasa natural"
+    - "Tata letak kalender, papan, daftar, dan tabel"
+    - "Pro cuma $5 per bulan bila ditagih tahunan"
+    - "Tersertifikasi SOC 2 Type II dengan lebih dari 90 integrasi"
+cons:
+  en:
+    - "Free plan allows only five personal projects"
+    - "Each project caps at 300 active tasks even on paid plans"
+    - "Advanced planning features need the Pro plan"
+  id:
+    - "Paket gratis cuma mengizinkan lima proyek pribadi"
+    - "Setiap proyek mentok di 300 tugas aktif walau di paket berbayar"
+    - "Fitur perencanaan lanjutan butuh paket Pro"
+alternatives:
+  - trello
+  - notion
+reviewMethod: research-based
+sources:
+  - label: "Todoist pricing"
+    url: https://todoist.com/pricing
+  - label: "Todoist homepage"
+    url: https://todoist.com/
+shortDescription:
+  en: "A calm, cross-platform to-do list with projects, filters, reminders, and team workspaces."
+  id: "Daftar tugas yang tenang dan lintas platform dengan proyek, filter, pengingat, dan workspace tim."
+description:
+  en: "Todoist is a task manager that works on phone, tablet, watch, desktop, and the web, syncing everything through one account. Tasks support natural language dates, priorities, labels, subtasks, and recurring schedules. Pro adds calendar and table layouts, custom reminders, deadlines, and full history, while Business adds a shared team workspace with roles and centralized billing. The free Beginner plan covers five personal projects."
+  id: "Todoist itu manajer tugas yang jalan di HP, tablet, jam, desktop, dan web, menyinkronkan semuanya lewat satu akun. Tugas mendukung tanggal berbahasa natural, prioritas, label, subtugas, dan jadwal berulang. Pro menambah tata letak kalender dan tabel, pengingat kustom, tenggat, dan riwayat lengkap, sementara Business menambah workspace tim bersama dengan peran dan tagihan terpusat. Paket gratis Beginner mencakup lima proyek pribadi."
+features:
+  en:
+    - "Quick Add with natural language due dates"
+    - "Projects, labels, filters, and priorities"
+    - "Recurring tasks and custom reminders"
+    - "Calendar, board, list, and table views"
+    - "Team workspace with roles and shared templates"
+    - "Todoist Assist and 90+ app integrations"
+  id:
+    - "Quick Add dengan tanggal jatuh tempo berbahasa natural"
+    - "Proyek, label, filter, dan prioritas"
+    - "Tugas berulang dan pengingat kustom"
+    - "Tampilan kalender, papan, daftar, dan tabel"
+    - "Workspace tim dengan peran dan template bersama"
+    - "Todoist Assist dan lebih dari 90 integrasi aplikasi"
+pricingNote:
+  en: "Beginner is free with five personal projects. Pro is $5 a month billed yearly ($60 a year) or $7 a month billed monthly. Business is $8 per user a month billed yearly ($96 a year) or $10 billed monthly, plus local tax."
+  id: "Beginner gratis dengan lima proyek pribadi. Pro $5 per bulan bila ditagih tahunan ($60 per tahun) atau $7 per bulan bila bulanan. Business $8 per pengguna per bulan bila ditagih tahunan ($96 per tahun) atau $10 bila bulanan, ditambah pajak lokal."

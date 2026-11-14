@@ -1,0 +1,100 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ToolsListing from '../../../components/tools/ToolsListing.astro';
+import ToolsSidebar from '../../../components/tools/ToolsSidebar.astro';
+import ToolsLayout from '../../../layouts/ToolsLayout.astro';
+import { getAllTools } from '../../../lib/tools';
+import {
+  TOOL_CATEGORIES,
+  buildCategoryNav,
+  countByPlatform,
+  countByPricing,
+  distinctAudiences,
+  toolCategoryUrl,
+  toolsHomeUrl,
+  type Lang,
+} from '../../../lib/tools-ui';
+import { SITE } from '../../../lib/site';
+import type { BreadcrumbItem } from '../../../lib/articles';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allTools = await getAllTools();
+  return TOOL_CATEGORIES.map((cat) => ({
+    params: { slug: cat.slug },
+    props: { tools: allTools.filter((t) => t.data.categories.includes(cat.slug)), totalCount: allTools.length },
+  }));
+};
+
+interface Props {
+  tools: import('../../../lib/tools').Tool[];
+  totalCount: number;
+}
+
+const lang: Lang = 'en';
+const { slug } = Astro.params;
+if (typeof slug !== 'string') throw new Error('Slug kategori tools tidak valid.');
+const { tools, totalCount } = Astro.props;
+const allTools = await getAllTools();
+const meta = TOOL_CATEGORIES.find((c) => c.slug === slug);
+if (!meta) throw new Error(`Kategori tools "${slug}" tidak dikenal.`);
+const label = meta.labelEn;
+const description = meta.descriptionEn;
+const canonical = new URL(toolCategoryUrl(slug, lang), SITE.url).href;
+
+const breadcrumb = [
+  { label: 'Home', href: '/' },
+  { label: 'Tools', href: toolsHomeUrl(lang) },
+  { label: `${label} Tools` },
+] satisfies BreadcrumbItem[];
+---
+
+<ToolsLayout
+  title={`${label} Tools`}
+  description={`${label} tools in the XDIRGA TOOLS directory. ${description} ${tools.length} tools listed.`}
+  lang={lang}
+  canonical={canonical}
+  hreflang={{ en: canonical, id: new URL(`/id/tools/kategori/${slug}/`, SITE.url).href }}
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: `${label} Tools`,
+      description,
+      url: canonical,
+      isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    },
+  ]}
+>
+  <ToolsSidebar
+    slot="sidebar"
+    categories={buildCategoryNav(allTools, lang)}
+    allHref={toolsHomeUrl(lang)}
+    allCount={totalCount}
+    lang={lang}
+    activeSlug={slug}
+    pricingCounts={countByPricing(allTools)}
+    platformCounts={countByPlatform(allTools)}
+    audiences={distinctAudiences(allTools, lang)}
+  />
+
+  <Breadcrumb items={breadcrumb} />
+  <h1 class="mt-6 font-display text-[2.3rem] font-semibold leading-[1.1] text-text sm:text-[2.9rem]">
+    {label} Tools
+  </h1>
+  <p class="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-text-secondary">
+    {description} {tools.length} {tools.length === 1 ? 'tool' : 'tools'} listed.
+  </p>
+
+  <div class="mt-8">
+    <ToolsListing
+      lang={lang}
+      tools={tools}
+      totalCount={tools.length}
+      currentPage={1}
+      lastPage={1}
+      pageUrl={() => toolCategoryUrl(slug, lang)}
+      heading={null}
+    />
+  </div>
+</ToolsLayout>

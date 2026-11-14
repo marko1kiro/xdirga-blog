@@ -1,0 +1,348 @@
+---
+import type { GetStaticPaths } from 'astro';
+import ToolsLayout from '../../layouts/ToolsLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ToolScoreBreakdown from '../../components/tools/ToolScoreBreakdown.astro';
+import ToolSources from '../../components/tools/ToolSources.astro';
+import {
+  getAllTools,
+  getToolBySlug,
+  getCategoryMeta,
+  toolUrl,
+  categoryUrl,
+  toolsIndexUrl,
+  PRICING_LABELS,
+  PLATFORM_LABELS,
+  AUDIENCE_LABELS,
+  type Tool,
+} from '../../lib/tools';
+import {
+  getPublishedArticles,
+  articleUrl,
+  breadcrumbJsonLd,
+  type BreadcrumbItem,
+} from '../../lib/articles';
+import { SITE } from '../../lib/site';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const tools = await getAllTools();
+  return tools.map((tool) => ({
+    params: { slug: tool.data.slug },
+    props: { tool },
+  }));
+};
+
+interface Props {
+  tool: Tool;
+}
+
+const { tool } = Astro.props;
+const t = tool.data;
+const lang = 'en' as const;
+const primaryCategory = t.categories[0] ? getCategoryMeta(t.categories[0]) : undefined;
+const canonical = new URL(toolUrl(t.slug, 'en'), SITE.url).href;
+const idHref = new URL(toolUrl(t.slug, 'id'), SITE.url).href;
+
+const breadcrumb = [
+  { label: 'Tools', href: toolsIndexUrl('en') },
+  ...(primaryCategory
+    ? [{ label: primaryCategory.labelEn, href: categoryUrl(primaryCategory.slug, 'en') }]
+    : []),
+  { label: t.name },
+] satisfies BreadcrumbItem[];
+
+// Alternatif: hanya tool active yang benar-benar ada.
+const alternatives = (
+  await Promise.all(t.alternatives.map((slug) => getToolBySlug(slug)))
+).filter((a): a is Tool => a !== undefined && a.data.status === 'active');
+
+// Artikel XDIRGA terkait: cocokkan tag tool dengan tag artikel (maks 3).
+const articles = await getPublishedArticles();
+const relatedArticles = articles
+  .filter((a) => a.data.tags.some((tag) => t.tags.includes(tag.toLowerCase())))
+  .slice(0, 3);
+
+const verifiedLabel = t.lastVerifiedAt.toLocaleDateString('en-US', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<ToolsLayout
+  title={t.name}
+  description={t.shortDescription.en}
+  lang={lang}
+  canonical={canonical}
+  hreflang={{ en: canonical, id: idHref }}
+  jsonLd={[breadcrumbJsonLd(breadcrumb)]}
+>
+  <div slot="sidebar">
+    <section class="rounded-2xl border border-border bg-surface p-5" aria-label="Quick facts">
+      <div class="flex items-center gap-3">
+        <img src={t.logo} alt={`${t.name} logo`} width="48" height="48" class="h-12 w-12 rounded-xl bg-surface-secondary object-contain p-1.5" loading="lazy" />
+        <div>
+          <p class="font-display text-lg leading-tight font-semibold text-text">{t.name}</p>
+          <p class="text-sm text-text-secondary">{t.vendor}</p>
+        </div>
+      </div>
+      <dl class="mt-5 space-y-3 text-sm">
+        <div class="flex items-baseline justify-between gap-3">
+          <dt class="text-text-secondary">Editorial score</dt>
+          <dd class="font-semibold text-text">{t.reviewScore.toFixed(1)}/10</dd>
+        </div>
+        <div class="flex items-baseline justify-between gap-3">
+          <dt class="text-text-secondary">Pricing</dt>
+          <dd class="font-semibold text-text">{PRICING_LABELS[t.pricingType].en}</dd>
+        </div>
+        <div>
+          <dt class="text-text-secondary">Platforms</dt>
+          <dd class="mt-1 font-medium text-text">
+            {t.platforms.map((p) => PLATFORM_LABELS[p].en).join(', ')}
+          </dd>
+        </div>
+        <div>
+          <dt class="text-text-secondary">Best for</dt>
+          <dd class="mt-1 font-medium text-text">
+            {t.audiences.map((a) => AUDIENCE_LABELS[a].en).join(', ')}
+          </dd>
+        </div>
+        <div class="flex items-baseline justify-between gap-3">
+          <dt class="text-text-secondary">Last verified</dt>
+          <dd class="font-medium text-text">
+            <time datetime={t.lastVerifiedAt.toISOString().slice(0, 10)}>{verifiedLabel}</time>
+          </dd>
+        </div>
+      </dl>
+      <a
+        href={t.officialWebsite}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-5 block rounded-xl bg-primary px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-primary-hover"
+      >
+        Visit official website ↗
+      </a>
+      <p class="mt-3 text-xs leading-relaxed text-text-secondary">
+        Research-based review. Not hands-on testing; see our editorial policy for the method.
+      </p>
+    </section>
+  </div>
+
+
+  <Breadcrumb items={breadcrumb} />
+
+  <header class="mt-6">
+    <div class="flex flex-wrap items-start gap-4">
+      <img
+        src={t.logo}
+        alt={`${t.name} logo`}
+        width="72"
+        height="72"
+        class="h-[72px] w-[72px] rounded-2xl border border-border bg-surface object-contain p-2"
+      />
+      <div class="min-w-0 flex-1">
+        <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">
+          {t.name}
+        </h1>
+        <p class="mt-1 text-text-secondary">
+          by {t.vendor}
+          {' · '}
+          <a
+            href={t.officialWebsite}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-medium text-primary hover:underline"
+          >
+            {t.officialWebsite.replace(/^https?:\/\//, '').replace(/\/$/, '')} ↗
+          </a>
+        </p>
+      </div>
+    </div>
+    <p class="mt-4 max-w-2xl text-[1.02rem] leading-relaxed text-text-secondary">
+      {t.shortDescription.en}
+    </p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      {
+        t.categories.map((slug) => {
+          const meta = getCategoryMeta(slug);
+          return (
+            <a
+              href={categoryUrl(slug, 'en')}
+              class="rounded-full border border-border bg-surface px-3 py-1 text-xs font-semibold text-text transition hover:border-primary hover:text-primary"
+            >
+              {meta ? meta.labelEn : slug}
+            </a>
+          );
+        })
+      }
+      <span class="rounded-full bg-surface-secondary px-3 py-1 text-xs font-semibold text-text">
+        {PRICING_LABELS[t.pricingType].en}
+      </span>
+      {
+        t.platforms.map((p) => (
+          <span class="rounded-full bg-surface-secondary px-3 py-1 text-xs font-semibold text-text">
+            {PLATFORM_LABELS[p].en}
+          </span>
+        ))
+      }
+    </div>
+  </header>
+
+  <section class="mt-10">
+    <h2 class="font-display text-2xl font-semibold text-text">What it does</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">{t.description.en}</p>
+  </section>
+
+  {
+    t.features.en.length > 0 && (
+      <section class="mt-10">
+        <h2 class="font-display text-2xl font-semibold text-text">Key features</h2>
+        <ul class="mt-4 space-y-2.5">
+          {t.features.en.map((f) => (
+            <li class="flex items-start gap-2.5 leading-relaxed text-text">
+              <span aria-hidden="true" class="mt-0.5 font-bold text-primary">
+                ✓
+              </span>
+              {f}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="mt-10">
+    <h2 class="font-display text-2xl font-semibold text-text">Pricing</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      <span class="font-semibold">{PRICING_LABELS[t.pricingType].en}</span>
+      {' — '}
+      {t.pricingNote.en}
+    </p>
+    <p class="mt-2 text-sm text-text-secondary">
+      Prices and plan details may change; check the official pricing page before deciding.
+    </p>
+  </section>
+
+  {
+    t.bestFor.en.length > 0 && (
+      <section class="mt-10">
+        <h2 class="font-display text-2xl font-semibold text-text">Best for</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {t.bestFor.en.map((b) => (
+            <li class="rounded-full border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text">
+              {b}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="mt-10 grid gap-8 sm:grid-cols-2">
+    {
+      t.pros.en.length > 0 && (
+        <div>
+          <h2 class="font-display text-2xl font-semibold text-text">Pros</h2>
+          <ul class="mt-4 space-y-2.5">
+            {t.pros.en.map((p) => (
+              <li class="flex items-start gap-2.5 leading-relaxed text-text">
+                <span aria-hidden="true" class="mt-0.5 font-bold text-accent">
+                  +
+                </span>
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    {
+      t.cons.en.length > 0 && (
+        <div>
+          <h2 class="font-display text-2xl font-semibold text-text">Cons</h2>
+          <ul class="mt-4 space-y-2.5">
+            {t.cons.en.map((c) => (
+              <li class="flex items-start gap-2.5 leading-relaxed text-text">
+                <span aria-hidden="true" class="mt-0.5 font-bold text-primary">
+                  −
+                </span>
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </section>
+
+  <section class="mt-10 rounded-2xl border border-border bg-surface p-5 sm:p-6">
+    <h2 class="font-display text-2xl font-semibold text-text">Editorial assessment</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">{t.verdict.en}</p>
+    <div class="mt-6">
+      <ToolScoreBreakdown breakdown={t.scoreBreakdown} reviewScore={t.reviewScore} lang="en" />
+    </div>
+  </section>
+
+  {
+    alternatives.length > 0 && (
+      <section class="mt-10">
+        <h2 class="font-display text-2xl font-semibold text-text">Alternatives</h2>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+          {alternatives.map((alt) => (
+            <li>
+              <a
+                href={toolUrl(alt, 'en')}
+                class="flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 transition hover:border-primary"
+              >
+                <img
+                  src={alt.data.logo}
+                  alt=""
+                  width="36"
+                  height="36"
+                  class="h-9 w-9 rounded-lg bg-surface-secondary object-contain p-1"
+                  loading="lazy"
+                />
+                <span>
+                  <span class="block font-semibold text-text">{alt.data.name}</span>
+                  <span class="block text-sm text-text-secondary">
+                    {alt.data.reviewScore.toFixed(1)}/10 ·{' '}
+                    {PRICING_LABELS[alt.data.pricingType].en}
+                  </span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    relatedArticles.length > 0 && (
+      <section class="mt-10">
+        <h2 class="font-display text-2xl font-semibold text-text">
+          Related articles from XDIRGA BLOG
+        </h2>
+        <ul class="mt-4 space-y-3">
+          {relatedArticles.map((a) => (
+            <li>
+              <a
+                href={articleUrl(a)}
+                class="font-medium text-text transition hover:text-primary"
+              >
+                {a.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="mt-10">
+    <h2 class="font-display text-2xl font-semibold text-text">Sources</h2>
+    <div class="mt-4">
+      <ToolSources sources={t.sources} lastVerifiedAt={t.lastVerifiedAt} lang="en" />
+    </div>
+  </section>
+</ToolsLayout>

@@ -7,6 +7,12 @@ interface Props {
 }
 
 const { items, currentPath } = Astro.props;
+// Menu Tools: tautan polos (tanpa mega panel), posisi paling akhir setelah
+// "Tentang". Aktif juga untuk rute /id/tools/*.
+const toolsActive =
+  currentPath === '/tools/' ||
+  currentPath.startsWith('/tools/') ||
+  currentPath.startsWith('/id/tools/');
 ---
 
 <!-- Panel mega menu absolute: jangkarnya <header> (sticky = positioned),
@@ -84,6 +90,17 @@ const { items, currentPath } = Astro.props;
     ]}
   >
     Tentang
+  </a>
+
+  <a
+    href="/tools/"
+    aria-current={toolsActive ? 'page' : undefined}
+    class:list={[
+      'rounded-lg px-3 py-2 text-sm font-medium transition hover:bg-surface-secondary hover:text-text',
+      toolsActive ? 'text-primary' : 'text-text-secondary',
+    ]}
+  >
+    Tools
   </a>
 
   {

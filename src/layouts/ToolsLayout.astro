@@ -1,0 +1,31 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'id';
+  canonical?: string;
+  /** Alternat hreflang EN/ID — diteruskan ke BaseLayout dan dirender di <head>. */
+  hreflang?: { en: string; id: string };
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title, description, lang, canonical, hreflang, noindex = false, jsonLd = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} lang={lang} canonical={canonical} hreflang={hreflang} noindex={noindex} jsonLd={jsonLd}>
+  <div class="grid gap-8 pt-8 sm:pt-10 lg:grid-cols-[272px_minmax(0,1fr)]">
+    {
+      Astro.slots.has('sidebar') && (
+        <aside class="min-w-0 lg:pt-1" aria-label="Filter dan kategori tools">
+          <slot name="sidebar" />
+        </aside>
+      )
+    }
+    <div class="min-w-0">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

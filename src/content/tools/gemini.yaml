@@ -1,0 +1,86 @@
+slug: gemini
+name: Gemini
+vendor: Google
+officialWebsite: https://gemini.google.com
+logo: /tools/logos/googlegemini.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/googlegemini.svg"
+categories: [ai-automation, productivity]
+tags: [ai-assistant, chatbot, research, google, multimodal]
+platforms: [web, windows, macos, android, ios]
+audiences: [individual, creator, developer, small-business]
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.1
+scoreBreakdown: { usefulness: 22, features: 16, easeOfUse: 13, pricing: 14, platform: 9, transparency: 7 }
+verdict:
+  en: "The best AI assistant if you already live in Google apps, with a free tier that covers the basics and a Pro plan that bundles a lot of storage and perks."
+  id: "Asisten AI terbaik kalau lo sudah hidup di aplikasi Google, paket gratisnya nutupin kebutuhan dasar dan paket Pronya membungkus banyak penyimpanan plus bonus lain."
+bestFor:
+  en:
+    - "Google Workspace users"
+    - "Research with Deep Research"
+    - "Image generation and editing"
+    - "Students and everyday questions"
+  id:
+    - "Pengguna Google Workspace"
+    - "Riset dengan Deep Research"
+    - "Bikin dan edit gambar"
+    - "Pelajar dan pertanyaan sehari hari"
+pros:
+  en:
+    - "Free with any Google account"
+    - "Deep Research is strong and well sourced"
+    - "Tight integration with Gmail, Docs, and Drive"
+    - "Pro bundles 5 TB storage and YouTube Premium Lite"
+  id:
+    - "Gratis dengan akun Google apa saja"
+    - "Deep Research kuat dan sumbernya jelas"
+    - "Menyatu rapat dengan Gmail, Docs, dan Drive"
+    - "Pro membungkus penyimpanan 5 TB dan YouTube Premium Lite"
+cons:
+  en:
+    - "Free usage limits refresh every 5 hours up to a weekly cap"
+    - "Best models need the Pro plan"
+    - "Paid plans are 18 and older only"
+    - "Model names and limits change often"
+  id:
+    - "Batas pakai gratis diperbarui tiap 5 jam sampai batas mingguan"
+    - "Model terbaik cuma ada di paket Pro"
+    - "Paket berbayar hanya untuk usia 18 tahun ke atas"
+    - "Nama model dan batasnya sering berubah"
+alternatives: [chatgpt, claude, microsoft-copilot]
+reviewMethod: research-based
+sources:
+  - label: "Google AI plans"
+    url: https://gemini.google/subscriptions/
+  - label: "Official website"
+    url: https://gemini.google.com
+shortDescription:
+  en: "Google's AI assistant for chat, research, images, and work inside Google apps."
+  id: "Asisten AI Google untuk chat, riset, gambar, dan kerja di dalam aplikasi Google."
+description:
+  en: "Gemini is Google's AI assistant on the web and in mobile and desktop apps, with any Google account. It answers questions, writes and summarizes, generates and edits images, runs Deep Research across sources, and connects with Gmail, Docs, and Drive on paid plans. The free plan covers everyday help, while Google AI Pro adds the strongest models, 5 TB of storage, and Gemini inside Google apps."
+  id: "Gemini adalah asisten AI Google di web serta aplikasi HP dan desktop, cukup dengan akun Google. Lo bisa tanya jawab, minta tulisan dan ringkasan, bikin dan edit gambar, jalanin Deep Research dari banyak sumber, dan nyambung ke Gmail, Docs, dan Drive di paket berbayar. Paket gratis sudah menutup kebutuhan sehari hari, sementara Google AI Pro menambah model terkuat, penyimpanan 5 TB, dan Gemini di dalam aplikasi Google."
+features:
+  en:
+    - "Chat with text, voice, and images"
+    - "Image generation and editing"
+    - "Deep Research across hundreds of sources"
+    - "Gemini Live for real time voice conversations"
+    - "Canvas for writing and coding drafts"
+    - "Gemini inside Gmail, Docs, and Drive on paid plans"
+  id:
+    - "Chat lewat teks, suara, dan gambar"
+    - "Bikin dan edit gambar"
+    - "Deep Research dari ratusan sumber"
+    - "Gemini Live untuk ngobrol suara secara langsung"
+    - "Canvas untuk draf tulisan dan kode"
+    - "Gemini di dalam Gmail, Docs, dan Drive di paket berbayar"
+pricingNote:
+  en: "Free at $0 with a Google account, including the Flash-Lite model, image generation, Deep Research, Gemini Live, and 15 GB of storage. Google AI Plus costs $4.99 a month, Pro $19.99 a month, and Ultra starts at $99.99 a month. Prices are US list prices before tax."
+  id: "Gratis 0 dolar dengan akun Google, termasuk model Flash Lite, bikin gambar, Deep Research, Gemini Live, dan penyimpanan 15 GB. Google AI Plus seharga 4,99 dolar per bulan, Pro 19,99 dolar per bulan, dan Ultra mulai dari 99,99 dolar per bulan. Harga di atas adalah harga resmi Amerika Serikat sebelum pajak."

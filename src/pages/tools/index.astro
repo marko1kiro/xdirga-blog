@@ -1,0 +1,148 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ToolCard from '../../components/tools/ToolCard.astro';
+import ToolsListing from '../../components/tools/ToolsListing.astro';
+import ToolsSidebar from '../../components/tools/ToolsSidebar.astro';
+import ToolsLayout from '../../layouts/ToolsLayout.astro';
+import { getAllTools } from '../../lib/tools';
+import {
+  TOOLS_PAGE_SIZE,
+  buildCategoryNav,
+  countByPlatform,
+  countByPricing,
+  distinctAudiences,
+  toolUrl,
+  toolsHomeUrl,
+  toolsPageUrl,
+  type Lang,
+} from '../../lib/tools-ui';
+import { SITE } from '../../lib/site';
+import type { BreadcrumbItem } from '../../lib/articles';
+
+const lang: Lang = 'en';
+const allTools = await getAllTools();
+const featured = allTools.filter((t) => t.data.featured).slice(0, 5);
+const totalCount = allTools.length;
+const lastPage = Math.max(1, Math.ceil(totalCount / TOOLS_PAGE_SIZE));
+const pageTools = allTools.slice(0, TOOLS_PAGE_SIZE);
+const pageUrl = (n: number) => toolsPageUrl(n, lang);
+const canonical = new URL(toolsHomeUrl(lang), SITE.url).href;
+
+const breadcrumb = [
+  { label: 'Home', href: '/' },
+  { label: 'Tools' },
+] satisfies BreadcrumbItem[];
+---
+
+<ToolsLayout
+  title="Tools"
+  description="A curated directory of digital tools for modern work and creativity. Discover, compare, and choose the right tool for the job."
+  lang={lang}
+  canonical={canonical}
+  hreflang={{ en: canonical, id: new URL('/id/tools/', SITE.url).href }}
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'XDIRGA TOOLS',
+      description:
+        'A curated directory of digital tools for modern work and creativity.',
+      url: canonical,
+      isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'XDIRGA TOOLS',
+      itemListElement: pageTools.map((tool, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: tool.data.name,
+        url: new URL(toolUrl(tool, lang), SITE.url).href,
+      })),
+    },
+  ]}
+>
+  <ToolsSidebar
+    slot="sidebar"
+    categories={buildCategoryNav(allTools, lang)}
+    allHref={toolsHomeUrl(lang)}
+    allCount={totalCount}
+    lang={lang}
+    pricingCounts={countByPricing(allTools)}
+    platformCounts={countByPlatform(allTools)}
+    audiences={distinctAudiences(allTools, lang)}
+  />
+
+  <Breadcrumb items={breadcrumb} />
+
+  <section
+    class="relative mt-6 overflow-hidden rounded-3xl bg-gradient-to-br from-[#c026d3] via-[#a21caf] to-[#0891b2] px-6 py-10 text-white sm:px-10 sm:py-12"
+    aria-label="XDIRGA TOOLS"
+  >
+    <div class="absolute inset-0 bg-[#0b2730]/20" aria-hidden="true"></div>
+    <div
+      class="absolute -right-16 -top-24 h-64 w-64 rounded-full bg-white/10"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute -bottom-28 right-24 h-56 w-56 rounded-full bg-[#22d3ee]/20"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative">
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-white/80">XDIRGA TOOLS</p>
+      <h1 class="mt-2 font-display text-3xl font-semibold leading-tight sm:text-4xl">
+        Discover. Compare. Choose.
+      </h1>
+      <p class="mt-3 max-w-xl text-[1.02rem] leading-relaxed text-white/90">
+        A curated directory of digital tools for modern work and creativity.
+      </p>
+      <ul class="mt-5 flex flex-wrap gap-2">
+        <li class="rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold backdrop-blur">
+          {totalCount} tools listed
+        </li>
+        <li class="rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold backdrop-blur">
+          Bilingual EN / ID
+        </li>
+        <li class="rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold backdrop-blur">
+          Editorial reviews
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  {
+    featured.length > 0 && (
+      <section id="featured-tools" class="mt-10" aria-label="Featured tools">
+        <div class="flex items-baseline justify-between gap-4">
+          <h2 class="font-display text-2xl font-semibold text-text">Featured Tools</h2>
+          <a
+            href="#tools-grid"
+            class="shrink-0 text-sm font-semibold text-primary transition hover:text-primary-hover"
+          >
+            View all →
+          </a>
+        </div>
+        <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {featured.map((tool) => (
+            <ToolCard tool={tool} lang={lang} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <div class="mt-10">
+    <ToolsListing
+      lang={lang}
+      tools={pageTools}
+      totalCount={totalCount}
+      currentPage={1}
+      lastPage={lastPage}
+      pageUrl={pageUrl}
+      heading="All Tools"
+    />
+  </div>
+</ToolsLayout>

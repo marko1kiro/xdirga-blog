@@ -1,0 +1,103 @@
+slug: obs-studio
+name: OBS Studio
+vendor: OBS Project
+officialWebsite: https://obsproject.com/
+logo: /tools/logos/obs-studio.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/obsstudio.svg"
+categories:
+  - video-audio
+tags:
+  - live-streaming
+  - screen-recording
+  - open-source
+  - video
+  - obs
+platforms:
+  - windows
+  - macos
+  - linux
+audiences:
+  - individual
+  - creator
+  - small-business
+pricingType: free
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.6
+scoreBreakdown:
+  usefulness: 22
+  features: 18
+  easeOfUse: 12
+  pricing: 18
+  platform: 8
+  transparency: 8
+verdict:
+  en: "The best free way to stream or record your screen, with professional tools and zero cost forever."
+  id: "Cara gratis terbaik buat streaming atau merekam layar, dengan perkakas profesional dan biaya nol selamanya."
+bestFor:
+  en:
+    - "Streamers going live on YouTube or Twitch"
+    - "Creators recording tutorials and gameplay"
+    - "Teams running webinars and virtual events"
+  id:
+    - "Streamer yang siaran langsung di YouTube atau Twitch"
+    - "Kreator yang merekam tutorial dan gameplay"
+    - "Tim yang menjalankan webinar dan acara virtual"
+pros:
+  en:
+    - "Completely free with no watermark or time limit"
+    - "Unlimited scenes, sources, and filters"
+    - "Streams to any RTMP, SRT, or WHIP service"
+    - "Powerful audio mixer with VST plugin support"
+    - "No account needed and recordings stay on your disk"
+  id:
+    - "Sepenuhnya gratis tanpa watermark atau batas waktu"
+    - "Scene, sumber, dan filter tanpa batas"
+    - "Streaming ke layanan RTMP, SRT, atau WHIP apa pun"
+    - "Audio mixer mumpuni dengan dukungan plugin VST"
+    - "Tidak perlu akun dan rekaman tetap di disk lo"
+cons:
+  en:
+    - "Interface takes time to learn for first-time streamers"
+    - "No built-in video editing timeline"
+    - "Plugin quality varies because anyone can publish one"
+  id:
+    - "Antar mukanya butuh waktu dipelajari buat streamer pemula"
+    - "Tidak ada timeline edit video bawaan"
+    - "Kualitas plugin beragam karena siapa pun bisa menerbitkannya"
+alternatives:
+  - capcut
+reviewMethod: research-based
+sources:
+  - label: "OBS Studio homepage"
+    url: https://obsproject.com/
+  - label: "Download OBS Studio"
+    url: https://obsproject.com/download
+shortDescription:
+  en: "Free and open source software for live streaming and screen recording on Windows, Mac, and Linux."
+  id: "Perangkat lunak gratis dan sumber terbuka buat live streaming dan rekam layar di Windows, Mac, dan Linux."
+description:
+  en: "OBS Studio is the free, open source standard for recording and streaming video. You build scenes from windows, webcams, images, browser pages, and capture cards, then record to disk or stream to YouTube, Twitch, or any RTMP service. It includes an audio mixer with filters, a virtual camera, Studio Mode previews, and plugin support. There is no paid tier, no watermark, and no account required."
+  id: "OBS Studio itu standar gratis dan sumber terbuka buat merekam dan streaming video. Lo merakit scene dari jendela, webcam, gambar, halaman browser, dan capture card, lalu merekam ke disk atau streaming ke YouTube, Twitch, atau layanan RTMP apa pun. Ia sudah membawa audio mixer dengan filter, kamera virtual, pratinjau Studio Mode, dan dukungan plugin. Tidak ada paket berbayar, tidak ada watermark, dan tidak perlu akun."
+features:
+  en:
+    - "Scenes built from windows, webcams, and browser sources"
+    - "Live streaming to YouTube, Twitch, and RTMP services"
+    - "Intuitive audio mixer with per-source filters"
+    - "Virtual camera for video calls"
+    - "Studio Mode and Multiview for live production"
+    - "Plugin and script support with Lua and Python"
+  id:
+    - "Scene yang dirakit dari jendela, webcam, dan sumber browser"
+    - "Live streaming ke YouTube, Twitch, dan layanan RTMP"
+    - "Audio mixer intuitif dengan filter per sumber"
+    - "Kamera virtual buat panggilan video"
+    - "Studio Mode dan Multiview buat produksi langsung"
+    - "Dukungan plugin dan skrip dengan Lua dan Python"
+pricingNote:
+  en: "OBS Studio is free forever under the GPL-2.0 license. There is no paid plan, no subscription, and no feature locked behind payment. The project is funded by sponsors and donations."
+  id: "OBS Studio gratis selamanya di bawah lisensi GPL 2.0. Tidak ada paket berbayar, tidak ada langganan, dan tidak ada fitur yang dikunci di balik pembayaran. Proyek ini didanai sponsor dan donasi."

@@ -16,6 +16,10 @@ interface Props {
   image?: string;
   canonical?: string;
   noindex?: boolean;
+  /** Bahasa halaman (atribut <html lang>). Default 'id' — semua halaman lama tidak berubah. */
+  lang?: string;
+  /** Pasangan hreflang EN/ID. Hanya dirender bila diisi (halaman Tools bilingual). */
+  hreflang?: { en: string; id: string };
   jsonLd?: Record<string, unknown>[];
   author?: string;
   preloadImage?: { srcset: string; sizes: string };
@@ -35,6 +39,8 @@ const {
   image = SITE.socialImage,
   canonical,
   noindex = false,
+  lang = 'id',
+  hreflang,
   jsonLd = [],
   author = SITE.author,
   preloadImage,
@@ -56,7 +62,7 @@ const orgJsonLd = {
 ---
 
 <!doctype html>
-<html lang="id">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -70,6 +76,15 @@ const orgJsonLd = {
     <meta name="description" content={description} />
     <meta name="author" content={author} />
     <link rel="canonical" href={canonicalUrl} />
+    {
+      hreflang && (
+        <>
+          <link rel="alternate" hreflang="en" href={hreflang.en} />
+          <link rel="alternate" hreflang="id" href={hreflang.id} />
+          <link rel="alternate" hreflang="x-default" href={hreflang.en} />
+        </>
+      )
+    }
     {noindex && <meta name="robots" content="noindex,follow" />}
     <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
     <link rel="preload" as="font" type="font/woff2" crossorigin href={inter400} />
@@ -94,7 +109,7 @@ const orgJsonLd = {
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="720" />
     <meta property="og:image:alt" content={pageTitle} />
-    <meta property="og:locale" content="id_ID" />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'id_ID'} />
     {
       articleMeta?.publishedTime && (
         <meta property="article:published_time" content={articleMeta.publishedTime} />

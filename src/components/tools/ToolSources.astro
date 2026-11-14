@@ -1,0 +1,52 @@
+---
+import { editorialPolicyUrl, type Tool, type ToolLang } from '../../lib/tools';
+
+interface Props {
+  sources: Tool['data']['sources'];
+  lastVerifiedAt: Date;
+  lang: ToolLang;
+}
+
+const { sources, lastVerifiedAt, lang } = Astro.props;
+const isId = lang === 'id';
+const verifiedLabel = lastVerifiedAt.toLocaleDateString(isId ? 'id-ID' : 'en-US', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<section aria-label={isId ? 'Sumber' : 'Sources'}>
+  <ul class="space-y-2.5">
+    {
+      sources.map((source) => (
+        <li class="flex items-start gap-2 text-sm">
+          <span aria-hidden="true" class="mt-0.5 text-primary">
+            ↗
+          </span>
+          <a
+            href={source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-medium text-primary hover:underline"
+          >
+            {source.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="mt-4 text-sm text-text-secondary">
+    {isId ? 'Terakhir diverifikasi: ' : 'Last verified: '}
+    <time datetime={lastVerifiedAt.toISOString().slice(0, 10)} class="font-medium text-text">
+      {verifiedLabel}
+    </time>
+  </p>
+  <p class="mt-2 text-sm text-text-secondary">
+    {isId ? 'Metode penilaian kami dijelaskan di ' : 'Our assessment method is explained in the '}
+    <a href={editorialPolicyUrl(lang)} class="font-medium text-primary hover:underline">
+      {isId ? 'kebijakan editorial' : 'editorial policy'}
+    </a>
+    .
+  </p>
+</section>

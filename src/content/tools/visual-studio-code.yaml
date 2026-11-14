@@ -1,0 +1,102 @@
+slug: visual-studio-code
+name: Visual Studio Code
+vendor: Microsoft
+officialWebsite: https://code.visualstudio.com/
+logo: /tools/logos/visual-studio-code.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/visualstudiocode.svg"
+categories:
+  - developer-engineering
+tags:
+  - code-editor
+  - microsoft
+  - open-source
+  - developer-tools
+  - ide
+platforms:
+  - web
+  - windows
+  - macos
+  - linux
+audiences:
+  - developer
+  - individual
+pricingType: free
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.8
+scoreBreakdown:
+  usefulness: 23
+  features: 18
+  easeOfUse: 13
+  pricing: 18
+  platform: 9
+  transparency: 7
+verdict:
+  en: "Still the best free code editor, and now a capable home for AI agent workflows too."
+  id: "Tetap editor kode gratis terbaik, dan sekarang juga rumah yang mumpuni buat alur kerja agen AI."
+bestFor:
+  en:
+    - "Developers who want a fast, free editor for any language"
+    - "Students learning to code on any operating system"
+    - "Teams standardizing on one editor with shared settings and extensions"
+  id:
+    - "Developer yang mau editor cepat dan gratis buat bahasa apa pun"
+    - "Pelajar yang belajar coding di sistem operasi apa pun"
+    - "Tim yang menyeragamkan satu editor dengan pengaturan dan ekstensi bersama"
+pros:
+  en:
+    - "Completely free for personal and commercial use"
+    - "Huge extension marketplace for languages, themes, and tools"
+    - "Built-in Git, debugging, and terminal in one window"
+    - "Runs on Windows, macOS, Linux, and the browser"
+    - "Settings and extension sync across machines"
+  id:
+    - "Sepenuhnya gratis buat pemakaian pribadi dan komersial"
+    - "Marketplace ekstensi raksasa buat bahasa, tema, dan perkakas"
+    - "Git, debugging, dan terminal bawaan dalam satu jendela"
+    - "Jalan di Windows, macOS, Linux, dan browser"
+    - "Pengaturan dan ekstensi tersinkron antar mesin"
+cons:
+  en:
+    - "AI agent features depend on a separate Copilot or model subscription"
+    - "Heavy extension setups can slow startup"
+    - "Microsoft's official build includes telemetry that is on by default"
+  id:
+    - "Fitur agen AI butuh langganan Copilot atau model terpisah"
+    - "Tumpukan ekstensi yang berat bisa memperlambat startup"
+    - "Build resmi Microsoft menyertakan telemetri yang aktif secara default"
+alternatives: []
+reviewMethod: research-based
+sources:
+  - label: "Download Visual Studio Code"
+    url: https://code.visualstudio.com/download
+  - label: "Visual Studio Code homepage"
+    url: https://code.visualstudio.com/
+shortDescription:
+  en: "Microsoft's free, open source code editor with debugging, Git, extensions, and built-in AI agent workflows."
+  id: "Editor kode gratis dari Microsoft yang sumber terbuka, lengkap dengan debugging, Git, ekstensi, dan alur kerja agen AI bawaan."
+description:
+  en: "Visual Studio Code is a lightweight editor that behaves like a full IDE once you add extensions. It ships with IntelliSense, an integrated terminal, debugging, and Git controls, plus a marketplace with thousands of extensions for almost any language or stack. Recent versions add agent harnesses that let you run Copilot, Claude, or Codex agents side by side. It costs nothing and runs on Windows, macOS, and Linux, with a browser version at vscode.dev."
+  id: "Visual Studio Code itu editor ringan yang rasanya seperti IDE lengkap begitu lo tambah ekstensi. Ia sudah bawa IntelliSense, terminal terpadu, debugging, dan kontrol Git, plus marketplace berisi ribuan ekstensi buat hampir semua bahasa atau stack. Versi terbaru menambah harness agen yang bikin lo bisa menjalankan agen Copilot, Claude, atau Codex berdampingan. Harganya nol dan jalan di Windows, macOS, dan Linux, dengan versi browser di vscode.dev."
+features:
+  en:
+    - "IntelliSense code completion and smart navigation"
+    - "Integrated terminal and task runner"
+    - "Built-in Git source control and debugging"
+    - "Extension marketplace with thousands of add-ons"
+    - "Agent harnesses for Copilot, Claude, and Codex"
+    - "Remote development over SSH, containers, and WSL"
+  id:
+    - "Pelengkapan kode IntelliSense dan navigasi cerdas"
+    - "Terminal terpadu dan task runner"
+    - "Kontrol sumber Git dan debugging bawaan"
+    - "Marketplace ekstensi berisi ribuan tambahan"
+    - "Harness agen buat Copilot, Claude, dan Codex"
+    - "Pengembangan jarak jauh lewat SSH, container, dan WSL"
+pricingNote:
+  en: "Visual Studio Code is free to download and use, including for commercial work. There is no paid tier. Some extensions and AI model subscriptions cost extra."
+  id: "Visual Studio Code gratis diunduh dan dipakai, termasuk buat kerja komersial. Tidak ada paket berbayar. Sebagian ekstensi dan langganan model AI berbayar terpisah."

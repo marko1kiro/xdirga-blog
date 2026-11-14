@@ -1,0 +1,179 @@
+---
+import ToolsLayout from '../../../layouts/ToolsLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { toolsIndexUrl, editorialPolicyUrl } from '../../../lib/tools';
+import { breadcrumbJsonLd, type BreadcrumbItem } from '../../../lib/articles';
+import { SITE } from '../../../lib/site';
+
+const canonical = new URL(editorialPolicyUrl('id'), SITE.url).href;
+const enHref = new URL(editorialPolicyUrl('en'), SITE.url).href;
+
+const breadcrumb = [
+  { label: 'Tools', href: toolsIndexUrl('id') },
+  { label: 'Kebijakan Editorial' },
+] satisfies BreadcrumbItem[];
+
+const sections = [
+  { id: 'metode', label: 'Metode berbasis riset' },
+  { id: 'skor', label: 'Skor hybrid' },
+  { id: 'independensi', label: 'Independensi editorial' },
+  { id: 'merek', label: 'Merek dagang & logo' },
+  { id: 'akurasi', label: 'Akurasi & koreksi' },
+];
+---
+
+<ToolsLayout
+  title="Kebijakan Editorial"
+  description="Cara XDIRGA TOOLS mengulas tools digital: metode berbasis riset, rubrik skor hybrid, independensi editorial, dan catatan merek dagang."
+  lang="id"
+  canonical={canonical}
+  hreflang={{ en: enHref, id: canonical }}
+  jsonLd={[breadcrumbJsonLd(breadcrumb)]}
+>
+  <div slot="sidebar">
+    <nav
+      class="rounded-2xl border border-border bg-surface p-5"
+      aria-label="Di halaman ini"
+    >
+      <p class="text-sm font-semibold text-text">Di halaman ini</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        {
+          sections.map((s) => (
+            <li>
+              <a href={`#${s.id}`} class="text-text-secondary transition hover:text-primary">
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a
+        href={toolsIndexUrl('id')}
+        class="mt-5 block rounded-xl bg-primary px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-primary-hover"
+      >
+        Jelajahi semua tools
+      </a>
+    </nav>
+  </div>
+
+
+  <Breadcrumb items={breadcrumb} />
+
+  <header class="mt-6">
+    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">
+      Kebijakan Editorial
+    </h1>
+    <p class="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-text-secondary">
+      XDIRGA TOOLS adalah direktori tools digital pilihan dengan ulasan jujur berbasis riset.
+      Halaman ini menjelaskan cara kerja kami secara persis, apa yang kami periksa, bagaimana
+      kami memberi skor, dan apa yang tidak pernah kami lakukan.
+    </p>
+  </header>
+
+  <section id="metode" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Metode berbasis riset</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Setiap ulasan disusun dari riset atas sumber resmi yang terbuka untuk publik: dokumentasi
+      vendor, halaman harga, syarat layanan, dan kebijakan privasi, ditambah liputan independen
+      yang kredibel bila tersedia. Setiap halaman tool mencantumkan sumbernya dan tanggal
+      terakhir informasi itu diverifikasi.
+    </p>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Kami <strong>tidak</strong> mengklaim hands-on testing. Kami tidak pernah memberi label
+      "Tested" pada sebuah tool dan tidak pernah mengaku memakai produk itu sendiri kecuali
+      memang benar demikian. Skor mencerminkan apa yang ditunjukkan dokumentasi dan catatan
+      publik, bukan pengalaman uji coba pribadi.
+    </p>
+  </section>
+
+  <section id="skor" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Skor hybrid</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Setiap tool mendapat skor editorial 0 sampai 10, disusun dari rubrik 100 poin dalam enam
+      dimensi. Total poin rubrik dibagi 10 menghasilkan skor utama, sehingga rincian dan skor
+      selalu cocok.
+    </p>
+    <div class="mt-5 overflow-x-auto">
+      <table class="w-full min-w-[480px] border-collapse text-sm">
+        <thead>
+          <tr class="border-b border-border text-left">
+            <th class="py-2.5 pr-4 font-semibold text-text">Dimensi</th>
+            <th class="py-2.5 pr-4 font-semibold text-text">Poin maks.</th>
+            <th class="py-2.5 font-semibold text-text">Yang diukur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Kegunaan</td>
+            <td class="py-2.5 pr-4 text-text-secondary">25</td>
+            <td class="py-2.5 text-text-secondary">Seberapa baik tool ini menyelesaikan masalah nyata untuk audiens yang dituju.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Fitur</td>
+            <td class="py-2.5 pr-4 text-text-secondary">20</td>
+            <td class="py-2.5 text-text-secondary">Luas dan kedalaman fitur, berdasarkan dokumentasi resmi.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Kemudahan pakai</td>
+            <td class="py-2.5 pr-4 text-text-secondary">15</td>
+            <td class="py-2.5 text-text-secondary">Seberapa mudah tool ini dipelajari dan dipakai sehari-hari.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Harga &amp; nilai</td>
+            <td class="py-2.5 pr-4 text-text-secondary">20</td>
+            <td class="py-2.5 text-text-secondary">Apa yang dicakup paket gratis dan apakah paket berbayarnya sepadan.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Platform &amp; aksesibilitas</td>
+            <td class="py-2.5 pr-4 text-text-secondary">10</td>
+            <td class="py-2.5 text-text-secondary">Ketersediaan di web, desktop, dan mobile, plus aksesibilitas.</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 pr-4 font-medium text-text">Transparansi &amp; kepercayaan</td>
+            <td class="py-2.5 pr-4 text-text-secondary">10</td>
+            <td class="py-2.5 text-text-secondary">Kejelasan harga, ketentuan, kebijakan privasi, dan rekam jejak vendor.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 max-w-2xl leading-relaxed text-text">
+      Dimensi bernilai 0 ditampilkan sebagai "bukti tidak cukup", artinya kami tidak menemukan
+      cukup bukti publik untuk menilainya, bukan berarti tool itu buruk di dimensi tersebut.
+      Skor adalah penilaian editorial, bukan rating pengguna dan bukan klaim vendor.
+    </p>
+  </section>
+
+  <section id="independensi" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Independensi editorial</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Ulasan ditulis secara independen. Vendor tidak membayar untuk ulasan, penempatan, atau
+      skor yang lebih tinggi, dan kami tidak menerima konten bersponsor di direktori ini.
+    </p>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Monetisasi ditunda total: tidak ada tautan afiliasi, tidak ada listing bersponsor, dan
+      tidak ada penempatan berbayar di XDIRGA TOOLS. Bila itu berubah, halaman ini akan
+      menjelaskannya sebelum tautan bermonetisasi apa pun muncul.
+    </p>
+  </section>
+
+  <section id="merek" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Merek dagang &amp; logo</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Nama produk, merek dagang, dan logo yang tampil di direktori adalah milik vendor
+      masing-masing. Logo dipakai hanya untuk mengidentifikasi produk yang diulas
+      (nominative use). Pencantuman sebuah tool bukan berarti dukungan atau afiliasi dari
+      vendornya.
+    </p>
+  </section>
+
+  <section id="akurasi" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Akurasi &amp; koreksi</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Informasi tool mencerminkan apa yang tersedia publik pada tanggal "terakhir diverifikasi"
+      di tiap halaman tool. Fitur dan harga bisa berubah. Bila menemukan yang kedaluwarsa atau
+      salah, beri tahu kami lewat{' '}
+      <a href="/kontak/" class="font-medium text-primary hover:underline">halaman kontak</a>
+      {' '}dan kami akan memeriksa ulang sumber resminya lalu memperbaiki halaman tersebut.
+    </p>
+  </section>
+</ToolsLayout>

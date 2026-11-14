@@ -1,0 +1,86 @@
+slug: chatgpt
+name: ChatGPT
+vendor: OpenAI
+officialWebsite: https://chatgpt.com
+logo: /tools/logos/openai.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/openai.svg"
+categories: [ai-automation, productivity]
+tags: [chatbot, writing, coding, research, productivity]
+platforms: [web, windows, macos, android, ios]
+audiences: [individual, creator, developer, small-business]
+pricingType: freemium
+status: active
+featured: true
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.6
+scoreBreakdown: { usefulness: 23, features: 18, easeOfUse: 13, pricing: 15, platform: 9, transparency: 8 }
+verdict:
+  en: "The most versatile general purpose AI chatbot, with a genuinely useful free tier and a Plus plan that is fairly priced for daily heavy use."
+  id: "Chatbot AI serbaguna yang paling fleksibel, paket gratisnya beneran kepakai dan paket Plusnya masuk akal buat pemakaian berat tiap hari."
+bestFor:
+  en:
+    - "Everyday questions and brainstorming"
+    - "Writing drafts and summaries"
+    - "Coding help and debugging"
+    - "Research with cited sources"
+  id:
+    - "Tanya jawab sehari hari dan cari ide"
+    - "Bikin draf tulisan dan ringkasan"
+    - "Bantuan ngoding dan debug"
+    - "Riset dengan sumber yang dikutip"
+pros:
+  en:
+    - "Free plan includes unlimited text chats"
+    - "Strong reasoning and coding ability on paid plans"
+    - "Available on web, desktop, and mobile"
+    - "Huge ecosystem of custom GPTs and integrations"
+  id:
+    - "Paket gratis sudah termasuk chat teks tanpa batas"
+    - "Penalaran dan kemampuan ngoding yang kuat di paket berbayar"
+    - "Tersedia di web, desktop, dan HP"
+    - "Ekosistem GPT kustom dan integrasi yang sangat luas"
+cons:
+  en:
+    - "Free plan limits uploads, images, voice, and deep research"
+    - "Advanced models sit behind the $20 Plus plan"
+    - "No annual discount on personal plans"
+    - "Answers can still be confidently wrong"
+  id:
+    - "Paket gratis membatasi upload, gambar, suara, dan riset mendalam"
+    - "Model paling canggih cuma ada di paket Plus seharga 20 dolar"
+    - "Tidak ada diskon tahunan untuk paket personal"
+    - "Jawabannya kadang salah tapi terdengar yakin"
+alternatives: [gemini, claude, microsoft-copilot]
+reviewMethod: research-based
+sources:
+  - label: "Official pricing page"
+    url: https://openai.com/chatgpt/pricing
+  - label: "Official website"
+    url: https://chatgpt.com
+shortDescription:
+  en: "Conversational AI assistant for writing, coding, research, and everyday questions."
+  id: "Asisten AI percakapan untuk menulis, ngoding, riset, dan pertanyaan sehari hari."
+description:
+  en: "ChatGPT is OpenAI's conversational AI assistant, available on the web and in desktop and mobile apps. It answers questions, drafts text, writes and debugs code, summarizes documents, and creates images. The free plan covers unlimited everyday text chats, while paid plans unlock stronger reasoning models, deeper research, and higher usage limits."
+  id: "ChatGPT adalah asisten AI percakapan dari OpenAI yang bisa dipakai di web serta aplikasi desktop dan HP. Lo bisa tanya apa saja, minta draf tulisan, tulis dan debug kode, rangkum dokumen, sampai buat gambar. Paket gratis sudah mencakup chat teks sehari hari tanpa batas, sementara paket berbayar membuka model penalaran yang lebih kuat, riset yang lebih dalam, dan batas pemakaian yang lebih longgar."
+features:
+  en:
+    - "Unlimited text chats on the free plan"
+    - "Image creation and editing"
+    - "Voice conversations"
+    - "Deep research across sources"
+    - "Projects, scheduled tasks, and custom GPTs on Plus"
+    - "Codex coding agent on paid plans"
+  id:
+    - "Chat teks tanpa batas di paket gratis"
+    - "Bikin dan edit gambar"
+    - "Ngobrol lewat suara"
+    - "Riset mendalam dari banyak sumber"
+    - "Projects, tugas terjadwal, dan GPT kustom di paket Plus"
+    - "Agen coding Codex di paket berbayar"
+pricingNote:
+  en: "Free at $0 with unlimited text chats and limited uploads, images, voice, and deep research. Go costs $8 a month, Plus $20 a month, and Pro starts at $100 a month. Prices are US list prices before tax and vary by region."
+  id: "Gratis 0 dolar dengan chat teks tanpa batas plus upload, gambar, suara, dan riset mendalam yang dibatasi. Go seharga 8 dolar per bulan, Plus 20 dolar per bulan, dan Pro mulai dari 100 dolar per bulan. Harga di atas adalah harga resmi Amerika Serikat sebelum pajak dan bisa berbeda di tiap wilayah."

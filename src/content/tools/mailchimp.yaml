@@ -1,0 +1,102 @@
+slug: mailchimp
+name: Mailchimp
+vendor: Intuit
+officialWebsite: https://mailchimp.com/
+logo: /tools/logos/mailchimp.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/mailchimp.svg"
+categories:
+  - marketing-growth
+tags:
+  - email-marketing
+  - newsletter
+  - automation
+  - sms-marketing
+  - intuit
+platforms:
+  - web
+  - android
+  - ios
+audiences:
+  - individual
+  - small-business
+  - enterprise
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 7.8
+scoreBreakdown:
+  usefulness: 20
+  features: 16
+  easeOfUse: 12
+  pricing: 13
+  platform: 8
+  transparency: 9
+verdict:
+  en: "A solid all-rounder for email marketing, but the free plan shrank and costs climb steeply with list size."
+  id: "Pilihan serba bisa yang solid buat pemasaran email, tapi paket gratisnya mengecil dan biaya naik tajam seiring besar daftar."
+bestFor:
+  en:
+    - "Small businesses sending regular newsletters"
+    - "Online stores using email for repeat sales"
+    - "Marketers who want built-in automation and segmentation"
+  id:
+    - "Bisnis kecil yang rutin mengirim newsletter"
+    - "Toko online yang memakai email buat penjualan berulang"
+    - "Marketer yang mau otomasi dan segmentasi bawaan"
+pros:
+  en:
+    - "Easy drag-and-drop campaign builder with templates"
+    - "Automation flows and predictive segmentation on Standard"
+    - "More than 300 integrations with stores and tools"
+    - "Generative AI features included on paid plans"
+    - "14-day free trial of the Standard plan"
+  id:
+    - "Pembuat kampanye seret dan letakkan yang gampang dengan template"
+    - "Alur otomasi dan segmentasi prediktif di paket Standard"
+    - "Lebih dari 300 integrasi dengan toko dan perkakas"
+    - "Fitur AI generatif termasuk di paket berbayar"
+    - "Uji coba gratis Standard selama 14 hari"
+cons:
+  en:
+    - "Free plan caps at 250 contacts and 500 sends a month"
+    - "Price rises with every contact band, not with sends"
+    - "SMS costs extra on top of the base plan"
+  id:
+    - "Paket gratis mentok di 250 kontak dan 500 kiriman per bulan"
+    - "Harga naik di setiap jenjang kontak, bukan di jumlah kiriman"
+    - "SMS berbayar tambahan di luar harga paket dasar"
+alternatives: []
+reviewMethod: research-based
+sources:
+  - label: "Mailchimp marketing pricing"
+    url: https://mailchimp.com/pricing/marketing
+  - label: "Mailchimp homepage"
+    url: https://mailchimp.com/
+shortDescription:
+  en: "Email and SMS marketing with templates, automations, and audience tools for growing businesses."
+  id: "Pemasaran email dan SMS dengan template, otomasi, dan perkakas audiens buat bisnis yang sedang tumbuh."
+description:
+  en: "Mailchimp is the long-running email marketing platform now owned by Intuit. It covers campaign design, audience segmentation, automations, and reporting, with SMS as a paid add-on. Pricing scales with the number of contacts stored, so costs rise as the list grows. The free plan is small at 250 contacts and 500 sends a month, while Standard adds multi-step automation, predictive segments, and A/B testing."
+  id: "Mailchimp itu platform pemasaran email yang sudah lama jalan dan kini dimiliki Intuit. Ia mencakup desain kampanye, segmentasi audiens, otomasi, dan laporan, dengan SMS sebagai tambahan berbayar. Harga naik mengikuti jumlah kontak yang disimpan, jadi biaya ikut membesar saat daftar membesar. Paket gratis terbilang kecil dengan 250 kontak dan 500 kiriman per bulan, sementara Standard menambah otomasi banyak langkah, segmen prediktif, dan pengujian A/B."
+features:
+  en:
+    - "Email campaign builder with pre-built templates"
+    - "Marketing automation flows up to 200 on Standard"
+    - "Predictive segmentation and dynamic content"
+    - "A/B and multivariate testing on Premium"
+    - "SMS marketing as a paid add-on"
+    - "Reports, custom reports, and revenue attribution"
+  id:
+    - "Pembuat kampanye email dengan template siap pakai"
+    - "Alur otomasi pemasaran sampai 200 di paket Standard"
+    - "Segmentasi prediktif dan konten dinamis"
+    - "Pengujian A/B dan multivariat di paket Premium"
+    - "Pemasaran SMS sebagai tambahan berbayar"
+    - "Laporan, laporan kustom, dan atribusi pendapatan"
+pricingNote:
+  en: "Free is $0 for up to 250 contacts and 500 sends a month. Essentials starts at $13 a month for 500 contacts, Standard at $20 a month, and Premium at $350 a month for 10,000 contacts. Standard and Essentials include a 14-day free trial."
+  id: "Gratis itu $0 buat sampai 250 kontak dan 500 kiriman per bulan. Essentials mulai $13 per bulan buat 500 kontak, Standard $20 per bulan, dan Premium $350 per bulan buat 10.000 kontak. Standard dan Essentials menyertakan uji coba gratis 14 hari."

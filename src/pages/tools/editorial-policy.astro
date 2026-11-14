@@ -1,0 +1,177 @@
+---
+import ToolsLayout from '../../layouts/ToolsLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { toolsIndexUrl, editorialPolicyUrl } from '../../lib/tools';
+import { breadcrumbJsonLd, type BreadcrumbItem } from '../../lib/articles';
+import { SITE } from '../../lib/site';
+
+const canonical = new URL(editorialPolicyUrl('en'), SITE.url).href;
+const idHref = new URL(editorialPolicyUrl('id'), SITE.url).href;
+
+const breadcrumb = [
+  { label: 'Tools', href: toolsIndexUrl('en') },
+  { label: 'Editorial Policy' },
+] satisfies BreadcrumbItem[];
+
+const sections = [
+  { id: 'method', label: 'Research-based method' },
+  { id: 'scoring', label: 'Hybrid scoring' },
+  { id: 'independence', label: 'Editorial independence' },
+  { id: 'trademarks', label: 'Trademarks & logos' },
+  { id: 'accuracy', label: 'Accuracy & corrections' },
+];
+---
+
+<ToolsLayout
+  title="Editorial Policy"
+  description="How XDIRGA TOOLS reviews digital tools: research-based method, hybrid scoring rubric, editorial independence, and trademark notes."
+  lang="en"
+  canonical={canonical}
+  hreflang={{ en: canonical, id: idHref }}
+  jsonLd={[breadcrumbJsonLd(breadcrumb)]}
+>
+  <div slot="sidebar">
+    <nav
+      class="rounded-2xl border border-border bg-surface p-5"
+      aria-label="On this page"
+    >
+      <p class="text-sm font-semibold text-text">On this page</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        {
+          sections.map((s) => (
+            <li>
+              <a href={`#${s.id}`} class="text-text-secondary transition hover:text-primary">
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a
+        href={toolsIndexUrl('en')}
+        class="mt-5 block rounded-xl bg-primary px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-primary-hover"
+      >
+        Browse all tools
+      </a>
+    </nav>
+  </div>
+
+
+  <Breadcrumb items={breadcrumb} />
+
+  <header class="mt-6">
+    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">
+      Editorial Policy
+    </h1>
+    <p class="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-text-secondary">
+      XDIRGA TOOLS is a curated directory of digital tools with honest, research-based reviews.
+      This page explains exactly how we work — what we check, how we score, and what we never
+      do.
+    </p>
+  </header>
+
+  <section id="method" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Research-based method</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Every review is based on research of public, official sources: the vendor's own
+      documentation, pricing page, terms of service, and privacy policy, plus reputable
+      independent coverage where available. Each tool page lists its sources and the date the
+      information was last verified.
+    </p>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      We do <strong>not</strong> claim hands-on testing. We never label a tool "Tested" and we
+      never describe using a product ourselves unless that is genuinely the case. Scores reflect
+      what the documentation and public record show, not personal trial experience.
+    </p>
+  </section>
+
+  <section id="scoring" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Hybrid scoring</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Each tool receives an editorial score from 0 to 10, built from a 100-point rubric across
+      six dimensions. The total rubric points divided by 10 give the headline score, so the
+      breakdown and the score always agree.
+    </p>
+    <div class="mt-5 overflow-x-auto">
+      <table class="w-full min-w-[480px] border-collapse text-sm">
+        <thead>
+          <tr class="border-b border-border text-left">
+            <th class="py-2.5 pr-4 font-semibold text-text">Dimension</th>
+            <th class="py-2.5 pr-4 font-semibold text-text">Max points</th>
+            <th class="py-2.5 font-semibold text-text">What it measures</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Usefulness</td>
+            <td class="py-2.5 pr-4 text-text-secondary">25</td>
+            <td class="py-2.5 text-text-secondary">How well the tool solves a real problem for its intended audience.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Features</td>
+            <td class="py-2.5 pr-4 text-text-secondary">20</td>
+            <td class="py-2.5 text-text-secondary">Breadth and depth of features, based on official documentation.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Ease of use</td>
+            <td class="py-2.5 pr-4 text-text-secondary">15</td>
+            <td class="py-2.5 text-text-secondary">How easy the tool is to learn and use day to day.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Pricing &amp; value</td>
+            <td class="py-2.5 pr-4 text-text-secondary">20</td>
+            <td class="py-2.5 text-text-secondary">What the free plan covers and whether paid plans are fairly priced.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="py-2.5 pr-4 font-medium text-text">Platform &amp; accessibility</td>
+            <td class="py-2.5 pr-4 text-text-secondary">10</td>
+            <td class="py-2.5 text-text-secondary">Availability across web, desktop, and mobile, plus accessibility.</td>
+          </tr>
+          <tr>
+            <td class="py-2.5 pr-4 font-medium text-text">Transparency &amp; trust</td>
+            <td class="py-2.5 pr-4 text-text-secondary">10</td>
+            <td class="py-2.5 text-text-secondary">Clear pricing, terms, privacy policy, and vendor track record.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 max-w-2xl leading-relaxed text-text">
+      A dimension scored 0 is shown as "insufficient evidence" — meaning we could not find
+      enough public evidence to assess it, not that the tool is bad at it. Scores are editorial
+      assessments, not user ratings and not vendor claims.
+    </p>
+  </section>
+
+  <section id="independence" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Editorial independence</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Reviews are written independently. Vendors do not pay for reviews, placement, or higher
+      scores, and we do not accept sponsored content in the directory.
+    </p>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Monetization is postponed entirely: there are no affiliate links, no sponsored listings,
+      and no paid placements in XDIRGA TOOLS. If that ever changes, this page will say so
+      before any monetized link appears.
+    </p>
+  </section>
+
+  <section id="trademarks" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Trademarks &amp; logos</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Product names, trademarks, and logos shown in the directory belong to their respective
+      vendors. Logos are used only to identify the product being reviewed (nominative use).
+      Listing a tool does not imply endorsement by, or affiliation with, its vendor.
+    </p>
+  </section>
+
+  <section id="accuracy" class="mt-10 scroll-mt-24">
+    <h2 class="font-display text-2xl font-semibold text-text">Accuracy &amp; corrections</h2>
+    <p class="mt-3 max-w-2xl leading-relaxed text-text">
+      Tool information reflects what was publicly available on the "last verified" date shown
+      on each tool page. Features and prices change — when you find something outdated or
+      wrong, tell us via the{' '}
+      <a href="/kontak/" class="font-medium text-primary hover:underline">contact page</a>
+      {' '}and we will re-check the official sources and correct the page.
+    </p>
+  </section>
+</ToolsLayout>

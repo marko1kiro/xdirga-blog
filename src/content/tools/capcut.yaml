@@ -1,0 +1,86 @@
+slug: capcut
+name: CapCut
+vendor: ByteDance
+officialWebsite: https://www.capcut.com
+logo: /tools/logos/capcut.svg
+logoSource: "Wikimedia Commons (Public domain) — https://commons.wikimedia.org/wiki/File:Capcut-icon.svg"
+categories: [video-audio, design-creative]
+tags: [video-editing, short-video, captions, templates, ai-video]
+platforms: [web, windows, macos, android, ios]
+audiences: [individual, creator, small-business]
+pricingType: freemium
+status: active
+featured: true
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 7.8
+scoreBreakdown: { usefulness: 20, features: 16, easeOfUse: 13, pricing: 13, platform: 9, transparency: 7 }
+verdict:
+  en: "The fastest way from phone footage to a finished vertical video, with a free tier that covers most casual creators and a Pro plan aimed at daily posters."
+  id: "Cara tercepat dari rekaman HP jadi video vertikal yang siap tayang, paket gratisnya sudah cukup buat kreator santai dan paket Pronya menyasar yang posting tiap hari."
+bestFor:
+  en:
+    - "TikTok, Reels, and Shorts"
+    - "Quick edits with templates"
+    - "Auto captioned social videos"
+    - "Creators on mobile first"
+  id:
+    - "TikTok, Reels, dan Shorts"
+    - "Edit cepat pakai template"
+    - "Video sosial dengan caption otomatis"
+    - "Kreator yang utamanya di HP"
+pros:
+  en:
+    - "Free plan is genuinely useful, no watermark on basic edits"
+    - "Very fast for vertical short form video"
+    - "Auto captions save a lot of time"
+    - "Available on mobile, desktop, and web"
+  id:
+    - "Paket gratisnya beneran kepakai, tanpa watermark untuk edit dasar"
+    - "Sangat cepat buat video vertikal pendek"
+    - "Caption otomatis menghemat banyak waktu"
+    - "Tersedia di HP, desktop, dan web"
+cons:
+  en:
+    - "Pro at $19.99 a month is pricey for the category"
+    - "Auto captions and AI tools need Pro"
+    - "Free plan has no cloud storage"
+    - "Prices vary by region and platform"
+  id:
+    - "Pro seharga 19,99 dolar per bulan terhitung mahal di kategorinya"
+    - "Caption otomatis dan tool AI butuh paket Pro"
+    - "Paket gratis tidak dapat penyimpanan cloud"
+    - "Harga beda beda menurut wilayah dan platform"
+alternatives: [canva, figma]
+reviewMethod: research-based
+sources:
+  - label: "Official pricing page"
+    url: https://www.capcut.com/pricing
+  - label: "Official website"
+    url: https://www.capcut.com
+shortDescription:
+  en: "Free video editor for short form content, with templates, auto captions, and AI tools."
+  id: "Editor video gratis untuk konten pendek, lengkap dengan template, caption otomatis, dan tool AI."
+description:
+  en: "CapCut is a video editor from ByteDance for phones, desktop, and the web, built for short form content on TikTok, Reels, and Shorts. It offers a full timeline, templates, effects, auto captions, and AI tools for video and image generation. The free plan covers basic editing and 1080p export, while Pro adds 4K export, the full AI toolkit, premium templates, and 1 TB of cloud storage."
+  id: "CapCut adalah editor video dari ByteDance untuk HP, desktop, dan web, yang dirancang untuk konten pendek di TikTok, Reels, dan Shorts. Di dalamnya ada timeline lengkap, template, efek, caption otomatis, dan tool AI untuk bikin video dan gambar. Paket gratis sudah mencakup edit dasar dan ekspor 1080p, sementara Pro menambah ekspor 4K, tool AI lengkap, template premium, dan penyimpanan cloud 1 TB."
+features:
+  en:
+    - "Full timeline editing on mobile, desktop, and web"
+    - "Auto captions with translation and styling"
+    - "Thousands of templates and effects"
+    - "AI video and image generation"
+    - "Background remover and motion tracking"
+    - "4K export and 1 TB storage on Pro"
+  id:
+    - "Edit timeline lengkap di HP, desktop, dan web"
+    - "Caption otomatis dengan terjemahan dan gaya"
+    - "Ribuan template dan efek"
+    - "AI untuk bikin video dan gambar"
+    - "Hapus latar dan pelacakan gerak"
+    - "Ekspor 4K dan penyimpanan 1 TB di paket Pro"
+pricingNote:
+  en: "Free at $0 with free templates and basic editing tools. Pro costs $19.99 a month or $179.99 a year, with 1,200 monthly AI credits, 1 TB of storage, and a 7 day free trial for new users. Ultra is $79 a month and Teams is $12.49 per seat a month. Prices are US list prices and vary by region and platform."
+  id: "Gratis 0 dolar dengan template gratis dan tool edit dasar. Pro seharga 19,99 dolar per bulan atau 179,99 dolar per tahun, dengan 1.200 kredit AI per bulan, penyimpanan 1 TB, dan uji coba gratis 7 hari buat pengguna baru. Ultra 79 dolar per bulan dan Teams 12,49 dolar per kursi per bulan. Harga di atas adalah harga resmi Amerika Serikat dan bisa berbeda menurut wilayah dan platform."

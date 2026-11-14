@@ -1,0 +1,101 @@
+slug: zapier
+name: Zapier
+vendor: Zapier
+officialWebsite: https://zapier.com/
+logo: /tools/logos/zapier.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/zapier.svg"
+categories:
+  - ai-automation
+  - productivity
+tags:
+  - automation
+  - no-code
+  - workflows
+  - integrations
+  - ai-automation
+platforms:
+  - web
+audiences:
+  - individual
+  - small-business
+  - enterprise
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.0
+scoreBreakdown:
+  usefulness: 21
+  features: 16
+  easeOfUse: 12
+  pricing: 14
+  platform: 8
+  transparency: 9
+verdict:
+  en: "The easiest way to automate busywork across apps, but the per-task pricing punishes heavy users."
+  id: "Cara paling gampang mengotomasi kerja sibuk antar aplikasi, tapi harga per task menghukum pemakai berat."
+bestFor:
+  en:
+    - "Small teams connecting tools like Slack, Sheets, and email"
+    - "Solo operators automating repetitive admin tasks"
+    - "Businesses that want automation without writing code"
+  id:
+    - "Tim kecil yang menghubungkan perkakas seperti Slack, Sheets, dan email"
+    - "Pekerja solo yang mengotomasi tugas admin berulang"
+    - "Bisnis yang mau otomasi tanpa menulis kode"
+pros:
+  en:
+    - "Connects 9,000+ apps, the widest library in its category"
+    - "Visual editor needs no coding at all"
+    - "Free plan is genuinely usable for small automations"
+    - "Tables and Forms are included in every plan"
+    - "Annual billing cuts roughly a third off the monthly rate"
+  id:
+    - "Menghubungkan lebih dari 9.000 aplikasi, pustaka terluas di kategorinya"
+    - "Editor visual tidak butuh coding sama sekali"
+    - "Paket gratis beneran kepakai buat otomasi kecil"
+    - "Tables dan Forms termasuk di semua paket"
+    - "Tagihan tahunan memangkas sekitar sepertiga dari tarif bulanan"
+cons:
+  en:
+    - "Every successful action costs a task, so bills grow fast"
+    - "Two-step Zaps only on the free plan"
+    - "AI steps can burn through the task allowance quickly"
+  id:
+    - "Setiap aksi yang berhasil memakan satu task, jadi tagihan cepat membengkak"
+    - "Paket gratis cuma boleh Zap dua langkah"
+    - "Langkah AI bisa menghabiskan jatah task dengan cepat"
+alternatives: []
+reviewMethod: research-based
+sources:
+  - label: "Zapier plans and pricing"
+    url: https://zapier.com/pricing
+  - label: "Zapier homepage"
+    url: https://zapier.com/
+shortDescription:
+  en: "No-code automation that connects 9,000+ apps so repetitive work runs itself."
+  id: "Otomasi tanpa kode yang menghubungkan lebih dari 9.000 aplikasi supaya kerja berulang jalan sendiri."
+description:
+  en: "Zapier connects the apps a business already uses and moves data between them with automated workflows called Zaps. Each Zap starts with a trigger and runs actions, and the free plan covers 100 tasks a month with two-step Zaps. Paid plans unlock multi-step Zaps, premium apps, webhooks, and team features. Newer additions include Tables, Forms, MCP, and AI steps that draw from the same task pool."
+  id: "Zapier menghubungkan aplikasi yang sudah dipakai sebuah bisnis dan memindahkan data antar aplikasi lewat alur kerja otomatis bernama Zap. Setiap Zap mulai dari trigger lalu menjalankan aksi, dan paket gratis mencakup 100 task per bulan dengan Zap dua langkah. Paket berbayar membuka Zap banyak langkah, aplikasi premium, webhook, dan fitur tim. Tambahan baru mencakup Tables, Forms, MCP, dan langkah AI yang memakai kumpulan task yang sama."
+features:
+  en:
+    - "Automated workflows across 9,000+ apps"
+    - "Multi-step Zaps with filters, paths, and formatting"
+    - "Built-in Tables for data and Forms for input"
+    - "Webhooks and premium app access on paid plans"
+    - "AI steps, Copilot, and MCP connections"
+    - "Shared workspaces and admin controls on Team plans"
+  id:
+    - "Alur kerja otomatis di lebih dari 9.000 aplikasi"
+    - "Zap banyak langkah dengan filter, jalur, dan format"
+    - "Tables bawaan buat data dan Forms buat masukan"
+    - "Webhook dan akses aplikasi premium di paket berbayar"
+    - "Langkah AI, Copilot, dan koneksi MCP"
+    - "Workspace bersama dan kontrol admin di paket Team"
+pricingNote:
+  en: "Free is $0 for 100 tasks a month. Professional starts at $19.99 a month billed yearly ($29.99 billed monthly) for 750 tasks. Team starts at $69 a month billed yearly for 2,000 tasks and 25 users. Enterprise is custom priced."
+  id: "Gratis itu $0 buat 100 task per bulan. Professional mulai $19,99 per bulan bila ditagih tahunan ($29,99 bila bulanan) buat 750 task. Team mulai $69 per bulan bila ditagih tahunan buat 2.000 task dan 25 pengguna. Enterprise harganya menyesuaikan."

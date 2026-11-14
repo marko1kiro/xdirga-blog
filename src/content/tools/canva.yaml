@@ -1,0 +1,86 @@
+slug: canva
+name: Canva
+vendor: Canva
+officialWebsite: https://www.canva.com
+logo: /tools/logos/canva.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/canva.svg"
+categories: [design-creative, productivity]
+tags: [design, templates, social-media, presentations, photo-editing]
+platforms: [web, windows, macos, android, ios]
+audiences: [individual, creator, small-business, enterprise]
+pricingType: freemium
+status: active
+featured: true
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.4
+scoreBreakdown: { usefulness: 22, features: 17, easeOfUse: 14, pricing: 15, platform: 9, transparency: 7 }
+verdict:
+  en: "The easiest design tool for non designers, with a free plan that covers most casual needs and a Pro plan that pays off for regular creators."
+  id: "Tool desain paling gampang buat yang bukan desainer, paket gratisnya nutupin sebagian besar kebutuhan santai dan paket Pronya sepadan buat kreator yang rutin berkarya."
+bestFor:
+  en:
+    - "Social media graphics"
+    - "Presentations and posters"
+    - "Small business branding"
+    - "Quick video and print designs"
+  id:
+    - "Grafis media sosial"
+    - "Presentasi dan poster"
+    - "Branding usaha kecil"
+    - "Desain video dan cetakan yang serba cepat"
+pros:
+  en:
+    - "Very easy to learn, no design skill needed"
+    - "Huge free template and asset library"
+    - "Works everywhere, including the browser"
+    - "Pro is affordable for one person"
+  id:
+    - "Sangat gampang dipelajari, tidak butuh skill desain"
+    - "Pustaka template dan aset gratis yang sangat besar"
+    - "Jalan di mana saja, termasuk langsung di browser"
+    - "Harga Pro terjangkau untuk satu orang"
+cons:
+  en:
+    - "Pro covers one person only, teams need Business"
+    - "Advanced AI uses are metered monthly"
+    - "Premium elements are watermarked on Free"
+    - "Print and export quality varies by plan"
+  id:
+    - "Pro cuma untuk satu orang, tim harus pakai Business"
+    - "Pemakaian AI canggih dihitung per bulan"
+    - "Elemen premium ber watermark di paket gratis"
+    - "Kualitas cetak dan ekspor beda beda tiap paket"
+alternatives: [figma, capcut]
+reviewMethod: research-based
+sources:
+  - label: "Official pricing page"
+    url: https://www.canva.com/pricing
+  - label: "Official website"
+    url: https://www.canva.com
+shortDescription:
+  en: "Drag and drop design platform for social posts, presentations, videos, and print."
+  id: "Platform desain seret dan lepas untuk postingan sosial, presentasi, video, dan cetakan."
+description:
+  en: "Canva is an online design platform with thousands of templates for social media, presentations, posters, videos, and print. Its editor works in the browser and on desktop and mobile, with AI tools for background removal, resizing, and text to image. The free plan is genuinely usable, while Pro adds premium assets, brand kits, and scheduling."
+  id: "Canva adalah platform desain online dengan ribuan template untuk media sosial, presentasi, poster, video, dan cetakan. Editornya jalan di browser, desktop, dan HP, lengkap dengan tool AI untuk hapus latar, ubah ukuran, dan teks jadi gambar. Paket gratisnya beneran kepakai, sementara Pro menambah aset premium, brand kit, dan penjadwalan konten."
+features:
+  en:
+    - "1.6M+ templates on the free plan"
+    - "Drag and drop editor in the browser"
+    - "Background remover and Magic Resize on Pro"
+    - "Brand Kits for consistent visuals"
+    - "Social media scheduling"
+    - "AI image and video generation"
+  id:
+    - "1,6 juta lebih template di paket gratis"
+    - "Editor seret dan lepas di browser"
+    - "Hapus latar dan Magic Resize di paket Pro"
+    - "Brand Kit biar visual tetap konsisten"
+    - "Penjadwalan konten media sosial"
+    - "AI untuk bikin gambar dan video"
+pricingNote:
+  en: "Free at $0 with 1.6M+ templates, 5 GB storage, and up to 20 AI uses a month. Pro costs $18 a month or $144 a year for one person. Business costs $25 a month or $250 a year per person, and Enterprise is quoted by sales. Prices are US list prices before tax."
+  id: "Gratis 0 dolar dengan 1,6 juta lebih template, penyimpanan 5 GB, dan sampai 20 kali pakai AI per bulan. Pro seharga 18 dolar per bulan atau 144 dolar per tahun untuk satu orang. Business seharga 25 dolar per bulan atau 250 dolar per tahun per orang, dan Enterprise ikut harga penawaran. Harga di atas adalah harga resmi Amerika Serikat sebelum pajak."

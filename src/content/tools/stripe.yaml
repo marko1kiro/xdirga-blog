@@ -1,0 +1,102 @@
+slug: stripe
+name: Stripe
+vendor: Stripe
+officialWebsite: https://stripe.com/
+logo: /tools/logos/stripe.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/stripe.svg"
+categories:
+  - business-finance
+tags:
+  - payments
+  - fintech
+  - billing
+  - subscriptions
+  - ecommerce
+platforms:
+  - web
+  - android
+  - ios
+audiences:
+  - developer
+  - small-business
+  - enterprise
+pricingType: paid
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.2
+scoreBreakdown:
+  usefulness: 22
+  features: 17
+  easeOfUse: 12
+  pricing: 13
+  platform: 9
+  transparency: 9
+verdict:
+  en: "The most complete payment platform for online business, with transparent pay-as-you-go pricing and no monthly fee."
+  id: "Platform pembayaran paling lengkap buat bisnis online, dengan harga bayar sesuai pemakaian yang transparan dan tanpa biaya bulanan."
+bestFor:
+  en:
+    - "Online stores and SaaS products taking card payments"
+    - "Creators and freelancers billing clients worldwide"
+    - "Platforms and marketplaces paying out to sellers"
+  id:
+    - "Toko online dan produk SaaS yang menerima pembayaran kartu"
+    - "Kreator dan freelancer yang menagih klien di seluruh dunia"
+    - "Platform dan marketplace yang membayar ke penjual"
+pros:
+  en:
+    - "No setup fees, monthly fees, or hidden fees on Standard"
+    - "Accepts 135+ currencies and payment methods"
+    - "Excellent developer docs, APIs, and SDKs"
+    - "Billing, invoicing, and payouts in one platform"
+    - "99.999% historical uptime for Stripe services"
+  id:
+    - "Tanpa biaya setup, biaya bulanan, atau biaya tersembunyi di paket Standar"
+    - "Menerima lebih dari 135 mata uang dan metode bayar"
+    - "Dokumentasi developer, API, dan SDK yang sangat bagus"
+    - "Billing, invoicing, dan payout dalam satu platform"
+    - "Uptime historis 99,999 persen buat layanan Stripe"
+cons:
+  en:
+    - "No free tier for the platform itself, every sale takes a fee"
+    - "Fees add up with international cards and currency conversion"
+    - "Disputes cost $15 each even when you win the appeal"
+  id:
+    - "Tidak ada paket gratis buat platformnya sendiri, setiap penjualan kena biaya"
+    - "Biaya menumpuk dengan kartu internasional dan konversi mata uang"
+    - "Sengketa kena $15 tiap satu walau lo menang banding"
+alternatives: []
+reviewMethod: research-based
+sources:
+  - label: "Stripe pricing and fees"
+    url: https://stripe.com/pricing
+  - label: "Stripe homepage"
+    url: https://stripe.com/
+shortDescription:
+  en: "Payment infrastructure for online and in-person sales, subscriptions, and payouts in 135+ currencies."
+  id: "Infrastruktur pembayaran buat penjualan online dan tatap muka, langganan, dan payout dalam lebih dari 135 mata uang."
+description:
+  en: "Stripe is the payment platform behind millions of online businesses, from solo creators to global enterprises. It accepts cards, digital wallets, bank debits, and local payment methods, with no setup or monthly fees on the standard plan. Billing, invoicing, Terminal, Connect, and Radar extend it into subscriptions, in-person sales, marketplaces, and fraud prevention. Standard pricing is 2.9% plus 30 cents per successful domestic card transaction in the US."
+  id: "Stripe itu platform pembayaran di balik jutaan bisnis online, dari kreator solo sampai perusahaan global. Ia menerima kartu, dompet digital, debit bank, dan metode bayar lokal, tanpa biaya setup atau bulanan di paket standar. Billing, invoicing, Terminal, Connect, dan Radar memperluasnya ke langganan, penjualan tatap muka, marketplace, dan pencegahan penipuan. Harga standar 2,9 persen ditambah 30 sen per transaksi kartu domestik yang berhasil di AS."
+features:
+  en:
+    - "Online card, wallet, and local payment acceptance"
+    - "Subscriptions and recurring billing"
+    - "In-person payments with Terminal readers"
+    - "Connect for marketplaces and platforms"
+    - "Radar fraud prevention and dispute handling"
+    - "Payouts to 160+ countries and financial reporting"
+  id:
+    - "Penerimaan pembayaran kartu, dompet, dan metode lokal online"
+    - "Langganan dan tagihan berulang"
+    - "Pembayaran tatap muka dengan reader Terminal"
+    - "Connect buat marketplace dan platform"
+    - "Pencegahan penipuan Radar dan penanganan sengketa"
+    - "Payout ke lebih dari 160 negara dan laporan keuangan"
+pricingNote:
+  en: "Standard is 2.9% plus 30 cents per successful domestic card transaction in the US, plus 1.5% for international cards and 1% for currency conversion. There are no setup or monthly fees. Volume businesses can negotiate custom pricing."
+  id: "Standar itu 2,9 persen ditambah 30 sen per transaksi kartu domestik yang berhasil di AS, ditambah 1,5 persen buat kartu internasional dan 1 persen buat konversi mata uang. Tidak ada biaya setup atau bulanan. Bisnis bervolume besar bisa menegosiasikan harga kustom."

@@ -1,0 +1,106 @@
+slug: slack
+name: Slack
+vendor: Salesforce
+officialWebsite: https://slack.com/
+logo: /tools/logos/slack.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/slack.svg"
+categories:
+  - productivity
+tags:
+  - team-chat
+  - collaboration
+  - messaging
+  - productivity
+  - remote-work
+platforms:
+  - web
+  - windows
+  - macos
+  - linux
+  - android
+  - ios
+audiences:
+  - individual
+  - small-business
+  - enterprise
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.2
+scoreBreakdown:
+  usefulness: 21
+  features: 17
+  easeOfUse: 13
+  pricing: 14
+  platform: 9
+  transparency: 8
+verdict:
+  en: "Still the best team chat for day-to-day work, though the free plan's 90-day history is a hard limit."
+  id: "Tetap chat tim terbaik buat kerja sehari hari, walau riwayat 90 hari di paket gratis itu batas yang keras."
+bestFor:
+  en:
+    - "Teams that live in chat and need searchable history"
+    - "Companies replacing internal email with channels"
+    - "Remote teams that want quick huddles and async updates"
+  id:
+    - "Tim yang hidup di chat dan butuh riwayat yang bisa dicari"
+    - "Perusahaan yang menggantikan email internal dengan channel"
+    - "Tim remote yang mau huddle cepat dan update yang tidak serentak"
+pros:
+  en:
+    - "Channels keep every conversation organized and searchable"
+    - "More than 2,600 app integrations in the directory"
+    - "Huddles make quick calls effortless"
+    - "Workflow Builder automates routine tasks without code"
+    - "Fair billing only charges for active members"
+  id:
+    - "Channel membuat setiap percakapan rapi dan gampang dicari"
+    - "Lebih dari 2.600 integrasi aplikasi di direktori"
+    - "Huddle bikin panggilan cepat terasa gampang"
+    - "Workflow Builder mengotomasi tugas rutin tanpa kode"
+    - "Tagihan adil cuma menghitung anggota yang aktif"
+cons:
+  en:
+    - "Free plan only shows the last 90 days of history"
+    - "Full AI features need the Business+ plan"
+    - "Per-user pricing gets expensive as teams grow"
+  id:
+    - "Paket gratis cuma menampilkan riwayat 90 hari terakhir"
+    - "Fitur AI lengkap butuh paket Business+"
+    - "Harga per pengguna jadi mahal saat tim membesar"
+alternatives:
+  - zoom
+reviewMethod: research-based
+sources:
+  - label: "Slack pricing plans"
+    url: https://slack.com/pricing
+  - label: "Slack homepage"
+    url: https://slack.com/
+shortDescription:
+  en: "Team chat organized into channels, now with Slackbot AI, huddles, and workflow automation built in."
+  id: "Chat tim yang rapi dalam channel, kini lengkap dengan AI Slackbot, huddle, dan otomasi alur kerja bawaan."
+description:
+  en: "Slack replaces scattered email threads with channels where teams talk, share files, and make decisions in the open. Huddles add quick audio and video calls, while Workflow Builder and Lists turn conversations into repeatable processes. Paid plans add unlimited history and AI features, including Slackbot, conversation summaries, and AI search. The free plan is usable for small teams but only keeps 90 days of message history."
+  id: "Slack menggantikan utas email yang berceceran dengan channel tempat tim ngobrol, berbagi file, dan mengambil keputusan secara terbuka. Huddle menambah panggilan audio dan video cepat, sementara Workflow Builder dan Lists mengubah percakapan jadi proses yang bisa diulang. Paket berbayar menambah riwayat tanpa batas dan fitur AI, termasuk Slackbot, ringkasan percakapan, dan pencarian AI. Paket gratis masih kepakai buat tim kecil tapi cuma menyimpan riwayat pesan 90 hari."
+features:
+  en:
+    - "Channels, threads, and direct messages"
+    - "Huddles for audio and video calls with screen sharing"
+    - "Slackbot AI with summaries, search, and answers"
+    - "Workflow Builder and Lists for lightweight processes"
+    - "Slack Connect for chatting with outside organizations"
+    - "Canvases for shared docs inside Slack"
+  id:
+    - "Channel, thread, dan pesan langsung"
+    - "Huddle buat panggilan audio dan video dengan berbagi layar"
+    - "AI Slackbot dengan ringkasan, pencarian, dan jawaban"
+    - "Workflow Builder dan Lists buat proses ringan"
+    - "Slack Connect buat ngobrol dengan organisasi luar"
+    - "Canvas buat dokumen bersama di dalam Slack"
+pricingNote:
+  en: "Free is $0 with 90 days of history and up to 10 apps. Pro is $8.75 per user a month billed monthly, or $7.25 billed annually. Business+ is $18 per user a month billed monthly, or $15 billed annually. Enterprise+ is sold through sales."
+  id: "Gratis itu $0 dengan riwayat 90 hari dan maksimal 10 aplikasi. Pro $8,75 per pengguna per bulan bila ditagih bulanan, atau $7,25 bila ditagih tahunan. Business+ $18 per pengguna per bulan bila bulanan, atau $15 bila tahunan. Enterprise+ dijual lewat tim sales."

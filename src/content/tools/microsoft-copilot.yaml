@@ -1,0 +1,86 @@
+slug: microsoft-copilot
+name: Microsoft Copilot
+vendor: Microsoft
+officialWebsite: https://copilot.microsoft.com
+logo: /tools/logos/microsoft-copilot.svg
+logoSource: "Wikimedia Commons (Public domain) — https://commons.wikimedia.org/wiki/File:Microsoft_365_Copilot_Icon_one-color.svg"
+categories: [ai-automation, productivity]
+tags: [ai-assistant, microsoft-365, office, windows, chatbot]
+platforms: [web, windows, macos, android, ios]
+audiences: [individual, creator, small-business, enterprise]
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 7.6
+scoreBreakdown: { usefulness: 20, features: 15, easeOfUse: 13, pricing: 12, platform: 9, transparency: 7 }
+verdict:
+  en: "The natural AI choice for Microsoft 365 users, with a useful free tier, but its best features are locked behind Microsoft 365 subscriptions."
+  id: "Pilihan AI yang paling natural buat pengguna Microsoft 365, paket gratisnya kepakai, tapi fitur terbaiknya terkunci di balik langganan Microsoft 365."
+bestFor:
+  en:
+    - "Microsoft 365 and Windows users"
+    - "Drafting in Word and Outlook"
+    - "Analyzing data in Excel"
+    - "Teams already on Microsoft tools"
+  id:
+    - "Pengguna Microsoft 365 dan Windows"
+    - "Bikin draf di Word dan Outlook"
+    - "Menganalisis data di Excel"
+    - "Tim yang sudah pakai tool Microsoft"
+pros:
+  en:
+    - "Free tier needs no subscription"
+    - "Deep integration with Office apps"
+    - "Strong enterprise security and compliance"
+    - "Available on Windows, web, and mobile"
+  id:
+    - "Paket gratis tidak butuh langganan"
+    - "Menyatu dalam dengan aplikasi Office"
+    - "Keamanan dan kepatuhan enterprise yang kuat"
+    - "Tersedia di Windows, web, dan HP"
+cons:
+  en:
+    - "Best features need a Microsoft 365 subscription"
+    - "Free usage is capacity limited with no published numbers"
+    - "Standalone Copilot Pro was retired in 2026"
+    - "Business add-on pricing stacks on top of base plans"
+  id:
+    - "Fitur terbaik butuh langganan Microsoft 365"
+    - "Pemakaian gratis dibatasi kapasitas tanpa angka resmi"
+    - "Copilot Pro mandiri sudah dipensiunkan pada 2026"
+    - "Harga add on bisnis menumpuk di atas paket dasar"
+alternatives: [chatgpt, gemini, claude]
+reviewMethod: research-based
+sources:
+  - label: "Copilot pricing for individuals"
+    url: https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/individuals
+  - label: "Official website"
+    url: https://copilot.microsoft.com
+shortDescription:
+  en: "Microsoft's AI assistant, free on the web and built into Word, Excel, PowerPoint, and Outlook with Microsoft 365."
+  id: "Asisten AI Microsoft, gratis di web dan menyatu dengan Word, Excel, PowerPoint, dan Outlook lewat Microsoft 365."
+description:
+  en: "Microsoft Copilot is a free AI assistant on the web and in Windows, macOS, and mobile apps, with chat, web search, image creation, and voice. With an eligible Microsoft 365 subscription it works inside Word, Excel, PowerPoint, and Outlook, drafting documents, analyzing data, and summarizing email. For businesses it is also sold as an add-on that grounds answers in company data."
+  id: "Microsoft Copilot adalah asisten AI gratis di web dan aplikasi Windows, macOS, dan HP, dengan chat, pencarian web, bikin gambar, dan suara. Dengan langganan Microsoft 365 yang memenuhi syarat, Copilot bekerja di dalam Word, Excel, PowerPoint, dan Outlook, bikin draf dokumen, menganalisis data, dan meringkas email. Buat bisnis, Copilot juga dijual sebagai add on yang jawabannya berakar pada data perusahaan."
+features:
+  en:
+    - "Free chat, web search, and image creation"
+    - "Voice mode and file uploads"
+    - "Copilot inside Word, Excel, PowerPoint, and Outlook"
+    - "Researcher and Analyst agents on Premium and Pro"
+    - "Works across Windows, web, and mobile"
+    - "Enterprise data protection on business plans"
+  id:
+    - "Chat, pencarian web, dan bikin gambar gratis"
+    - "Mode suara dan upload file"
+    - "Copilot di dalam Word, Excel, PowerPoint, dan Outlook"
+    - "Agen Researcher dan Analyst di Premium dan Pro"
+    - "Jalan di Windows, web, dan HP"
+    - "Perlindungan data enterprise di paket bisnis"
+pricingNote:
+  en: "Free at $0 on the web, subject to available capacity and limits. Copilot inside Microsoft 365 apps comes with Microsoft 365 Personal at $9.99 a month, Family at $12.99, Premium at $19.99, and Pro at $99.99. For businesses the Copilot add-on is $21 per user a month, and the enterprise add-on is $30. Prices are US list prices and vary by region."
+  id: "Gratis 0 dolar di web, tergantung kapasitas dan batas yang tersedia. Copilot di dalam aplikasi Microsoft 365 ikut langganan Microsoft 365 Personal 9,99 dolar per bulan, Family 12,99 dolar, Premium 19,99 dolar, dan Pro 99,99 dolar. Buat bisnis, add on Copilot 21 dolar per pengguna per bulan, dan add on enterprise 30 dolar. Harga di atas adalah harga resmi Amerika Serikat dan bisa berbeda menurut wilayah."

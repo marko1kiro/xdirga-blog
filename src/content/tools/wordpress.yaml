@@ -1,0 +1,104 @@
+slug: wordpress
+name: WordPress.com
+vendor: Automattic
+officialWebsite: https://wordpress.com
+logo: /tools/logos/wordpress.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/wordpress.svg"
+categories:
+  - website-infrastructure
+tags:
+  - website-builder
+  - wordpress
+  - blogging
+  - hosting
+  - woocommerce
+platforms:
+  - web
+  - windows
+  - macos
+  - android
+  - ios
+audiences:
+  - individual
+  - creator
+  - small-business
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.1
+scoreBreakdown:
+  usefulness: 21
+  features: 17
+  easeOfUse: 12
+  pricing: 14
+  platform: 9
+  transparency: 8
+verdict:
+  en: "The simplest way to run a serious WordPress site without managing a server, with fair entry pricing."
+  id: "Cara paling simpel menjalankan situs WordPress yang serius tanpa mengurus server, dengan harga awal yang wajar."
+bestFor:
+  en:
+    - "Bloggers who want WordPress without server chores"
+    - "Small businesses needing a credible website fast"
+    - "Creators selling with WooCommerce without technical setup"
+  id:
+    - "Blogger yang mau WordPress tanpa repot mengurus server"
+    - "Bisnis kecil yang butuh situs yang meyakinkan dengan cepat"
+    - "Kreator yang berjualan lewat WooCommerce tanpa setup teknis"
+pros:
+  en:
+    - "Hosting, updates, and security handled for you"
+    - "Plugins allowed on every paid plan since April 2026"
+    - "Huge theme and plugin ecosystem"
+    - "Free plan never expires"
+    - "WooCommerce store included on Commerce with no transaction fee"
+  id:
+    - "Hosting, update, dan keamanan sudah diurus buat lo"
+    - "Plugin dibolehkan di semua paket berbayar sejak April 2026"
+    - "Ekosistem tema dan plugin yang sangat besar"
+    - "Paket gratis tidak pernah kedaluwarsa"
+    - "Toko WooCommerce termasuk di Commerce tanpa biaya transaksi"
+cons:
+  en:
+    - "Free plan shows WordPress.com ads and blocks plugins"
+    - "Monthly billing costs more than double the yearly rate"
+    - "Backups and developer tools need the Business plan"
+  id:
+    - "Paket gratis menampilkan iklan WordPress.com dan memblokir plugin"
+    - "Tagihan bulanan lebih dari dua kali lipat tarif tahunan"
+    - "Backup dan perkakas developer butuh paket Business"
+alternatives: []
+reviewMethod: research-based
+sources:
+  - label: "WordPress.com pricing"
+    url: https://wordpress.com/pricing
+  - label: "WordPress.com homepage"
+    url: https://wordpress.com/
+shortDescription:
+  en: "Hosted WordPress with themes, plugins, and built-in hosting, from a free blog to a full WooCommerce store."
+  id: "WordPress terhosting dengan tema, plugin, dan hosting bawaan, dari blog gratis sampai toko WooCommerce lengkap."
+description:
+  en: "WordPress.com is the hosted version of WordPress, run by Automattic, so hosting, updates, and security are handled for you. The free plan gives a wordpress.com subdomain with 1 GB of storage and shows ads. Every paid plan now allows plugin installs from more than 60,000 plugins, plus a custom domain and no ads. Business adds developer tools and backups, while Commerce adds a managed WooCommerce store."
+  id: "WordPress.com itu versi terhosting dari WordPress yang dijalankan Automattic, jadi hosting, update, dan keamanan sudah diurus buat lo. Paket gratis memberi subdomain wordpress.com dengan penyimpanan 1 GB dan menampilkan iklan. Semua paket berbayar kini boleh memasang plugin dari lebih dari 60.000 plugin, plus domain kustom dan tanpa iklan. Business menambah perkakas developer dan backup, sementara Commerce menambah toko WooCommerce yang dikelola."
+features:
+  en:
+    - "Block editor with themes and drag-and-drop layouts"
+    - "More than 60,000 plugins on paid plans"
+    - "Custom domain and free SSL on paid plans"
+    - "AI website builder and site assistant"
+    - "WooCommerce store on the Commerce plan"
+    - "Built-in CDN, firewall, and spam protection"
+  id:
+    - "Editor blok dengan tema dan tata letak seret dan letakkan"
+    - "Lebih dari 60.000 plugin di paket berbayar"
+    - "Domain kustom dan SSL gratis di paket berbayar"
+    - "Pembuat situs AI dan asisten situs"
+    - "Toko WooCommerce di paket Commerce"
+    - "CDN, firewall, dan perlindungan spam bawaan"
+pricingNote:
+  en: "Free is $0 with 1 GB of storage. Personal is $4 a month billed yearly ($9 billed monthly), Premium is $8 ($18), Business is $25 ($40), and Commerce is $45 ($70). Longer prepaid terms lower the monthly equivalent further."
+  id: "Gratis itu $0 dengan penyimpanan 1 GB. Personal $4 per bulan bila ditagih tahunan ($9 bila bulanan), Premium $8 ($18), Business $25 ($40), dan Commerce $45 ($70). Masa prabayar yang lebih panjang menurunkan tarif bulanan lebih jauh."

@@ -1,0 +1,86 @@
+slug: trello
+name: Trello
+vendor: Atlassian
+officialWebsite: https://trello.com
+logo: /tools/logos/trello.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/trello.svg"
+categories: [productivity]
+tags: [kanban, task-management, boards, collaboration, project-management]
+platforms: [web, windows, macos, android, ios]
+audiences: [individual, creator, small-business, enterprise]
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 7.9
+scoreBreakdown: { usefulness: 21, features: 16, easeOfUse: 13, pricing: 13, platform: 9, transparency: 7 }
+verdict:
+  en: "The simplest board tool for getting a small team organized fast, with a free plan that stays useful until you outgrow its 10 board limit."
+  id: "Tool papan paling sederhana buat merapikan tim kecil dengan cepat, paket gratisnya tetap kepakai sampai lo mentok di batas 10 papan."
+bestFor:
+  en:
+    - "Small team task tracking"
+    - "Personal projects and to do lists"
+    - "Content and editorial calendars"
+    - "Simple agile workflows"
+  id:
+    - "Pelacakan tugas tim kecil"
+    - "Proyek pribadi dan daftar tugas"
+    - "Kalender konten dan editorial"
+    - "Alur kerja agile yang sederhana"
+pros:
+  en:
+    - "Very easy to start, no training needed"
+    - "Free plan covers 10 boards and 10 collaborators"
+    - "Visual and intuitive for non technical users"
+    - "Strong automation and Power-Up ecosystem"
+  id:
+    - "Sangat gampang mulai, tidak butuh pelatihan"
+    - "Paket gratis mencakup 10 papan dan 10 kolaborator"
+    - "Visual dan intuitif buat pengguna non teknis"
+    - "Ekosistem otomatisasi dan Power Up yang kuat"
+cons:
+  en:
+    - "Free plan caps at 10 boards per workspace"
+    - "Advanced views need Premium"
+    - "Reporting is basic compared with rivals"
+    - "Can get messy on very large projects"
+  id:
+    - "Paket gratis mentok di 10 papan per workspace"
+    - "Tampilan lanjutan butuh paket Premium"
+    - "Laporan masih sederhana dibanding rival"
+    - "Bisa berantakan di proyek yang sangat besar"
+alternatives: [notion]
+reviewMethod: research-based
+sources:
+  - label: "Official pricing page"
+    url: https://trello.com/pricing
+  - label: "Official website"
+    url: https://trello.com
+shortDescription:
+  en: "Visual kanban boards for organizing tasks, projects, and team workflows."
+  id: "Papan kanban visual untuk merapikan tugas, proyek, dan alur kerja tim."
+description:
+  en: "Trello is Atlassian's visual task manager built around kanban boards, lists, and cards. Teams drag cards across lists, add due dates, checklists, attachments, and automations, and extend boards with Power-Ups for other apps. The free plan covers up to 10 boards and 10 collaborators, while Premium adds calendar, timeline, and dashboard views plus unlimited automation."
+  id: "Trello adalah pengatur tugas visual dari Atlassian yang dibangun di atas papan kanban, daftar, dan kartu. Tim menggeser kartu antar daftar, menambah tenggat, checklist, lampiran, dan otomatisasi, serta memperluas papan dengan Power Up untuk aplikasi lain. Paket gratis mencakup sampai 10 papan dan 10 kolaborator, sementara Premium menambah tampilan kalender, timeline, dan dashboard plus otomatisasi tanpa batas."
+features:
+  en:
+    - "Visual kanban boards, lists, and cards"
+    - "Due dates, checklists, and attachments"
+    - "Butler no code automation"
+    - "200+ Power-Ups and integrations"
+    - "Calendar, Timeline, and Dashboard views on Premium"
+    - "Mobile and desktop apps with offline boards"
+  id:
+    - "Papan kanban, daftar, dan kartu yang visual"
+    - "Tenggat, checklist, dan lampiran"
+    - "Otomatisasi tanpa kode lewat Butler"
+    - "200 lebih Power Up dan integrasi"
+    - "Tampilan Kalender, Timeline, dan Dashboard di Premium"
+    - "Aplikasi HP dan desktop dengan papan offline"
+pricingNote:
+  en: "Free at $0 for up to 10 collaborators and 10 boards per workspace. Standard costs $5 per user a month billed yearly or $6 billed monthly. Premium costs $10 per user a month billed yearly or $12.50 billed monthly, and Enterprise is $17.50 per user a month billed annually. Prices are US list prices before tax."
+  id: "Gratis 0 dolar untuk sampai 10 kolaborator dan 10 papan per workspace. Standard seharga 5 dolar per pengguna per bulan bila ditagih tahunan atau 6 dolar bila ditagih bulanan. Premium seharga 10 dolar per pengguna per bulan bila ditagih tahunan atau 12,50 dolar bila ditagih bulanan, dan Enterprise 17,50 dolar per pengguna per bulan ditagih tahunan. Harga di atas adalah harga resmi Amerika Serikat sebelum pajak."

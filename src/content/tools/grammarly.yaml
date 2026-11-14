@@ -1,0 +1,108 @@
+slug: grammarly
+name: Grammarly
+vendor: Grammarly
+officialWebsite: https://grammarly.com/
+logo: /tools/logos/grammarly.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/grammarly.svg"
+categories:
+  - education-learning
+  - productivity
+tags:
+  - writing-assistant
+  - grammar
+  - ai-writing
+  - proofreading
+  - education
+platforms:
+  - web
+  - windows
+  - macos
+  - android
+  - ios
+audiences:
+  - individual
+  - creator
+  - small-business
+  - enterprise
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.0
+scoreBreakdown:
+  usefulness: 21
+  features: 16
+  easeOfUse: 13
+  pricing: 14
+  platform: 8
+  transparency: 8
+verdict:
+  en: "The most polished writing checker available, with a free tier good enough for everyday writing."
+  id: "Pemeriksa tulisan paling rapi yang tersedia, dengan paket gratis yang sudah cukup buat menulis sehari hari."
+bestFor:
+  en:
+    - "Non-native English writers polishing professional messages"
+    - "Students and researchers checking essays and papers"
+    - "Teams keeping one consistent brand voice"
+  id:
+    - "Penulis yang bahasa Inggrisnya bukan bahasa ibu dan mau memoles pesan profesional"
+    - "Pelajar dan peneliti yang memeriksa esai dan makalah"
+    - "Tim yang menjaga satu suara merek yang konsisten"
+pros:
+  en:
+    - "Works everywhere through browser, desktop, and mobile apps"
+    - "Free plan covers core grammar and tone checks"
+    - "Full-sentence rewrites and tone adjustment on Pro"
+    - "Plagiarism and AI-generated text detection"
+    - "Style guides and brand tones for teams"
+  id:
+    - "Jalan di mana mana lewat browser, desktop, dan aplikasi HP"
+    - "Paket gratis mencakup pemeriksaan grammar dan nada inti"
+    - "Tulis ulang kalimat penuh dan penyesuaian nada di Pro"
+    - "Deteksi plagiarisme dan teks hasil AI"
+    - "Panduan gaya dan nada merek buat tim"
+cons:
+  en:
+    - "Pro costs $30 a month on monthly billing, far above the annual rate"
+    - "Free plan allows only 100 AI prompts a month"
+    - "Enterprise pricing is no longer published separately"
+  id:
+    - "Pro $30 per bulan bila ditagih bulanan, jauh di atas tarif tahunan"
+    - "Paket gratis cuma memberi 100 prompt AI per bulan"
+    - "Harga Enterprise tidak lagi dipublikasi terpisah"
+alternatives:
+  - chatgpt
+  - claude
+reviewMethod: research-based
+sources:
+  - label: "Grammarly prices and plans"
+    url: https://grammarly.com/plans
+  - label: "Grammarly homepage"
+    url: https://grammarly.com/
+shortDescription:
+  en: "AI writing assistant that fixes grammar, rewrites sentences, and checks tone and plagiarism as you type."
+  id: "Asisten menulis AI yang membetulkan grammar, menulis ulang kalimat, dan memeriksa nada serta plagiarisme saat lo mengetik."
+description:
+  en: "Grammarly checks spelling, grammar, and punctuation in real time across the browser, desktop apps, and mobile keyboard. The free plan includes tone detection and 100 generative AI prompts a month. Pro adds full-sentence rewrites, tone adjustment, fluency help, plagiarism detection, and 2,000 AI prompts a month. Enterprise is now sold through Superhuman Go with admin controls and unlimited prompts."
+  id: "Grammarly memeriksa ejaan, grammar, dan tanda baca secara langsung di browser, aplikasi desktop, dan keyboard HP. Paket gratis mencakup deteksi nada dan 100 prompt AI generatif per bulan. Pro menambah tulis ulang kalimat penuh, penyesuaian nada, bantuan kefasihan, deteksi plagiarisme, dan 2.000 prompt AI per bulan. Enterprise kini dijual lewat Superhuman Go dengan kontrol admin dan prompt tanpa batas."
+features:
+  en:
+    - "Real-time grammar, spelling, and punctuation checks"
+    - "Tone detection and writing suggestions"
+    - "Full-sentence rewrites and fluency improvements"
+    - "Plagiarism and AI-generated text detection"
+    - "2,000 generative AI prompts a month on Pro"
+    - "Style guides, brand tones, and team analytics"
+  id:
+    - "Pemeriksaan grammar, ejaan, dan tanda baca secara langsung"
+    - "Deteksi nada dan saran penulisan"
+    - "Tulis ulang kalimat penuh dan perbaikan kefasihan"
+    - "Deteksi plagiarisme dan teks hasil AI"
+    - "2.000 prompt AI generatif per bulan di Pro"
+    - "Panduan gaya, nada merek, dan analitik tim"
+pricingNote:
+  en: "Free is $0 with 100 AI prompts a month. Pro is $12 per member a month billed annually ($144 a year), $20 a month billed quarterly, or $30 a month billed monthly. Enterprise is custom priced through Superhuman Go."
+  id: "Gratis itu $0 dengan 100 prompt AI per bulan. Pro $12 per anggota per bulan bila ditagih tahunan ($144 per tahun), $20 per bulan bila kuartalan, atau $30 per bulan bila bulanan. Enterprise harganya menyesuaikan lewat Superhuman Go."

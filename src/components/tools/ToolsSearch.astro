@@ -1,0 +1,231 @@
+---
+import { toolSearchText, type Lang, type Tool } from '../../lib/tools-ui';
+
+interface Props {
+  lang: Lang;
+  /** Tool di halaman ini (sumber data JSON client-side + hitungan awal). */
+  tools: Tool[];
+  /** Total tool dalam cakupan listing ini (semua tools / satu kategori). */
+  totalCount: number;
+}
+
+const { lang, tools, totalCount } = Astro.props;
+
+const L = {
+  searchLabel: lang === 'id' ? 'Cari tools' : 'Search tools',
+  searchPlaceholder:
+    lang === 'id' ? 'Cari tools, merek, atau kata kunci…' : 'Search tools, brands, or keywords…',
+  sortLabel: lang === 'id' ? 'Urutkan' : 'Sort by',
+  sortFeatured: lang === 'id' ? 'Unggulan (pilihan editor)' : 'Featured (editorial picks)',
+  sortNewest: lang === 'id' ? 'Terbaru' : 'Newest',
+  sortName: lang === 'id' ? 'Nama A–Z' : 'Name A–Z',
+  sortRating: lang === 'id' ? 'Rating tertinggi' : 'Highest rated',
+  showing: (shown: number, total: number) =>
+    lang === 'id'
+      ? `Menampilkan ${shown} dari ${total} tools`
+      : `Showing ${shown} of ${total} tools`,
+  found: (n: number) => (lang === 'id' ? `${n} tools ditemukan` : `${n} tools found`),
+  emptyTitle: lang === 'id' ? 'Tidak ada tools yang cocok' : 'No tools match',
+  emptyBody:
+    lang === 'id'
+      ? 'Coba kata kunci lain, atau bersihkan filter harga / platform di sidebar.'
+      : 'Try a different keyword, or clear the price / platform filters in the sidebar.',
+  emptyReset: lang === 'id' ? 'Bersihkan pencarian & filter' : 'Clear search & filters',
+} as const;
+
+// Data JSON minimal untuk filter/sort client-side. Daftar lengkap tetap
+// dirender server-side (tanpa JS pun semua kartu tampil); JS hanya
+// menyembunyikan/mengurutkan ulang kartu yang sudah ada.
+const clientData = {
+  tools: tools.map((tool) => ({
+    slug: tool.data.slug,
+    search: toolSearchText(tool),
+    pricing: tool.data.pricingType,
+    platforms: tool.data.platforms,
+    audience: tool.data.audiences,
+    published: tool.data.publishedAt.toISOString(),
+    rating: tool.data.reviewScore,
+    name: tool.data.name.toLowerCase(),
+    featured: tool.data.featured === true,
+  })),
+};
+const clientJson = JSON.stringify(clientData).replace(/</g, '\\u003c');
+---
+
+<div class="flex flex-col gap-3 sm:flex-row sm:items-center" data-tools-search>
+  <div class="relative flex-1">
+    <label for="tools-search" class="sr-only">{L.searchLabel}</label>
+    <svg
+      class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-text-secondary"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      aria-hidden="true"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.5" y2="16.5" />
+    </svg>
+    <input
+      id="tools-search"
+      type="search"
+      autocomplete="off"
+      placeholder={L.searchPlaceholder}
+      class="w-full rounded-xl border border-border bg-surface py-2.5 pl-10 pr-4 text-sm text-text placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+    />
+  </div>
+  <div class="flex items-center gap-2">
+    <label for="tools-sort" class="shrink-0 text-sm font-medium text-text-secondary">
+      {L.sortLabel}
+    </label>
+    <select
+      id="tools-sort"
+      class="rounded-xl border border-border bg-surface px-3 py-2.5 text-sm font-medium text-text focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+    >
+      <option value="featured" selected>{L.sortFeatured}</option>
+      <option value="newest">{L.sortNewest}</option>
+      <option value="name">{L.sortName}</option>
+      <option value="rating">{L.sortRating}</option>
+    </select>
+  </div>
+</div>
+
+<p id="tools-count" class="mt-3 text-sm text-text-secondary" role="status" aria-live="polite" data-total-all={totalCount}>
+  {L.showing(tools.length, totalCount)}
+</p>
+
+<div
+  id="tools-empty"
+  class="mt-6 hidden rounded-2xl border border-dashed border-border bg-surface p-8 text-center"
+>
+  <p class="text-base font-semibold text-text">{L.emptyTitle}</p>
+  <p class="mx-auto mt-2 max-w-md text-sm leading-relaxed text-text-secondary">{L.emptyBody}</p>
+  <button
+    type="button"
+    data-tools-reset
+    class="mt-4 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover"
+  >
+    {L.emptyReset}
+  </button>
+</div>
+
+<script type="application/json" id="tools-data" set:html={clientJson} />
+
+<script is:inline>
+  (function () {
+    function init() {
+      var dataEl = document.getElementById('tools-data');
+      var grid = document.getElementById('tools-grid');
+      var input = document.getElementById('tools-search');
+      var sort = document.getElementById('tools-sort');
+      var count = document.getElementById('tools-count');
+      var empty = document.getElementById('tools-empty');
+      if (!dataEl || !grid || !input || !sort || !count || !empty) return;
+      var parsed = JSON.parse(dataEl.textContent || '{"tools":[]}');
+      var tools = parsed.tools || [];
+      var bySlug = {};
+      tools.forEach(function (t, i) {
+        t._index = i;
+        bySlug[t.slug] = t;
+      });
+      var listing = document.querySelector('[data-tools-listing]');
+      var lang = (listing && listing.getAttribute('data-lang')) || 'en';
+      var totalOnPage = tools.length;
+      var totalAll = parseInt(count.getAttribute('data-total-all') || String(totalOnPage), 10);
+      var featured = document.getElementById('featured-tools');
+      var pagination = document.querySelector('[data-tools-pagination]');
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-tool-card]'));
+
+      function checkedValues(group) {
+        var out = new Set();
+        Array.prototype.slice
+          .call(document.querySelectorAll('[data-filter-group="' + group + '"]:checked'))
+          .forEach(function (el) {
+            out.add(el.value);
+          });
+        return out;
+      }
+      function anyFilterActive(q, pricing, platforms, audiences, sortValue) {
+        return q !== '' || pricing.size > 0 || platforms.size > 0 || audiences.size > 0 || sortValue !== 'featured';
+      }
+      function apply() {
+        var q = (input.value || '').trim().toLowerCase();
+        var pricing = checkedValues('pricing');
+        var platforms = checkedValues('platform');
+        var audiences = checkedValues('audience');
+        var sortValue = sort.value;
+        var active = anyFilterActive(q, pricing, platforms, audiences, sortValue);
+        var visible = 0;
+        var ordered = cards.slice();
+        ordered.sort(function (a, b) {
+          var ta = bySlug[a.getAttribute('data-slug')] || {};
+          var tb = bySlug[b.getAttribute('data-slug')] || {};
+          if (sortValue === 'newest') {
+            return String(tb.published || '').localeCompare(String(ta.published || ''));
+          }
+          if (sortValue === 'name') {
+            return String(ta.name || '').localeCompare(String(tb.name || ''));
+          }
+          if (sortValue === 'rating') {
+            return (tb.rating === null || tb.rating === undefined ? -1 : tb.rating) - (ta.rating === null || ta.rating === undefined ? -1 : ta.rating);
+          }
+          return (ta._index || 0) - (tb._index || 0);
+        });
+        ordered.forEach(function (card) {
+          grid.appendChild(card);
+        });
+        cards.forEach(function (card) {
+          var t = bySlug[card.getAttribute('data-slug')];
+          if (!t) {
+            card.classList.remove('hidden');
+            visible += 1;
+            return;
+          }
+          var ok = true;
+          if (q !== '' && (t.search || '').indexOf(q) === -1) ok = false;
+          if (ok && pricing.size > 0 && !pricing.has(t.pricing)) ok = false;
+          if (ok && platforms.size > 0 && !(t.platforms || []).some(function (p) { return platforms.has(p); })) ok = false;
+          if (ok && audiences.size > 0 && !(t.audience || []).some(function (a) { return audiences.has(a); })) ok = false;
+          card.classList.toggle('hidden', !ok);
+          if (ok) visible += 1;
+        });
+        count.textContent = active
+          ? (lang === 'id' ? visible + ' tools ditemukan' : visible + ' tools found')
+          : (lang === 'id'
+              ? 'Menampilkan ' + totalOnPage + ' dari ' + totalAll + ' tools'
+              : 'Showing ' + totalOnPage + ' of ' + totalAll + ' tools');
+        empty.classList.toggle('hidden', visible !== 0);
+        if (featured) featured.classList.toggle('hidden', active);
+        if (pagination) pagination.classList.toggle('hidden', active);
+      }
+      function resetAll() {
+        input.value = '';
+        sort.value = 'featured';
+        Array.prototype.slice
+          .call(document.querySelectorAll('[data-filter-group]'))
+          .forEach(function (el) {
+            el.checked = false;
+          });
+        apply();
+      }
+      input.addEventListener('input', apply);
+      sort.addEventListener('change', apply);
+      Array.prototype.slice
+        .call(document.querySelectorAll('[data-filter-group]'))
+        .forEach(function (el) {
+          el.addEventListener('change', apply);
+        });
+      Array.prototype.slice.call(document.querySelectorAll('[data-tools-reset]')).forEach(function (btn) {
+        btn.addEventListener('click', resetAll);
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

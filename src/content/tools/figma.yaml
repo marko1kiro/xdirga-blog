@@ -1,0 +1,86 @@
+slug: figma
+name: Figma
+vendor: Figma
+officialWebsite: https://www.figma.com
+logo: /tools/logos/figma.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/figma.svg"
+categories: [design-creative, productivity]
+tags: [ui-design, prototyping, collaboration, design-systems, wireframing]
+platforms: [web, windows, macos, android, ios]
+audiences: [individual, creator, developer, small-business, enterprise]
+pricingType: freemium
+status: active
+featured: true
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.3
+scoreBreakdown: { usefulness: 22, features: 17, easeOfUse: 13, pricing: 14, platform: 9, transparency: 8 }
+verdict:
+  en: "The industry standard for interface design and collaboration, with a free tier that is genuinely useful for learning and side projects."
+  id: "Standar industri untuk desain antarmuka dan kolaborasi, paket gratisnya beneran kepakai buat belajar dan proyek sampingan."
+bestFor:
+  en:
+    - "UI and UX design"
+    - "Interactive prototyping"
+    - "Design systems at scale"
+    - "Designer developer handoff"
+  id:
+    - "Desain UI dan UX"
+    - "Prototipe interaktif"
+    - "Design system dalam skala besar"
+    - "Serah terima desain ke developer"
+pros:
+  en:
+    - "Runs in the browser, nothing to install"
+    - "Best in class real time collaboration"
+    - "Huge community library of files and plugins"
+    - "Free Starter plan for drafts and learning"
+  id:
+    - "Jalan di browser, tidak perlu instal apa apa"
+    - "Kolaborasi langsung yang paling rapi di kelasnya"
+    - "Pustaka komunitas berisi file dan plugin yang sangat besar"
+    - "Paket Starter gratis buat draf dan belajar"
+cons:
+  en:
+    - "Paid seats are priced per editor and add up fast"
+    - "Needs a stable internet connection"
+    - "Advanced features live behind paid seats"
+    - "Can feel heavy on very large files"
+  id:
+    - "Kursi berbayar dihitung per editor dan cepat membengkak"
+    - "Butuh koneksi internet yang stabil"
+    - "Fitur lanjutan cuma ada di kursi berbayar"
+    - "Bisa terasa berat di file yang sangat besar"
+alternatives: [canva]
+reviewMethod: research-based
+sources:
+  - label: "Official pricing page"
+    url: https://www.figma.com/pricing/
+  - label: "Official website"
+    url: https://www.figma.com
+shortDescription:
+  en: "Collaborative design canvas for interfaces, prototypes, and design systems."
+  id: "Kanvas desain kolaboratif untuk antarmuka, prototipe, dan design system."
+description:
+  en: "Figma is a browser based design tool where teams design interfaces, build prototypes, and maintain design systems together in real time. Designers and developers share one file, with comments, variables, components, and Dev Mode for handoff. The free Starter plan covers drafts and learning, while paid seats unlock unlimited files, team libraries, and more AI credits."
+  id: "Figma adalah tool desain berbasis browser tempat tim merancang antarmuka, bikin prototipe, dan merawat design system bareng bareng secara langsung. Desainer dan developer berbagi satu file yang sama, lengkap dengan komentar, variabel, komponen, dan Dev Mode untuk serah terima. Paket Starter gratis sudah cukup buat draf dan belajar, sementara kursi berbayar membuka file tanpa batas, pustaka tim, dan kredit AI yang lebih banyak."
+features:
+  en:
+    - "Real time multiplayer editing in the browser"
+    - "Interactive prototypes with conditional logic"
+    - "Components, variables, and team libraries"
+    - "Dev Mode for developer handoff"
+    - "FigJam, Slides, and Sites in one workspace"
+    - "AI credits for design generation"
+  id:
+    - "Edit bareng secara langsung di browser"
+    - "Prototipe interaktif dengan logika kondisional"
+    - "Komponen, variabel, dan pustaka tim"
+    - "Dev Mode untuk serah terima ke developer"
+    - "FigJam, Slides, dan Sites dalam satu workspace"
+    - "Kredit AI untuk bantu bikin desain"
+pricingNote:
+  en: "Starter is free with unlimited drafts, 3 collaborative files, and 30 day version history. Professional costs $16 a month per full seat billed yearly, with dev seats at $12 and collab seats at $3. Organization is $55 and Enterprise $90 per full seat a month, both billed annually."
+  id: "Starter gratis dengan draf tanpa batas, 3 file kolaboratif, dan riwayat versi 30 hari. Professional seharga 16 dolar per bulan per kursi full bila ditagih tahunan, kursi dev 12 dolar dan kursi collab 3 dolar. Organization 55 dolar dan Enterprise 90 dolar per kursi full per bulan, keduanya ditagih tahunan."

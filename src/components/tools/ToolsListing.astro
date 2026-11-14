@@ -1,0 +1,47 @@
+---
+import ToolCard from './ToolCard.astro';
+import ToolsPagination from './ToolsPagination.astro';
+import ToolsSearch from './ToolsSearch.astro';
+import type { Lang, Tool } from '../../lib/tools-ui';
+
+interface Props {
+  lang: Lang;
+  /** Tool di halaman ini (sudah dipaginasi server-side). */
+  tools: Tool[];
+  /** Total tool dalam cakupan listing ini (semua tools / satu kategori). */
+  totalCount: number;
+  currentPage: number;
+  lastPage: number;
+  pageUrl: (page: number) => string;
+  /** Judul seksi grid; null = tanpa heading (dipakai bila halaman sudah punya H1 sendiri). */
+  heading?: string | null;
+}
+
+const { lang, tools, totalCount, currentPage, lastPage, pageUrl, heading = null } = Astro.props;
+const emptyLabel =
+  lang === 'id' ? 'Belum ada tools di sini.' : 'No tools listed here yet.';
+---
+
+<section aria-label={heading ?? (lang === 'id' ? 'Daftar tools' : 'Tools list')} data-tools-listing data-lang={lang}>
+  <ToolsSearch lang={lang} tools={tools} totalCount={totalCount} />
+
+  {
+    heading && (
+      <h2 class="mt-8 font-display text-2xl font-semibold text-text">{heading}</h2>
+    )
+  }
+
+  {
+    tools.length > 0 ? (
+      <div id="tools-grid" class="mt-5 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        {tools.map((tool) => (
+          <ToolCard tool={tool} lang={lang} />
+        ))}
+      </div>
+    ) : (
+      <p class="py-10 text-text-secondary">{emptyLabel}</p>
+    )
+  }
+
+  <ToolsPagination currentPage={currentPage} lastPage={lastPage} pageUrl={pageUrl} lang={lang} />
+</section>

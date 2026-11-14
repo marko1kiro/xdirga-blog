@@ -1,0 +1,86 @@
+slug: zoom
+name: Zoom
+vendor: Zoom Communications
+officialWebsite: https://zoom.com
+logo: /tools/logos/zoom.svg
+logoSource: "Simple Icons (CC0) — https://simpleicons.org/icons/zoom.svg"
+categories: [productivity]
+tags: [video-meetings, conferencing, webinars, team-chat, collaboration]
+platforms: [web, windows, macos, linux, android, ios]
+audiences: [individual, creator, small-business, enterprise]
+pricingType: freemium
+status: active
+featured: false
+publishedAt: 2026-11-15
+updatedAt: 2026-11-15
+reviewedAt: 2026-11-15
+lastVerifiedAt: 2026-11-15
+reviewScore: 8.0
+scoreBreakdown: { usefulness: 21, features: 16, easeOfUse: 13, pricing: 14, platform: 9, transparency: 7 }
+verdict:
+  en: "The reliable default for video meetings, with a free plan that works for short calls and paid plans that remove the 40 minute wall."
+  id: "Pilihan default yang bisa diandalkan untuk rapat video, paket gratisnya cukup buat panggilan singkat dan paket berbayarnya menghapus batas 40 menit."
+bestFor:
+  en:
+    - "Remote team meetings"
+    - "Client calls and interviews"
+    - "Online classes and webinars"
+    - "Hybrid office collaboration"
+  id:
+    - "Rapat tim jarak jauh"
+    - "Panggilan klien dan wawancara"
+    - "Kelas online dan webinar"
+    - "Kolaborasi kantor hybrid"
+pros:
+  en:
+    - "Very reliable video and audio quality"
+    - "Easy to join, no account needed for guests"
+    - "Free plan covers short meetings well"
+    - "Works on every major platform"
+  id:
+    - "Kualitas video dan audio sangat bisa diandalkan"
+    - "Gampang ikut rapat, tamu tidak butuh akun"
+    - "Paket gratis sudah cukup buat rapat singkat"
+    - "Jalan di semua platform utama"
+cons:
+  en:
+    - "Free meetings end after 40 minutes"
+    - "Per user pricing adds up for large teams"
+    - "AI features are limited on the free plan"
+    - "Cloud recording storage is capped on Pro and Business"
+  id:
+    - "Rapat gratis berakhir setelah 40 menit"
+    - "Harga per pengguna cepat membengkak buat tim besar"
+    - "Fitur AI dibatasi di paket gratis"
+    - "Penyimpanan rekaman cloud dibatasi di Pro dan Business"
+alternatives: []
+reviewMethod: research-based
+sources:
+  - label: "Official pricing page"
+    url: https://zoom.us/pricing
+  - label: "Official website"
+    url: https://zoom.com
+shortDescription:
+  en: "Video meetings, team chat, and webinars for one on one calls and large teams."
+  id: "Rapat video, chat tim, dan webinar untuk panggilan berdua sampai tim besar."
+description:
+  en: "Zoom Workplace is a video conferencing platform for meetings, team chat, whiteboards, and webinars, on the web and in desktop and mobile apps. The free Basic plan covers unlimited 40 minute meetings with up to 100 participants, while paid plans lift the time limit, add cloud recording, AI summaries, and admin controls."
+  id: "Zoom Workplace adalah platform konferensi video untuk rapat, chat tim, papan tulis, dan webinar, di web serta aplikasi desktop dan HP. Paket Basic gratis mencakup rapat tanpa batas berdurasi 40 menit dengan sampai 100 peserta, sementara paket berbayar menghapus batas waktu, menambah rekaman cloud, ringkasan AI, dan kontrol admin."
+features:
+  en:
+    - "Unlimited 40 minute meetings on the free plan"
+    - "Up to 100 participants on Basic, 300 on Business"
+    - "AI meeting summaries and note taking"
+    - "Team chat, whiteboard, and scheduling"
+    - "Cloud recording on paid plans"
+    - "Webinars and large meetings on Enterprise"
+  id:
+    - "Rapat tanpa batas berdurasi 40 menit di paket gratis"
+    - "Sampai 100 peserta di Basic, 300 di Business"
+    - "Ringkasan rapat dan pencatatan AI"
+    - "Chat tim, papan tulis, dan penjadwalan"
+    - "Rekaman cloud di paket berbayar"
+    - "Webinar dan rapat besar di Enterprise"
+pricingNote:
+  en: "Basic is free with 40 minute meetings for up to 100 participants. Pro costs $16.99 per user a month billed monthly or $14.16 billed annually. Business costs $21.99 per user a month billed monthly or $18.33 billed annually, and Enterprise is quoted by sales. Prices are US list prices before tax."
+  id: "Basic gratis dengan rapat 40 menit untuk sampai 100 peserta. Pro seharga 16,99 dolar per pengguna per bulan bila ditagih bulanan atau 14,16 dolar bila ditagih tahunan. Business seharga 21,99 dolar per pengguna per bulan bila ditagih bulanan atau 18,33 dolar bila ditagih tahunan, dan Enterprise ikut harga penawaran. Harga di atas adalah harga resmi Amerika Serikat sebelum pajak."
