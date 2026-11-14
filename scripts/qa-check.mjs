@@ -54,6 +54,9 @@ const allRoutes = [...new Set([...routes, ...extraRoutes])];
 let statusOk = 0;
 for (const route of allRoutes) {
   const res = await fetch(BASE + route);
+  // WAJIB konsumsi body: server HTTP/1.0 menutup koneksi tiap respons,
+  // body yang tidak dibaca memicu assert undici di Node 24 (crash QA).
+  await res.arrayBuffer().catch(() => {});
   if (res.status === 200) statusOk += 1;
   else ok(`route 200 ${route}`, false, `status ${res.status}`);
 }
@@ -198,6 +201,48 @@ try {
   ok('tombol toggle tema ada', toggleExists === true);
   const menuExists = await evalJs(`!!document.getElementById('menu-toggle')`);
   ok('tombol menu seluler ada', menuExists === true);
+
+  // ---------- 7. Mega Menu desktop + drawer mobile ----------
+  await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
+  await nav(BASE + '/');
+  const megaCount = await evalJs(`document.querySelectorAll('[data-mega-trigger]').length`);
+  ok('mega menu: 6 pemicu kategori desktop', megaCount === 6, `${megaCount} pemicu`);
+  const megaInit = await evalJs(`document.querySelector('[data-mega-panel="teknologi"]').getAttribute('data-open')`);
+  ok('mega menu: panel tertutup saat awal', megaInit === 'false');
+  await evalJs(`document.querySelector('[data-mega-trigger="teknologi"]').click()`);
+  await sleep(400);
+  const megaOpen = await evalJs(`document.querySelector('[data-mega-panel="teknologi"]').getAttribute('data-open')`);
+  ok('mega menu: panel terbuka saat klik', megaOpen === 'true');
+  const megaFit = await evalJs(`(function(){var p=document.querySelector('[data-mega-panel="teknologi"]');var r=p.getBoundingClientRect();return r.width>=600 && r.width<=960 && r.left>=0 && r.right<=window.innerWidth;})()`);
+  ok('mega menu: panel muat di viewport 1280', megaFit === true);
+  await shot('mega-teknologi-1280.png');
+  await evalJs(`document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}))`);
+  await sleep(300);
+  const megaClosed = await evalJs(`document.querySelector('[data-mega-panel="teknologi"]').getAttribute('data-open')`);
+  ok('mega menu: Escape menutup panel', megaClosed === 'false');
+
+  await send('Emulation.setDeviceMetricsOverride', { width: 360, height: 800, deviceScaleFactor: 1, mobile: true });
+  await nav(BASE + '/');
+  await evalJs(`document.getElementById('menu-toggle').click()`);
+  await sleep(500);
+  const drawerOpen = await evalJs(`!document.getElementById('mobile-menu').hidden && document.body.style.overflow==='hidden'`);
+  ok('drawer mobile: terbuka + scroll terkunci', drawerOpen === true);
+  await shot('drawer-360.png');
+  await evalJs(`document.querySelector('[data-accordion-btn="teknologi"]').click()`);
+  await sleep(400);
+  const accOpen = await evalJs(`document.querySelector('[data-accordion-btn="teknologi"]').getAttribute('aria-expanded')`);
+  ok('drawer mobile: accordion Teknologi terbuka', accOpen === 'true');
+  await evalJs(`document.querySelector('[data-accordion-panel="teknologi"] a[href]').click()`);
+  await sleep(700);
+  const drawerClosed = await evalJs(`document.getElementById('mobile-menu').hidden`);
+  ok('drawer mobile: tertutup setelah pilih tujuan', drawerClosed === true);
+
+  await send('Emulation.setDeviceMetricsOverride', { width: 320, height: 700, deviceScaleFactor: 1, mobile: true });
+  await nav(BASE + '/');
+  await evalJs(`document.getElementById('menu-toggle').click()`);
+  await sleep(500);
+  const overflow320 = await evalJs(`document.documentElement.scrollWidth - document.documentElement.clientWidth`);
+  ok('drawer mobile: tanpa overflow horizontal 320px', overflow320 === 0, `kelebihan ${overflow320}px`);
 
   ws.close();
 } finally {

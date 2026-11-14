@@ -1,0 +1,304 @@
+---
+import type { NavItem } from '../../config/navigation';
+
+interface Props {
+  items: NavItem[];
+  currentPath: string;
+}
+
+const { items, currentPath } = Astro.props;
+---
+
+<!-- Panel mega menu absolute: jangkarnya <header> (sticky = positioned),
+     bukan <nav>, supaya top-full = tepat di bawah bar header dan panel
+     terpusat di viewport. Jangan tambah class relative di <nav> ini. -->
+<nav
+  class="hidden items-center gap-1 lg:flex"
+  aria-label="Navigasi utama"
+  data-desktop-nav
+>
+  <a
+    href="/"
+    aria-current={currentPath === '/' ? 'page' : undefined}
+    class:list={[
+      'rounded-lg px-3 py-2 text-sm font-medium transition hover:bg-surface-secondary hover:text-text',
+      currentPath === '/' ? 'text-primary' : 'text-text-secondary',
+    ]}
+  >
+    Beranda
+  </a>
+
+  {
+    items.map((item) => {
+      const active = currentPath.startsWith(item.href);
+      return (
+        <div class="flex items-center" data-mega-item={item.slug}>
+          <a
+            href={item.href}
+            aria-current={active ? 'page' : undefined}
+            class:list={[
+              'rounded-l-lg py-2 pl-3 pr-1 text-sm font-medium transition hover:bg-surface-secondary hover:text-text',
+              active ? 'text-primary' : 'text-text-secondary',
+            ]}
+          >
+            {item.label}
+          </a>
+          <button
+            type="button"
+            data-mega-trigger={item.slug}
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls={`mega-${item.slug}`}
+            aria-label={`Buka submenu ${item.label}`}
+            class:list={[
+              'rounded-r-lg py-2 pl-0.5 pr-2 text-sm transition hover:bg-surface-secondary hover:text-text',
+              active ? 'text-primary' : 'text-text-secondary',
+            ]}
+          >
+            <svg
+              class="mega-chevron"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
+      );
+    })
+  }
+
+  <a
+    href="/tentang/"
+    aria-current={currentPath.startsWith('/tentang/') ? 'page' : undefined}
+    class:list={[
+      'rounded-lg px-3 py-2 text-sm font-medium transition hover:bg-surface-secondary hover:text-text',
+      currentPath.startsWith('/tentang/') ? 'text-primary' : 'text-text-secondary',
+    ]}
+  >
+    Tentang
+  </a>
+
+  {
+    items.map((item) => (
+      <div
+        id={`mega-${item.slug}`}
+        class="mega-panel absolute left-1/2 top-full z-50 w-[min(92vw,960px)] pt-2"
+        data-mega-panel={item.slug}
+        data-open="false"
+        role="region"
+        aria-label={`Submenu ${item.label}`}
+      >
+        <div class="rounded-2xl border border-border bg-surface p-6 shadow-[0_18px_50px_-12px_rgba(16,51,61,0.25)]">
+          <div class="grid gap-8 sm:grid-cols-3">
+            <div>
+              <p class="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-secondary">
+                Kategori
+              </p>
+              <p class="mt-2 font-display text-2xl font-semibold leading-tight text-text">
+                {item.label}
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-text-secondary">{item.description}</p>
+              <a
+                href={item.href}
+                class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:text-primary-hover"
+              >
+                Lihat Semua {item.label}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+
+            <div>
+              <p class="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-secondary">
+                Topik
+              </p>
+              <ul class="mt-3 space-y-0.5">
+                {item.tags.map((tag) => (
+                  <li>
+                    <a
+                      href={tag.href}
+                      class="flex items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-text transition hover:bg-surface-secondary hover:text-primary"
+                    >
+                      {tag.label}
+                      <span class="rounded-full bg-surface-secondary px-2 py-0.5 text-xs font-semibold text-text-secondary">
+                        {tag.count}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p class="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-secondary">
+                Terbaru di {item.label}
+              </p>
+              <ul class="mt-3 space-y-1">
+                {item.latest.map((post) => (
+                  <li>
+                    <a
+                      href={post.href}
+                      class="block rounded-lg px-2.5 py-2 text-sm font-medium leading-snug text-text transition hover:bg-surface-secondary hover:text-primary"
+                    >
+                      {post.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</nav>
+
+<style>
+  .mega-panel {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%, 6px);
+    transition:
+      opacity 0.16s ease,
+      transform 0.16s ease,
+      visibility 0s linear 0.16s;
+    pointer-events: none;
+  }
+  .mega-panel[data-open='true'] {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transition:
+      opacity 0.16s ease,
+      transform 0.16s ease;
+    pointer-events: auto;
+  }
+  .mega-chevron {
+    display: block;
+    transition: transform 0.18s ease;
+  }
+  [data-mega-trigger][aria-expanded='true'] .mega-chevron {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var nav = document.querySelector('[data-desktop-nav]');
+    if (!nav) return;
+    var triggers = Array.prototype.slice.call(nav.querySelectorAll('[data-mega-trigger]'));
+    var panels = Array.prototype.slice.call(nav.querySelectorAll('[data-mega-panel]'));
+    var openSlug = null;
+    var openTimer = null;
+    var closeTimer = null;
+    var lastTrigger = null;
+
+    function panelFor(slug) {
+      return nav.querySelector('[data-mega-panel="' + slug + '"]');
+    }
+    function triggerFor(slug) {
+      return nav.querySelector('[data-mega-trigger="' + slug + '"]');
+    }
+    function closeAll() {
+      openSlug = null;
+      panels.forEach(function (p) {
+        p.setAttribute('data-open', 'false');
+      });
+      triggers.forEach(function (t) {
+        t.setAttribute('aria-expanded', 'false');
+      });
+    }
+    function open(slug, focusFirst) {
+      if (openSlug === slug) return;
+      closeAll();
+      var panel = panelFor(slug);
+      var trigger = triggerFor(slug);
+      if (!panel || !trigger) return;
+      openSlug = slug;
+      lastTrigger = trigger;
+      panel.setAttribute('data-open', 'true');
+      trigger.setAttribute('aria-expanded', 'true');
+      if (focusFirst) {
+        var first = panel.querySelector('a[href]');
+        if (first) first.focus();
+      }
+    }
+    function scheduleOpen(slug) {
+      clearTimeout(closeTimer);
+      clearTimeout(openTimer);
+      openTimer = setTimeout(function () {
+        open(slug, false);
+      }, 120);
+    }
+    function scheduleClose() {
+      clearTimeout(openTimer);
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(closeAll, 150);
+    }
+
+    triggers.forEach(function (btn) {
+      var slug = btn.getAttribute('data-mega-trigger');
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        clearTimeout(openTimer);
+        clearTimeout(closeTimer);
+        if (openSlug === slug) closeAll();
+        else open(slug, false);
+      });
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          open(slug, true);
+        } else if (e.key === 'Escape') {
+          closeAll();
+          btn.focus();
+        }
+      });
+    });
+
+    Array.prototype.slice.call(nav.querySelectorAll('[data-mega-item]')).forEach(function (item) {
+      var slug = item.getAttribute('data-mega-item');
+      item.addEventListener('mouseenter', function () {
+        scheduleOpen(slug);
+      });
+      item.addEventListener('mouseleave', scheduleClose);
+    });
+    panels.forEach(function (panel) {
+      panel.addEventListener('mouseenter', function () {
+        clearTimeout(closeTimer);
+        clearTimeout(openTimer);
+      });
+      panel.addEventListener('mouseleave', scheduleClose);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (openSlug && !nav.contains(e.target)) closeAll();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && openSlug) {
+        closeAll();
+        if (lastTrigger) lastTrigger.focus();
+      }
+    });
+  })();
+</script>

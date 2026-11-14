@@ -1,12 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
-import { categoryUrl } from '../lib/articles';
+import { getPublishedArticles } from '../lib/articles';
+import { buildNavigation } from '../config/navigation';
+import DesktopNavigation from './navigation/DesktopNavigation.astro';
+import MobileNavigation from './navigation/MobileNavigation.astro';
 
-const NAV_SLUGS = ['berita', 'teknologi', 'lifestyle', 'edukasi', 'tips', 'lainnya'];
 const allCategories = await getCollection('categories');
-const navCategories = NAV_SLUGS.map((slug) => allCategories.find((c) => c.id === slug)).filter(
-  (c): c is NonNullable<typeof c> => Boolean(c),
-);
+const articles = await getPublishedArticles();
+const navItems = buildNavigation(allCategories, articles);
 const currentPath = Astro.url.pathname;
 ---
 
@@ -21,33 +22,7 @@ const currentPath = Astro.url.pathname;
       </span>
     </a>
 
-    <nav class="hidden items-center gap-1 lg:flex" aria-label="Navigasi utama">
-      <a
-        href="/"
-        aria-current={currentPath === '/' ? 'page' : undefined}
-        class="rounded-lg px-3 py-2 text-sm font-medium text-text-secondary transition hover:bg-surface-secondary hover:text-text"
-      >
-        Beranda
-      </a>
-      {
-        navCategories.map((cat) => {
-          const href = categoryUrl(cat.id);
-          const active = currentPath.startsWith(href);
-          return (
-            <a
-              href={href}
-              aria-current={active ? 'page' : undefined}
-              class:list={[
-                'rounded-lg px-3 py-2 text-sm font-medium transition hover:bg-surface-secondary hover:text-text',
-                active ? 'text-primary' : 'text-text-secondary',
-              ]}
-            >
-              {cat.data.name}
-            </a>
-          );
-        })
-      }
-    </nav>
+    <DesktopNavigation items={navItems} currentPath={currentPath} />
 
     <div class="flex items-center gap-2">
       <a
@@ -111,24 +86,11 @@ const currentPath = Astro.url.pathname;
       </button>
     </div>
   </div>
-
-  <nav id="mobile-menu" class="hidden border-t border-border lg:hidden" aria-label="Navigasi seluler">
-    <div class="mx-auto flex w-full max-w-[1280px] flex-col px-5 py-3">
-      <a href="/" class="rounded-lg px-3 py-2.5 text-[0.95rem] font-medium text-text transition hover:bg-surface-secondary">Beranda</a>
-      {
-        navCategories.map((cat) => (
-          <a
-            href={categoryUrl(cat.id)}
-            class="rounded-lg px-3 py-2.5 text-[0.95rem] font-medium text-text-secondary transition hover:bg-surface-secondary hover:text-text"
-          >
-            {cat.data.name}
-          </a>
-        ))
-      }
-      <a href="/tentang/" class="rounded-lg px-3 py-2.5 text-[0.95rem] font-medium text-text-secondary transition hover:bg-surface-secondary hover:text-text">Tentang</a>
-    </div>
-  </nav>
 </header>
+
+<!-- Drawer seluler: sibling <header>, bukan anaknya, supaya position: fixed
+     tidak terjebak containing block dari backdrop-blur header. -->
+<MobileNavigation items={navItems} currentPath={currentPath} />
 
 <script is:inline>
   (function () {
@@ -177,15 +139,5 @@ const currentPath = Astro.url.pathname;
           if (stored() === 'system') apply('system');
         });
     } catch (e) {}
-
-    var menuBtn = document.getElementById('menu-toggle');
-    var menu = document.getElementById('mobile-menu');
-    if (menuBtn && menu) {
-      menuBtn.addEventListener('click', function () {
-        var open = menu.classList.toggle('hidden') === false;
-        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        menuBtn.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
-      });
-    }
   })();
 </script>
