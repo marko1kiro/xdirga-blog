@@ -9,7 +9,7 @@ interface Props {
 const { post } = Astro.props;
 const minutes = readingMinutes(post.body ?? '');
 const author = await getAuthor(post.data.author);
-const authorName = author?.data.name ?? 'XDIRGA';
+const authorName = author?.data.name ?? 'Marko';
 const authorAvatar = author?.data.avatar ?? '/avatars/xdirga.svg';
 ---
 

@@ -28,7 +28,7 @@ const category = await getCategory(post.data.category);
       </h3>
       <p class="mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-text-secondary">{post.data.description}</p>
       <p class="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8rem] text-text-secondary">
-        <span class="font-medium text-text">{post.data.author === 'xdirga' ? 'XDIRGA' : post.data.author}</span>
+        <span class="font-medium text-text">{post.data.author === 'xdirga' ? 'Marko' : post.data.author}</span>
         <span aria-hidden="true">·</span>
         <time datetime={post.data.publishedAt.toISOString()}>{formatDateShort(post.data.publishedAt)}</time>
       </p>

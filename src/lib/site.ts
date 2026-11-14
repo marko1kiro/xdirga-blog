@@ -7,7 +7,7 @@ export const SITE = {
   url: 'https://xdirga.xyz',
   locale: 'id-ID',
   language: 'id',
-  author: 'XDIRGA',
+  author: 'Marko',
 } as const;
 
 export const NAV_STATIC = [
