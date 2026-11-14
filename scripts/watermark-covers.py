@@ -47,6 +47,7 @@ SLUGS = [
     "aman-pakai-ai-gratis-data-jangan-upload",
     "ai-gratis-umkm-pelajar-rencana-7-hari",
     "gemini-google-wallet",
+    "cloudflare-kitesurf-open-source",
 ]
 
 
