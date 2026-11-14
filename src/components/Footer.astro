@@ -9,9 +9,24 @@ const categories = (await getCollection('categories')).sort((a, b) => a.data.ord
 <footer class="border-t border-border bg-surface-secondary/60">
   <div class="mx-auto grid w-full max-w-[1280px] gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4">
     <div class="lg:col-span-2">
-      <p class="text-xl font-extrabold tracking-tight text-text">
-        XDIRGA <span class="rounded-md bg-primary px-1.5 py-0.5 align-middle text-[0.65rem] font-bold tracking-[0.14em] text-white">BLOG</span>
-      </p>
+      <a href="/" class="inline-flex items-center" aria-label="XDIRGA BLOG, ke beranda">
+        <img
+          src="/logo-xdirga-blog-light.png"
+          alt="XDIRGA BLOG"
+          width="880"
+          height="146"
+          loading="lazy"
+          class="block h-9 w-auto dark:hidden"
+        />
+        <img
+          src="/logo-xdirga-blog-dark.png"
+          alt="XDIRGA BLOG"
+          width="880"
+          height="146"
+          loading="lazy"
+          class="hidden h-9 w-auto dark:block"
+        />
+      </a>
       <p class="mt-3 max-w-md text-sm leading-relaxed text-text-secondary">{SITE.tagline}</p>
       <p class="mt-3 max-w-md text-sm leading-relaxed text-text-secondary">
         Publikasi digital independen. Ditulis mengalir, dari hal yang dicoba sendiri, tanpa paywall dan tanpa iklan.
