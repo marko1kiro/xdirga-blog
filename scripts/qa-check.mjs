@@ -66,9 +66,10 @@ const home = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 ok('draf tidak ada di sitemap', !sitemap.includes('catatan-draft-contoh'));
 ok('draf tidak ada di RSS', !rss.includes('catatan-draft-contoh'));
 ok('draf tidak ada di homepage', !home.includes('catatan-draft-contoh'));
-ok('sitemap berisi 10 artikel', (sitemap.match(/\/artikel\//g) || []).length === 10, `${(sitemap.match(/\/artikel\//g) || []).length} artikel`);
+const publishedCount = fs.readdirSync(path.join(root, 'src/content/articles')).filter((f) => /\.(md|mdx)$/.test(f)).filter((f) => /status:\s*published/.test(fs.readFileSync(path.join(root, 'src/content/articles', f), 'utf8'))).length;
+ok(`sitemap berisi ${publishedCount} artikel`, (sitemap.match(/\/artikel\//g) || []).length === publishedCount, `${(sitemap.match(/\/artikel\//g) || []).length} artikel`);
 ok('sitemap tidak berisi /search/', !sitemap.includes('/search'));
-ok('RSS berisi 10 item', (rss.match(/<item>/g) || []).length === 10, `${(rss.match(/<item>/g) || []).length} item`);
+ok(`RSS berisi ${publishedCount} item`, (rss.match(/<item>/g) || []).length === publishedCount, `${(rss.match(/<item>/g) || []).length} item`);
 ok('homepage berisi judul XDIRGA BLOG', home.includes('XDIRGA') && home.includes('Sedang Tren'));
 
 // ---------- 3. Broken internal link ----------

@@ -37,6 +37,9 @@ SLUGS = [
     "rutinitas-pagi-sebelum-buka-laptop",
     "selamat-datang-di-blog-xdirga",
     "catatan-draft-contoh",
+    "chatgpt-vs-gemini-vs-claude-gratis",
+    "gemini-gratis-2026-flash-lite",
+    "cara-pakai-ai-gratis-untuk-kerja",
 ]
 
 
