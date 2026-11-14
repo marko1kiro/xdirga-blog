@@ -63,7 +63,8 @@ const pageTitle = page.currentPage > 1 ? `${category.data.name} (Halaman ${page.
       '@type': 'CollectionPage',
       name: category.data.name,
       description: category.data.description,
-      url: new URL(`/kategori/${slug}/`, SITE.url).href,
+      // URL halaman ini sendiri (hal. 1 maupun paginasi), sama dengan canonical.
+      url: new URL(pageUrl(page.currentPage), SITE.url).href,
       isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
     },
   ]}

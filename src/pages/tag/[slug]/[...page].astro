@@ -61,7 +61,8 @@ const pageTitle = page.currentPage > 1 ? `Tag ${tag} (Halaman ${page.currentPage
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       name: `Tag ${tag}`,
-      url: new URL(`/tag/${encodeURIComponent(tag)}/`, SITE.url).href,
+      // URL halaman ini sendiri (hal. 1 maupun paginasi), sama dengan canonical.
+      url: new URL(pageUrl(page.currentPage), SITE.url).href,
       isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
     },
   ]}
