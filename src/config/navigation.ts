@@ -22,6 +22,14 @@ export interface NavLink {
   count?: number;
 }
 
+/** Artikel unggulan panel mega menu (artikel terbaru di kategori). */
+export interface NavFeatured {
+  label: string;
+  href: string;
+  cover: string;
+  description: string;
+}
+
 export interface NavItem {
   /** slug kategori, dipakai untuk id panel/accordion */
   slug: string;
@@ -32,6 +40,8 @@ export interface NavItem {
   tags: NavLink[];
   /** Artikel terbaru di kategori ini (maks 3). */
   latest: NavLink[];
+  /** Artikel terbaru di kategori ini, untuk panel unggulan mega menu. */
+  featured: NavFeatured | null;
 }
 
 /** Urutan kategori di nav utama. */
@@ -69,6 +79,15 @@ export function buildNavigation(categories: Category[], articles: Article[]): Na
     const latest: NavLink[] = inCat
       .slice(0, MAX_NAV_LATEST)
       .map((a) => ({ label: a.data.title, href: articleUrl(a) }));
+    const first = inCat[0];
+    const featured: NavFeatured | null = first
+      ? {
+          label: first.data.title,
+          href: articleUrl(first),
+          cover: first.data.cover,
+          description: first.data.description,
+        }
+      : null;
     return {
       slug,
       label: cat.data.name,
@@ -76,6 +95,7 @@ export function buildNavigation(categories: Category[], articles: Article[]): Na
       description: cat.data.description ?? '',
       tags,
       latest,
+      featured,
     };
   });
 }

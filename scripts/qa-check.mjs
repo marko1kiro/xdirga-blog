@@ -213,7 +213,7 @@ try {
   await sleep(400);
   const megaOpen = await evalJs(`document.querySelector('[data-mega-panel="teknologi"]').getAttribute('data-open')`);
   ok('mega menu: panel terbuka saat klik', megaOpen === 'true');
-  const megaFit = await evalJs(`(function(){var p=document.querySelector('[data-mega-panel="teknologi"]');var r=p.getBoundingClientRect();return r.width>=600 && r.width<=960 && r.left>=0 && r.right<=window.innerWidth;})()`);
+  const megaFit = await evalJs(`(function(){var p=document.querySelector('[data-mega-panel="teknologi"]');var r=p.getBoundingClientRect();return r.width>=600 && r.width<=1130 && r.left>=0 && r.right<=window.innerWidth;})()`);
   ok('mega menu: panel muat di viewport 1280', megaFit === true);
   await shot('mega-teknologi-1280.png');
   await evalJs(`document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}))`);
