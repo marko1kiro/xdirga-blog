@@ -244,6 +244,38 @@ try {
   const overflow320 = await evalJs(`document.documentElement.scrollWidth - document.documentElement.clientWidth`);
   ok('drawer mobile: tanpa overflow horizontal 320px', overflow320 === 0, `kelebihan ${overflow320}px`);
 
+  // ---------- 8. Arsip tanpa empty-state palsu + nav utama benar ----------
+  // Empty-state "Belum ada artikel" tidak boleh muncul di file HTML mana pun:
+  // arsip 1 artikel pun harus menampilkan featured-nya, bukan empty-state.
+  const emptyFiles = htmlFiles.filter((f) =>
+    fs.readFileSync(f, 'utf8').includes('Belum ada artikel di sini'),
+  );
+  ok(
+    'arsip: tidak ada empty-state palsu di dist',
+    emptyFiles.length === 0,
+    emptyFiles.map((f) => path.relative(dist, f)).join(', '),
+  );
+  const goneRes = await fetch(BASE + '/kategori/lainnya/');
+  await goneRes.arrayBuffer().catch(() => {});
+  ok('arsip: /kategori/lainnya/ sudah tidak ada (404)', goneRes.status === 404, `status ${goneRes.status}`);
+  await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
+  await nav(BASE + '/');
+  const navLabels = await evalJs(
+    `(function(){var n=document.querySelector('[data-desktop-nav]');var l=[];n.querySelectorAll(':scope > a, :scope > div[data-mega-item] > a').forEach(function(a){l.push(a.textContent.trim());});return l.join('|');})()`,
+  );
+  ok(
+    'nav: urutan Beranda, Berita, Teknologi, Lifestyle, Edukasi, Tips, Bisnis, Tentang',
+    navLabels === 'Beranda|Berita|Teknologi|Lifestyle|Edukasi|Tips|Bisnis|Tentang',
+    navLabels,
+  );
+  const noLainnyaLink = await evalJs(`!document.querySelector('a[href="/kategori/lainnya/"]')`);
+  ok('nav: tidak ada tautan ke /kategori/lainnya/ di homepage', noLainnyaLink === true);
+  const beritaHtml = await (await fetch(BASE + '/kategori/berita/')).text();
+  ok(
+    'arsip: artikel Selamat Datang sudah pindah ke Berita',
+    beritaHtml.includes('/artikel/selamat-datang-di-blog-xdirga/'),
+  );
+
   ws.close();
 } finally {
   chrome.kill('SIGKILL');

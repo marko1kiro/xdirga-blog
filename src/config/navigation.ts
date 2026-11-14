@@ -9,8 +9,10 @@ import { articleUrl, categoryUrl, tagUrl } from '../lib/articles';
  *   arsip tag (/tag/), dan artikel terbit (/artikel/). Subkategori usulan
  *   konsultan (Nasional, Politik, dst.) TIDAK dibuat jadi tautan karena
  *   tidak ada artikel maupun rutenya — tautan mati dilarang.
- * - "Lainnya" tidak masuk nav utama, tapi arsipnya (/kategori/lainnya/)
- *   tetap hidup dan terdaftar di halaman /kategori/.
+ * - Kategori "Lainnya" DIHAPUS 2026-11-14: satu-satunya artikelnya
+ *   (Selamat Datang di Blog XDIRGA) dimigrasikan ke Berita, file
+ *   src/content/categories/lainnya.yaml dihapus, dan /kategori/lainnya/
+ *   dialihkan 301 ke /kategori/berita/ (lihat public/_redirects).
  * - Deskripsi kategori diambil dari src/content/categories/*.yaml.
  */
 

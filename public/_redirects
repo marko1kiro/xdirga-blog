@@ -2,3 +2,6 @@
 /blog/* /artikel/:splat 301
 /tags/* /tag/:splat 301
 /tags/ /tag/ 301
+# Kategori Lainnya dihapus 2026-11-14, artikelnya pindah ke Berita
+/kategori/lainnya/ /kategori/berita/ 301
+/kategori/lainnya/* /kategori/berita/ 301

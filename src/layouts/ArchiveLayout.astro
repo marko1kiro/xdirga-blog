@@ -19,6 +19,10 @@ interface Props {
 
 const { title, description, heading, intro, featured, posts, currentPage, lastPage, pageUrl, jsonLd = [] } = Astro.props;
 const hasPagination = lastPage > 1;
+// Halaman 1 memisahkan artikel pertama jadi featured, jadi `posts` bisa kosong
+// padahal arsip TIDAK kosong. Empty-state hanya benar bila tidak ada featured
+// dan tidak ada posts (mis. halaman paginasi di luar jangkauan).
+const hasContent = posts.length > 0 || (featured && currentPage === 1);
 ---
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>
@@ -37,15 +41,15 @@ const hasPagination = lastPage > 1;
 
   <section class="mt-10" aria-label="Daftar artikel">
     {
-      posts.length === 0 ? (
+      !hasContent ? (
         <p class="py-10 text-text-secondary">Belum ada artikel di sini.</p>
-      ) : (
+      ) : posts.length > 0 ? (
         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <StandardCard post={post} />
           ))}
         </div>
-      )
+      ) : null
     }
   </section>
 

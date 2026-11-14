@@ -1,7 +1,7 @@
 ---
 title: "Selamat Datang di Blog XDIRGA"
 description: "Perkenalan singkat. Blog ini tempat gue nyatet soal AI, tools gratis, dan hal hal yang dicoba sendiri."
-category: lainnya
+category: berita
 tags: ["XDIRGA"]
 author: xdirga
 publishedAt: 2026-11-14
