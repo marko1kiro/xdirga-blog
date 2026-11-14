@@ -13,26 +13,26 @@ coverAlt: "Ilustrasi meja kerja rapi dilihat dari atas dengan lima kartu tugas"
 coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
-Hari kerja yang berantakan jarang disebabkan satu masalah besar. Biasanya penyebabnya adalah banyak kekacauan kecil yang menumpuk. Lima kebiasaan di bawah ini sederhana, tapi efeknya terasa dalam seminggu.
+Hari kerja yang berantakan jarang disebabkan satu masalah besar. Biasanya penyebabnya banyak kekacauan kecil yang numpuk. Lima kebiasaan di bawah ini sederhana, tapi efeknya kerasa dalam seminggu.
 
 ## 1. Tulis tiga hal terpenting sebelum mulai
 
-Sebelum buka apa pun, tulis tiga hal yang harus selesai hari ini. Bukan sepuluh, cukup tiga. Tiga hal yang jelas bikin hari punya arah, dan sisanya jadi bonus.
+Sebelum buka apa pun, tulis tiga hal yang harus selesai hari ini. Bukan sepuluh, cukup tiga. Tiga hal yang jelas bikin hari punya arah. Sisanya jadi bonus.
 
 ## 2. Bereskan meja sebelum pulang
 
-Meja yang bersih di pagi hari bikin kepala ikut bersih. Lima menit sebelum pulang cukup buat merapikan, menutup tab yang tidak perlu, dan menulis satu kalimat soal apa yang dilanjutkan besok.
+Meja yang bersih di pagi hari bikin kepala ikut bersih. Lima menit sebelum pulang cukup buat merapikan, nutup tab yang nggak perlu, dan nulis satu kalimat soal apa yang dilanjutin besok.
 
 ## 3. Satu tugas, satu waktu
 
-Pindah pindah tugas itu terasa sibuk, padahal hasilnya sedikit. Kerjakan satu tugas sampai satu titik berhenti yang jelas, baru pindah. Otak tidak dirancang buat lompat lompat, dan kualitas kerja ikut turun setiap kali pindah.
+Pindah pindah tugas itu terasa sibuk, padahal hasilnya dikit. Kerjain satu tugas sampai satu titik berhenti yang jelas, baru pindah. Otak nggak dirancang buat lompat lompat, dan kualitas kerja ikut turun setiap kali pindah.
 
 ## 4. Catat, jangan dihafal
 
-Semua janji, semua permintaan, semua hal yang harus diingat, tulis di satu tempat. Otak yang dipakai buat menghafal tidak bisa dipakai buat berpikir. Satu tempat catatan yang konsisten lebih berharga daripada ingatan yang kuat.
+Semua janji, semua permintaan, semua hal yang harus diinget, tulis di satu tempat. Otak yang dipakai buat menghafal nggak bisa dipakai buat berpikir. Satu tempat catatan yang konsisten lebih berharga daripada ingatan yang kuat.
 
 ## 5. Tutup hari dengan review singkat
 
-Sebelum selesai, luangkan dua menit untuk melihat apa yang selesai dan apa yang tertunda. Bukan buat menyalahkan diri, tapi supaya besok tidak mulai dari kebingungan. Hari yang ditutup dengan jelas bikin besok dimulai dengan tenang.
+Sebelum selesai, luangin dua menit buat lihat apa yang selesai dan apa yang tertunda. Bukan buat nyalahin diri, tapi supaya besok nggak mulai dari kebingungan. Hari yang ditutup dengan jelas bikin besok dimulai dengan tenang.
 
-Tidak perlu menerapkan kelimanya sekaligus. Pilih satu, jalankan seminggu, lalu tambah satu lagi. Kebiasaan kecil yang bertahan jauh lebih kuat daripada rencana besar yang cuma bertahan sehari.
+Nggak perlu nerapin kelimanya sekaligus. Pilih satu, jalanin seminggu, terus tambah satu lagi. Kebiasaan kecil yang bertahan jauh lebih kuat daripada rencana besar yang cuma bertahan sehari.

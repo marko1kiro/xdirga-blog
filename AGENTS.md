@@ -14,7 +14,7 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 - Deploy ke Cloudflare Pages: `npm run build` lalu `python3 cf_pages_direct_upload.py` (repo belum GitHub-connected, jadi push tidak auto-deploy).
 - QA otomatis: server statis di port 8321, lalu `node scripts/qa-check.mjs` (rute, draf, tautan internal, overflow 360/1280px, dark mode, screenshot ke `/tmp/qa-shots/`).
 - Palet LIME (magenta + cyan/teal). Palet hijau di master prompt DIBATALKAN TOTAL. Jangan kembalikan warna hijau.
-- Gambar cover artikel: WAJIB minimal 1 gambar per artikel, hasil generate (media.generate_image, 16:9, palet LIME, tanpa teks di dalam gambar) + watermark kecil "XDIRGA BLOG" pojok kanan bawah via `scripts/watermark-covers.py` (PIL, JPG kualitas 82, ke `public/covers/<slug>.jpg`). Jangan pernah minta AI menambahkan watermark. Cover SVG lama sudah dihapus total 2026-11-14.
+- Gambar cover artikel: WAJIB minimal 1 gambar per artikel, hasil generate (media.generate_image, 16:9, palet LIME, tanpa teks di dalam gambar) + watermark kecil "XDIRGA BLOG" pojok kanan bawah via `scripts/watermark-covers.py` (PIL, JPG kualitas 82, ke `public/covers/<slug>.jpg`). Jangan pernah minta AI menambahkan watermark. Cover SVG lama sudah dihapus total 2026-11-14. **TANPA KARAKTER (aturan durable 2026-11-14): tidak ada manusia, hewan, robot, maskot, makhluk, atau wajah di gambar cover dalam bentuk apa pun — hanya objek, scene, workspace tanpa orang, perangkat, diagram, atau abstrak. Alasan: bahaya klaim IP/trademark di blog publik.**
 
 ## Documentation
 

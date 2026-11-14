@@ -13,16 +13,16 @@ coverAlt: "Ilustrasi agen AI lucu bekerja di laptop dengan kartu tugas selesai"
 coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
-Ada yang nanya kemarin agen AI apa yang bisa dicoba gratisan tanpa kartu kredit. Nah ini salah satu yang masih jalan. Manus yang versi gratis ngasih 300 kredit tiap hari buat dipakai di mode Lite. Satu tugas nyata sehari itu cukup banget buat ngetes, misal disuruh riset topik, nyusun dokumen, atau beresin spreadsheet.
+Ada yang nanya kemarin, agen AI apa yang bisa dicoba gratisan tanpa kartu kredit. Nah, ini salah satu yang masih jalan. Manus versi gratis ngasih 300 kredit tiap hari buat dipakai di mode Lite. Satu tugas nyata sehari itu udah cukup banget buat ngetes. Suruh dia riset satu topik, nyusun dokumen, atau beresin spreadsheet, terus lihat hasilnya.
 
 ## Yang perlu diperhatikan
 
-Jujur aja ada batasnya. Kreditnya cuma berlaku di mode Lite, jadi bukan versi paling pintarnya. Terus tiap hari reset jam 7 pagi waktu kita, sisa kemarin hangus, nggak bisa ditabung. Sebulan mentok 1.500 kredit dan cuma bisa jalanin satu tugas dalam satu waktu. Lumayannya, dua tugas bisa dijadwalin otomatis.
+Ada batasnya, dan batasnya lumayan ketat. Kreditnya cuma berlaku di mode Lite, jadi bukan versi paling pintarnya. Tiap hari reset jam 7 pagi waktu kita, sisa kemarin hangus, nggak bisa ditabung. Sebulan mentok 1.500 kredit, dan cuma bisa jalanin satu tugas dalam satu waktu. Lumayannya, dua tugas bisa dijadwalin otomatis.
 
 ## Buat siapa ini cocok
 
-Kalau lo baru pertama kali nyentuh agen AI, ini titik masuk yang paling gampang. Nggak ada kartu kredit, nggak ada komitmen, dan besok paginya kredit balik lagi 300. Coba satu tugas kecil dulu, misal minta riset lima sumber soal satu topik, lalu lihat hasilnya. Kalau hasilnya kepakai, baru pikirin apakah mode berbayarnya sepadan.
+Kalau lo baru pertama kali nyentuh agen AI, ini titik masuk yang paling gampang. Nggak ada kartu kredit, nggak ada komitmen. Besok paginya kredit balik lagi 300, jadi lo bisa coba lagi tanpa mikir.
 
-Tapi buat sekadar nyoba rasanya punya agen yang kerja sendiri, ini udah lebih dari cukup. Gratis, nggak pakai kartu, dan besok paginya kreditnya balik lagi 300. Kalau nanti udah ketagihan baru mikir yang berbayar.
+Mulai dari tugas kecil dulu. Minta riset lima sumber soal satu topik, terus lihat hasilnya. Kalau hasilnya kepakai, baru pikirin apakah mode berbayarnya sepadan. Buat sekadar nyoba rasanya punya agen yang kerja sendiri, yang gratis ini udah lebih dari cukup.
 
 Sumber tulisan ini [Medium](https://medium.com/@larkgrass/best-free-ai-agents-in-2026-what-you-get-for-0-f57a5a8167d2).

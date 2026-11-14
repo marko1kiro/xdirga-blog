@@ -40,7 +40,7 @@ coverAlt: "Ilustrasi artikel Judul Artikel"
 
 Setiap artikel WAJIB punya minimal 1 gambar (hero/konten). Gambar di-generate sendiri, bukan foto stok. Pipeline-nya:
 
-1. Generate gambar hero 16:9 (sekitar 1280x720 atau lebih besar) dengan `media.generate_image`, gaya editorial modern yang bersih, sesuai topik artikel, palet LIME (magenta, cyan, teal gelap, dasar putih teal). Jangan ada teks, huruf, logo, atau watermark di dalam hasil generate.
+1. Generate gambar hero 16:9 (sekitar 1280x720 atau lebih besar) dengan `media.generate_image`, gaya editorial modern yang bersih, sesuai topik artikel, palet LIME (magenta, cyan, teal gelap, dasar putih teal). Jangan ada teks, huruf, logo, atau watermark di dalam hasil generate. **JANGAN ADA KARAKTER di gambar (aturan durable 2026-11-14): tidak ada manusia, hewan, robot, maskot, makhluk, atau wajah dalam bentuk apa pun — hanya objek, scene, workspace tanpa orang, perangkat, diagram, atau komposisi abstrak. Alasan: karakter yang mirip karakter komersial yang sudah ada bisa kena klaim IP/trademark di blog publik.**
 2. Jalankan `python3 scripts/watermark-covers.py` — script ini resize ke 1280x720 lalu menambahkan watermark kecil "XDIRGA BLOG" di pojok kanan bawah (putih dengan bayangan gelap halus), dan menyimpan hasilnya sebagai JPG kualitas 82 ke `public/covers/<slug>.jpg`. Watermark selalu ditambahkan oleh script, jangan pernah minta AI menambahkan watermark.
 3. Set frontmatter `cover: /covers/<slug>.jpg` dan `coverAlt` yang jujur (mendeskripsikan isi gambar).
 

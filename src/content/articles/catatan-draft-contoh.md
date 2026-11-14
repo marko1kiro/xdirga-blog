@@ -12,4 +12,4 @@ cover: /covers/catatan-draft-contoh.jpg
 coverAlt: "Ilustrasi sketsa buku catatan dengan pensil dan ide lampu yang belum selesai"
 ---
 
-Ini adalah draf contoh yang sengaja dibuat untuk menguji filter draf. Kalau tulisan ini muncul di halaman mana pun, berarti ada yang salah dengan filternya.
+Ini draf contoh yang sengaja dibuat buat ngetes filter draf. Kalau tulisan ini muncul di halaman mana pun, berarti ada yang salah sama filternya.

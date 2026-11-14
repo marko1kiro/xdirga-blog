@@ -13,30 +13,30 @@ coverAlt: "Ilustrasi meteran jatah gratis yang menyempit dan dompet dengan koin"
 coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
-Kalau lo mengikuti dunia AI gratis, mungkin lo merasakan hal yang sama. Jatah yang dulu terasa longgar pelan pelan menyempit. Batas harian turun, antrean makin panjang, dan fitur yang dulu gratis pindah ke paket berbayar. Ini bukan kebetulan, dan bukan karena layanannya pelit.
+Kalau lo ngikutin dunia AI gratis, mungkin lo ngerasain hal yang sama. Jatah yang dulu terasa longgar pelan pelan menyempit. Batas harian turun, antrean makin panjang, dan fitur yang dulu gratis pindah ke paket berbayar. Ini bukan kebetulan, dan bukan karena layanannya pelit.
 
 ## Kenapa jatah gratis menyempit
 
-Ada tiga alasan yang saling berkaitan.
+Ada tiga alasan, dan ketiganya saling berkaitan.
 
-Pertama, biayanya nyata. Setiap jawaban yang dihasilkan model butuh komputasi, dan komputasi butuh listrik dan server. Makin banyak yang memakai, makin besar tagihannya. Layanan gratis dibiayai dari kantong perusahaan, dan kantong itu ada batasnya.
+Yang pertama soal biaya, dan biayanya nyata. Setiap jawaban yang dihasilkan model butuh komputasi, dan komputasi butuh listrik dan server. Makin banyak yang memakai, makin besar tagihannya. Layanan gratis dibiayai dari kantong perusahaan, dan kantong itu ada batasnya.
 
-Kedua, penyalahgunaan. Jatah gratis dipakai buat hal yang tidak dimaksudkan, misal menjalankan ribuan permintaan otomatis dari banyak akun. Satu penyalahguna bisa menghabiskan jatah ribuan pengguna biasa.
+Terus ada soal penyalahgunaan. Jatah gratis dipakai buat hal yang nggak dimaksudkan, misal jalanin ribuan permintaan otomatis dari banyak akun. Satu penyalahguna bisa ngabisin jatah ribuan pengguna biasa.
 
-Ketiga, perubahan model bisnis. Layanan gratis sering dipakai buat menarik pengguna baru. Setelah penggunanya cukup banyak, fokus bergeser ke yang berbayar. Ini pola yang sudah berulang di banyak layanan digital.
+Dan yang ketiga, perubahan model bisnis. Layanan gratis sering dipakai buat narik pengguna baru. Begitu penggunanya udah cukup banyak, fokus geser ke yang berbayar. Pola ini udah berulang di banyak layanan digital.
 
 ## Yang berubah buat pengguna
 
-Buat pengguna biasa, perubahan ini terasa dalam tiga hal. Batas harian yang dulu cukup buat seharian sekarang habis sebelum siang. Model yang dulu tersedia gratis sekarang cuma ada di paket berbayar. Dan fitur tambahan seperti unggah file besar atau riwayat panjang mulai dibatasi.
+Buat pengguna biasa, perubahannya kerasa langsung. Batas harian yang dulu cukup buat seharian sekarang habis sebelum siang. Model yang dulu tersedia gratis sekarang cuma ada di paket berbayar. Fitur tambahan kayak unggah file besar atau riwayat panjang juga mulai dibatasi.
 
 ## Cara menyikapinya
 
-Ada tiga langkah yang masuk akal.
+Ada tiga langkah yang masuk akal buat nyikapin ini.
 
-Pertama, jangan andalkan satu layanan. Punya dua atau tiga cadangan membuat kerjaan tidak berhenti saat satu layanan mengubah batasnya.
+Yang pertama, jangan andalkan satu layanan. Punya dua atau tiga cadangan bikin kerjaan nggak berhenti pas satu layanan mengubah batasnya.
 
-Kedua, pakai jatah gratis buat hal yang memang butuh model pintar. Buat tugas ringan, model yang lebih kecil atau tools lokal sering sudah cukup.
+Terus, pakai jatah gratis buat hal yang memang butuh model pintar. Buat tugas ringan, model yang lebih kecil atau tools lokal sering udah cukup.
 
-Ketiga, catat layanan mana yang masih memberi jatah tanpa tanggal berakhir. Daftar seperti itu berubah terus, jadi perlu dicek berkala. Di blog ini ada daftar API gratis yang masih jalan, dan akan diperbarui kalau ada perubahan.
+Terakhir, catat layanan mana yang masih ngasih jatah tanpa tanggal berakhir. Daftar kayak gitu berubah terus, jadi perlu dicek berkala. Di blog ini ada daftar API gratis yang masih jalan, dan bakal diperbarui kalau ada perubahan.
 
-Jatah gratis tidak akan hilang sepenuhnya. Tapi bentuknya akan terus berubah. Yang siap dengan cadangan akan baik baik saja, yang cuma mengandalkan satu layanan akan kerepotan setiap kali ada perubahan.
+Jatah gratis nggak bakal hilang sepenuhnya. Tapi bentuknya bakal terus berubah. Yang siap dengan cadangan bakal baik baik aja, yang cuma ngandelin satu layanan bakal kerepotan setiap kali ada perubahan.

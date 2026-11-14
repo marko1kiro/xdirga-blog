@@ -13,20 +13,20 @@ coverAlt: "Ilustrasi pagi yang tenang, matahari terbit di jendela, kopi, dan lap
 coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
-Banyak panduan rutinitas pagi yang terdengar mustahil. Bangun jam 4, olahraga satu jam, meditasi, baca buku, lalu baru kerja. Buat yang hidupnya nyata, rutinitas seperti itu justru bikin stres sebelum hari dimulai.
+Banyak panduan rutinitas pagi yang kedengeran mustahil. Bangun jam 4, olahraga satu jam, meditasi, baca buku, lalu baru kerja. Buat yang hidupnya nyata, rutinitas kayak gitu justru bikin stres sebelum hari dimulai.
 
-Rutinitas yang bertahan adalah rutinitas yang sederhana. Cukup tiga langkah, totalnya tidak sampai setengah jam.
+Rutinitas yang bertahan itu yang sederhana. Cukup tiga langkah, totalnya nggak sampai setengah jam.
 
 ## Air dulu, layar belakangan
 
-Minum air putih sebelum menyentuh layar. Badan yang baru bangun itu dehidrasi, dan layar langsung bikin kepala penuh sebelum sempat sadar. Lima belas menit tanpa layar di pagi hari rasanya aneh di awal, tapi bikin sisanya lebih tenang.
+Minum air putih dulu sebelum nyentuh layar. Badan yang baru bangun itu dehidrasi, dan layar langsung bikin kepala penuh sebelum sempat sadar. Lima belas menit tanpa layar di pagi hari rasanya aneh di awal, tapi bikin sisanya lebih tenang.
 
 ## Bergerak sebentar, bukan olahraga berat
 
-Tidak perlu olahraga penuh. Peregangan ringan, jalan sebentar, atau sekadar berdiri dan menggerakkan badan sudah cukup. Tujuannya bukan kebugaran, tapi membangunkan badan supaya tidak kaku sepanjang hari.
+Nggak perlu olahraga penuh. Peregangan ringan, jalan sebentar, atau sekadar berdiri dan nggerakin badan udah cukup. Tujuannya bukan kebugaran, tapi membangunkan badan supaya nggak kaku sepanjang hari.
 
 ## Tentukan satu hal yang paling penting
 
-Sebelum buka laptop, tentukan satu hal yang paling penting hari ini. Satu saja. Kalau satu hal itu selesai, hari ini sudah berhasil, apa pun yang terjadi setelahnya.
+Sebelum buka laptop, tentuin satu hal yang paling penting hari ini. Satu aja. Kalau satu hal itu selesai, hari ini udah berhasil, apa pun yang terjadi setelahnya.
 
-Rutinitas pagi yang bagus bukan yang paling panjang, tapi yang paling gampang diulang. Kalau bisa dilakukan saat sedang lelah dan sedang sibuk, itu rutinitas yang benar.
+Yang bikin rutinitas pagi bagus itu gampang diulangnya, bukan panjangnya. Kalau bisa dilakuin pas lagi lelah dan lagi sibuk, itu rutinitas yang bener.
