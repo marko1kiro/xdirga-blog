@@ -1,0 +1,32 @@
+---
+/**
+ * Bagian "Ikuti" di homepage. Tanpa formulir email palsu:
+ * blog ini tidak punya backend newsletter, jadi ajakan yang jujur
+ * adalah mengikuti lewat RSS dan memakai pencarian.
+ */
+---
+
+<section class="mt-16 rounded-2xl border border-border bg-accent-soft p-6 sm:p-8" aria-label="Ikuti XDIRGA BLOG">
+  <div class="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h2 class="font-display text-2xl font-semibold text-text sm:text-[1.7rem]">Jangan sampai ketinggalan tulisan baru</h2>
+      <p class="mt-2 max-w-xl text-sm leading-relaxed text-text-secondary">
+        Semua tulisan di sini gratis dibaca, tanpa paywall dan tanpa iklan. Ikuti lewat RSS supaya tulisan baru langsung masuk ke pembaca favoritmu.
+      </p>
+    </div>
+    <div class="flex shrink-0 flex-wrap gap-2.5">
+      <a
+        href="/rss.xml"
+        class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover"
+      >
+        Ikuti lewat RSS
+      </a>
+      <a
+        href="/search/"
+        class="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+      >
+        Cari tulisan
+      </a>
+    </div>
+  </div>
+</section>

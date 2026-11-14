@@ -8,6 +8,14 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Deploy dan QA (v2, 2026-11-14)
+
+- Push ke GitHub: `python3 ~/workspace/xdirga-blog-push.py "<pesan>"` — SATU commit via Git Data API. Perhatian, helper itu tidak menghapus file yang sudah tidak ada di worktree; kalau ada file yang dihapus, hapus juga di repo (entri tree dengan `"sha": null`) dalam commit yang sama, atau build GitHub-connected bisa rusak.
+- Deploy ke Cloudflare Pages: `npm run build` lalu `python3 cf_pages_direct_upload.py` (repo belum GitHub-connected, jadi push tidak auto-deploy).
+- QA otomatis: server statis di port 8321, lalu `node scripts/qa-check.mjs` (rute, draf, tautan internal, overflow 360/1280px, dark mode, screenshot ke `/tmp/qa-shots/`).
+- Palet LIME (magenta + cyan/teal). Palet hijau di master prompt DIBATALKAN TOTAL. Jangan kembalikan warna hijau.
+- Cover artikel selalu SVG abstrak dari `scripts/make-covers.mjs`, bukan foto stok.
+
 ## Documentation
 
 Full documentation: https://docs.astro.build

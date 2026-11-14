@@ -1,0 +1,32 @@
+---
+/**
+ * Anti-flash theme script. Harus jalan sebelum render pertama.
+ * Mode tersimpan di localStorage 'xdirga-theme': 'light' | 'dark' | 'system'.
+ * Tanpa nilai tersimpan, ikuti preferensi sistem.
+ */
+---
+<script is:inline>
+  (function () {
+    function storedMode() {
+      try {
+        return localStorage.getItem('xdirga-theme');
+      } catch (e) {
+        return null;
+      }
+    }
+    function apply(mode) {
+      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var dark = mode === 'dark' || (mode !== 'light' && systemDark);
+      document.documentElement.classList.toggle('dark', dark);
+    }
+    var mode = storedMode();
+    apply(mode);
+    try {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', function () {
+          if ((storedMode() || 'system') === 'system') apply('system');
+        });
+    } catch (e) {}
+  })();
+</script>

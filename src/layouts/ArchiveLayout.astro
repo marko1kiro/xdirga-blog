@@ -1,0 +1,88 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import FeaturedCard from '../components/cards/FeaturedCard.astro';
+import StandardCard from '../components/cards/StandardCard.astro';
+import type { Article } from '../lib/articles';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  intro?: string;
+  featured?: Article | null;
+  posts: Article[];
+  currentPage: number;
+  lastPage: number;
+  pageUrl: (page: number) => string;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title, description, heading, intro, featured, posts, currentPage, lastPage, pageUrl, jsonLd = [] } = Astro.props;
+const hasPagination = lastPage > 1;
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="pt-10 sm:pt-12">
+    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">{heading}</h1>
+    {intro && <p class="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-text-secondary">{intro}</p>}
+  </section>
+
+  {
+    featured && currentPage === 1 && (
+      <section class="mt-8" aria-label="Artikel unggulan">
+        <FeaturedCard post={featured} />
+      </section>
+    )
+  }
+
+  <section class="mt-10" aria-label="Daftar artikel">
+    {
+      posts.length === 0 ? (
+        <p class="py-10 text-text-secondary">Belum ada artikel di sini.</p>
+      ) : (
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <StandardCard post={post} />
+          ))}
+        </div>
+      )
+    }
+  </section>
+
+  {
+    hasPagination && (
+      <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
+        {currentPage > 1 && (
+          <a
+            href={pageUrl(currentPage - 1)}
+            class="rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+          >
+            ← Sebelumnya
+          </a>
+        )}
+        {Array.from({ length: lastPage }, (_, i) => i + 1).map((page) => (
+          <a
+            href={pageUrl(page)}
+            aria-current={page === currentPage ? 'page' : undefined}
+            class:list={[
+              'rounded-xl border px-4 py-2.5 text-sm font-semibold transition',
+              page === currentPage
+                ? 'border-primary bg-primary text-white'
+                : 'border-border bg-surface text-text hover:border-primary hover:text-primary',
+            ]}
+          >
+            {page}
+          </a>
+        ))}
+        {currentPage < lastPage && (
+          <a
+            href={pageUrl(currentPage + 1)}
+            class="rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+          >
+            Berikutnya →
+          </a>
+        )}
+      </nav>
+    )
+  }
+</BaseLayout>

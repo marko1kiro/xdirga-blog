@@ -1,22 +1,168 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/800.css";
+@import "@fontsource/newsreader/400.css";
+@import "@fontsource/newsreader/500.css";
+@import "@fontsource/newsreader/600.css";
+@import "@fontsource/newsreader/700.css";
+@import "@fontsource/newsreader/400-italic.css";
+@import "@fontsource/newsreader/500-italic.css";
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
+/* ---- Design tokens: XDIRGA BLOG — PALET LIME (koreksi 14 Nov 2026) ----
+   Palet hijau di master prompt DIBATALKAN TOTAL. Sumber kebenaran: token
+   landing page LIME (lihatmeja.com). Aksen utama MAGENTA, aksen kedua
+   CYAN/TEAL, background PUTIH TEAL. Tidak ada hijau di mana pun. */
+:root {
+  --color-background: #faf8fb;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #fdf4ff;
+  --color-text: #10333d;
+  --color-text-secondary: #46626c;
+  --color-border: rgba(16, 51, 61, 0.14);
+  --color-primary: #c026d3;
+  --color-primary-hover: #a21caf;
   --color-accent: #0891b2;
-  --color-accent-bright: #22d3ee;
-  --font-display: Georgia, 'Times New Roman', serif;
+  --color-accent-soft: #ecfeff;
+  --gradient-page: linear-gradient(180deg, #fdf4ff 0%, #faf8fb 22%, #faf8fb 78%, #ecfeff 100%);
+  color-scheme: light;
+}
+
+.dark {
+  --color-background: #0b2730;
+  --color-surface: #10333d;
+  --color-surface-secondary: #143f4d;
+  --color-text: #f2f7f8;
+  --color-text-secondary: #9db8c0;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-primary: #d946ef;
+  --color-primary-hover: #e879f9;
+  --color-accent: #22d3ee;
+  --color-accent-soft: #164e63;
+  --gradient-page: linear-gradient(180deg, #1d2f3d 0%, #0b2730 22%, #0b2730 78%, #12303c 100%);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-secondary: var(--color-surface-secondary);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
-  @apply bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-300;
+  @apply bg-background font-sans text-text antialiased;
+  background-image: var(--gradient-page);
+  background-attachment: fixed;
+  overflow-x: clip;
 }
 
 ::selection {
-  background: #22d3ee;
-  color: #082f49;
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Prose artikel: warna mengikuti token tema ---- */
+.prose {
+  --tw-prose-body: var(--color-text);
+  --tw-prose-headings: var(--color-text);
+  --tw-prose-lead: var(--color-text-secondary);
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-bold: var(--color-text);
+  --tw-prose-counters: var(--color-text-secondary);
+  --tw-prose-bullets: var(--color-primary);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-text);
+  --tw-prose-quote-borders: var(--color-primary);
+  --tw-prose-captions: var(--color-text-secondary);
+  --tw-prose-code: var(--color-text);
+  --tw-prose-pre-code: #d9f0f5;
+  --tw-prose-pre-bg: #0b2730;
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+}
+
+.prose {
+  font-size: 1.075rem;
+  line-height: 1.8;
+}
+
+.prose h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.prose h3 {
+  font-weight: 700;
+}
+
+.prose img {
+  border-radius: 14px;
+}
+
+.prose blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* ---- Pagefind UI: samakan dengan token tema ---- */
+.pagefind-ui {
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: var(--color-primary);
+  --pagefind-ui-text: var(--color-text);
+  --pagefind-ui-background: var(--color-surface);
+  --pagefind-ui-border: var(--color-border);
+  --pagefind-ui-tag: var(--color-surface-secondary);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 12px;
+  --pagefind-ui-image-border-radius: 8px;
+  --pagefind-ui-image-box-ratio: 3 / 2;
+  --pagefind-ui-font: var(--font-sans);
+}
+
+.pagefind-ui__search-input {
+  font-weight: 500;
+}
+
+.pagefind-ui__result-title,
+.pagefind-ui__result-link {
+  font-weight: 600;
 }

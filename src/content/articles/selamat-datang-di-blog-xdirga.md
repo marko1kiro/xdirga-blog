@@ -1,8 +1,16 @@
 ---
 title: "Selamat Datang di Blog XDIRGA"
-date: 2026-11-14
 description: "Perkenalan singkat. Blog ini tempat gue nyatet soal AI, tools gratis, dan hal hal yang dicoba sendiri."
+category: lainnya
 tags: ["XDIRGA"]
+author: xdirga
+publishedAt: 2026-11-14
+status: published
+featured: false
+trending: false
+cover: /covers/selamat-datang-di-blog-xdirga.svg
+coverAlt: "Ilustrasi abstrak artikel Selamat Datang di Blog XDIRGA"
+coverCaption: "Ilustrasi abstrak, dibuat khusus untuk artikel ini."
 ---
 
 Halo, selamat datang di blog XDIRGA.

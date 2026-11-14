@@ -1,20 +1,21 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { getIndexableArticles } from '../lib/articles';
+import { articleUrl } from '../lib/articles';
+import { SITE } from '../lib/site';
 import type { APIRoute } from 'astro';
-import { postSlug } from '../lib/posts';
 
 export const GET: APIRoute = async (context) => {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
-  const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const posts = await getIndexableArticles();
   return rss({
-    title: 'XDIRGA',
-    description: 'Catatan soal AI dan tools gratis, ditulis dari yang dicoba sendiri.',
-    site: context.site ?? 'https://xdirga.xyz',
-    items: sorted.map((post) => ({
+    title: SITE.name,
+    description: SITE.description,
+    site: context.site ?? SITE.url,
+    items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
-      pubDate: post.data.date,
-      link: `/blog/${postSlug(post)}/`,
+      pubDate: post.data.publishedAt,
+      link: articleUrl(post),
+      categories: [post.data.category, ...post.data.tags],
     })),
   });
 };

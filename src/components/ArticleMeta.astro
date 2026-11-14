@@ -1,0 +1,43 @@
+---
+import type { Article } from '../lib/articles';
+import { formatDateID, readingMinutes, getAuthor, authorUrl } from '../lib/articles';
+
+interface Props {
+  post: Article;
+}
+
+const { post } = Astro.props;
+const minutes = readingMinutes(post.body ?? '');
+const author = await getAuthor(post.data.author);
+const authorName = author?.data.name ?? 'XDIRGA';
+const authorAvatar = author?.data.avatar ?? '/avatars/xdirga.svg';
+---
+
+<div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
+  <a href={authorUrl(post.data.author)} class="flex items-center gap-2.5">
+    <img
+      src={authorAvatar}
+      alt={`Foto profil ${authorName}`}
+      width="40"
+      height="40"
+      loading="lazy"
+      decoding="async"
+      class="h-10 w-10 rounded-full border border-border object-cover"
+    />
+    <span class="text-sm font-semibold text-text transition hover:text-primary">{authorName}</span>
+  </a>
+  <span class="hidden h-4 w-px bg-border sm:block" aria-hidden="true"></span>
+  <p class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-text-secondary">
+    <time datetime={post.data.publishedAt.toISOString()}>{formatDateID(post.data.publishedAt)}</time>
+    {
+      post.data.updatedAt && (
+        <>
+          <span aria-hidden="true">·</span>
+          <span>Diperbarui {formatDateID(post.data.updatedAt)}</span>
+        </>
+      )
+    }
+    <span aria-hidden="true">·</span>
+    <span>{minutes} menit baca</span>
+  </p>
+</div>

@@ -1,0 +1,27 @@
+---
+import type { Article } from '../../lib/articles';
+import { articleUrl, formatDateShort } from '../../lib/articles';
+
+interface Props {
+  post: Article;
+  rank: number;
+}
+
+const { post, rank } = Astro.props;
+---
+
+<article class="group flex gap-4 border-b border-border py-4 first:pt-0 last:border-b-0 last:pb-0">
+  <span class="font-display text-[1.9rem] leading-none font-semibold text-primary/50 transition group-hover:text-primary" aria-hidden="true">
+    {String(rank).padStart(2, '0')}
+  </span>
+  <div class="min-w-0">
+    <a href={articleUrl(post)} class="block">
+      <h3 class="text-[1rem] leading-snug font-bold text-text transition group-hover:text-primary">
+        {post.data.title}
+      </h3>
+    </a>
+    <p class="mt-1.5 text-xs text-text-secondary">
+      <time datetime={post.data.publishedAt.toISOString()}>{formatDateShort(post.data.publishedAt)}</time>
+    </p>
+  </div>
+</article>

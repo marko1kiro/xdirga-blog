@@ -1,0 +1,23 @@
+---
+import type { Article } from '../../lib/articles';
+import { articleUrl, formatDateShort, getCategory } from '../../lib/articles';
+
+interface Props {
+  post: Article;
+}
+
+const { post } = Astro.props;
+const category = await getCategory(post.data.category);
+---
+
+<article class="group border-b border-border py-4 first:pt-0 last:border-b-0 last:pb-0">
+  <a href={articleUrl(post)} class="block">
+    <p class="text-[0.7rem] font-bold tracking-[0.12em] text-primary uppercase">{category?.data.name ?? post.data.category}</p>
+    <h3 class="mt-1 text-[1.02rem] leading-snug font-bold text-text transition group-hover:text-primary">
+      {post.data.title}
+    </h3>
+    <p class="mt-1.5 text-xs text-text-secondary">
+      <time datetime={post.data.publishedAt.toISOString()}>{formatDateShort(post.data.publishedAt)}</time>
+    </p>
+  </a>
+</article>

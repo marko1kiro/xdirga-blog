@@ -1,0 +1,4 @@
+# Redirect rute lama v1 ke rute baru v2 (301 permanen)
+/blog/* /artikel/:splat 301
+/tags/* /tag/:splat 301
+/tags/ /tag/ 301

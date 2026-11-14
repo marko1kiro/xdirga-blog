@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Halaman Tidak Ditemukan" description="Halaman yang kamu cari tidak ada di XDIRGA BLOG.">
+  <section class="mx-auto max-w-[720px] pt-16 pb-8 text-center sm:pt-24">
+    <p class="font-display text-[5rem] leading-none font-semibold text-primary sm:text-[7rem]">404</p>
+    <h1 class="mt-4 font-display text-[1.9rem] font-semibold text-text sm:text-[2.4rem]">Halaman tidak ditemukan</h1>
+    <p class="mx-auto mt-3 max-w-md leading-relaxed text-text-secondary">
+      Tautan yang kamu buka mungkin sudah pindah atau salah ketik. Coba cari dari beranda atau lewat pencarian.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-hover"
+      >
+        Kembali ke Beranda
+      </a>
+      <a
+        href="/search/"
+        class="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-5 py-3 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+      >
+        Cari tulisan
+      </a>
+    </div>
+  </section>
+</BaseLayout>

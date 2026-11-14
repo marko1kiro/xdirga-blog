@@ -1,0 +1,30 @@
+---
+import { render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {
+  articleSlug,
+  getPublishedArticles,
+  relatedArticles,
+  prevNext,
+  validateArticleCategories,
+} from '../../lib/articles';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedArticles();
+  await validateArticleCategories(posts);
+  return posts.map((post) => ({
+    params: { slug: articleSlug(post) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const all = await getPublishedArticles();
+const related = relatedArticles(post, all, 3);
+const { prev, next } = prevNext(post, all);
+---
+
+<ArticleLayout post={post} prev={prev} next={next} related={related}>
+  <Content />
+</ArticleLayout>

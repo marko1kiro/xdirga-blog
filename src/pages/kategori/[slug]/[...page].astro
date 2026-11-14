@@ -1,0 +1,54 @@
+---
+import type { GetStaticPaths, Page } from 'astro';
+import ArchiveLayout from '../../../layouts/ArchiveLayout.astro';
+import { getPublishedArticles, getCategories, type Article } from '../../../lib/articles';
+import { PAGE_SIZE, SITE } from '../../../lib/site';
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const all = await getPublishedArticles();
+  const categories = await getCategories();
+  return categories.flatMap((cat) => {
+    const posts = all.filter((a) => a.data.category === cat.id);
+    if (posts.length === 0) return [];
+    return paginate(posts, {
+      params: { slug: cat.id },
+      props: { category: cat },
+      pageSize: PAGE_SIZE,
+    });
+  });
+};
+
+interface Props {
+  page: Page<Article>;
+  category: { id: string; data: { name: string; description: string } };
+}
+
+const { page, category } = Astro.props;
+const { slug } = Astro.params;
+const featured = page.currentPage === 1 ? page.data[0] : null;
+const posts = page.currentPage === 1 ? page.data.slice(1) : page.data;
+const pageUrl = (n: number) => (n === 1 ? `/kategori/${slug}/` : `/kategori/${slug}/${n}/`);
+const pageTitle = page.currentPage > 1 ? `${category.data.name} (Halaman ${page.currentPage})` : category.data.name;
+---
+
+<ArchiveLayout
+  title={pageTitle}
+  description={category.data.description}
+  heading={category.data.name}
+  intro={category.data.description}
+  featured={featured}
+  posts={posts}
+  currentPage={page.currentPage}
+  lastPage={page.lastPage}
+  pageUrl={pageUrl}
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: category.data.name,
+      description: category.data.description,
+      url: new URL(`/kategori/${slug}/`, SITE.url).href,
+      isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    },
+  ]}
+/>

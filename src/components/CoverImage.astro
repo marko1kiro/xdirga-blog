@@ -1,0 +1,28 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  eager?: boolean;
+}
+
+const { src, alt, caption, eager = false } = Astro.props;
+---
+
+<figure class="mt-8">
+  <img
+    src={src}
+    alt={alt}
+    width="1200"
+    height="630"
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : undefined}
+    decoding="async"
+    class="aspect-[16/9] w-full rounded-2xl border border-border object-cover sm:aspect-[2/1]"
+  />
+  {
+    caption && (
+      <figcaption class="mt-2.5 text-center text-[0.8rem] text-text-secondary">{caption}</figcaption>
+    )
+  }
+</figure>

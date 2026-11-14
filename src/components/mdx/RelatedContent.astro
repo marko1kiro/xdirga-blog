@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import { articleUrl, articleSlug, formatDateShort } from '../../lib/articles';
+
+interface Props {
+  slug: string;
+  label?: string;
+}
+
+const { slug, label = 'Baca juga' } = Astro.props;
+const all = await getCollection('articles', ({ data }) => data.status === 'published');
+const entry = all.find((a) => articleSlug(a) === slug);
+---
+
+{
+  entry && (
+    <aside class="my-6 flex gap-4 rounded-2xl border border-border bg-surface-secondary p-4 sm:p-5">
+      <a href={articleUrl(entry)} class="block w-24 shrink-0 overflow-hidden rounded-xl">
+        <img
+          src={entry.data.cover}
+          alt={entry.data.coverAlt}
+          width="1200"
+          height="630"
+          loading="lazy"
+          decoding="async"
+          class="aspect-[16/10] h-full w-full object-cover"
+        />
+      </a>
+      <div class="min-w-0">
+        <p class="text-[0.7rem] font-bold tracking-[0.12em] text-primary uppercase">{label}</p>
+        <a
+          href={articleUrl(entry)}
+          class="mt-1 block text-[0.95rem] leading-snug font-bold text-text transition hover:text-primary"
+        >
+          {entry.data.title}
+        </a>
+        <p class="mt-1 text-xs text-text-secondary">
+          <time datetime={entry.data.publishedAt.toISOString()}>
+            {formatDateShort(entry.data.publishedAt)}
+          </time>
+        </p>
+      </div>
+    </aside>
+  )
+}

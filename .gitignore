@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+# python bytecode dari helper deploy
+__pycache__/
+
 # dependencies
 node_modules/
 

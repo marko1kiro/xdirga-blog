@@ -1,0 +1,29 @@
+---
+import type { TocItem } from '../lib/articles';
+
+interface Props {
+  items: TocItem[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+  items.length > 1 && (
+    <nav aria-label="Daftar isi artikel">
+      <h2 class="text-sm font-bold tracking-wide text-text">Daftar Isi</h2>
+      <ol class="mt-3 space-y-2 text-sm">
+        {items.map((item) => (
+          <li class:list={{ 'pl-4': item.depth === 3 }}>
+            <a
+              href={`#${item.id}`}
+              class="text-text-secondary transition hover:text-primary"
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}

@@ -1,0 +1,44 @@
+---
+import type { Article } from '../lib/articles';
+import { articleUrl } from '../lib/articles';
+
+interface Props {
+  prev: Article | null;
+  next: Article | null;
+}
+
+const { prev, next } = Astro.props;
+---
+
+<nav class="mt-10 grid gap-4 sm:grid-cols-2" aria-label="Artikel sebelum dan sesudah">
+  {
+    prev ? (
+      <a
+        href={articleUrl(prev)}
+        class="group rounded-2xl border border-border bg-surface p-5 transition hover:border-primary/60"
+      >
+        <p class="text-xs font-bold tracking-[0.12em] text-primary uppercase">Sebelumnya</p>
+        <p class="mt-2 line-clamp-2 font-bold leading-snug text-text transition group-hover:text-primary">
+          {prev.data.title}
+        </p>
+      </a>
+    ) : (
+      <span />
+    )
+  }
+  {
+    next ? (
+      <a
+        href={articleUrl(next)}
+        class="group rounded-2xl border border-border bg-surface p-5 text-right transition hover:border-primary/60"
+      >
+        <p class="text-xs font-bold tracking-[0.12em] text-primary uppercase">Berikutnya</p>
+        <p class="mt-2 line-clamp-2 font-bold leading-snug text-text transition group-hover:text-primary">
+          {next.data.title}
+        </p>
+      </a>
+    ) : (
+      <span />
+    )
+  }
+</nav>

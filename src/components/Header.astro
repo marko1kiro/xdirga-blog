@@ -1,39 +1,191 @@
 ---
+import { getCollection } from 'astro:content';
+import { categoryUrl } from '../lib/articles';
+
+const NAV_SLUGS = ['berita', 'teknologi', 'lifestyle', 'edukasi', 'tips', 'lainnya'];
+const allCategories = await getCollection('categories');
+const navCategories = NAV_SLUGS.map((slug) => allCategories.find((c) => c.id === slug)).filter(
+  (c): c is NonNullable<typeof c> => Boolean(c),
+);
+const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur dark:border-slate-800 dark:bg-slate-950/85">
-  <div class="mx-auto flex w-full max-w-3xl items-center justify-between px-5 py-4">
-    <a href="/" class="flex items-baseline gap-2">
-      <span class="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-        <span class="text-accent-bright">X</span>DIRGA
+<header class="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur">
+  <div class="mx-auto flex w-full max-w-[1280px] items-center justify-between gap-4 px-5 py-3.5">
+    <a href="/" class="flex shrink-0 items-baseline gap-1.5" aria-label="XDIRGA BLOG, ke beranda">
+      <span class="text-[1.55rem] font-extrabold leading-none tracking-tight text-text">
+        XDIRGA
+      </span>
+      <span class="rounded-md bg-primary px-1.5 py-0.5 text-[0.7rem] font-bold leading-none tracking-[0.14em] text-white">
+        BLOG
       </span>
     </a>
-    <nav class="flex items-center gap-4 text-sm sm:gap-6">
-      <a href="/" class="text-slate-600 transition hover:text-accent dark:text-slate-300">Beranda</a>
-      <a href="/tags/" class="text-slate-600 transition hover:text-accent dark:text-slate-300">Tag</a>
-      <a href="/search/" class="text-slate-600 transition hover:text-accent dark:text-slate-300">Cari</a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Navigasi utama">
+      <a
+        href="/"
+        aria-current={currentPath === '/' ? 'page' : undefined}
+        class="rounded-lg px-3 py-2 text-sm font-medium text-text-secondary transition hover:bg-surface-secondary hover:text-text"
+      >
+        Beranda
+      </a>
+      {
+        navCategories.map((cat) => {
+          const href = categoryUrl(cat.id);
+          const active = currentPath.startsWith(href);
+          return (
+            <a
+              href={href}
+              aria-current={active ? 'page' : undefined}
+              class:list={[
+                'rounded-lg px-3 py-2 text-sm font-medium transition hover:bg-surface-secondary hover:text-text',
+                active ? 'text-primary' : 'text-text-secondary',
+              ]}
+            >
+              {cat.data.name}
+            </a>
+          );
+        })
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        href="/search/"
+        aria-label="Cari artikel"
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition hover:border-primary hover:text-primary"
+      >
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.5" y2="16.5" />
+        </svg>
+      </a>
+
       <button
         id="theme-toggle"
         type="button"
         aria-label="Ganti tema"
-        class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-accent hover:text-accent dark:border-slate-700 dark:text-slate-300"
+        title="Ganti tema"
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition hover:border-primary hover:text-primary"
       >
-        <span class="dark:hidden">☾</span>
-        <span class="hidden dark:inline">☀</span>
+        <span data-theme-icon="light" class="hidden" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <line x1="12" y1="2" x2="12" y2="4" />
+            <line x1="12" y1="20" x2="12" y2="22" />
+            <line x1="4.9" y1="4.9" x2="6.3" y2="6.3" />
+            <line x1="17.7" y1="17.7" x2="19.1" y2="19.1" />
+            <line x1="2" y1="12" x2="4" y2="12" />
+            <line x1="20" y1="12" x2="22" y2="12" />
+            <line x1="4.9" y1="19.1" x2="6.3" y2="17.7" />
+            <line x1="17.7" y1="6.3" x2="19.1" y2="4.9" />
+          </svg>
+        </span>
+        <span data-theme-icon="dark" class="hidden" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </span>
+        <span data-theme-icon="system" class="hidden" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
+        </span>
       </button>
-    </nav>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-label="Buka menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition hover:border-primary hover:text-primary lg:hidden"
+      >
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
   </div>
+
+  <nav id="mobile-menu" class="hidden border-t border-border lg:hidden" aria-label="Navigasi seluler">
+    <div class="mx-auto flex w-full max-w-[1280px] flex-col px-5 py-3">
+      <a href="/" class="rounded-lg px-3 py-2.5 text-[0.95rem] font-medium text-text transition hover:bg-surface-secondary">Beranda</a>
+      {
+        navCategories.map((cat) => (
+          <a
+            href={categoryUrl(cat.id)}
+            class="rounded-lg px-3 py-2.5 text-[0.95rem] font-medium text-text-secondary transition hover:bg-surface-secondary hover:text-text"
+          >
+            {cat.data.name}
+          </a>
+        ))
+      }
+      <a href="/tentang/" class="rounded-lg px-3 py-2.5 text-[0.95rem] font-medium text-text-secondary transition hover:bg-surface-secondary hover:text-text">Tentang</a>
+    </div>
+  </nav>
 </header>
 
 <script is:inline>
   (function () {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      var dark = document.documentElement.classList.toggle('dark');
+    var MODES = ['light', 'dark', 'system'];
+    var LABELS = {
+      light: 'Tema terang, klik untuk tema gelap',
+      dark: 'Tema gelap, klik untuk tema sistem',
+      system: 'Tema mengikuti sistem, klik untuk tema terang',
+    };
+    function stored() {
       try {
-        localStorage.setItem('xdirga-theme', dark ? 'dark' : 'light');
-      } catch (e) {}
-    });
+        return localStorage.getItem('xdirga-theme') || 'system';
+      } catch (e) {
+        return 'system';
+      }
+    }
+    function apply(mode) {
+      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var dark = mode === 'dark' || (mode === 'system' && systemDark);
+      document.documentElement.classList.toggle('dark', dark);
+      var btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.setAttribute('aria-label', LABELS[mode] || LABELS.system);
+        btn.setAttribute('title', LABELS[mode] || LABELS.system);
+        btn.querySelectorAll('[data-theme-icon]').forEach(function (el) {
+          el.classList.toggle('hidden', el.getAttribute('data-theme-icon') !== mode);
+        });
+      }
+    }
+    var btn = document.getElementById('theme-toggle');
+    if (btn) {
+      apply(stored());
+      btn.addEventListener('click', function () {
+        var current = stored();
+        var next = MODES[(MODES.indexOf(current) + 1) % MODES.length];
+        try {
+          localStorage.setItem('xdirga-theme', next);
+        } catch (e) {}
+        apply(next);
+      });
+    }
+    try {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', function () {
+          if (stored() === 'system') apply('system');
+        });
+    } catch (e) {}
+
+    var menuBtn = document.getElementById('menu-toggle');
+    var menu = document.getElementById('mobile-menu');
+    if (menuBtn && menu) {
+      menuBtn.addEventListener('click', function () {
+        var open = menu.classList.toggle('hidden') === false;
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        menuBtn.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+      });
+    }
   })();
 </script>

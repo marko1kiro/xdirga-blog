@@ -1,0 +1,34 @@
+---
+import type { Article } from '../../lib/articles';
+import { articleUrl, formatDateShort } from '../../lib/articles';
+
+interface Props {
+  post: Article;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="group flex gap-3.5">
+  <a href={articleUrl(post)} class="block w-24 shrink-0 overflow-hidden rounded-xl">
+    <img
+      src={post.data.cover}
+      alt={post.data.coverAlt}
+      width="1200"
+      height="630"
+      loading="lazy"
+      decoding="async"
+      class="aspect-[16/10] h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+    />
+  </a>
+  <div class="min-w-0">
+    <a href={articleUrl(post)} class="block">
+      <h3 class="line-clamp-2 text-[0.95rem] leading-snug font-bold text-text transition group-hover:text-primary">
+        {post.data.title}
+      </h3>
+    </a>
+    <p class="mt-1.5 text-xs text-text-secondary">
+      <time datetime={post.data.publishedAt.toISOString()}>{formatDateShort(post.data.publishedAt)}</time>
+    </p>
+  </div>
+</article>
