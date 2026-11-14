@@ -5,7 +5,8 @@ category: bisnis
 tags: ["AI gratis", "Bisnis"]
 author: xdirga
 publishedAt: 2026-11-14T18:27:00+07:00
-lastVerifiedAt: 2026-11-14
+lastVerifiedAt: 2026-11-15
+updatedAt: 2026-11-15
 status: published
 featured: false
 trending: true
@@ -26,7 +27,7 @@ Hari ini fokus ke teks. Buat UMKM, tulis draf balasan pelanggan dan satu pengumu
 
 ## Hari 3, gambar pertama
 
-Buat satu gambar yang kepakai. Buat UMKM, gambar produk atau promo toko. Buat pelajar, gambar ilustrasi buat presentasi atau tugas. Leonardo kasih 150 token gratis per hari, cukup buat belasan gambar. Canva gratis kasih sampai 20 pemakaian AI per bulan. Perbandingan lengkap plus soal lisensi ada di [artikel gambar AI gratis](/artikel/ai-gambar-gratis-leonardo-canva-gemini/). Hasil hari ketiga, satu gambar siap tayang.
+Buat satu gambar yang kepakai. Buat UMKM, gambar produk atau promo toko. Buat pelajar, gambar ilustrasi buat presentasi atau tugas. Leonardo kasih 150 token gratis per hari, cukup buat belasan gambar menurut hasil uji kami, bukan tarif resmi Leonardo. Canva gratis kasih sampai 20 pemakaian AI per bulan, Standard dan Premium dalam satu pool bersama. Perbandingan lengkap plus soal lisensi ada di [artikel gambar AI gratis](/artikel/ai-gambar-gratis-leonardo-canva-gemini/). Hasil hari ketiga, satu gambar siap tayang.
 
 ## Hari 4, suara dan musik
 
@@ -34,7 +35,7 @@ Hari ini coba suara. Buat UMKM, bikin voiceover 1 menit buat video promosi pakai
 
 ## Hari 5, satu konten lengkap
 
-Hari ini semua langkah digabung. Dari ide sampai caption, satu konten selesai dalam satu hari. Ide dan naskah dari ChatGPT, gambar dari Leonardo, suara dari ElevenLabs, edit di CapCut. Alur lengkapnya, termasuk jebakan trial yang minta kartu kredit, ada di [artikel AI gratis buat content creator](/artikel/ai-gratis-content-creator/). Buat UMKM, kontennya satu postingan promosi. Buat pelajar, kontennya satu video tugas. Hasil hari kelima, satu konten lengkap yang sudah tayang atau sudah dikumpulkan.
+Hari ini semua langkah digabung. Dari ide sampai caption, satu konten selesai dalam satu hari. Ide dan naskah dari ChatGPT, gambar dari Leonardo, suara dari ElevenLabs, edit di CapCut, lalu caption dibuat lewat halaman AI Captions yang terpisah karena caption otomatis di dalam editor butuh Pro. Alur lengkapnya, termasuk jebakan trial yang minta kartu kredit, ada di [artikel AI gratis buat content creator](/artikel/ai-gratis-content-creator/). Buat UMKM, kontennya satu postingan promosi. Buat pelajar, kontennya satu video tugas. Hasil hari kelima, satu konten lengkap yang sudah tayang atau sudah dikumpulkan.
 
 ## Hari 6, rapikan cara kerja
 
