@@ -42,6 +42,7 @@ SLUGS = [
     "cara-pakai-ai-gratis-untuk-kerja",
     "ai-gambar-gratis-leonardo-canva-gemini",
     "voiceover-musik-ai-gratis-elevenlabs-suno",
+    "ai-coding-gratis-copilot-cursor-codex",
 ]
 
 
