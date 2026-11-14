@@ -45,6 +45,7 @@ SLUGS = [
     "ai-coding-gratis-copilot-cursor-codex",
     "prompt-ai-pemula-siap-pakai",
     "ai-gratis-content-creator",
+    "aman-pakai-ai-gratis-data-jangan-upload",
 ]
 
 
