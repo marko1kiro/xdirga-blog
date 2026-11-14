@@ -6,7 +6,7 @@ tags: ["Manus", "AI gratis", "Agen AI"]
 author: xdirga
 publishedAt: 2026-11-12
 status: published
-featured: true
+featured: false
 trending: true
 cover: /covers/manus-free-300-kredit-sehari.jpg
 coverAlt: "Ilustrasi agen AI lucu bekerja di laptop dengan kartu tugas selesai"

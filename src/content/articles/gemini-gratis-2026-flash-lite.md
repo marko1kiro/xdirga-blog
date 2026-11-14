@@ -4,10 +4,10 @@ description: "Gemini gratis sejak 9 Oktober 2026 cuma kebagian Flash Lite, tapi 
 category: teknologi
 tags: ["Gemini", "AI gratis", "Google"]
 author: xdirga
-publishedAt: 2026-11-14
+publishedAt: 2026-11-14T12:20:00+07:00
 status: published
 featured: false
-trending: false
+trending: true
 cover: /covers/gemini-gratis-2026-flash-lite.jpg
 coverAlt: "Ilustrasi meja kerja tanpa orang dengan laptop dan layar berisi grafik sederhana berwarna magenta dan cyan"
 ---

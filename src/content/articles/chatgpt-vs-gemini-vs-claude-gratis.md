@@ -4,10 +4,10 @@ description: "ChatGPT, Gemini, dan Claude gratis di 2026 punya batas yang beda j
 category: teknologi
 tags: ["ChatGPT", "Gemini", "Claude", "AI gratis"]
 author: xdirga
-publishedAt: 2026-11-14
+publishedAt: 2026-11-14T12:30:00+07:00
 status: published
-featured: false
-trending: false
+featured: true
+trending: true
 cover: /covers/chatgpt-vs-gemini-vs-claude-gratis.jpg
 coverAlt: "Ilustrasi meja kerja dengan laptop dan layar berisi tiga jendela chat AI, tanpa orang dan tanpa karakter"
 ---

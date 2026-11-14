@@ -4,10 +4,10 @@ description: "Cara pakai AI gratis untuk kerja sehari hari, tujuh tutorial prakt
 category: tips
 tags: ["AI gratis", "Produktivitas", "Tips"]
 author: xdirga
-publishedAt: 2026-11-14
+publishedAt: 2026-11-14T12:10:00+07:00
 status: published
 featured: false
-trending: false
+trending: true
 cover: /covers/cara-pakai-ai-gratis-untuk-kerja.jpg
 coverAlt: "Ilustrasi meja kerja tanpa orang, laptop terbuka dan tumpukan dokumen di atas meja"
 ---
