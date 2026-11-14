@@ -44,6 +44,7 @@ SLUGS = [
     "voiceover-musik-ai-gratis-elevenlabs-suno",
     "ai-coding-gratis-copilot-cursor-codex",
     "prompt-ai-pemula-siap-pakai",
+    "ai-gratis-content-creator",
 ]
 
 
