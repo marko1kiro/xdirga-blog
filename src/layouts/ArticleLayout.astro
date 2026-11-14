@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import CoverImage from '../components/CoverImage.astro';
 import ArticleMeta from '../components/ArticleMeta.astro';
 import TagList from '../components/TagList.astro';
@@ -12,10 +13,12 @@ import { SITE } from '../lib/site';
 import { coverSrcsetWebp } from '../lib/covers';
 import {
   articleUrl,
+  breadcrumbJsonLd,
   categoryUrl,
   getCategory,
   tocFromBody,
   type Article,
+  type BreadcrumbItem,
 } from '../lib/articles';
 
 interface Props {
@@ -54,15 +57,12 @@ const articleJsonLd = {
   ...(tags.length > 0 ? { keywords: tags.join(', ') } : {}),
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Beranda', item: new URL('/', SITE.url).href },
-    { '@type': 'ListItem', position: 2, name: categoryName, item: new URL(categoryUrl(category), SITE.url).href },
-    { '@type': 'ListItem', position: 3, name: title, item: canonical },
-  ],
-};
+const breadcrumbItems: BreadcrumbItem[] = [
+  { label: 'Beranda', href: '/' },
+  { label: categoryName, href: categoryUrl(category) },
+  { label: title, href: canonical },
+];
+const breadcrumbJsonLdData = breadcrumbJsonLd(breadcrumbItems, SITE.url);
 ---
 
 <BaseLayout
@@ -72,7 +72,7 @@ const breadcrumbJsonLd = {
   image={cover}
   canonical={canonical}
   noindex={post.data.noindex}
-  jsonLd={[articleJsonLd, breadcrumbJsonLd]}
+  jsonLd={[articleJsonLd, breadcrumbJsonLdData]}
   preloadImage={{ srcset: coverSrcsetWebp(cover), sizes: '(max-width: 1023px) 100vw, 880px' }}
   articleMeta={{
     publishedTime: post.data.publishedAt.toISOString(),
@@ -84,15 +84,7 @@ const breadcrumbJsonLd = {
   <div id="progress-bar" class="fixed inset-x-0 top-0 z-50 h-[3px] origin-left scale-x-0 bg-primary" aria-hidden="true"></div>
 
   <article class="pt-8 sm:pt-10">
-    <nav aria-label="Breadcrumb" class="text-sm text-text-secondary">
-      <ol class="flex flex-wrap items-center gap-x-1.5 gap-y-1">
-        <li><a href="/" class="transition hover:text-primary">Beranda</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href={categoryUrl(category)} class="transition hover:text-primary">{categoryName}</a></li>
-        <li aria-hidden="true">/</li>
-        <li class="line-clamp-1 max-w-[16rem] text-text sm:max-w-md" aria-current="page">{title}</li>
-      </ol>
-    </nav>
+    <Breadcrumb items={breadcrumbItems} />
 
     <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-12">
       <div class="min-w-0">

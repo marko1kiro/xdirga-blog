@@ -1,5 +1,5 @@
 ---
-title: "Gemini Gratis 2026, Masih Bisa Dipakai Buat Apa Setelah Cuma Flash-Lite"
+title: "Gemini Gratis 2026, Masih Bisa Dipakai Buat Apa dengan Flash-Lite Saja"
 description: "Gemini gratis sejak 9 Oktober 2026 cuma kebagian Flash Lite, tapi masih bisa dipakai buat kerja harian kalau lo tahu batasnya dan cara menghemat jatahnya."
 category: teknologi
 tags: ["Gemini", "AI gratis", "Google"]

@@ -1,7 +1,13 @@
 ---
 import type { GetStaticPaths, Page } from 'astro';
 import ArchiveLayout from '../../../layouts/ArchiveLayout.astro';
-import { getPublishedArticles, getAllTags, type Article } from '../../../lib/articles';
+import {
+  archivePageDescription,
+  getPublishedArticles,
+  getAllTags,
+  type Article,
+  type BreadcrumbItem,
+} from '../../../lib/articles';
 import { PAGE_SIZE, SITE } from '../../../lib/site';
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
@@ -32,7 +38,12 @@ const pageTitle = page.currentPage > 1 ? `Tag ${tag} (Halaman ${page.currentPage
 
 <ArchiveLayout
   title={pageTitle}
-  description={`Semua tulisan di XDIRGA BLOG dengan tag ${tag}.`}
+  description={archivePageDescription(
+    `Semua tulisan di XDIRGA BLOG dengan tag ${tag}.`,
+    page.currentPage,
+    page.lastPage,
+    `tulisan dengan tag ${tag}`,
+  )}
   heading={`#${tag}`}
   intro={`Semua tulisan dengan tag ${tag}. Total ${page.total} tulisan.`}
   featured={featured}
@@ -40,6 +51,11 @@ const pageTitle = page.currentPage > 1 ? `Tag ${tag} (Halaman ${page.currentPage
   currentPage={page.currentPage}
   lastPage={page.lastPage}
   pageUrl={pageUrl}
+  breadcrumb={[
+    { label: 'Beranda', href: '/' },
+    { label: 'Semua Tag', href: '/tag/' },
+    { label: `#${tag}` },
+  ] satisfies BreadcrumbItem[]}
   jsonLd={[
     {
       '@context': 'https://schema.org',

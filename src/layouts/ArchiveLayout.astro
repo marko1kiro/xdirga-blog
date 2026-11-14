@@ -1,8 +1,9 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import FeaturedCard from '../components/cards/FeaturedCard.astro';
 import StandardCard from '../components/cards/StandardCard.astro';
-import type { Article } from '../lib/articles';
+import { breadcrumbJsonLd, type Article, type BreadcrumbItem } from '../lib/articles';
 
 interface Props {
   title: string;
@@ -14,20 +15,24 @@ interface Props {
   currentPage: number;
   lastPage: number;
   pageUrl: (page: number) => string;
+  breadcrumb: BreadcrumbItem[];
   jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, heading, intro, featured, posts, currentPage, lastPage, pageUrl, jsonLd = [] } = Astro.props;
+const { title, description, heading, intro, featured, posts, currentPage, lastPage, pageUrl, breadcrumb, jsonLd = [] } = Astro.props;
 const hasPagination = lastPage > 1;
 // Halaman 1 memisahkan artikel pertama jadi featured, jadi `posts` bisa kosong
 // padahal arsip TIDAK kosong. Empty-state hanya benar bila tidak ada featured
 // dan tidak ada posts (mis. halaman paginasi di luar jangkauan).
 const hasContent = posts.length > 0 || (featured && currentPage === 1);
+// Satu trail breadcrumb menggerakkan visual dan JSON-LD sekaligus.
+const allJsonLd = [...jsonLd, breadcrumbJsonLd(breadcrumb)];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd}>
-  <section class="pt-10 sm:pt-12">
-    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">{heading}</h1>
+<BaseLayout title={title} description={description} jsonLd={allJsonLd}>
+  <section class="pt-8 sm:pt-10">
+    <Breadcrumb items={breadcrumb} />
+    <h1 class="mt-6 font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">{heading}</h1>
     {intro && <p class="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-text-secondary">{intro}</p>}
   </section>
 

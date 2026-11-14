@@ -24,6 +24,40 @@ export function authorUrl(slug: string): string {
   return `/author/${slug}/`;
 }
 
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+/** BreadcrumbList JSON-LD dari trail yang sama dengan breadcrumb visual. */
+export function breadcrumbJsonLd(items: BreadcrumbItem[], siteUrl = 'https://xdirga.xyz') {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.label,
+      ...(item.href ? { item: new URL(item.href, siteUrl).href } : {}),
+    })),
+  };
+}
+
+/**
+ * Deskripsi meta untuk halaman arsip berpaginasi.
+ * Halaman 1 memakai deskripsi dasar; halaman berikutnya memakai kalimat
+ * lanjutan yang menyebut arsip dan posisi halamannya, bukan sekadar angka.
+ */
+export function archivePageDescription(
+  base: string,
+  currentPage: number,
+  lastPage: number,
+  label: string,
+): string {
+  if (currentPage <= 1) return base;
+  return `Lanjutan ${label} di XDIRGA BLOG, halaman ${currentPage} dari ${lastPage}.`;
+}
+
 /** Artikel terbit (status published), terbaru dulu. Draft tidak pernah lolos dari sini. */
 export async function getPublishedArticles(): Promise<Article[]> {
   const articles = await getCollection('articles', ({ data }) => data.status === 'published');

@@ -1,7 +1,13 @@
 ---
 import type { GetStaticPaths, Page } from 'astro';
 import ArchiveLayout from '../../../layouts/ArchiveLayout.astro';
-import { getPublishedArticles, getCategories, type Article } from '../../../lib/articles';
+import {
+  archivePageDescription,
+  getPublishedArticles,
+  getCategories,
+  type Article,
+  type BreadcrumbItem,
+} from '../../../lib/articles';
 import { PAGE_SIZE, SITE } from '../../../lib/site';
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
@@ -33,7 +39,12 @@ const pageTitle = page.currentPage > 1 ? `${category.data.name} (Halaman ${page.
 
 <ArchiveLayout
   title={pageTitle}
-  description={category.data.description}
+  description={archivePageDescription(
+    category.data.description,
+    page.currentPage,
+    page.lastPage,
+    `artikel ${category.data.name}`,
+  )}
   heading={category.data.name}
   intro={category.data.description}
   featured={featured}
@@ -41,6 +52,11 @@ const pageTitle = page.currentPage > 1 ? `${category.data.name} (Halaman ${page.
   currentPage={page.currentPage}
   lastPage={page.lastPage}
   pageUrl={pageUrl}
+  breadcrumb={[
+    { label: 'Beranda', href: '/' },
+    { label: 'Kategori', href: '/kategori/' },
+    { label: category.data.name },
+  ] satisfies BreadcrumbItem[]}
   jsonLd={[
     {
       '@context': 'https://schema.org',
