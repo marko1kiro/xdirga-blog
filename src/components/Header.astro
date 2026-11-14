@@ -13,12 +13,45 @@ const currentPath = Astro.url.pathname;
 
 <header class="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur">
   <div class="mx-auto flex w-full max-w-[1280px] items-center justify-between gap-4 px-5 py-3.5">
-    <a href="/" class="flex shrink-0 items-baseline gap-1.5" aria-label="XDIRGA BLOG, ke beranda">
-      <span class="text-[1.55rem] font-extrabold leading-none tracking-tight text-text">
-        XDIRGA
+    <a href="/" class="flex shrink-0 items-center" aria-label="XDIRGA BLOG, ke beranda">
+      {/* Lockup lengkap, layar sm ke atas. Dua varian: terang untuk light mode,
+          gelap (teks putih asli) untuk dark mode. */}
+      <span class="hidden sm:block">
+        <img
+          src="/logo-xdirga-blog-light.png"
+          alt="XDIRGA BLOG"
+          width="880"
+          height="146"
+          fetchpriority="high"
+          class="block h-9 w-auto dark:hidden"
+        />
+        <img
+          src="/logo-xdirga-blog-dark.png"
+          alt="XDIRGA BLOG"
+          width="880"
+          height="146"
+          fetchpriority="high"
+          class="hidden h-9 w-auto dark:block"
+        />
       </span>
-      <span class="rounded-md bg-primary px-1.5 py-0.5 text-[0.7rem] font-bold leading-none tracking-[0.14em] text-white">
-        BLOG
+      {/* Mark saja di layar kecil: lockup lengkap terlalu kecil untuk dibaca. */}
+      <span class="block sm:hidden">
+        <img
+          src="/logo-xdirga-mark-light.png"
+          alt="XDIRGA BLOG"
+          width="360"
+          height="227"
+          fetchpriority="high"
+          class="block h-8 w-auto dark:hidden"
+        />
+        <img
+          src="/logo-xdirga-mark-dark.png"
+          alt="XDIRGA BLOG"
+          width="360"
+          height="227"
+          fetchpriority="high"
+          class="hidden h-8 w-auto dark:block"
+        />
       </span>
     </a>
 

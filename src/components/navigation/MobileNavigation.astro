@@ -28,15 +28,21 @@ const { items, currentPath } = Astro.props;
     <div
       class="flex shrink-0 items-center justify-between border-b border-border px-5 pb-3.5 pt-[max(0.875rem,env(safe-area-inset-top))]"
     >
-      <span class="flex items-baseline gap-1.5" aria-hidden="true">
-        <span class="text-[1.25rem] font-extrabold leading-none tracking-tight text-text">
-          XDIRGA
-        </span>
-        <span
-          class="rounded-md bg-primary px-1.5 py-0.5 text-[0.6rem] font-bold leading-none tracking-[0.14em] text-white"
-        >
-          BLOG
-        </span>
+      <span class="flex items-center" aria-hidden="true">
+        <img
+          src="/logo-xdirga-mark-light.png"
+          alt=""
+          width="360"
+          height="227"
+          class="block h-7 w-auto dark:hidden"
+        />
+        <img
+          src="/logo-xdirga-mark-dark.png"
+          alt=""
+          width="360"
+          height="227"
+          class="hidden h-7 w-auto dark:block"
+        />
       </span>
       <button
         id="mobile-menu-close"
