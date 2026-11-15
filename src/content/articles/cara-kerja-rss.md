@@ -5,6 +5,7 @@ category: teknologi
 tags: ["RSS", "Teknologi", "Membaca"]
 author: xdirga
 publishedAt: 2026-11-13
+updatedAt: 2026-11-15
 status: published
 featured: false
 trending: false
@@ -34,7 +35,7 @@ Satu item di dalam berkas RSS bentuknya kira kira seperti ini.
 </item>
 ```
 
-Nggak ada iklan, nggak ada pelacak, nggak ada algoritma yang milihin. Yang ada cuma daftar tulisan, urut dari yang terbaru.
+Nggak ada iklan, nggak ada pelacak, nggak ada algoritma yang milihin. Yang ada cuma daftar tulisan, urut dari yang terbaru. Item contoh di atas diambil dari [tulisan soal Manus di blog ini](/artikel/manus-free-300-kredit-sehari/).
 
 ## Kenapa masih berguna
 
@@ -48,6 +49,6 @@ Yang ketiga, awet. Situs boleh ganti desain, ganti platform, atau ganti pemilik.
 
 ## Cara mulai
 
-Tinggal pilih satu aplikasi pembaca RSS, terus tambahin alamat RSS dari situs yang lo suka. Blog ini punya umpan di `/rss.xml`. Tambahin, dan tulisan baru bakal muncul sendiri tanpa perlu diingat.
+Tinggal pilih satu aplikasi pembaca RSS, terus tambahin alamat RSS dari situs yang lo suka. Blog ini punya umpan di `/rss.xml`. Tambahin, dan tulisan baru bakal muncul sendiri tanpa perlu diingat. Tulisan baru itu termasuk [kabar model gratis terbaru](/artikel/ling-3-2-flash-gratis-openrouter/), seperti Ling 3.2 Flash yang bisa dipakai gratis di OpenRouter sejak 13 November 2026.
 
 Teknologi yang tenang kayak RSS jarang jadi berita. Justru itu kekuatannya. Dia kerja diam diam, tanpa minta perhatian, dan tetap jalan tahun demi tahun.

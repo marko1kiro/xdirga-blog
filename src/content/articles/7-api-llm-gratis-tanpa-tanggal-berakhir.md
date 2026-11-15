@@ -5,6 +5,7 @@ category: teknologi
 tags: ["API", "LLM gratis", "AI gratis"]
 author: xdirga
 publishedAt: 2026-11-11
+updatedAt: 2026-11-15
 lastVerifiedAt: 2026-11-14
 status: published
 featured: false
@@ -28,7 +29,7 @@ Dari 42 API yang dicek di llmlatency.dev, cuma 7 yang kasih gratis tanpa tanggal
 | Gemini API | Token gratis terbatas, konten tier gratis dipakai Google buat improve produk |
 | SenseNova | Nol yuan per bulan selama beta publik |
 
-**OpenRouter.** Paling cepat dari semuanya, median TTFB 67 ms di halaman live. Jatah gratisnya 20 request per menit dan 50 per hari, naik jadi 1.000 per hari setelah beli minimal 10 kredit.
+**OpenRouter.** Paling cepat dari semuanya, median TTFB 67 ms di halaman live. Jatah gratisnya 20 request per menit dan 50 per hari, naik jadi 1.000 per hari setelah beli minimal 10 kredit. Salah satu model gratis yang bisa lo pakai lewat jalur ini adalah [Ling 3.2 Flash](/artikel/ling-3-2-flash-gratis-openrouter/), model 1 juta token yang tidak memungut biaya buat prompt maupun completion.
 
 **Cohere.** Trial key 1.000 panggilan per bulan. Buat testing sih cukup, buat produksi jangan harap.
 
@@ -44,6 +45,6 @@ Dari 42 API yang dicek di llmlatency.dev, cuma 7 yang kasih gratis tanpa tanggal
 
 ## Buat yang bangun agen sendiri
 
-Dari 7 ini, 5 bisa dipakai di OpenClaw, Hermes Agent, dan n8n. Jadi buat yang [bangun agen sendiri](/artikel/apa-itu-agen-ai/), daftar ini langsung kepakai. Mulai dari yang batasnya paling longgar buat kebutuhanmu. Dan jangan andalkan satu layanan saja buat produksi, batas gratis bisa berubah sewaktu waktu.
+Dari 7 ini, 5 bisa dipakai di OpenClaw, Hermes Agent, dan n8n. Jadi buat yang [bangun agen sendiri](/artikel/apa-itu-agen-ai/), daftar ini langsung kepakai. Mulai dari yang batasnya paling longgar buat kebutuhanmu. Dan jangan andalkan satu layanan saja buat produksi, batas gratis bisa berubah sewaktu waktu. Agen yang jalan di layanan ini juga butuh browser kalau tugasnya menjelajah web, dan Cloudflare baru saja [membuka kode browser ringan buat agen AI](/artikel/cloudflare-kitesurf-open-source/).
 
 Sumber data [llmlatency.dev](https://llmlatency.dev/free-llm-api), dicek 11 November 2026.

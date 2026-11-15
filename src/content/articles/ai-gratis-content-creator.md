@@ -6,7 +6,7 @@ tags: ["AI gratis", "Tips"]
 author: xdirga
 publishedAt: 2026-11-14T18:20:00+07:00
 lastVerifiedAt: 2026-11-14
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 status: published
 featured: false
 trending: true
@@ -44,6 +44,6 @@ CapCut itu editor video yang paling gampang buat pemula. Paket gratisnya bisa di
 
 Ini bagian yang paling sering bikin pemula kecolongan. Ada tiga tanda yang perlu lo hafal. Pertama, alat minta nomor kartu sebelum lo bisa pakai fitur intinya, walau tulisannya bilang gratis. Kedua, yang tertulis "free trial", bukan "free plan". Trial itu ada tanggal berakhirnya, dan tagihan jalan otomatis kalau lo lupa batalkan. Ketiga, harga baru muncul setelah lo sudah terlanjur nyaman pakai alatnya. Aturan praktisnya sederhana. Kalau diminta kartu di awal, tutup tabnya dan cari alternatif lain. Selalu cek nama paketnya di halaman harga sebelum daftar. Dan kalau lo suatu hari memang memulai trial berbayar, pasang pengingat di HP sehari sebelum trial berakhir.
 
-Satu konten lengkap, dari ide sampai caption, bisa selesai tanpa keluar uang dan tanpa kartu kredit. Ide dan naskah dari ChatGPT atau Gemini, gambar dari Leonardo atau Canva, suara dari ElevenLabs atau Suno, edit di CapCut. Yang tidak gratis cuma satu, waktu lo buat konsisten bikin konten. Sebelum lo monetisasi, baca dulu syarat lisensi tiap alat, karena batas gratis dan lisensi komersial itu dua hal yang berbeda.
+Satu konten lengkap, dari ide sampai caption, bisa selesai tanpa keluar uang dan tanpa kartu kredit. Ide dan naskah dari ChatGPT atau Gemini, gambar dari Leonardo atau Canva, suara dari ElevenLabs atau Suno, edit di CapCut. Yang tidak gratis cuma satu, waktu lo buat konsisten bikin konten. Kalau lo mau alur ini disusun jadi tugas kecil tiap hari buat usaha atau tugas sekolah, ada [rencana 7 hari buat UMKM dan pelajar](/artikel/ai-gratis-umkm-pelajar-rencana-7-hari/) yang merangkai semua langkah di atas dari hari pertama sampai hari ketujuh. Sebelum lo monetisasi, baca dulu syarat lisensi tiap alat, karena batas gratis dan lisensi komersial itu dua hal yang berbeda.
 
 Sumber tulisan ini [halaman harga Leonardo](https://leonardo.ai/pricing), [halaman harga Canva](https://www.canva.com/pricing), [halaman harga ElevenLabs](https://elevenlabs.io/pricing), [halaman harga Suno](https://suno.com/pricing), [situs CapCut](https://www.capcut.com/), dan [pengujian independen soal harga dan fitur CapCut](https://aialleyway.com/capcut-pricing/).

@@ -5,6 +5,7 @@ category: edukasi
 tags: ["AI gratis", "Edukasi"]
 author: xdirga
 publishedAt: 2026-11-14T18:00:00+07:00
+updatedAt: 2026-11-15
 status: published
 featured: false
 trending: true
@@ -73,7 +74,7 @@ Jelaskan [topik] seolah lo ngajar anak umur 12 tahun. Pakai contoh dari kehidupa
 Buatkan rencana belajar [topik] selama 30 hari, 15 menit per hari. Tiap hari satu langkah kecil dengan latihan yang bisa dikerjakan di HP. Mulai dari yang paling dasar
 ```
 
-**Hasil yang diharapkan.** Rencana harian yang ringan dan konsisten, bukan target besar yang bikin menyerah di hari ketiga.
+**Hasil yang diharapkan.** Rencana harian yang ringan dan konsisten, bukan target besar yang bikin menyerah di hari ketiga. Kalau lo pelajar dan mau rencana yang sudah dirangkai lengkap dengan alat gratisnya, coba [rencana 7 hari](/artikel/ai-gratis-umkm-pelajar-rencana-7-hari/) buat UMKM dan pelajar yang memakai prompt seperti ini di tiap harinya.
 
 ### 8. Kuis buat latihan
 

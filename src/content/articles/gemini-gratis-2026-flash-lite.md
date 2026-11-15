@@ -5,6 +5,7 @@ category: teknologi
 tags: ["Gemini", "AI gratis", "Google"]
 author: xdirga
 publishedAt: 2026-11-14T12:20:00+07:00
+updatedAt: 2026-11-15
 lastVerifiedAt: 2026-11-14
 status: published
 featured: false
@@ -27,7 +28,7 @@ Perubahan ini cuma berlaku untuk akun personal. Google tidak menjelaskan akun ke
 
 ## Yang masih jalan di versi gratis
 
-Yang berubah itu modelnya, bukan daftar fiturnya. Chat, bikin dan edit gambar, Deep Research, Gemini Live, Canvas, dan Gems masih ada di akun gratis, begitu juga penyimpanan 15 GB yang nempel di akun Google lo.
+Yang berubah itu modelnya, bukan daftar fiturnya. Chat, bikin dan edit gambar, Deep Research, Gemini Live, Canvas, dan Gems masih ada di akun gratis, begitu juga penyimpanan 15 GB yang nempel di akun Google lo. Di Amerika, aplikasi Gemini bahkan sudah bisa [membaca pengeluaran lo lewat Google Wallet](/artikel/gemini-google-wallet/).
 
 Tapi fitur berat makan jatah lebih cepat. Google sendiri menyebut media generation, Deep Research, model Pro, dan Deep Think sebagai pemakai jatah yang besar. Jadi kalau lo cuma butuh jawaban teks, jangan panggil fitur berat tanpa alasan.
 

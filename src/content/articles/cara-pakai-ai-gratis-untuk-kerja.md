@@ -5,6 +5,7 @@ category: tips
 tags: ["AI gratis", "Produktivitas", "Tips"]
 author: xdirga
 publishedAt: 2026-11-14T12:10:00+07:00
+updatedAt: 2026-11-15
 status: published
 featured: false
 trending: true
@@ -46,7 +47,7 @@ Ringkas dokumen ini jadi poin penting. Pisahkan antara keputusan yang sudah diam
 
 Contoh nyata, notulen rapat berisi banyak usulan tapi tidak jelas siapa yang mengerjakan apa. Ringkasan AI memisahkan keputusan dan tugas, jadi lo langsung tahu siapa yang harus ditagih minggu depan.
 
-Ingat, paket gratis membatasi jumlah file yang bisa diunggah. Kalau dokumennya besar, potong jadi beberapa bagian dan ringkas satu per satu.
+Ingat, paket gratis membatasi jumlah file yang bisa diunggah. Kalau dokumennya besar, potong jadi beberapa bagian dan ringkas satu per satu. Catatan hasil ringkasan itu tetap harus gampang dicari lagi, jadi ada baiknya lo menulisnya dengan [cara yang bikin tiap catatan ketemu pas dibutuhkan](/artikel/cara-menulis-catatan-belajar/).
 
 ## 3. Bikin dan Rapikan Spreadsheet
 

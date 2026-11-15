@@ -5,7 +5,7 @@ category: teknologi
 tags: ["ChatGPT", "Gemini", "Claude", "AI gratis"]
 author: xdirga
 publishedAt: 2026-11-14T12:30:00+07:00
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 lastVerifiedAt: 2026-11-14
 status: published
 featured: false
@@ -46,7 +46,7 @@ Flash Lite itu model paling ringan dan paling cepat di keluarga Gemini. Buat tan
 
 Batas pemakaian Gemini dihitung dari komputasi yang dipakai, bukan dari jumlah pesan. Sejak 17 Mei 2026, jatahnya diperbarui tiap lima jam sampai batas mingguan. Makin rumit pertanyaan lo, makin panjang obrolannya, dan makin berat fiturnya, makin cepat jatahnya habis. Fitur berat seperti bikin gambar dan Deep Research menghabiskan jatah lebih cepat.
 
-Jendela konteksnya, alias seberapa banyak teks yang bisa dia ingat dalam satu obrolan, juga paling kecil di antara ketiganya. Dokumen yang sangat panjang harus lo potong jadi beberapa bagian sebelum diunggah.
+Jendela konteksnya, alias seberapa banyak teks yang bisa dia ingat dalam satu obrolan, juga paling kecil di antara ketiganya. Dokumen yang sangat panjang harus lo potong jadi beberapa bagian sebelum diunggah. Di Amerika, Gemini juga sudah [terhubung ke Google Wallet](/artikel/gemini-google-wallet/) buat membaca pengeluaran, walau fitur itu belum sampai ke Indonesia.
 
 ## Claude gratis
 
