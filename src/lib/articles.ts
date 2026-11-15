@@ -64,7 +64,7 @@ export async function getPublishedArticles(): Promise<Article[]> {
   return articles.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 }
 
-/** Artikel terbit yang boleh masuk sitemap dan RSS (bukan noindex). */
+/** Artikel terbit yang boleh masuk sitemap (bukan noindex). RSS sudah dihapus total. */
 export async function getIndexableArticles(): Promise<Article[]> {
   const published = await getPublishedArticles();
   return published.filter((a) => !a.data.noindex);

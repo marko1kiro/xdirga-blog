@@ -132,8 +132,8 @@ export const UI = {
     footerTagline:
       'Tempat menemukan informasi bermanfaat, sudut pandang segar, dan pengetahuan praktis.',
     footerAbout:
-      'Publikasi digital independen. Ditulis mengalir, dari hal yang dicoba sendiri, tanpa paywall dan tanpa iklan.',
-    footerRss: 'Ikuti lewat RSS',
+      'Publikasi digital independen. Ditulis mengalir, dari hal yang dicoba sendiri, tanpa paywall.',
+    footerSubscribe: 'Langganan email',
     footerCategories: 'Kategori',
     footerCategoriesAria: 'Kategori di footer',
     footerLinks: 'Tautan',
@@ -170,7 +170,7 @@ export const UI = {
     publishedCount: (n: number, m: number) => `${n} tulisan diterbitkan sejauh ini, di ${m} kategori.`,
     followTitle: 'Jangan sampai ketinggalan tulisan baru',
     followText:
-      'Semua tulisan di sini gratis dibaca, tanpa paywall dan tanpa iklan. Ikuti lewat RSS supaya tulisan baru langsung masuk ke pembaca favoritmu.',
+      'Semua tulisan di sini gratis dibaca, tanpa paywall. Langganan email supaya tulisan baru langsung masuk ke kotak masuk lo.',
     followAria: 'Ikuti XDIRGA BLOG',
     followSearch: 'Cari tulisan',
     // Indeks kategori/tag
@@ -234,8 +234,8 @@ export const UI = {
     footerTagline:
       'Where to find useful information, fresh perspectives, and practical knowledge.',
     footerAbout:
-      'An independent digital publication. Written in a flowing style, from things tried firsthand, with no paywall and no ads.',
-    footerRss: 'Follow via RSS',
+      'An independent digital publication. Written in a flowing style, from things tried firsthand, with no paywall.',
+    footerSubscribe: 'Subscribe by email',
     footerCategories: 'Categories',
     footerCategoriesAria: 'Categories in footer',
     footerLinks: 'Links',
@@ -272,7 +272,7 @@ export const UI = {
     publishedCount: (n: number, m: number) => `${n} articles published so far, across ${m} categories.`,
     followTitle: "Don't miss new articles",
     followText:
-      'Everything here is free to read, with no paywall and no ads. Follow via RSS so new articles land straight in your favorite reader.',
+      'Everything here is free to read, with no paywall. Subscribe by email so new articles land straight in your inbox.',
     followAria: 'Follow XDIRGA BLOG',
     followSearch: 'Search articles',
     // Category/tag indexes

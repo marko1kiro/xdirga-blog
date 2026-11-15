@@ -2,7 +2,9 @@
 /**
  * QA otomatis untuk XDIRGA BLOG v2.
  * 1. Semua rute di dist mengembalikan 200.
- * 2. Draf tidak muncul di sitemap, RSS, atau homepage.
+ * 2. Draf tidak muncul di sitemap atau homepage. RSS sudah dihapus total:
+ *    /rss.xml 404, dist/rss.xml tidak ada, tidak ada application/rss+xml
+ *    di dist kecuali isi artikel editorial cara-kerja-rss.
  * 3. Tidak ada broken internal link.
  * 4. Tidak ada horizontal overflow di 360px dan 1280px (via CDP).
  * 5. Dark mode: class .dark terpasang dan preferensi tersimpan di localStorage.
@@ -48,7 +50,7 @@ const routes = htmlFiles.map((f) => {
   rel = rel.replace(/\/index\.html$/, '/');
   return '/' + rel;
 });
-const extraRoutes = ['/rss.xml', '/sitemap-index.xml', '/sitemap-0.xml', '/robots.txt', '/_redirects'];
+const extraRoutes = ['/sitemap-index.xml', '/sitemap-0.xml', '/robots.txt', '/_redirects'];
 const allRoutes = [...new Set([...routes, ...extraRoutes])];
 
 let statusOk = 0;
@@ -83,16 +85,63 @@ ok('rute /en/tag/ ada (min. 1 tag)', allRoutes.some((r) => r.startsWith('/en/tag
 
 // ---------- 2. Draf tidak boleh muncul ----------
 const sitemap = fs.readFileSync(path.join(dist, 'sitemap-0.xml'), 'utf8');
-const rss = fs.readFileSync(path.join(dist, 'rss.xml'), 'utf8');
 const home = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 ok('draf tidak ada di sitemap', !sitemap.includes('catatan-draft-contoh'));
-ok('draf tidak ada di RSS', !rss.includes('catatan-draft-contoh'));
 ok('draf tidak ada di homepage', !home.includes('catatan-draft-contoh'));
 const publishedCount = fs.readdirSync(path.join(root, 'src/content/articles')).filter((f) => /\.(md|mdx)$/.test(f)).filter((f) => /status:\s*published/.test(fs.readFileSync(path.join(root, 'src/content/articles', f), 'utf8'))).length;
 ok(`sitemap berisi ${publishedCount} artikel`, (sitemap.match(/\/artikel\//g) || []).length === publishedCount, `${(sitemap.match(/\/artikel\//g) || []).length} artikel`);
 ok('sitemap tidak berisi /search/', !sitemap.includes('/search'));
-ok(`RSS berisi ${publishedCount} item`, (rss.match(/<item>/g) || []).length === publishedCount, `${(rss.match(/<item>/g) || []).length} item`);
 ok('homepage berisi judul XDIRGA BLOG', home.includes('XDIRGA') && home.includes('Sedang Tren'));
+
+// ---------- 2c. RSS dihapus total (keputusan user 15 Nov 2026) ----------
+// /rss.xml tidak ada di dist, server mengembalikan 404, tidak ada jejak
+// application/rss+xml atau /rss.xml di HTML mana pun — KECUALI isi artikel
+// editorial cara-kerja-rss (konten TENTANG RSS, sengaja dipertahankan).
+// Footer: tanpa tombol RSS, ada tombol langganan email ke /kontak/.
+// FollowSection: dirender beserta form langganan karena newsletter AKTIF
+// (username Buttondown sudah diisi); penanda data-follow-section hanya ada
+// bila section dirender.
+ok('RSS: dist/rss.xml tidak ada', !fs.existsSync(path.join(dist, 'rss.xml')));
+const rssRes = await fetch(BASE + '/rss.xml');
+await rssRes.arrayBuffer().catch(() => {});
+ok('RSS: /rss.xml mengembalikan 404', rssRes.status === 404, `status ${rssRes.status}`);
+const rssLeakFiles = htmlFiles.filter((f) => {
+  const rel = path.relative(dist, f).replace(/\\/g, '/');
+  if (rel.startsWith('artikel/cara-kerja-rss/')) return false;
+  const text = fs.readFileSync(f, 'utf8');
+  return text.includes('rss.xml') || text.includes('application/rss+xml');
+});
+ok(
+  'RSS: tidak ada jejak rss.xml / application/rss+xml di dist (kecuali artikel cara-kerja-rss)',
+  rssLeakFiles.length === 0,
+  rssLeakFiles.map((f) => path.relative(dist, f)).join(', '),
+);
+ok('RSS: homepage tanpa tautan /rss.xml', !home.includes('/rss.xml'));
+ok('RSS: homepage tanpa application/rss+xml', !home.includes('application/rss+xml'));
+ok('RSS: footer punya tombol langganan email ke /kontak/', home.includes('href="/kontak/"'));
+// Newsletter AKTIF (username Buttondown xdirgablog, keputusan user 15 Nov 11:12 WIB):
+// FollowSection HARUS dirender di beranda ID + EN beserta form langganan,
+// dan form HARUS ada di halaman kontak ID + EN, dengan action URL Buttondown
+// yang tepat. Tidak ada subscriber palsu yang dibuat — verifikasi hanya
+// sampai form ter-render dengan action URL benar.
+const enHome = fs.readFileSync(path.join(dist, 'en/index.html'), 'utf8');
+const kontakId = fs.readFileSync(path.join(dist, 'kontak/index.html'), 'utf8');
+const kontakEn = fs.readFileSync(path.join(dist, 'en/contact/index.html'), 'utf8');
+const BUTTONDOWN_ACTION = 'https://buttondown.com/api/emails/embed-subscribe/xdirgablog';
+ok('newsletter: FollowSection dirender di beranda ID', home.includes('data-follow-section'));
+ok('newsletter: FollowSection dirender di beranda EN', enHome.includes('data-follow-section'));
+for (const [label, html] of [
+  ['beranda ID', home],
+  ['beranda EN', enHome],
+  ['kontak ID', kontakId],
+  ['kontak EN', kontakEn],
+]) {
+  ok(`newsletter: form muncul di ${label}`, html.includes('id="subscribe-email"'));
+  ok(
+    `newsletter: action URL Buttondown benar di ${label}`,
+    html.includes(`action="${BUTTONDOWN_ACTION}"`),
+  );
+}
 
 // ---------- 2b. Hreflang i18n ----------
 // Halaman EN berpasangan: hreflang en/id/x-default + <html lang="en"> +

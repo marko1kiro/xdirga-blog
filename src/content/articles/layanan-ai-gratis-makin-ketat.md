@@ -40,4 +40,4 @@ Terus, pakai jatah gratis buat hal yang memang butuh model pintar. Buat tugas ri
 
 Terakhir, catat layanan mana yang masih ngasih jatah tanpa tanggal berakhir. Daftar kayak gitu berubah terus, jadi perlu dicek berkala. Di blog ini ada [daftar API gratis yang masih jalan](/artikel/7-api-llm-gratis-tanpa-tanggal-berakhir/), dan bakal diperbarui kalau ada perubahan.
 
-Jatah gratis nggak bakal hilang sepenuhnya. Tapi bentuknya bakal terus berubah. Yang siap dengan cadangan bakal baik baik aja, yang cuma ngandelin satu layanan bakal kerepotan setiap kali ada perubahan. Perubahan kayak gini paling gampang diikuti lewat [umpan RSS](/artikel/cara-kerja-rss/), jadi lo tidak ketinggalan tiap ada batas yang berubah.
+Jatah gratis nggak bakal hilang sepenuhnya. Tapi bentuknya bakal terus berubah. Yang siap dengan cadangan bakal baik baik aja, yang cuma ngandelin satu layanan bakal kerepotan setiap kali ada perubahan. Perubahan kayak gini paling gampang diikuti lewat [langganan email](/kontak/), jadi lo tidak ketinggalan tiap ada batas yang berubah.

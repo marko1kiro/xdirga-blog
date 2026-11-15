@@ -1,6 +1,6 @@
 ---
 title: "Catatan Draf yang Belum Selesai"
-description: "Ini draf contoh. Tidak boleh muncul di daftar, pencarian, sitemap, atau RSS."
+description: "Ini draf contoh. Tidak boleh muncul di daftar, pencarian, atau sitemap."
 category: tips
 tags: ["Draf"]
 author: xdirga

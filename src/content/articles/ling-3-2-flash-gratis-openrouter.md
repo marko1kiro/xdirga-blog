@@ -15,7 +15,7 @@ coverAlt: "Ilustrasi abstrak jendela konteks panjang dan chip AI di atas meja ke
 coverCaption: "Ilustrasi dibuat khusus untuk artikel ini."
 ---
 
-Lo pernah ngerasa model AI gratis itu selalu pelit konteks? Dokumen panjang dikit langsung kepotong, percakapan panjang langsung lupa awalnya. Nah, ada kabar yang lumayan bikin senyum buat lo yang suka eksperimen tanpa keluar duit, dan Ling 3.2 Flash gratis di OpenRouter bisa jadi jawabannya. Kabar kayak gini bakal muncul sendiri di pembaca RSS lo kalau lo mengikuti blog ini lewat [umpan RSS](/artikel/cara-kerja-rss/).
+Lo pernah ngerasa model AI gratis itu selalu pelit konteks? Dokumen panjang dikit langsung kepotong, percakapan panjang langsung lupa awalnya. Nah, ada kabar yang lumayan bikin senyum buat lo yang suka eksperimen tanpa keluar duit, dan Ling 3.2 Flash gratis di OpenRouter bisa jadi jawabannya. Kabar kayak gini bakal lo terima lewat [langganan email](/kontak/) kalau lo mengikuti blog ini.
 
 ## Ling 3.2 Flash Gratis sejak 13 November 2026
 

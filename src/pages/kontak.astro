@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+import { NEWSLETTER_ENABLED } from '../lib/newsletter';
 import { SITE } from '../lib/site';
 ---
 
@@ -14,17 +16,28 @@ import { SITE } from '../lib/site';
       <p>
         XDIRGA BLOG adalah publikasi pribadi yang dikelola satu orang. Tidak ada tim redaksi dan tidak ada layanan pelanggan, jadi mohon maklum kalau respons tidak bisa secepat layanan komersial.
       </p>
+      <h2>Email</h2>
+      <p>
+        Email <a href="mailto:admin@xdirga.xyz">admin@xdirga.xyz</a>. Kirim email ke alamat ini buat koreksi, usulan topik, atau hal lain soal blog ini.
+      </p>
       <h2>Cara terbaik mengikuti blog ini</h2>
       <p>
-        Cara paling gampang adalah mengikuti umpan RSS di <a href="/rss.xml">/rss.xml</a>. Setiap tulisan baru langsung muncul di pembaca RSS favoritmu, tanpa perlu buka situs ini tiap hari.
+        Cara paling gampang adalah langganan email. Setiap tulisan baru langsung masuk ke kotak masuk lo, tanpa perlu buka situs ini tiap hari.
       </p>
       <p>
-        Kalau ada tulisan yang keliru atau tautan yang rusak, cara paling membantu adalah mencatat judul artikel dan bagian yang bermasalah, lalu menyampaikannya lewat kanal yang sudah kamu punya ke penulis. Perbaikan akan dicatat dengan tanggal pembaruan di artikelnya.
+        Kalau ada tulisan yang keliru atau tautan yang rusak, cara paling membantu adalah mencatat judul artikel dan bagian yang bermasalah, lalu kirim email ke <a href="mailto:admin@xdirga.xyz">admin@xdirga.xyz</a>. Perbaikan akan dicatat dengan tanggal pembaruan di artikelnya.
       </p>
       <h2>Usulan topik</h2>
       <p>
-        Usulan topik dipersilakan, terutama soal tools gratis, API, dan hal teknis yang lagi kamu kerjakan. Tidak semua usulan bisa ditulis, tapi semua dibaca dan dipertimbangkan.
+        Usulan topik dipersilakan, terutama soal tools gratis, API, dan hal teknis yang lagi kamu kerjakan. Tidak semua usulan bisa ditulis, tapi semua dibaca dan dipertimbangkan. Usulan juga bisa lo kirim ke email di atas.
       </p>
     </div>
+    {
+      NEWSLETTER_ENABLED && (
+        <section id="langganan" class="mt-10">
+          <SubscribeForm />
+        </section>
+      )
+    }
   </section>
 </BaseLayout>

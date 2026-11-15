@@ -1,9 +1,13 @@
 ---
 /**
- * Bagian "Ikuti" di homepage. Tanpa formulir email palsu:
- * blog ini tidak punya backend newsletter, jadi ajakan yang jujur
- * adalah mengikuti lewat RSS dan memakai pencarian.
+ * Bagian "Ikuti" di homepage. Ajakan langganan email lewat Buttondown.
+ * RSS sudah dihapus total, jadi tidak ada lagi tombol RSS di sini.
+ *
+ * Selama newsletter belum aktif (BUTTONDOWN_USERNAME masih kosong),
+ * SELURUH section tidak dirender — bukan section kosong.
  */
+import SubscribeForm from './SubscribeForm.astro';
+import { NEWSLETTER_ENABLED } from '../lib/newsletter';
 import { searchUrl, ui, type Lang } from '../lib/i18n';
 
 interface Props {
@@ -15,27 +19,30 @@ const { lang = 'id' } = Astro.props;
 const t = ui(lang);
 ---
 
-<section class="mt-16 rounded-2xl border border-border bg-accent-soft p-6 sm:p-8" aria-label={t.followAria}>
-  <div class="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
-    <div>
-      <h2 class="font-display text-2xl font-semibold text-text sm:text-[1.7rem]">{t.followTitle}</h2>
-      <p class="mt-2 max-w-xl text-sm leading-relaxed text-text-secondary">
-        {t.followText}
-      </p>
-    </div>
-    <div class="flex shrink-0 flex-wrap gap-2.5">
-      <a
-        href="/rss.xml"
-        class="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover"
-      >
-        {t.footerRss}
-      </a>
-      <a
-        href={searchUrl(lang)}
-        class="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
-      >
-        {t.followSearch}
-      </a>
-    </div>
-  </div>
-</section>
+{
+  NEWSLETTER_ENABLED && (
+    <section
+      data-follow-section
+      class="mt-16 rounded-2xl border border-border bg-accent-soft p-6 sm:p-8"
+      aria-label={t.followAria}
+    >
+      <div class="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 class="font-display text-2xl font-semibold text-text sm:text-[1.7rem]">{t.followTitle}</h2>
+          <p class="mt-2 max-w-xl text-sm leading-relaxed text-text-secondary">{t.followText}</p>
+        </div>
+        <div class="flex shrink-0 flex-wrap gap-2.5">
+          <a
+            href={searchUrl(lang)}
+            class="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+          >
+            {t.followSearch}
+          </a>
+        </div>
+      </div>
+      <div class="mt-6">
+        <SubscribeForm lang={lang} />
+      </div>
+    </section>
+  )
+}
