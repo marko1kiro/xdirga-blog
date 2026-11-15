@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../lib/site';
+---
+
+<BaseLayout
+  title="About"
+  description="About XDIRGA BLOG, an independent digital publication with useful information and practical knowledge."
+  lang="en"
+  hreflang={{ en: new URL('/en/about/', SITE.url).href, id: new URL('/tentang/', SITE.url).href }}
+>
+  <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
+    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">About XDIRGA BLOG</h1>
+    <div class="prose mt-8 max-w-none">
+      <p>
+        XDIRGA BLOG is an independent digital publication. Its content is a mix of news, technology, lifestyle, education, tips, and business. One thread runs through it all: everything written here has to be useful to the reader.
+      </p>
+      <p>
+        This blog is written the way people talk, not the way documentation reads. Everything covered here is something already tried firsthand, not theory that has never been put to the test. When something discussed has limits or shortcomings, they are stated as they are.
+      </p>
+      <h2>What this blog covers</h2>
+      <ul>
+        <li>Technology and digital trends, especially the free or cheap ones you can use right away.</li>
+        <li>Education and general knowledge, easy to digest.</li>
+        <li>Practical tips and tutorials for work and everyday life.</li>
+        <li>Lifestyle and small habits that make the day run smoother.</li>
+        <li>Business and productivity from the point of view of someone doing it, not watching it.</li>
+      </ul>
+      <h2>How this blog works</h2>
+      <p>
+        Everything here is free to read, with no paywall and no ads. There are no accounts, no tracking, and no reader data is collected. Your light or dark theme preference is stored in your own browser, not on a server.
+      </p>
+      <p>
+        If an article turns out to be wrong or out of date, it will be corrected and given an update date on the article page.
+      </p>
+      <h2>About the author</h2>
+      <p>
+        The author of this blog is Marko, who works in the field day to day and builds many things with the help of AI. The writing here grows out of real problems encountered firsthand, worked through, and written down so they are not lost.
+      </p>
+      <p>
+        Happy reading. Hopefully something here sticks and proves useful.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getAllTags, tagUrl } from '../../lib/articles';
+import { SITE } from '../../lib/site';
 
 const tags = await getAllTags();
 ---
@@ -8,6 +9,7 @@ const tags = await getAllTags();
 <BaseLayout
   title="Semua Tag"
   description="Jelajahi semua tag di XDIRGA BLOG untuk menemukan tulisan berdasarkan topik yang lo cari."
+  hreflang={{ en: new URL('/en/tag/', SITE.url).href, id: new URL('/tag/', SITE.url).href }}
 >
   <section class="pt-10 sm:pt-12">
     <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Semua Tag</h1>

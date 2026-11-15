@@ -40,6 +40,8 @@ export default defineConfig({
         const pathname = new URL(page).pathname;
         if (hiddenPaths.has(pathname)) return false;
         if (pathname.startsWith('/search')) return false;
+        // Halaman pencarian EN juga bukan konten indexable (cermin /search/).
+        if (pathname.startsWith('/en/search')) return false;
         return true;
       },
     }),

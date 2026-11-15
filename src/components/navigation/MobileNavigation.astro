@@ -1,12 +1,16 @@
 ---
 import type { NavItem } from '../../config/navigation';
+import LangSwitch from '../LangSwitch.astro';
+import { ui, homeUrl, aboutUrl, searchUrl, categoriesIndexUrl, type Lang } from '../../lib/i18n';
 
 interface Props {
   items: NavItem[];
   currentPath: string;
+  lang?: Lang;
 }
 
-const { items, currentPath } = Astro.props;
+const { items, currentPath, lang = 'id' } = Astro.props;
+const t = ui(lang);
 // Menu Tools: tautan polos (tanpa accordion), posisi paling akhir setelah
 // "Tentang". Aktif juga untuk rute /id/tools/*.
 const toolsActive =
@@ -28,7 +32,7 @@ const toolsActive =
     class="fixed inset-y-0 right-0 z-50 flex w-[min(92vw,400px)] translate-x-full flex-col bg-surface shadow-2xl transition-transform duration-200 ease-out"
     role="dialog"
     aria-modal="true"
-    aria-label="Menu navigasi"
+    aria-label={t.mobileNavAria}
     data-mobile-drawer
   >
     <div
@@ -53,7 +57,7 @@ const toolsActive =
       <button
         id="mobile-menu-close"
         type="button"
-        aria-label="Tutup menu"
+        aria-label={t.mobileMenuClose}
         class="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text-secondary transition hover:border-primary hover:text-primary"
       >
         <svg
@@ -74,17 +78,17 @@ const toolsActive =
 
     <nav
       class="flex-1 overflow-y-auto px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-2"
-      aria-label="Navigasi seluler"
+      aria-label={t.mobileNavAria}
     >
       <a
-        href="/"
-        aria-current={currentPath === '/' ? 'page' : undefined}
+        href={homeUrl(lang)}
+        aria-current={currentPath === '/' || currentPath === '/en/' ? 'page' : undefined}
         class:list={[
           'block rounded-lg px-3 py-3 text-[0.95rem] font-medium transition hover:bg-surface-secondary',
-          currentPath === '/' ? 'text-primary' : 'text-text',
+          currentPath === '/' || currentPath === '/en/' ? 'text-primary' : 'text-text',
         ]}
       >
-        Beranda
+        {t.navHome}
       </a>
 
       {
@@ -108,7 +112,7 @@ const toolsActive =
                   data-accordion-btn={item.slug}
                   aria-expanded="false"
                   aria-controls={`acc-${item.slug}`}
-                  aria-label={`Buka submenu ${item.label}`}
+                  aria-label={t.openSubmenu(item.label)}
                   class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-text-secondary transition hover:bg-surface-secondary hover:text-text"
                 >
                   <svg
@@ -135,7 +139,7 @@ const toolsActive =
                 <div class="min-h-0 overflow-hidden">
                   <div class="px-3 pb-4 pt-1">
                     <p class="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-secondary">
-                      Topik
+                      {t.topics}
                     </p>
                     <ul class="mt-1">
                       {item.tags.map((tag) => (
@@ -153,7 +157,7 @@ const toolsActive =
                       ))}
                     </ul>
                     <p class="mt-3 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-secondary">
-                      Terbaru di {item.label}
+                      {t.latestIn(item.label)}
                     </p>
                     <ul class="mt-1">
                       {item.latest.map((post) => (
@@ -171,7 +175,7 @@ const toolsActive =
                       href={item.href}
                       class="mt-2 inline-flex min-h-[44px] items-center gap-1 px-2 text-sm font-semibold text-primary"
                     >
-                      Lihat Semua {item.label} →
+                      {t.seeAll(item.label)} →
                     </a>
                   </div>
                 </div>
@@ -182,14 +186,14 @@ const toolsActive =
       }
 
       <a
-        href="/tentang/"
-        aria-current={currentPath.startsWith('/tentang/') ? 'page' : undefined}
+        href={aboutUrl(lang)}
+        aria-current={currentPath.startsWith('/tentang/') || currentPath.startsWith('/en/about/') ? 'page' : undefined}
         class:list={[
           'block rounded-lg px-3 py-3 text-[0.95rem] font-medium transition hover:bg-surface-secondary',
-          currentPath.startsWith('/tentang/') ? 'text-primary' : 'text-text-secondary',
+          currentPath.startsWith('/tentang/') || currentPath.startsWith('/en/about/') ? 'text-primary' : 'text-text-secondary',
         ]}
       >
-        Tentang
+        {t.navAbout}
       </a>
       <a
         href="/tools/"
@@ -202,16 +206,20 @@ const toolsActive =
         Tools
       </a>
       <a
-        href="/kategori/"
+        href={categoriesIndexUrl(lang)}
         class="mt-1 block rounded-lg px-3 py-3 text-[0.95rem] font-medium text-text-secondary transition hover:bg-surface-secondary hover:text-text"
       >
-        Semua Kategori →
+        {t.allCategories} →
       </a>
     </nav>
 
     <div class="shrink-0 border-t border-border px-5 py-4">
+      <div class="mb-3 flex items-center justify-between gap-2">
+        <span class="text-sm font-medium text-text-secondary">Bahasa / Language</span>
+        <LangSwitch />
+      </div>
       <a
-        href="/search/"
+        href={searchUrl(lang)}
         class="flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover"
       >
         <svg
@@ -227,7 +235,7 @@ const toolsActive =
           <circle cx="11" cy="11" r="7" />
           <line x1="21" y1="21" x2="16.5" y2="16.5" />
         </svg>
-        Cari Artikel
+        {t.searchArticles}
       </a>
     </div>
   </aside>

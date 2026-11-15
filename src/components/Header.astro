@@ -4,16 +4,26 @@ import { getPublishedArticles } from '../lib/articles';
 import { buildNavigation } from '../config/navigation';
 import DesktopNavigation from './navigation/DesktopNavigation.astro';
 import MobileNavigation from './navigation/MobileNavigation.astro';
+import LangSwitch from './LangSwitch.astro';
+import { homeUrl, searchUrl, ui, type Lang } from '../lib/i18n';
+
+interface Props {
+  /** Bahasa halaman; default 'id' (semua halaman lama tidak berubah). */
+  lang?: Lang;
+}
+
+const { lang = 'id' } = Astro.props;
+const t = ui(lang);
 
 const allCategories = await getCollection('categories');
 const articles = await getPublishedArticles();
-const navItems = buildNavigation(allCategories, articles);
+const navItems = buildNavigation(allCategories, articles, lang);
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur">
   <div class="mx-auto flex w-full max-w-[1280px] items-center justify-between gap-4 px-5 py-3.5">
-    <a href="/" class="flex shrink-0 items-center" aria-label="XDIRGA BLOG, ke beranda">
+    <a href={homeUrl(lang)} class="flex shrink-0 items-center" aria-label={t.logoHome}>
       {/* Lockup lengkap di semua ukuran layar (keputusan user 14 Nov 2026).
           Di layar kecil tingginya dikecilkan supaya muat bersama 3 tombol ikon.
           Dua varian: terang untuk light mode, gelap (teks putih asli) untuk dark mode. */}
@@ -37,12 +47,12 @@ const currentPath = Astro.url.pathname;
       </span>
     </a>
 
-    <DesktopNavigation items={navItems} currentPath={currentPath} />
+    <DesktopNavigation items={navItems} currentPath={currentPath} lang={lang} />
 
     <div class="flex items-center gap-2">
       <a
-        href="/search/"
-        aria-label="Cari artikel"
+        href={searchUrl(lang)}
+        aria-label={t.searchAria}
         class="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition hover:border-primary hover:text-primary"
       >
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -51,11 +61,15 @@ const currentPath = Astro.url.pathname;
         </svg>
       </a>
 
+      {/* Switcher bahasa: hanya desktop (hidden di bawah lg — di mobile
+          switcher ada di drawer, header sudah sesak). */}
+      <LangSwitch class="hidden lg:flex" />
+
       <button
         id="theme-toggle"
         type="button"
-        aria-label="Ganti tema"
-        title="Ganti tema"
+        aria-label={t.themeAria}
+        title={t.themeAria}
         class="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition hover:border-primary hover:text-primary"
       >
         <span data-theme-icon="light" class="hidden" aria-hidden="true">
@@ -88,7 +102,7 @@ const currentPath = Astro.url.pathname;
       <button
         id="menu-toggle"
         type="button"
-        aria-label="Buka menu"
+        aria-label={t.menuAria}
         aria-expanded="false"
         aria-controls="mobile-menu"
         class="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition hover:border-primary hover:text-primary lg:hidden"
@@ -105,16 +119,27 @@ const currentPath = Astro.url.pathname;
 
 <!-- Drawer seluler: sibling <header>, bukan anaknya, supaya position: fixed
      tidak terjebak containing block dari backdrop-blur header. -->
-<MobileNavigation items={navItems} currentPath={currentPath} />
+<MobileNavigation items={navItems} currentPath={currentPath} lang={lang} />
 
 <script is:inline>
   (function () {
     var MODES = ['light', 'dark', 'system'];
-    var LABELS = {
-      light: 'Tema terang, klik untuk tema gelap',
-      dark: 'Tema gelap, klik untuk tema sistem',
-      system: 'Tema mengikuti sistem, klik untuk tema terang',
+    // Label tombol tema mengikuti bahasa halaman (<html lang>).
+    var LABELS_BY_LANG = {
+      id: {
+        light: 'Tema terang, klik untuk tema gelap',
+        dark: 'Tema gelap, klik untuk tema sistem',
+        system: 'Tema mengikuti sistem, klik untuk tema terang',
+      },
+      en: {
+        light: 'Light theme, click for dark theme',
+        dark: 'Dark theme, click for system theme',
+        system: 'System theme, click for light theme',
+      },
     };
+    function labels() {
+      return LABELS_BY_LANG[document.documentElement.lang] || LABELS_BY_LANG.id;
+    }
     function stored() {
       try {
         return localStorage.getItem('xdirga-theme') || 'system';
@@ -128,8 +153,9 @@ const currentPath = Astro.url.pathname;
       document.documentElement.classList.toggle('dark', dark);
       var btn = document.getElementById('theme-toggle');
       if (btn) {
-        btn.setAttribute('aria-label', LABELS[mode] || LABELS.system);
-        btn.setAttribute('title', LABELS[mode] || LABELS.system);
+        var L = labels();
+        btn.setAttribute('aria-label', L[mode] || L.system);
+        btn.setAttribute('title', L[mode] || L.system);
         btn.querySelectorAll('[data-theme-icon]').forEach(function (el) {
           el.classList.toggle('hidden', el.getAttribute('data-theme-icon') !== mode);
         });

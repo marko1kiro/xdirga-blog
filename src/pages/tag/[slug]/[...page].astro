@@ -33,6 +33,8 @@ const featured = page.currentPage === 1 ? page.data[0] : null;
 const posts = page.currentPage === 1 ? page.data.slice(1) : page.data;
 const pageUrl = (n: number) =>
   n === 1 ? `/tag/${encodeURIComponent(tag)}/` : `/tag/${encodeURIComponent(tag)}/${n}/`;
+const enPageUrl = (n: number) =>
+  n === 1 ? `/en/tag/${encodeURIComponent(tag)}/` : `/en/tag/${encodeURIComponent(tag)}/${n}/`;
 const pageTitle = page.currentPage > 1 ? `Tag ${tag} (Halaman ${page.currentPage})` : `Tag ${tag}`;
 ---
 
@@ -51,6 +53,10 @@ const pageTitle = page.currentPage > 1 ? `Tag ${tag} (Halaman ${page.currentPage
   currentPage={page.currentPage}
   lastPage={page.lastPage}
   pageUrl={pageUrl}
+  hreflang={{
+    en: new URL(enPageUrl(page.currentPage), SITE.url).href,
+    id: new URL(pageUrl(page.currentPage), SITE.url).href,
+  }}
   breadcrumb={[
     { label: 'Beranda', href: '/' },
     { label: 'Semua Tag', href: '/tag/' },

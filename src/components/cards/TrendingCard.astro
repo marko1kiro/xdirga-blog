@@ -1,13 +1,16 @@
 ---
 import type { Article } from '../../lib/articles';
-import { articleUrl, formatDateShort } from '../../lib/articles';
+import { articleUrl } from '../../lib/articles';
+import { formatDateShortLang, type Lang } from '../../lib/i18n';
 
 interface Props {
   post: Article;
   rank: number;
+  /** Bahasa format tanggal; default 'id'. */
+  lang?: Lang;
 }
 
-const { post, rank } = Astro.props;
+const { post, rank, lang = 'id' } = Astro.props;
 ---
 
 <article class="group flex gap-4 border-b border-border py-4 first:pt-0 last:border-b-0 last:pb-0">
@@ -21,7 +24,7 @@ const { post, rank } = Astro.props;
       </h3>
     </a>
     <p class="mt-1.5 text-xs text-text-secondary">
-      <time datetime={post.data.publishedAt.toISOString()}>{formatDateShort(post.data.publishedAt)}</time>
+      <time datetime={post.data.publishedAt.toISOString()}>{formatDateShortLang(post.data.publishedAt, lang)}</time>
     </p>
   </div>
 </article>

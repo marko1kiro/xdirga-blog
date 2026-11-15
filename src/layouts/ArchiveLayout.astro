@@ -4,6 +4,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import FeaturedCard from '../components/cards/FeaturedCard.astro';
 import StandardCard from '../components/cards/StandardCard.astro';
 import { breadcrumbJsonLd, type Article, type BreadcrumbItem } from '../lib/articles';
+import { ui, type Lang } from '../lib/i18n';
 
 interface Props {
   title: string;
@@ -17,9 +18,14 @@ interface Props {
   pageUrl: (page: number) => string;
   breadcrumb: BreadcrumbItem[];
   jsonLd?: Record<string, unknown>[];
+  /** Bahasa halaman; default 'id'. */
+  lang?: Lang;
+  /** Pasangan hreflang EN/ID. Hanya dirender bila diisi. */
+  hreflang?: { en: string; id: string };
 }
 
-const { title, description, heading, intro, featured, posts, currentPage, lastPage, pageUrl, breadcrumb, jsonLd = [] } = Astro.props;
+const { title, description, heading, intro, featured, posts, currentPage, lastPage, pageUrl, breadcrumb, jsonLd = [], lang = 'id', hreflang } = Astro.props;
+const t = ui(lang);
 const hasPagination = lastPage > 1;
 // Halaman 1 memisahkan artikel pertama jadi featured, jadi `posts` bisa kosong
 // padahal arsip TIDAK kosong. Empty-state hanya benar bila tidak ada featured
@@ -29,7 +35,7 @@ const hasContent = posts.length > 0 || (featured && currentPage === 1);
 const allJsonLd = [...jsonLd, breadcrumbJsonLd(breadcrumb)];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={allJsonLd}>
+<BaseLayout title={title} description={description} jsonLd={allJsonLd} lang={lang} hreflang={hreflang}>
   <section class="pt-8 sm:pt-10">
     <Breadcrumb items={breadcrumb} />
     <h1 class="mt-6 font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">{heading}</h1>
@@ -38,20 +44,20 @@ const allJsonLd = [...jsonLd, breadcrumbJsonLd(breadcrumb)];
 
   {
     featured && currentPage === 1 && (
-      <section class="mt-8" aria-label="Artikel unggulan">
-        <FeaturedCard post={featured} />
+      <section class="mt-8" aria-label={t.featuredSectionAria}>
+        <FeaturedCard post={featured} lang={lang} />
       </section>
     )
   }
 
-  <section class="mt-10" aria-label="Daftar artikel">
+  <section class="mt-10" aria-label={t.articleListAria}>
     {
       !hasContent ? (
-        <p class="py-10 text-text-secondary">Belum ada artikel di sini.</p>
+        <p class="py-10 text-text-secondary">{t.emptyArchive}</p>
       ) : posts.length > 0 ? (
         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <StandardCard post={post} />
+            <StandardCard post={post} lang={lang} />
           ))}
         </div>
       ) : null
@@ -60,13 +66,13 @@ const allJsonLd = [...jsonLd, breadcrumbJsonLd(breadcrumb)];
 
   {
     hasPagination && (
-      <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
+      <nav class="mt-12 flex items-center justify-center gap-2" aria-label={t.paginationAria}>
         {currentPage > 1 && (
           <a
             href={pageUrl(currentPage - 1)}
             class="rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
           >
-            ← Sebelumnya
+            {t.prevPage}
           </a>
         )}
         {Array.from({ length: lastPage }, (_, i) => i + 1).map((page) => (
@@ -88,7 +94,7 @@ const allJsonLd = [...jsonLd, breadcrumbJsonLd(breadcrumb)];
             href={pageUrl(currentPage + 1)}
             class="rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
           >
-            Berikutnya →
+            {t.nextPage}
           </a>
         )}
       </nav>

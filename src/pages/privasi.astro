@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../lib/site';
 ---
 
 <BaseLayout
   title="Kebijakan Privasi"
   description="Kebijakan privasi XDIRGA BLOG: blog ini tidak mengumpulkan data pribadi, tidak ada pelacak pihak ketiga, dan hanya preferensi tema yang tersimpan di perambanmu."
+  hreflang={{ en: new URL('/en/privacy/', SITE.url).href, id: new URL('/privasi/', SITE.url).href }}
 >
   <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
     <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Kebijakan Privasi</h1>

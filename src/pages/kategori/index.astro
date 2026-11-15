@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCategories, getPublishedArticles, categoryUrl } from '../../lib/articles';
+import { SITE } from '../../lib/site';
 
 const categories = await getCategories();
 const all = await getPublishedArticles();
@@ -10,7 +11,11 @@ for (const article of all) {
 }
 ---
 
-<BaseLayout title="Kategori" description="Jelajahi semua kategori di XDIRGA BLOG.">
+<BaseLayout
+  title="Kategori"
+  description="Jelajahi semua kategori di XDIRGA BLOG."
+  hreflang={{ en: new URL('/en/category/', SITE.url).href, id: new URL('/kategori/', SITE.url).href }}
+>
   <section class="pt-10 sm:pt-12">
     <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Kategori</h1>
     <p class="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-text-secondary">

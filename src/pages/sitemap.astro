@@ -1,6 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getPublishedArticles, getCategories, articleUrl, categoryUrl, formatDateShort } from '../lib/articles';
+import { getCollection } from 'astro:content';
+import {
+  getPublishedArticles,
+  getCategories,
+  getAllTags,
+  articleUrl,
+  categoryUrl,
+  tagUrl,
+  authorUrl,
+  formatDateShort,
+} from '../lib/articles';
 import {
   getAllTools,
   TOOL_CATEGORIES,
@@ -9,10 +19,26 @@ import {
   toolsIndexUrl,
   editorialPolicyUrl,
 } from '../lib/tools';
+import { SITE } from '../lib/site';
 
 const articles = await getPublishedArticles();
 const categories = await getCategories();
 const tools = await getAllTools();
+const allTags = await getAllTags();
+const authors = await getCollection('authors');
+
+// Halaman EN (prefix /en/) dan pasangan ID-nya — peta URL brief i18n §1.
+// /en/page/<n>/ TIDAK dicantumkan: /page/<n>/ tidak punya padanan ID di kode
+// saat ini (paginasi hanya di dalam arsip kategori/tag/author).
+const enPages = [
+  { labelEn: 'Home', labelId: 'Beranda', hrefEn: '/en/', hrefId: '/' },
+  { labelEn: 'About', labelId: 'Tentang', hrefEn: '/en/about/', hrefId: '/tentang/' },
+  { labelEn: 'Contact', labelId: 'Kontak', hrefEn: '/en/contact/', hrefId: '/kontak/' },
+  { labelEn: 'Search', labelId: 'Cari', hrefEn: '/en/search/', hrefId: '/search/' },
+  { labelEn: 'Privacy', labelId: 'Privasi', hrefEn: '/en/privacy/', hrefId: '/privasi/' },
+  { labelEn: 'Terms', labelId: 'Syarat', hrefEn: '/en/terms/', hrefId: '/syarat/' },
+  { labelEn: 'Sitemap', labelId: 'Sitemap', hrefEn: '/en/sitemap/', hrefId: '/sitemap/' },
+];
 
 const groups = categories
   .map((cat) => ({
@@ -34,7 +60,7 @@ const mainPages = [
 ];
 ---
 
-<BaseLayout title="Sitemap" description="Daftar semua halaman dan artikel di XDIRGA BLOG, dikelompokkan per kategori.">
+<BaseLayout title="Sitemap" description="Daftar semua halaman dan artikel di XDIRGA BLOG, dikelompokkan per kategori." hreflang={{ en: new URL('/en/sitemap/', SITE.url).href, id: new URL('/sitemap/', SITE.url).href }}>
   <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
     <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Sitemap</h1>
     <p class="mt-3 leading-relaxed text-text-secondary">
@@ -100,6 +126,65 @@ const mainPages = [
             {' · '}
             <a href={toolUrl(tool, 'id')} class="text-primary hover:underline">
               ID
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="mt-10 text-xl font-bold text-text">Halaman (English)</h2>
+    <p class="mt-3 leading-relaxed text-text-secondary">
+      English versions of the blog pages. Article titles stay in Indonesian.
+    </p>
+    <ul class="mt-4 space-y-2.5 text-sm">
+      {
+        enPages.map((page) => (
+          <li>
+            <a href={page.hrefEn} class="text-primary hover:underline">
+              {page.labelEn}
+            </a>
+            {' · '}
+            <a href={page.hrefId} class="text-primary hover:underline">
+              {page.labelId}
+            </a>
+          </li>
+        ))
+      }
+      {
+        groups.map((group) => (
+          <li>
+            <a href={`/en/category/${group.id}/`} class="text-primary hover:underline">
+              {group.name} (EN)
+            </a>
+            {' · '}
+            <a href={group.url} class="text-primary hover:underline">
+              {group.name}
+            </a>
+          </li>
+        ))
+      }
+      {
+        allTags.map(({ tag }) => (
+          <li>
+            <a href={`/en/tag/${encodeURIComponent(tag)}/`} class="text-primary hover:underline">
+              #{tag} (EN)
+            </a>
+            {' · '}
+            <a href={tagUrl(tag)} class="text-primary hover:underline">
+              #{tag}
+            </a>
+          </li>
+        ))
+      }
+      {
+        authors.map((author) => (
+          <li>
+            <a href={`/en/author/${author.id}/`} class="text-primary hover:underline">
+              {author.data.name} (EN)
+            </a>
+            {' · '}
+            <a href={authorUrl(author.id)} class="text-primary hover:underline">
+              {author.data.name}
             </a>
           </li>
         ))

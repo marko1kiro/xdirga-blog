@@ -1,13 +1,17 @@
 ---
 import CoverPicture from '../CoverPicture.astro';
 import type { Article } from '../../lib/articles';
-import { articleUrl, formatDateShort, getCategory, readingMinutes } from '../../lib/articles';
+import { articleUrl, getCategory, readingMinutes } from '../../lib/articles';
+import { formatDateShortLang, ui, type Lang } from '../../lib/i18n';
 
 interface Props {
   post: Article;
+  /** Bahasa label kartu ("menit baca" / tanggal); default 'id'. */
+  lang?: Lang;
 }
 
-const { post } = Astro.props;
+const { post, lang = 'id' } = Astro.props;
+const t = ui(lang);
 const category = await getCategory(post.data.category);
 const minutes = readingMinutes(post.body ?? '');
 ---
@@ -27,9 +31,9 @@ const minutes = readingMinutes(post.body ?? '');
       </h3>
       <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-text-secondary">{post.data.description}</p>
       <p class="mt-3.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-text-secondary">
-        <time datetime={post.data.publishedAt.toISOString()}>{formatDateShort(post.data.publishedAt)}</time>
+        <time datetime={post.data.publishedAt.toISOString()}>{formatDateShortLang(post.data.publishedAt, lang)}</time>
         <span aria-hidden="true">·</span>
-        <span>{minutes} menit baca</span>
+        <span>{t.minRead(minutes)}</span>
       </p>
     </div>
   </a>

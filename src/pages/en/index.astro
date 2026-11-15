@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FeaturedCard from '../../components/cards/FeaturedCard.astro';
+import StandardCard from '../../components/cards/StandardCard.astro';
+import HorizontalCard from '../../components/cards/HorizontalCard.astro';
+import CompactCard from '../../components/cards/CompactCard.astro';
+import TrendingCard from '../../components/cards/TrendingCard.astro';
+import FollowSection from '../../components/FollowSection.astro';
+import TagList from '../../components/TagList.astro';
+import {
+  getPublishedArticles,
+  getCategories,
+  getAllTags,
+  articleSlug,
+} from '../../lib/articles';
+import { categoryUrlFor } from '../../lib/i18n';
+import { SITE } from '../../lib/site';
+import { coverSrcsetWebp } from '../../lib/covers';
+import { ui } from '../../lib/i18n';
+
+const lang = 'en' as const;
+const t = ui(lang);
+
+const all = await getPublishedArticles();
+const categories = await getCategories();
+const allTags = await getAllTags();
+
+// Hero = artikel terbaru, otomatis ganti tiap ada artikel baru terbit.
+// Flag frontmatter `featured` tidak lagi dipakai di homepage (keputusan user 14 Nov 2026).
+const featured = all[0];
+const featuredSlug = featured ? articleSlug(featured) : '';
+const trending = all.filter((a) => a.data.trending).slice(0, 4);
+const latest = all.filter((a) => articleSlug(a) !== featuredSlug).slice(0, 6);
+const latestSlugs = new Set(latest.map(articleSlug));
+const learn = all.filter((a) => ['tips', 'edukasi'].includes(a.data.category)).slice(0, 3);
+const picks = all.filter((a) => ['bisnis', 'lifestyle', 'berita'].includes(a.data.category)).slice(0, 3);
+const discovery = all.filter(
+  (a) => articleSlug(a) !== featuredSlug && !latestSlugs.has(articleSlug(a)),
+);
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: SITE.url,
+  description:
+    'XDIRGA BLOG is an independent digital publication covering news, technology, lifestyle, education, tips, and business. Written in a flowing style, from things tried firsthand.',
+  inLanguage: 'en-US',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: `${SITE.url}/en/search/?q={search_term_string}` },
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<BaseLayout
+  fullTitle={t.homeTitle}
+  description="XDIRGA BLOG is an independent digital publication covering news, technology, lifestyle, education, tips, and business. Written in a flowing style, from things tried firsthand."
+  lang={lang}
+  hreflang={{ en: new URL('/en/', SITE.url).href, id: new URL('/', SITE.url).href }}
+  jsonLd={[websiteJsonLd]}
+  preloadImage={
+    featured
+      ? { srcset: coverSrcsetWebp(featured.data.cover), sizes: '(max-width: 1023px) 100vw, 800px' }
+      : undefined
+  }
+>
+  <section class="pt-8 sm:pt-10" aria-label={t.homeAboutAria}>
+    <h1 class="max-w-3xl font-display text-[2rem] leading-[1.15] font-semibold text-text sm:text-[2.6rem]">
+      {t.homeH1}
+    </h1>
+    <p class="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-text-secondary">
+      {t.homeSub}
+    </p>
+  </section>
+
+  <section class="mt-8 sm:mt-10" aria-label={t.homeTrendingAria}>
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        {featured && <FeaturedCard post={featured} eager lang={lang} />}
+      </div>
+      <aside class="rounded-2xl border border-border bg-surface p-5 sm:p-6" aria-label={t.trending}>
+        <h2 class="text-sm font-bold tracking-[0.12em] text-primary uppercase">{t.trending}</h2>
+        <div class="mt-5">
+          {trending.map((post, i) => (
+            <TrendingCard post={post} rank={i + 1} lang={lang} />
+          ))}
+        </div>
+        <a
+          href="/en/search/"
+          class="mt-6 inline-block text-sm font-semibold text-primary transition hover:text-primary-hover"
+        >
+          {t.trendingMore}
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="mt-12" aria-label={t.browseCategoriesAria}>
+    <div class="flex flex-wrap gap-2.5">
+      {
+        categories.map((cat) => (
+          <a
+            href={categoryUrlFor(cat.id, lang)}
+            class="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+          >
+            {cat.data.name}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mt-14" aria-label={t.latestAria}>
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="font-display text-[1.7rem] leading-tight font-semibold text-text sm:text-[2rem]">{t.latest}</h2>
+      <a href="/en/category/teknologi/" class="shrink-0 text-sm font-semibold text-primary transition hover:text-primary-hover">
+        {t.latestSeeAll}
+      </a>
+    </div>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {latest.map((post) => (
+        <StandardCard post={post} lang={lang} />
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-14" aria-label={t.learnAria}>
+    <h2 class="font-display text-[1.7rem] leading-tight font-semibold text-text sm:text-[2rem]">{t.learnTitle}</h2>
+    <p class="mt-2 max-w-2xl text-[0.95rem] leading-relaxed text-text-secondary">
+      {t.learnSub}
+    </p>
+    <div class="mt-6 grid gap-5 lg:grid-cols-2">
+      {learn.map((post) => (
+        <HorizontalCard post={post} lang={lang} />
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-14" aria-label={t.picksAria}>
+    <h2 class="font-display text-[1.7rem] leading-tight font-semibold text-text sm:text-[2rem]">{t.picksTitle}</h2>
+    <p class="mt-2 max-w-2xl text-[0.95rem] leading-relaxed text-text-secondary">
+      {t.picksSub}
+    </p>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {picks.map((post) => (
+        <StandardCard post={post} lang={lang} />
+      ))}
+    </div>
+  </section>
+
+  {
+    discovery.length > 0 && (
+      <section class="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]" aria-label={t.exploreAria}>
+        <div>
+          <h2 class="font-display text-[1.7rem] leading-tight font-semibold text-text sm:text-[2rem]">{t.exploreTitle}</h2>
+          <div class="mt-6 rounded-2xl border border-border bg-surface p-5 sm:p-6">
+            {discovery.map((post) => (
+              <CompactCard post={post} lang={lang} />
+            ))}
+          </div>
+        </div>
+        <aside>
+          <h2 class="text-sm font-bold tracking-[0.12em] text-primary uppercase">{t.popularTopics}</h2>
+          <div class="mt-4">
+            <TagList tags={allTags.slice(0, 12).map((t) => t.tag)} lang={lang} />
+          </div>
+          <p class="mt-5 text-sm leading-relaxed text-text-secondary">
+            {t.publishedCount(all.length, categories.length)}
+          </p>
+        </aside>
+      </section>
+    )
+  }
+
+  <FollowSection lang={lang} />
+</BaseLayout>

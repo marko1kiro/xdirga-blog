@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../lib/site';
 ---
 
-<BaseLayout title="Tentang" description="Tentang XDIRGA BLOG, publikasi digital independen berisi informasi bermanfaat dan pengetahuan praktis.">
+<BaseLayout
+  title="Tentang"
+  description="Tentang XDIRGA BLOG, publikasi digital independen berisi informasi bermanfaat dan pengetahuan praktis."
+  hreflang={{ en: new URL('/en/about/', SITE.url).href, id: new URL('/tentang/', SITE.url).href }}
+>
   <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
     <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Tentang XDIRGA BLOG</h1>
     <div class="prose mt-8 max-w-none">

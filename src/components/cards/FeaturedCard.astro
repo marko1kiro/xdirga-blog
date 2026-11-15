@@ -1,14 +1,17 @@
 ---
 import CoverPicture from '../CoverPicture.astro';
 import type { Article } from '../../lib/articles';
-import { articleUrl, formatDateShort, getCategory } from '../../lib/articles';
+import { articleUrl, getCategory } from '../../lib/articles';
+import { formatDateShortLang, type Lang } from '../../lib/i18n';
 
 interface Props {
   post: Article;
   eager?: boolean;
+  /** Bahasa format tanggal; default 'id'. */
+  lang?: Lang;
 }
 
-const { post, eager = false } = Astro.props;
+const { post, eager = false, lang = 'id' } = Astro.props;
 const category = await getCategory(post.data.category);
 ---
 
@@ -30,7 +33,7 @@ const category = await getCategory(post.data.category);
       <p class="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8rem] text-text-secondary">
         <span class="font-medium text-text">{post.data.author === 'xdirga' ? 'Marko' : post.data.author}</span>
         <span aria-hidden="true">·</span>
-        <time datetime={post.data.publishedAt.toISOString()}>{formatDateShort(post.data.publishedAt)}</time>
+        <time datetime={post.data.publishedAt.toISOString()}>{formatDateShortLang(post.data.publishedAt, lang)}</time>
       </p>
     </div>
   </a>

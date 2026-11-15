@@ -1,12 +1,18 @@
 ---
 import type { NavItem } from '../../config/navigation';
+import { aboutUrl, homeUrl, ui, type Lang } from '../../lib/i18n';
 
 interface Props {
   items: NavItem[];
   currentPath: string;
+  /** Bahasa halaman; default 'id'. */
+  lang?: Lang;
 }
 
-const { items, currentPath } = Astro.props;
+const { items, currentPath, lang = 'id' } = Astro.props;
+const t = ui(lang);
+const homeActive = currentPath === homeUrl(lang);
+const aboutActive = currentPath.startsWith(aboutUrl(lang));
 // Menu Tools: tautan polos (tanpa mega panel), posisi paling akhir setelah
 // "Tentang". Aktif juga untuk rute /id/tools/*.
 const toolsActive =
@@ -20,18 +26,18 @@ const toolsActive =
      terpusat di viewport. Jangan tambah class relative di <nav> ini. -->
 <nav
   class="hidden items-center gap-1 lg:flex"
-  aria-label="Navigasi utama"
+  aria-label={t.mainNavAria}
   data-desktop-nav
 >
   <a
-    href="/"
-    aria-current={currentPath === '/' ? 'page' : undefined}
+    href={homeUrl(lang)}
+    aria-current={homeActive ? 'page' : undefined}
     class:list={[
       'rounded-lg px-3 py-2 text-sm font-medium transition hover:bg-surface-secondary hover:text-text',
-      currentPath === '/' ? 'text-primary' : 'text-text-secondary',
+      homeActive ? 'text-primary' : 'text-text-secondary',
     ]}
   >
-    Beranda
+    {t.navHome}
   </a>
 
   {
@@ -55,7 +61,7 @@ const toolsActive =
             aria-expanded="false"
             aria-haspopup="true"
             aria-controls={`mega-${item.slug}`}
-            aria-label={`Buka submenu ${item.label}`}
+            aria-label={t.openSubmenu(item.label)}
             class:list={[
               'rounded-r-lg py-2 pl-0.5 pr-2 text-sm transition hover:bg-surface-secondary hover:text-text',
               active ? 'text-primary' : 'text-text-secondary',
@@ -82,14 +88,14 @@ const toolsActive =
   }
 
   <a
-    href="/tentang/"
-    aria-current={currentPath.startsWith('/tentang/') ? 'page' : undefined}
+    href={aboutUrl(lang)}
+    aria-current={aboutActive ? 'page' : undefined}
     class:list={[
       'rounded-lg px-3 py-2 text-sm font-medium transition hover:bg-surface-secondary hover:text-text',
-      currentPath.startsWith('/tentang/') ? 'text-primary' : 'text-text-secondary',
+      aboutActive ? 'text-primary' : 'text-text-secondary',
     ]}
   >
-    Tentang
+    {t.navAbout}
   </a>
 
   <a
@@ -111,14 +117,14 @@ const toolsActive =
         data-mega-panel={item.slug}
         data-open="false"
         role="region"
-        aria-label={`Submenu ${item.label}`}
+        aria-label={t.submenu(item.label)}
       >
         <div class="rounded-3xl border border-border bg-surface p-5 shadow-[0_24px_60px_-12px_rgba(16,51,61,0.35)] sm:p-6">
           <div class="grid gap-8 lg:grid-cols-[1fr_300px]">
             <div class="grid gap-8 sm:grid-cols-2">
               <div>
                 <p class="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-secondary">
-                  Topik
+                  {t.topics}
                 </p>
                 <ul class="mt-3 space-y-0.5">
                   {item.tags.map((tag) => (
@@ -139,7 +145,7 @@ const toolsActive =
 
               <div>
                 <p class="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-secondary">
-                  Terbaru di {item.label}
+                  {t.latestIn(item.label)}
                 </p>
                 <ul class="mt-3 space-y-1">
                   {item.latest.map((post) => (
@@ -157,7 +163,7 @@ const toolsActive =
                   href={item.href}
                   class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:text-primary-hover"
                 >
-                  Lihat Semua {item.label}
+                  {t.seeAll(item.label)}
                   <svg
                     width="14"
                     height="14"
@@ -179,7 +185,7 @@ const toolsActive =
             {item.featured && (
               <a
                 href={item.featured.href}
-                aria-label={`Artikel unggulan: ${item.featured.label}`}
+                aria-label={t.featuredArticle(item.featured.label)}
                 class="group block overflow-hidden rounded-2xl bg-[#0b2730] text-white ring-1 ring-white/10 transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-primary"
               >
                 <img
@@ -196,7 +202,7 @@ const toolsActive =
                     {item.featured.description}
                   </span>
                   <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#22d3ee]">
-                    Baca selengkapnya
+                    {t.readMore}
                     <svg
                       width="14"
                       height="14"

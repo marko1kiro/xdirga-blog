@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import { SITE } from '../lib/site';
+import { ui, type Lang } from '../lib/i18n';
 import '../styles/global.css';
 import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import newsreader600 from '@fontsource/newsreader/files/newsreader-latin-600-normal.woff2?url';
@@ -17,7 +18,7 @@ interface Props {
   canonical?: string;
   noindex?: boolean;
   /** Bahasa halaman (atribut <html lang>). Default 'id' — semua halaman lama tidak berubah. */
-  lang?: string;
+  lang?: Lang;
   /** Pasangan hreflang EN/ID. Hanya dirender bila diisi (halaman Tools bilingual). */
   hreflang?: { en: string; id: string };
   jsonLd?: Record<string, unknown>[];
@@ -135,14 +136,14 @@ const orgJsonLd = {
       href="#konten-utama"
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
     >
-      Lewati ke konten
+      {ui(lang).skipLink}
     </a>
     <div class="mx-auto min-h-screen w-full max-w-[1280px] border-x border-border bg-surface shadow-[0_0_60px_rgba(16,51,61,0.08)]">
-      <Header />
+      <Header lang={lang} />
       <main id="konten-utama" class="mx-auto w-full max-w-[1280px] px-5 pb-16">
         <slot />
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   </body>
 </html>

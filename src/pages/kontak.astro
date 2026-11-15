@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../lib/site';
 ---
 
-<BaseLayout title="Kontak" description="Cara menghubungi dan mengikuti XDIRGA BLOG.">
+<BaseLayout
+  title="Kontak"
+  description="Cara menghubungi dan mengikuti XDIRGA BLOG."
+  hreflang={{ en: new URL('/en/contact/', SITE.url).href, id: new URL('/kontak/', SITE.url).href }}
+>
   <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
     <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Kontak</h1>
     <div class="prose mt-8 max-w-none">

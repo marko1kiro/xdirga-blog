@@ -1,5 +1,6 @@
 import type { Article, Category } from '../lib/articles';
-import { articleUrl, categoryUrl, tagUrl } from '../lib/articles';
+import { articleUrl } from '../lib/articles';
+import { CATEGORY_LABELS_EN, categoryUrlFor, tagUrlFor, type Lang } from '../lib/i18n';
 
 /**
  * Navigasi utama XDIRGA BLOG — satu sumber data untuk desktop dan mobile.
@@ -57,7 +58,18 @@ export const PRIMARY_CATEGORY_SLUGS = [
 export const MAX_NAV_TAGS = 6;
 export const MAX_NAV_LATEST = 3;
 
-export function buildNavigation(categories: Category[], articles: Article[]): NavItem[] {
+/**
+ * Bangun item nav utama. `lang` mengontrol label kategori + href arsip:
+ * - 'id' (default): label dari data kategori, href /kategori/<slug>/, tag /tag/<tag>/.
+ * - 'en': label dari CATEGORY_LABELS_EN, href /en/category/<slug>/, tag /en/tag/<tag>/.
+ * Tautan artikel (latest/featured) selalu /artikel/<slug>/ — artikel tidak
+ * punya versi EN. Data kategori tidak diubah.
+ */
+export function buildNavigation(
+  categories: Category[],
+  articles: Article[],
+  lang: Lang = 'id',
+): NavItem[] {
   const bySlug = new Map(categories.map((c) => [c.id, c]));
   return PRIMARY_CATEGORY_SLUGS.map((slug) => {
     const cat = bySlug.get(slug);
@@ -75,7 +87,7 @@ export function buildNavigation(categories: Category[], articles: Article[]): Na
     const tags: NavLink[] = [...tagCounts.entries()]
       .sort((a, b) => b[1] - a[1])
       .slice(0, MAX_NAV_TAGS)
-      .map(([tag, count]) => ({ label: tag, href: tagUrl(tag), count }));
+      .map(([tag, count]) => ({ label: tag, href: tagUrlFor(tag, lang), count }));
     const latest: NavLink[] = inCat
       .slice(0, MAX_NAV_LATEST)
       .map((a) => ({ label: a.data.title, href: articleUrl(a) }));
@@ -90,8 +102,8 @@ export function buildNavigation(categories: Category[], articles: Article[]): Na
       : null;
     return {
       slug,
-      label: cat.data.name,
-      href: categoryUrl(slug),
+      label: lang === 'en' ? (CATEGORY_LABELS_EN[slug] ?? cat.data.name) : cat.data.name,
+      href: categoryUrlFor(slug, lang),
       description: cat.data.description ?? '',
       tags,
       latest,

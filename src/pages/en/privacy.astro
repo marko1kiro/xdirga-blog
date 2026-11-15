@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../lib/site';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="XDIRGA BLOG privacy policy: this blog collects no personal data, has no third-party trackers, and only your theme preference is stored in your browser."
+  lang="en"
+  hreflang={{ en: new URL('/en/privacy/', SITE.url).href, id: new URL('/privasi/', SITE.url).href }}
+>
+  <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
+    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Privacy Policy</h1>
+    <p class="mt-3 text-sm text-text-secondary">Last updated 14 November 2026.</p>
+    <div class="prose mt-8 max-w-none">
+      <h2>Data collected</h2>
+      <p>
+        This blog does not collect personal data. There is no sign-up form, no comments, no third-party trackers, and no ads that monitor readers.
+      </p>
+      <h2>Browser storage</h2>
+      <p>
+        The only thing stored in your browser is your theme preference: light, dark, or follow the system. That value lives in your own browser's local storage, is never sent to the server, and can be deleted at any time through your browser settings.
+      </p>
+      <h2>Outbound links</h2>
+      <p>
+        Some articles link to other sites as sources. Those sites have their own privacy policies, outside this blog's control.
+      </p>
+      <h2>Changes to this policy</h2>
+      <p>
+        If this policy changes, the update date above changes with it. Meaningful changes will be noted on this page.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

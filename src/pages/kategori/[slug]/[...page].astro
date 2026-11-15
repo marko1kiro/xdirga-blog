@@ -34,6 +34,7 @@ const { slug } = Astro.params;
 const featured = page.currentPage === 1 ? page.data[0] : null;
 const posts = page.currentPage === 1 ? page.data.slice(1) : page.data;
 const pageUrl = (n: number) => (n === 1 ? `/kategori/${slug}/` : `/kategori/${slug}/${n}/`);
+const enPageUrl = (n: number) => (n === 1 ? `/en/category/${slug}/` : `/en/category/${slug}/${n}/`);
 const pageTitle = page.currentPage > 1 ? `${category.data.name} (Halaman ${page.currentPage})` : category.data.name;
 ---
 
@@ -52,6 +53,10 @@ const pageTitle = page.currentPage > 1 ? `${category.data.name} (Halaman ${page.
   currentPage={page.currentPage}
   lastPage={page.lastPage}
   pageUrl={pageUrl}
+  hreflang={{
+    en: new URL(enPageUrl(page.currentPage), SITE.url).href,
+    id: new URL(pageUrl(page.currentPage), SITE.url).href,
+  }}
   breadcrumb={[
     { label: 'Beranda', href: '/' },
     { label: 'Kategori', href: '/kategori/' },

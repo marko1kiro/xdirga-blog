@@ -1,12 +1,15 @@
 ---
 import type { Article } from '../../lib/articles';
-import { articleUrl, formatDateShort, getCategory } from '../../lib/articles';
+import { articleUrl, getCategory } from '../../lib/articles';
+import { formatDateShortLang, type Lang } from '../../lib/i18n';
 
 interface Props {
   post: Article;
+  /** Bahasa format tanggal; default 'id'. */
+  lang?: Lang;
 }
 
-const { post } = Astro.props;
+const { post, lang = 'id' } = Astro.props;
 const category = await getCategory(post.data.category);
 ---
 
@@ -17,7 +20,7 @@ const category = await getCategory(post.data.category);
       {post.data.title}
     </h3>
     <p class="mt-1.5 text-xs text-text-secondary">
-      <time datetime={post.data.publishedAt.toISOString()}>{formatDateShort(post.data.publishedAt)}</time>
+      <time datetime={post.data.publishedAt.toISOString()}>{formatDateShortLang(post.data.publishedAt, lang)}</time>
     </p>
   </a>
 </article>

@@ -37,6 +37,7 @@ interface Props {
 const { page, author } = Astro.props;
 const { slug } = Astro.params;
 const pageUrl = (n: number) => (n === 1 ? `/author/${slug}/` : `/author/${slug}/${n}/`);
+const enPageUrl = (n: number) => (n === 1 ? `/en/author/${slug}/` : `/en/author/${slug}/${n}/`);
 const pageTitle = page.currentPage > 1 ? `${author.data.name} (Halaman ${page.currentPage})` : author.data.name;
 
 const breadcrumbItems: BreadcrumbItem[] = [{ label: 'Beranda', href: '/' }, { label: author.data.name }];
@@ -79,6 +80,10 @@ const topTags = [...tagCounts.entries()]
     page.lastPage,
     `tulisan oleh ${author.data.name}`,
   )}
+  hreflang={{
+    en: new URL(enPageUrl(page.currentPage), SITE.url).href,
+    id: new URL(pageUrl(page.currentPage), SITE.url).href,
+  }}
   jsonLd={[personJsonLd, breadcrumbJsonLd(breadcrumbItems, SITE.url)]}
 >
   <div class="pt-8 sm:pt-10">

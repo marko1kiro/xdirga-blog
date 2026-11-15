@@ -1,0 +1,57 @@
+---
+import { getLangFromPath, getLangTargets, type Lang } from '../lib/lang-url';
+
+interface Props {
+  /** Bahasa halaman. Bila tidak diisi, diturunkan dari Astro.url.pathname. */
+  lang?: Lang;
+  /** Pathname saat ini. Bila tidak diisi, dipakai Astro.url.pathname. */
+  currentPath?: string;
+  /** Kelas tambahan pada wadah pill (mis. "hidden lg:flex" di header). */
+  class?: string;
+}
+
+const currentPath = Astro.props.currentPath ?? Astro.url.pathname;
+const lang = Astro.props.lang ?? getLangFromPath(currentPath);
+const targets = getLangTargets(currentPath);
+const isEn = lang === 'en';
+// Label grup mengikuti bahasa halaman (bukan bahasa target).
+const groupLabel = isEn ? 'Choose language' : 'Pilih bahasa';
+---
+
+<div
+  role="group"
+  aria-label={groupLabel}
+  title={groupLabel}
+  class:list={[
+    'flex h-9 items-center rounded-full border border-border p-0.5',
+    Astro.props.class,
+  ]}
+>
+  <a
+    href={targets.id}
+    lang="id"
+    aria-current={!isEn ? 'true' : undefined}
+    title="Bahasa Indonesia"
+    class:list={[
+      'flex h-full items-center rounded-full px-2.5 text-[0.8rem] font-bold transition',
+      !isEn ? 'bg-primary text-white' : 'text-text-secondary hover:text-primary',
+    ]}
+  >
+    ID
+  </a>
+  <span aria-hidden="true" class="mx-0.5 text-[0.8rem] font-bold text-text-secondary/50"
+    >|</span
+  >
+  <a
+    href={targets.en}
+    lang="en"
+    aria-current={isEn ? 'true' : undefined}
+    title="English"
+    class:list={[
+      'flex h-full items-center rounded-full px-2.5 text-[0.8rem] font-bold transition',
+      isEn ? 'bg-primary text-white' : 'text-text-secondary hover:text-primary',
+    ]}
+  >
+    EN
+  </a>
+</div>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../lib/site';
+---
+
+<BaseLayout
+  title="Terms of Service"
+  description="XDIRGA BLOG terms of use: articles are free to read as is, may be shared with attribution, and decisions based on them are the reader's own responsibility."
+  lang="en"
+  hreflang={{ en: new URL('/en/terms/', SITE.url).href, id: new URL('/syarat/', SITE.url).href }}
+>
+  <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
+    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Terms of Service</h1>
+    <p class="mt-3 text-sm text-text-secondary">Last updated 14 November 2026.</p>
+    <div class="prose mt-8 max-w-none">
+      <h2>Blog content</h2>
+      <p>
+        All articles on this blog are free to read and provided as is. The information shared is written based on experience and checks made when the article was written. Third-party services discussed here can change at any time, including their prices, free limits, and availability.
+      </p>
+      <h2>Reuse</h2>
+      <p>
+        Articles on this blog may be shared with attribution and a link to the original article. Copying in full without attribution is not allowed.
+      </p>
+      <h2>Liability</h2>
+      <p>
+        Decisions made based on the writing on this blog are the reader's own responsibility. This blog is not liable for losses arising from changes to third-party services or from applying a guide outside the context described.
+      </p>
+      <h2>Changes to these terms</h2>
+      <p>
+        These terms may change at any time. The version in force is the one shown on this page.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../lib/site';
+---
+
+<BaseLayout
+  title="Contact"
+  description="How to reach and follow XDIRGA BLOG."
+  lang="en"
+  hreflang={{ en: new URL('/en/contact/', SITE.url).href, id: new URL('/kontak/', SITE.url).href }}
+>
+  <section class="mx-auto max-w-[720px] pt-10 sm:pt-12">
+    <h1 class="font-display text-[2.3rem] leading-[1.1] font-semibold text-text sm:text-[2.9rem]">Contact</h1>
+    <div class="prose mt-8 max-w-none">
+      <p>
+        XDIRGA BLOG is a personal publication run by one person. There is no editorial team and no customer service, so please understand if replies cannot be as fast as a commercial service.
+      </p>
+      <h2>The best way to follow this blog</h2>
+      <p>
+        The easiest way is to follow the RSS feed at <a href="/rss.xml">/rss.xml</a>. Every new article shows up straight in your favorite RSS reader, without needing to open this site every day.
+      </p>
+      <p>
+        If you spot a mistake in an article or a broken link, the most helpful thing is to note the article title and the part that is wrong, then pass it on through a channel you already have to the author. Corrections are recorded with an update date on the article.
+      </p>
+      <h2>Topic suggestions</h2>
+      <p>
+        Topic suggestions are welcome, especially about free tools, APIs, and technical things you are working on. Not every suggestion can be written up, but all of them are read and considered.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

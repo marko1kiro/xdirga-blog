@@ -51,6 +51,7 @@ const websiteJsonLd = {
 
 <BaseLayout
   fullTitle="XDIRGA BLOG — Berita, Teknologi, dan Tips Digital"
+  hreflang={{ en: new URL('/en/', SITE.url).href, id: new URL('/', SITE.url).href }}
   jsonLd={[websiteJsonLd]}
   preloadImage={
     featured

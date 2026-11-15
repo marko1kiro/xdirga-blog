@@ -62,6 +62,25 @@ for (const route of allRoutes) {
 }
 ok(`semua rute 200 (${statusOk}/${allRoutes.length})`, statusOk === allRoutes.length);
 
+// ---------- 1b. Rute /en/ wajib ADA di dist (i18n) ----------
+// Daftar rute 200 di atas diturunkan otomatis dari dist, jadi rute yang tidak
+// kebangun tidak akan ketahuan dari sana. Daftar eksplisit ini gagal keras
+// bila tim halaman EN belum terintegrasi.
+const expectedRoutes = [
+  '/en/',
+  '/en/about/',
+  '/en/contact/',
+  '/en/privacy/',
+  '/en/terms/',
+  '/en/search/',
+  '/en/category/teknologi/',
+  '/en/author/xdirga/',
+  '/tools/',
+  '/tools/chatgpt/',
+];
+for (const r of expectedRoutes) ok(`rute wajib ada ${r}`, allRoutes.includes(r));
+ok('rute /en/tag/ ada (min. 1 tag)', allRoutes.some((r) => r.startsWith('/en/tag/')));
+
 // ---------- 2. Draf tidak boleh muncul ----------
 const sitemap = fs.readFileSync(path.join(dist, 'sitemap-0.xml'), 'utf8');
 const rss = fs.readFileSync(path.join(dist, 'rss.xml'), 'utf8');
@@ -74,6 +93,45 @@ ok(`sitemap berisi ${publishedCount} artikel`, (sitemap.match(/\/artikel\//g) ||
 ok('sitemap tidak berisi /search/', !sitemap.includes('/search'));
 ok(`RSS berisi ${publishedCount} item`, (rss.match(/<item>/g) || []).length === publishedCount, `${(rss.match(/<item>/g) || []).length} item`);
 ok('homepage berisi judul XDIRGA BLOG', home.includes('XDIRGA') && home.includes('Sedang Tren'));
+
+// ---------- 2b. Hreflang i18n ----------
+// Halaman EN berpasangan: hreflang en/id/x-default + <html lang="en"> +
+// canonical ke diri sendiri. Halaman artikel: TANPA hreflang (ID-only,
+// brief §0 aturan 1) + <html lang="id">. Asersi urutan nav desktop (§8)
+// TIDAK disentuh — switcher bukan item nav.
+const readDist = (rel) => {
+  const f = path.join(dist, rel);
+  return fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null;
+};
+const enPageFiles = [
+  { file: 'en/index.html', url: 'https://xdirga.xyz/en/' },
+  { file: 'en/about/index.html', url: 'https://xdirga.xyz/en/about/' },
+  { file: 'en/search/index.html', url: 'https://xdirga.xyz/en/search/' },
+  { file: 'en/category/teknologi/index.html', url: 'https://xdirga.xyz/en/category/teknologi/' },
+];
+for (const { file, url } of enPageFiles) {
+  const html = readDist(file);
+  const label = '/' + file.replace('/index.html', '/');
+  ok(`i18n: ${label} ada di dist`, html !== null);
+  if (html === null) continue;
+  ok(`i18n: ${label} hreflang en`, html.includes('hreflang="en"'));
+  ok(`i18n: ${label} hreflang id`, html.includes('hreflang="id"'));
+  ok(`i18n: ${label} hreflang x-default`, html.includes('hreflang="x-default"'));
+  ok(`i18n: ${label} <html lang="en">`, html.includes('<html lang="en">'));
+  ok(`i18n: ${label} canonical ke diri sendiri`, html.includes(`<link rel="canonical" href="${url}"`));
+}
+const articleHtml = readDist('artikel/manus-free-300-kredit-sehari/index.html');
+ok('i18n: artikel contoh ada di dist', articleHtml !== null);
+if (articleHtml !== null) {
+  ok('i18n: artikel TIDAK punya hreflang', !articleHtml.includes('hreflang='));
+  ok('i18n: artikel <html lang="id">', articleHtml.includes('<html lang="id">'));
+}
+// Sitemap XML: rute /en/ masuk otomatis lewat @astrojs/sitemap (tanpa pola
+// hreflang — sitemap Tools juga polos tanpa xhtml:link); /en/search/ tetap
+// terkecuali seperti /search/.
+ok('sitemap berisi rute /en/', sitemap.includes('https://xdirga.xyz/en/'));
+ok('sitemap berisi /en/about/', sitemap.includes('https://xdirga.xyz/en/about/'));
+ok('sitemap tidak berisi /en/search/', !sitemap.includes('/en/search'));
 
 // ---------- 3. Broken internal link ----------
 const linkRe = /(?:href|src)="(\/[^"#]*)(?:#[^"]*)?"/g;
