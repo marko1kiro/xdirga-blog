@@ -10,20 +10,160 @@ const { items } = Astro.props;
 
 {
   items.length > 1 && (
-    <nav aria-label="Daftar isi artikel">
-      <h2 class="text-sm font-bold tracking-wide text-text">Daftar Isi</h2>
-      <ol class="mt-3 space-y-2 text-sm">
-        {items.map((item) => (
-          <li class:list={{ 'pl-4': item.depth === 3 }}>
-            <a
-              href={`#${item.id}`}
-              class="text-text-secondary transition hover:text-primary"
+    <>
+      {/* Blok TOC sidebar desktop (lg+): bisa di-collapse, preferensi tersimpan di localStorage */}
+      <div class="hidden lg:block">
+        <div class="flex items-center justify-between gap-2">
+          <h2 class="text-sm font-bold tracking-wide text-text">Daftar Isi</h2>
+          <button
+            type="button"
+            id="toc-collapse-btn"
+            class="rounded-md p-1 text-text-secondary transition hover:bg-surface-secondary hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            aria-expanded="true"
+            aria-controls="toc-list"
+            aria-label="Sembunyikan daftar isi"
+          >
+            <svg
+              class="h-4 w-4 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
             >
-              {item.text}
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+        <ol id="toc-list" class="mt-3 space-y-2 text-sm">
+          {items.map((item) => (
+            <li class:list={{ 'pl-4': item.depth === 3 }}>
+              <a href={`#${item.id}`} class="text-text-secondary transition hover:text-primary">
+                {item.text}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      {/* FAB + panel dropdown TOC mobile (<lg): satu-satunya TOC di mobile */}
+      <div class="lg:hidden">
+        <button
+          type="button"
+          id="toc-fab"
+          class="fixed right-4 bottom-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          aria-expanded="false"
+          aria-controls="toc-mobile-panel"
+          aria-label="Daftar isi"
+        >
+          <svg
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="8" x2="21" y1="6" y2="6" />
+            <line x1="8" x2="21" y1="12" y2="12" />
+            <line x1="8" x2="21" y1="18" y2="18" />
+            <line x1="3" x2="3.01" y1="6" y2="6" />
+            <line x1="3" x2="3.01" y1="12" y2="12" />
+            <line x1="3" x2="3.01" y1="18" y2="18" />
+          </svg>
+        </button>
+        <div
+          id="toc-mobile-panel"
+          class="fixed right-4 bottom-[4.75rem] z-50 hidden w-[min(20rem,calc(100vw-2rem))] rounded-2xl border border-border bg-surface-secondary p-5 shadow-xl"
+          role="dialog"
+          aria-label="Daftar isi artikel"
+        >
+          <h2 class="text-sm font-bold tracking-wide text-text">Daftar Isi</h2>
+          <ol class="mt-3 max-h-[60dvh] space-y-2 overflow-y-auto text-sm">
+            {items.map((item) => (
+              <li class:list={{ 'pl-4': item.depth === 3 }}>
+                <a href={`#${item.id}`} class="text-text-secondary transition hover:text-primary">
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </>
   )
 }
+
+<script is:inline>
+  // Collapse/expand TOC sidebar desktop, preferensi tersimpan di localStorage.
+  (function () {
+    const KEY = 'xdirga-toc-collapsed';
+    const btn = document.getElementById('toc-collapse-btn');
+    const list = document.getElementById('toc-list');
+    if (!btn || !list) return;
+    let collapsed = false;
+    try {
+      collapsed = localStorage.getItem(KEY) === 'true';
+    } catch (e) {}
+    /** @param {boolean} value */
+    function apply(value) {
+      list.classList.toggle('hidden', value);
+      btn.setAttribute('aria-expanded', String(!value));
+      btn.setAttribute('aria-label', value ? 'Tampilkan daftar isi' : 'Sembunyikan daftar isi');
+      const icon = btn.querySelector('svg');
+      if (icon) icon.classList.toggle('rotate-180', value);
+    }
+    apply(collapsed);
+    btn.addEventListener('click', function () {
+      collapsed = !collapsed;
+      try {
+        localStorage.setItem(KEY, String(collapsed));
+      } catch (e) {}
+      apply(collapsed);
+    });
+  })();
+
+  // FAB + panel dropdown TOC mobile: buka/tutup via tombol, tautan, klik di luar, Escape.
+  (function () {
+    const fab = document.getElementById('toc-fab');
+    const panel = document.getElementById('toc-mobile-panel');
+    if (!fab || !panel) return;
+    let open = false;
+    /** @param {boolean} next @param {boolean} refocus */
+    function setOpen(next, refocus) {
+      open = next;
+      panel.classList.toggle('hidden', !open);
+      fab.setAttribute('aria-expanded', String(open));
+      if (!open && refocus) fab.focus();
+    }
+    fab.addEventListener('click', function (event) {
+      event.stopPropagation();
+      setOpen(!open, false);
+    });
+    panel.addEventListener('click', function (event) {
+      const target = event.target;
+      if (target instanceof Element && target.closest('a')) {
+        // Tutup panel sekarang; fokus ke FAB ditunda satu tick supaya tidak
+        // dicuri navigasi fragmen browser (default action klik anchor
+        // memindahkan fokus ke <body> bila heading target tidak focusable).
+        setOpen(false, false);
+        setTimeout(function () {
+          fab.focus();
+        }, 0);
+      }
+    });
+    document.addEventListener('click', function (event) {
+      const target = event.target;
+      if (open && target instanceof Node && !panel.contains(target) && !fab.contains(target)) {
+        setOpen(false, true);
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && open) setOpen(false, true);
+    });
+  })();
+</script>

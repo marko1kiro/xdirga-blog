@@ -33,6 +33,17 @@ const hiddenPaths = hiddenArticlePaths();
 // https://astro.build/config
 export default defineConfig({
   site: 'https://xdirga.xyz',
+  markdown: {
+    // Pewarnaan kode ala GitHub, mengikuti mode terang/gelap blog.
+    // Astro menginjek CSS dual-theme: tema gelap aktif di bawah `html.dark`
+    // (kelas yang dipasang ThemeScript), tanpa JS tambahan.
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+    },
+  },
   integrations: [
     mdx(),
     sitemap({

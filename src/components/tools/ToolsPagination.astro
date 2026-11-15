@@ -19,7 +19,7 @@ const ariaLabel = lang === 'id' ? 'Pagination' : 'Pagination';
       {currentPage > 1 && (
         <a
           href={pageUrl(currentPage - 1)}
-          class="rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+          class="rounded-xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
         >
           {prevLabel}
         </a>
@@ -29,7 +29,7 @@ const ariaLabel = lang === 'id' ? 'Pagination' : 'Pagination';
           href={pageUrl(page)}
           aria-current={page === currentPage ? 'page' : undefined}
           class:list={[
-            'rounded-xl border px-4 py-2.5 text-sm font-semibold transition',
+            'rounded-xl border px-4 py-3 text-sm font-semibold transition',
             page === currentPage
               ? 'border-primary bg-primary text-white'
               : 'border-border bg-surface text-text hover:border-primary hover:text-primary',
@@ -41,7 +41,7 @@ const ariaLabel = lang === 'id' ? 'Pagination' : 'Pagination';
       {currentPage < lastPage && (
         <a
           href={pageUrl(currentPage + 1)}
-          class="rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+          class="rounded-xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
         >
           {nextLabel}
         </a>

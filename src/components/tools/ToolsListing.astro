@@ -33,7 +33,7 @@ const emptyLabel =
 
   {
     tools.length > 0 ? (
-      <div id="tools-grid" class="mt-5 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <div id="tools-grid" class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {tools.map((tool) => (
           <ToolCard tool={tool} lang={lang} />
         ))}

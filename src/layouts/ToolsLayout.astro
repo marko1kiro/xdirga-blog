@@ -16,7 +16,7 @@ const { title, description, lang, canonical, hreflang, noindex = false, jsonLd =
 ---
 
 <BaseLayout title={title} description={description} lang={lang} canonical={canonical} hreflang={hreflang} noindex={noindex} jsonLd={jsonLd}>
-  <div class="grid gap-8 pt-8 sm:pt-10 lg:grid-cols-[272px_minmax(0,1fr)]">
+  <div class="grid gap-6 pt-6 sm:pt-10 lg:grid-cols-[272px_minmax(0,1fr)] lg:gap-8">
     {
       Astro.slots.has('sidebar') && (
         <aside class="min-w-0 lg:pt-1" aria-label="Filter dan kategori tools">

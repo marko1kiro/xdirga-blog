@@ -52,44 +52,55 @@ const clientData = {
 const clientJson = JSON.stringify(clientData).replace(/</g, '\\u003c');
 ---
 
-<div class="flex flex-col gap-3 sm:flex-row sm:items-center" data-tools-search>
-  <div class="relative flex-1">
-    <label for="tools-search" class="sr-only">{L.searchLabel}</label>
-    <svg
-      class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-text-secondary"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      aria-hidden="true"
-    >
-      <circle cx="11" cy="11" r="7" />
-      <line x1="21" y1="21" x2="16.5" y2="16.5" />
-    </svg>
-    <input
-      id="tools-search"
-      type="search"
-      autocomplete="off"
-      placeholder={L.searchPlaceholder}
-      class="w-full rounded-xl border border-border bg-surface py-2.5 pl-10 pr-4 text-sm text-text placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
-    />
-  </div>
-  <div class="flex items-center gap-2">
-    <label for="tools-sort" class="shrink-0 text-sm font-medium text-text-secondary">
-      {L.sortLabel}
-    </label>
-    <select
-      id="tools-sort"
-      class="rounded-xl border border-border bg-surface px-3 py-2.5 text-sm font-medium text-text focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
-    >
-      <option value="featured" selected>{L.sortFeatured}</option>
-      <option value="newest">{L.sortNewest}</option>
-      <option value="name">{L.sortName}</option>
-      <option value="rating">{L.sortRating}</option>
-    </select>
+{/*
+  Mobile: baris search + sort menempel di bawah header sticky (64px)
+  selama grid di-scroll, ala filter pills toolfinder yang selalu
+  terjangkau. Desktop: statis seperti sebelumnya. Ancestor <main>
+  tidak punya overflow, jadi sticky bekerja. Header z-40, bar ini z-30.
+*/}
+<div
+  class="sticky top-16 z-30 -mx-1 bg-background/95 px-1 py-2 backdrop-blur sm:static sm:mx-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none"
+  data-tools-search
+>
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <div class="relative flex-1">
+      <label for="tools-search" class="sr-only">{L.searchLabel}</label>
+      <svg
+        class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-text-secondary"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="7" />
+        <line x1="21" y1="21" x2="16.5" y2="16.5" />
+      </svg>
+      <input
+        id="tools-search"
+        type="search"
+        autocomplete="off"
+        placeholder={L.searchPlaceholder}
+        class="w-full rounded-xl border border-border bg-surface py-3 pl-10 pr-4 text-sm text-text placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:py-2.5"
+      />
+    </div>
+    <div class="flex items-center gap-2 max-sm:w-full max-sm:justify-between">
+      <label for="tools-sort" class="shrink-0 text-sm font-medium text-text-secondary">
+        {L.sortLabel}
+      </label>
+      <select
+        id="tools-sort"
+        class="rounded-xl border border-border bg-surface px-3 py-3 text-sm font-medium text-text focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 max-sm:min-w-0 max-sm:flex-1 sm:py-2.5"
+      >
+        <option value="featured" selected>{L.sortFeatured}</option>
+        <option value="newest">{L.sortNewest}</option>
+        <option value="name">{L.sortName}</option>
+        <option value="rating">{L.sortRating}</option>
+      </select>
+    </div>
   </div>
 </div>
 

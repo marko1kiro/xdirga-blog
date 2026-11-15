@@ -322,8 +322,8 @@ try {
     `(function(){var n=document.querySelector('[data-desktop-nav]');var l=[];n.querySelectorAll(':scope > a, :scope > div[data-mega-item] > a').forEach(function(a){l.push(a.textContent.trim());});return l.join('|');})()`,
   );
   ok(
-    'nav: urutan Beranda, Berita, Teknologi, Lifestyle, Edukasi, Tips, Bisnis, Tentang, Tools',
-    navLabels === 'Beranda|Berita|Teknologi|Lifestyle|Edukasi|Tips|Bisnis|Tentang|Tools',
+    'nav: urutan Beranda, Berita, Teknologi, Lifestyle, Edukasi, Tips, Bisnis, Tools',
+    navLabels === 'Beranda|Berita|Teknologi|Lifestyle|Edukasi|Tips|Bisnis|Tools',
     navLabels,
   );
   const noLainnyaLink = await evalJs(`!document.querySelector('a[href="/kategori/lainnya/"]')`);
