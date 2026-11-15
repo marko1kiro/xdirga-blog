@@ -185,3 +185,16 @@ body {
 .sidebar-scroll::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
 }
+
+/* ---- Shiki dual theme: aktifkan varian gelap saat mode gelap ----
+   Shiki (astro.config `markdown.shikiConfig` light github-light /
+   dark github-dark) hanya menulis variabel `--shiki-dark*` inline di
+   <pre>/<span>; tanpa aturan ini tidak ada yang memakainya sehingga
+   blok kode tetap putih di mode gelap. `!important` WAJIB karena Shiki
+   juga menulis `background-color`/`color` terang inline di elemen yang
+   sama (tanpanya hanya span yang gelap, <pre> tetap putih). */
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}
