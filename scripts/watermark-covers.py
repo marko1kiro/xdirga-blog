@@ -49,6 +49,7 @@ SLUGS = [
     "gemini-google-wallet",
     "cloudflare-kitesurf-open-source",
     "ling-3-2-flash-gratis-openrouter",
+    "chatgpt-wallet-agen-ai-bisa-bayar",
 ]
 
 
