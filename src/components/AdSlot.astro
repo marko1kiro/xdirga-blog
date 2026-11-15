@@ -1,0 +1,111 @@
+---
+/**
+ * Slot iklan AdSense.
+ *
+ * Bila ADS_ENABLED false (ID publisher kosong) → render NOTHING:
+ * bukan div kosong, bukan placeholder, bukan script. Halaman terlihat
+ * persis seperti sebelum ada slot.
+ *
+ * Bila aktif → render <ins class="adsbygoogle"> dengan tinggi cadangan
+ * (min-height) supaya tidak ada layout shift, dan push dilakukan secara
+ * lazy (IntersectionObserver: hanya saat slot mendekati viewport) dan
+ * hanya setelah consent diterima (localStorage `xdirga-consent` =
+ * 'accepted', atau event `xdirga-consent:accepted` dari ConsentBanner).
+ */
+import { ADS_ENABLED, ADSENSE_CLIENT_ID, AD_SLOTS, CONSENT_KEY, type AdPlacement } from '../lib/ads';
+
+interface Props {
+  /** Nama penempatan (kunci di AD_SLOTS). */
+  slot: AdPlacement;
+  /** Format iklan. Saat ini hanya 'display' yang dipakai. */
+  format?: 'display' | 'rectangle' | 'horizontal';
+  class?: string;
+}
+
+const { slot, format = 'display', class: className = '' } = Astro.props;
+
+const slotId = AD_SLOTS[slot];
+// Tinggi cadangan per format (anti layout shift / CLS).
+const minHeight = format === 'horizontal' ? '90px' : '250px';
+---
+
+{
+  ADS_ENABLED && slotId && (
+    <>
+      <div class={`ad-slot ${className}`} style={`min-height:${minHeight}`} data-ad-placement={slot}>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client={ADSENSE_CLIENT_ID}
+          data-ad-slot={slotId}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      </div>
+      <script
+        is:inline
+        data-consent-key={CONSENT_KEY}
+        data-client-id={ADSENSE_CLIENT_ID}
+      >
+        (function () {
+          var scriptEl = document.currentScript;
+          var KEY = scriptEl.getAttribute('data-consent-key');
+          var CLIENT = scriptEl.getAttribute('data-client-id');
+
+          function loadAdsScript() {
+            // Guard global: satu halaman boleh memuat script AdSense sekali saja,
+            // walau ada beberapa slot (tiap slot merender script ini).
+            if (window.__xdirgaAdsLoaded) return;
+            window.__xdirgaAdsLoaded = true;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + CLIENT;
+            s.crossOrigin = 'anonymous';
+            document.head.appendChild(s);
+          }
+
+          function pushIns(ins) {
+            if (ins.dataset.xdirgaPushed) return;
+            ins.dataset.xdirgaPushed = '1';
+            try {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+              // AdSense belum siap; biarkan observer mencoba lagi saat terlihat.
+              delete ins.dataset.xdirgaPushed;
+            }
+          }
+
+          function watchSlot(ins) {
+            if (!('IntersectionObserver' in window)) {
+              pushIns(ins);
+              return;
+            }
+            var io = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                    pushIns(ins);
+                    io.disconnect();
+                  }
+                });
+              },
+              { rootMargin: '200px' },
+            );
+            io.observe(ins);
+          }
+
+          function activate() {
+            loadAdsScript();
+            document.querySelectorAll('ins.adsbygoogle').forEach(watchSlot);
+          }
+
+          if (localStorage.getItem(KEY) === 'accepted') {
+            activate();
+          } else {
+            window.addEventListener('xdirga-consent:accepted', activate, { once: true });
+          }
+        })();
+      </script>
+    </>
+  )
+}

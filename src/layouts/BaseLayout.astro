@@ -3,6 +3,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import CodeBlockEnhancer from '../components/CodeBlockEnhancer.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import { CONSENT_BANNER_ENABLED } from '../lib/ads';
 import { SITE } from '../lib/site';
 import { ui, type Lang } from '../lib/i18n';
 import '../styles/global.css';
@@ -51,6 +53,19 @@ const {
 
 const pageTitle = fullTitle ?? (title ? `${title} — ${SITE.name}` : SITE.name);
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
+
+// Consent banner HANYA di halaman blog — TIDAK PERNAH di Tools.
+// BaseLayout dipakai juga oleh ToolsLayout, jadi gating di sini berdasarkan
+// path, bukan berdasarkan layout pemanggil: semua rute /tools/, /id/tools/,
+// /en/tools/ (indeks, detail, kategori, paginasi) dikecualikan. Blog lain
+// (artikel, beranda, arsip, privasi, search, dsb.) tetap dapat banner.
+const toolsPath = Astro.url.pathname;
+const isToolsPage =
+  toolsPath === '/tools' ||
+  toolsPath.startsWith('/tools/') ||
+  toolsPath.startsWith('/id/tools') ||
+  toolsPath.startsWith('/en/tools');
+const showConsentBanner = CONSENT_BANNER_ENABLED && !isToolsPage;
 const imageUrl = new URL(image, SITE.url).href;
 const orgJsonLd = {
   '@context': 'https://schema.org',
@@ -147,5 +162,6 @@ const orgJsonLd = {
       <Footer lang={lang} />
     </div>
     <CodeBlockEnhancer />
+    {showConsentBanner && <ConsentBanner lang={lang} />}
   </body>
 </html>

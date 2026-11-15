@@ -1,0 +1,124 @@
+---
+/**
+ * Banner consent cookie/iklan (first-party gate, BUKAN Google CMP).
+ *
+ * - Bar kecil di bawah layar, maks ~1/4 tinggi layar di mobile.
+ * - Muncul hanya bila belum ada pilihan di localStorage (`xdirga-consent`).
+ * - Terima → simpan 'accepted', dispatch event `xdirga-consent:accepted`
+ *   (AdSlot yang mendengarkan lalu memuat script iklan — hanya bila
+ *   ADS_ENABLED; saat ID kosong tidak ada script apa pun yang dimuat).
+ * - Tolak / tombol tutup (X) → simpan 'declined', TIDAK ADA script iklan.
+ * - Tidak ada tombol tutup tanpa memilih: X dihitung sebagai Tolak
+ *   (pilihan paling aman).
+ *
+ * Banner ini BUKAN Google CMP bersertifikat. Begitu AdSense disetujui,
+ * user WAJIB mengaktifkan Google "Privacy & messaging" di dashboard
+ * AdSense dan mematikan banner ini via CONSENT_BANNER_ENABLED = false.
+ */
+import { CONSENT_KEY } from '../lib/ads';
+
+interface Props {
+  lang?: 'id' | 'en';
+}
+
+const { lang = 'id' } = Astro.props;
+
+const text =
+  lang === 'en'
+    ? {
+        message: 'We use cookies for personalised ads. You can accept or decline — your choice is saved on this device.',
+        accept: 'Accept',
+        decline: 'Decline',
+        privacy: 'Privacy Policy',
+        closeLabel: 'Decline and close',
+      }
+    : {
+        message: 'Kami memakai cookie untuk iklan yang dipersonalisasi. Kamu bisa menerima atau menolak, pilihanmu disimpan di perangkat ini.',
+        accept: 'Terima',
+        decline: 'Tolak',
+        privacy: 'Kebijakan Privasi',
+        closeLabel: 'Tolak dan tutup',
+      };
+
+const privacyHref = lang === 'en' ? '/en/privacy/' : '/privasi/';
+---
+
+<div
+  id="xdirga-consent-banner"
+  class="fixed inset-x-0 bottom-0 z-50 hidden max-h-[25vh] overflow-y-auto border-t border-border bg-surface shadow-[0_-8px_30px_rgba(16,51,61,0.15)]"
+  role="dialog"
+  aria-live="polite"
+  aria-label={lang === 'en' ? 'Cookie consent' : 'Persetujuan cookie'}
+  data-consent-key={CONSENT_KEY}
+>
+  <div class="mx-auto flex w-full max-w-[1280px] flex-wrap items-center gap-x-4 gap-y-2 px-5 py-3 sm:flex-nowrap">
+    <p class="min-w-0 flex-1 text-sm leading-relaxed text-text">
+      {text.message}{' '}
+      <a href={privacyHref} class="font-semibold text-primary underline underline-offset-2 hover:text-primary-hover">
+        {text.privacy}
+      </a>
+    </p>
+    <div class="flex shrink-0 items-center gap-2">
+      <button
+        type="button"
+        data-consent-choice="declined"
+        class="rounded-full border border-border px-4 py-2 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
+      >
+        {text.decline}
+      </button>
+      <button
+        type="button"
+        data-consent-choice="accepted"
+        class="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-hover"
+      >
+        {text.accept}
+      </button>
+      <button
+        type="button"
+        data-consent-choice="declined"
+        aria-label={text.closeLabel}
+        class="rounded-full px-2 py-2 text-lg leading-none text-text-secondary transition hover:text-text"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('xdirga-consent-banner');
+    if (!banner) return;
+    var KEY = banner.dataset.consentKey || 'xdirga-consent';
+    try {
+      // Sudah pernah memilih → banner tidak muncul lagi.
+      if (localStorage.getItem(KEY)) return;
+    } catch (e) {
+      // localStorage tidak tersedia (mode privat ketat): tampilkan banner,
+      // tombol tetap bisa menutupnya (pilihan tidak tersimpan, banner muncul
+      // lagi lain kali) — default paling aman: tanpa iklan.
+      banner.classList.remove('hidden');
+      banner.querySelectorAll('[data-consent-choice]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          banner.classList.add('hidden');
+        });
+      });
+      return;
+    }
+    banner.classList.remove('hidden');
+    banner.querySelectorAll('[data-consent-choice]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var choice = btn.getAttribute('data-consent-choice');
+        try {
+          localStorage.setItem(KEY, choice);
+        } catch (e) {
+          /* Abaikan: pilihan tidak tersimpan, banner muncul lagi lain kali. */
+        }
+        banner.classList.add('hidden');
+        if (choice === 'accepted') {
+          window.dispatchEvent(new CustomEvent('xdirga-consent:accepted'));
+        }
+      });
+    });
+  })();
+</script>

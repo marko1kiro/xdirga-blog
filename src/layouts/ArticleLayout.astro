@@ -6,6 +6,7 @@ import ArticleMeta from '../components/ArticleMeta.astro';
 import TagList from '../components/TagList.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import ArticleTOC from '../components/ArticleTOC.astro';
+import AdSlot from '../components/AdSlot.astro';
 import AuthorBox from '../components/AuthorBox.astro';
 import PrevNext from '../components/PrevNext.astro';
 import RelatedArticleCard from '../components/cards/RelatedArticleCard.astro';
@@ -107,6 +108,8 @@ const breadcrumbJsonLdData = breadcrumbJsonLd(breadcrumbItems, SITE.url);
           <slot />
         </div>
 
+        <AdSlot slot="article-below-content" class="mt-10" />
+
         <div class="mt-10 border-t border-border pt-6">
           <TagList tags={tags} />
         </div>
@@ -119,6 +122,7 @@ const breadcrumbJsonLdData = breadcrumbJsonLd(breadcrumbItems, SITE.url);
         <div class="sidebar-scroll flex flex-col gap-8 rounded-2xl border border-border bg-surface-secondary p-5 sm:p-6 lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto lg:overscroll-contain lg:bg-transparent lg:p-0 lg:pr-2 lg:border-0 lg:rounded-none">
           <ShareButtons url={canonical} title={title} image={new URL(cover, SITE.url).href} />
           <ArticleTOC items={toc} />
+          <AdSlot slot="article-sidebar" />
           {
             tags.length > 0 && (
               <div>

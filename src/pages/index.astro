@@ -6,6 +6,7 @@ import HorizontalCard from '../components/cards/HorizontalCard.astro';
 import CompactCard from '../components/cards/CompactCard.astro';
 import TrendingCard from '../components/cards/TrendingCard.astro';
 import FollowSection from '../components/FollowSection.astro';
+import AdSlot from '../components/AdSlot.astro';
 import TagList from '../components/TagList.astro';
 import {
   getPublishedArticles,
@@ -118,6 +119,8 @@ const websiteJsonLd = {
       ))}
     </div>
   </section>
+
+  <AdSlot slot="home-feed" class="mt-14" />
 
   <section class="mt-14" aria-label="Tips dan edukasi">
     <h2 class="font-display text-[1.7rem] leading-tight font-semibold text-text sm:text-[2rem]">Belajar dan Berkembang</h2>
