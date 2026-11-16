@@ -53,6 +53,8 @@ SLUGS = [
     "ngatur-waktu-layar-hp-android-iphone",
     "cara-cek-jawaban-ai-halusinasi-klaim-per-klaim",
     "ollama-jalankan-ai-gratis-di-laptop-sendiri",
+    "rangkum-pdf-materi-belajar-notebooklm-gratis",
+    "italia-denda-meta-805-juta-euro-galeri-facebook",
 ]
 
 
