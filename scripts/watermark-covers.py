@@ -55,6 +55,7 @@ SLUGS = [
     "ollama-jalankan-ai-gratis-di-laptop-sendiri",
     "rangkum-pdf-materi-belajar-notebooklm-gratis",
     "italia-denda-meta-805-juta-euro-galeri-facebook",
+    "6-update-ai-pocket-tts-kimi-k3",
 ]
 
 
