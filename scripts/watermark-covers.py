@@ -56,6 +56,8 @@ SLUGS = [
     "rangkum-pdf-materi-belajar-notebooklm-gratis",
     "italia-denda-meta-805-juta-euro-galeri-facebook",
     "6-update-ai-pocket-tts-kimi-k3",
+    "jualan-di-whatsapp-business-gratis-katalog-umkm",
+    "foto-lama-jadi-kinclong-edit-gratis-ai-google-photos",
 ]
 
 
