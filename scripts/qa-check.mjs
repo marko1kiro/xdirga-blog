@@ -378,15 +378,18 @@ try {
   const noLainnyaLink = await evalJs(`!document.querySelector('a[href="/kategori/lainnya/"]')`);
   ok('nav: tidak ada tautan ke /kategori/lainnya/ di homepage', noLainnyaLink === true);
   const beritaHtml = await (await fetch(BASE + '/kategori/berita/')).text();
-  // Paginasi: PAGE_SIZE 3, Berita kini 4 artikel, jadi artikel tertua bisa
-  // pindah ke halaman 2. Cek halaman 1 dan 2 (hal. 2 boleh 404 bila belum ada).
+  // Paginasi: PAGE_SIZE 3, Berita kini 7 artikel, jadi artikel tertua bisa
+  // pindah ke halaman 3. Cek halaman 1, 2, dan 3 (hal. 3 boleh 404 bila belum ada).
   const beritaHtml2 = await (await fetch(BASE + '/kategori/berita/2/')).text();
+  const beritaHtml3 = await (await fetch(BASE + '/kategori/berita/3/')).text();
   ok(
     'arsip: artikel Selamat Datang sudah dihapus permanen, Berita tersisa Layanan AI Gratis Makin Ketat',
     !beritaHtml.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
       !beritaHtml2.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
+      !beritaHtml3.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
       (beritaHtml.includes('/artikel/layanan-ai-gratis-makin-ketat/') ||
-        beritaHtml2.includes('/artikel/layanan-ai-gratis-makin-ketat/')),
+        beritaHtml2.includes('/artikel/layanan-ai-gratis-makin-ketat/') ||
+        beritaHtml3.includes('/artikel/layanan-ai-gratis-makin-ketat/')),
   );
 
   ws.close();

@@ -58,6 +58,8 @@ SLUGS = [
     "6-update-ai-pocket-tts-kimi-k3",
     "jualan-di-whatsapp-business-gratis-katalog-umkm",
     "foto-lama-jadi-kinclong-edit-gratis-ai-google-photos",
+    "qwen4-max",
+    "aplikasi-kasir-gratis-umkm-pawoon-kasir-pintar-qasir-loyverse",
 ]
 
 
