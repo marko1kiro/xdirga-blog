@@ -51,6 +51,8 @@ SLUGS = [
     "ling-3-2-flash-gratis-openrouter",
     "chatgpt-wallet-agen-ai-bisa-bayar",
     "ngatur-waktu-layar-hp-android-iphone",
+    "cara-cek-jawaban-ai-halusinasi-klaim-per-klaim",
+    "ollama-jalankan-ai-gratis-di-laptop-sendiri",
 ]
 
 
