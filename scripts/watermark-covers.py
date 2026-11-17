@@ -60,6 +60,7 @@ SLUGS = [
     "foto-lama-jadi-kinclong-edit-gratis-ai-google-photos",
     "qwen4-max",
     "aplikasi-kasir-gratis-umkm-pawoon-kasir-pintar-qasir-loyverse",
+    "cara-bedain-gambar-ai-deepfake",
 ]
 
 
