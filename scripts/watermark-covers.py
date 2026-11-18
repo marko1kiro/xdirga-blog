@@ -62,6 +62,7 @@ SLUGS = [
     "aplikasi-kasir-gratis-umkm-pawoon-kasir-pintar-qasir-loyverse",
     "cara-bedain-gambar-ai-deepfake",
     "elevenlabs-akuisisi-kotoba-voice-ai-jepang",
+    "bikin-presentasi-rapi-gamma-gratis",
 ]
 
 
