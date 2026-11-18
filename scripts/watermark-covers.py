@@ -63,6 +63,7 @@ SLUGS = [
     "cara-bedain-gambar-ai-deepfake",
     "elevenlabs-akuisisi-kotoba-voice-ai-jepang",
     "bikin-presentasi-rapi-gamma-gratis",
+    "gpt-6-2-astra-sol-openai",
 ]
 
 
