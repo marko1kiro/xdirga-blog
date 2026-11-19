@@ -64,6 +64,7 @@ SLUGS = [
     "elevenlabs-akuisisi-kotoba-voice-ai-jepang",
     "bikin-presentasi-rapi-gamma-gratis",
     "gpt-6-2-astra-sol-openai",
+    "transkripsi-rekaman-jadi-teks-gratis-pakai-whisper",
 ]
 
 
