@@ -67,6 +67,7 @@ SLUGS = [
     "transkripsi-rekaman-jadi-teks-gratis-pakai-whisper",
     "gemini-4-neon-model-baru-google",
     "belajar-bahasa-asing-gratis-duolingo",
+    "anthropic-ipo-nasdaq-terbesar-sejarah",
 ]
 
 
