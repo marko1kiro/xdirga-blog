@@ -66,6 +66,7 @@ SLUGS = [
     "gpt-6-2-astra-sol-openai",
     "transkripsi-rekaman-jadi-teks-gratis-pakai-whisper",
     "gemini-4-neon-model-baru-google",
+    "belajar-bahasa-asing-gratis-duolingo",
 ]
 
 
