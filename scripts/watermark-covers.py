@@ -68,6 +68,7 @@ SLUGS = [
     "gemini-4-neon-model-baru-google",
     "belajar-bahasa-asing-gratis-duolingo",
     "anthropic-ipo-nasdaq-terbesar-sejarah",
+    "bikin-invoice-gratis-paper-id-freelancer-umkm",
 ]
 
 
