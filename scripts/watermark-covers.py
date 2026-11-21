@@ -69,6 +69,7 @@ SLUGS = [
     "belajar-bahasa-asing-gratis-duolingo",
     "anthropic-ipo-nasdaq-terbesar-sejarah",
     "bikin-invoice-gratis-paper-id-freelancer-umkm",
+    "thinking-machines-inkling-2-mini-model-ai-gratis-jalan-di-laptop",
 ]
 
 
