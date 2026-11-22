@@ -71,6 +71,7 @@ SLUGS = [
     "bikin-invoice-gratis-paper-id-freelancer-umkm",
     "thinking-machines-inkling-2-mini-model-ai-gratis-jalan-di-laptop",
     "token-context-window-kenapa-chat-ai-tiba-tiba-lupa",
+    "chatgpt-down-3-setengah-jam-75-persen-gagal",
 ]
 
 
