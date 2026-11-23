@@ -73,6 +73,7 @@ SLUGS = [
     "token-context-window-kenapa-chat-ai-tiba-tiba-lupa",
     "chatgpt-down-3-setengah-jam-75-persen-gagal",
     "ngetik-tanpa-keyboard-voice-typing-google-docs-gratis",
+    "openai-perplexity-and-intelligence-batas-pretraining-ai",
 ]
 
 
