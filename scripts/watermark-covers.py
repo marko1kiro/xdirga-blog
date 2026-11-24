@@ -75,6 +75,7 @@ SLUGS = [
     "ngetik-tanpa-keyboard-voice-typing-google-docs-gratis",
     "openai-perplexity-and-intelligence-batas-pretraining-ai",
     "hugging-face-spaces-coba-ribuan-model-ai-gratis",
+    "claude-ship-anthropic-review-perbaiki-setujui-pull-request",
 ]
 
 
