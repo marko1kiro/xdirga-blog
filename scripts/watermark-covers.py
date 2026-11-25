@@ -77,6 +77,7 @@ SLUGS = [
     "hugging-face-spaces-coba-ribuan-model-ai-gratis",
     "claude-ship-anthropic-review-perbaiki-setujui-pull-request",
     "traveling-tanpa-sinyal-peta-terjemahan-offline",
+    "google-workspace-mcp-servers-cli-ga",
 ]
 
 

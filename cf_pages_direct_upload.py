@@ -17,7 +17,12 @@ JWT asset dipakai mentah sebagai Bearer (itu kredensial Cloudflare asli).
 import base64, hashlib, json, mimetypes, os, sys, time, urllib.request, urllib.error
 import uuid
 
-import blake3
+try:
+    import blake3
+except ImportError:  # hilang bila VM di-swap (insiden 25 Nov 2026) — pasang ulang sendiri
+    import subprocess
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "blake3"])
+    import blake3
 
 sys.path.insert(0, "/opt/muse/skills/custom-connector-setup/bin")
 from dynamic_credentials import add_surrogate_to_request  # noqa: E402
