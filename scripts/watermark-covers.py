@@ -76,6 +76,7 @@ SLUGS = [
     "openai-perplexity-and-intelligence-batas-pretraining-ai",
     "hugging-face-spaces-coba-ribuan-model-ai-gratis",
     "claude-ship-anthropic-review-perbaiki-setujui-pull-request",
+    "traveling-tanpa-sinyal-peta-terjemahan-offline",
 ]
 
 
