@@ -19,9 +19,11 @@ import uuid
 
 try:
     import blake3
-except ImportError:  # hilang bila VM di-swap (insiden 25 Nov 2026) — pasang ulang sendiri
+except ImportError:  # hilang bila VM di-swap (insiden 25-26 Nov 2026) — pasang ulang sendiri
     import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "blake3"])
+    # PEP 668: pip polos ditolak di VM ini, WAJIB --break-system-packages
+    subprocess.check_call([sys.executable, "-m", "pip", "install",
+                           "--break-system-packages", "blake3"])
     import blake3
 
 sys.path.insert(0, "/opt/muse/skills/custom-connector-setup/bin")

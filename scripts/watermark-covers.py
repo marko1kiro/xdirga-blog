@@ -79,6 +79,7 @@ SLUGS = [
     "traveling-tanpa-sinyal-peta-terjemahan-offline",
     "google-workspace-mcp-servers-cli-ga",
     "email-marketing-gratis-toko-online-brevo-mailerlite-sender",
+    "nvidia-nemotron-image-30b-a3b",
 ]
 
 
