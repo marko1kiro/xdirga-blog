@@ -78,6 +78,7 @@ SLUGS = [
     "claude-ship-anthropic-review-perbaiki-setujui-pull-request",
     "traveling-tanpa-sinyal-peta-terjemahan-offline",
     "google-workspace-mcp-servers-cli-ga",
+    "email-marketing-gratis-toko-online-brevo-mailerlite-sender",
 ]
 
 
