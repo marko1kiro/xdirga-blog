@@ -378,27 +378,19 @@ try {
   const noLainnyaLink = await evalJs(`!document.querySelector('a[href="/kategori/lainnya/"]')`);
   ok('nav: tidak ada tautan ke /kategori/lainnya/ di homepage', noLainnyaLink === true);
   const beritaHtml = await (await fetch(BASE + '/kategori/berita/')).text();
-  // Paginasi: PAGE_SIZE 3, Berita kini 16 artikel, jadi artikel tertua bisa
-  // pindah ke halaman 6. Cek halaman 1, 2, 3, 4, 5, dan 6.
-  const beritaHtml2 = await (await fetch(BASE + '/kategori/berita/2/')).text();
-  const beritaHtml3 = await (await fetch(BASE + '/kategori/berita/3/')).text();
-  const beritaHtml4 = await (await fetch(BASE + '/kategori/berita/4/')).text();
-  const beritaHtml5 = await (await fetch(BASE + '/kategori/berita/5/')).text();
-  const beritaHtml6 = await (await fetch(BASE + '/kategori/berita/6/')).text();
+  // Paginasi: PAGE_SIZE 3, Berita kini 19 artikel (tambah 1 tiap Berita baru),
+  // jadi artikel tertua bisa pindah ke halaman 7. Ambil semua halaman sampai
+  // 404 supaya cek ini tidak basi lagi saat jumlah Berita bertambah.
+  const beritaPages = [beritaHtml];
+  for (let p = 2; p <= 12; p++) {
+    const res = await fetch(BASE + `/kategori/berita/${p}/`);
+    if (res.status !== 200) break;
+    beritaPages.push(await res.text());
+  }
   ok(
     'arsip: artikel Selamat Datang sudah dihapus permanen, Berita tersisa Layanan AI Gratis Makin Ketat',
-    !beritaHtml.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
-      !beritaHtml2.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
-      !beritaHtml3.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
-      !beritaHtml4.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
-      !beritaHtml5.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
-      !beritaHtml6.includes('/artikel/selamat-datang-di-blog-xdirga/') &&
-      (beritaHtml.includes('/artikel/layanan-ai-gratis-makin-ketat/') ||
-        beritaHtml2.includes('/artikel/layanan-ai-gratis-makin-ketat/') ||
-        beritaHtml3.includes('/artikel/layanan-ai-gratis-makin-ketat/') ||
-        beritaHtml4.includes('/artikel/layanan-ai-gratis-makin-ketat/') ||
-        beritaHtml5.includes('/artikel/layanan-ai-gratis-makin-ketat/') ||
-        beritaHtml6.includes('/artikel/layanan-ai-gratis-makin-ketat/')),
+    beritaPages.every((h) => !h.includes('/artikel/selamat-datang-di-blog-xdirga/')) &&
+      beritaPages.some((h) => h.includes('/artikel/layanan-ai-gratis-makin-ketat/')),
   );
 
   ws.close();

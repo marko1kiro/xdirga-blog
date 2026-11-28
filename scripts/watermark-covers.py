@@ -83,6 +83,7 @@ SLUGS = [
     "password-manager-gratis-hp-passkey-2fa-30-menit",
     "deepl-aure-v2-terjemahan-suara-langsung",
     "otomatisasi-tugas-berulang-tanpa-coding-zapier-gratis",
+    "liquid-ai-d1-3-ultra-model-keputusan-teratas",
 ]
 
 
